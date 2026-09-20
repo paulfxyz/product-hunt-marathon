@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Type direction — pick one</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Söhne&family=General+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700;9..144,800;9..144,900&family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ph:#DA552F; --ph-deep:#B33A17; --ph-hover:#EA6338;
+    --ink:#1F1F1F; --ink-2:#4A4A4A; --ink-3:#8A8A8A;
+    --paper:#FFF7ED; --paper-2:#FFF1E0; --card:#FFFFFF;
+    --line:#F0E0CD; --line-2:#E8D5BB;
+    --ok:#3F9E4F;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .top{
+    padding:32px 24px 20px;text-align:center;
+    background:#fff;border-bottom:1px solid var(--line);
+  }
+  .top h1{font-family:"Inter",system-ui;font-weight:800;font-size:28px;margin:0 0 6px;letter-spacing:-.02em}
+  .top p{margin:0;color:var(--ink-2);font-size:15px}
+  .top code{background:var(--paper-2);padding:2px 8px;border-radius:6px;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ph-deep)}
+  .wrap{max-width:1400px;margin:0 auto;padding:32px 20px 60px}
+  .row{
+    display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:44px;
+  }
+  @media(min-width:1100px){.row{grid-template-columns:1fr}}
+  .variant{
+    background:#fff;border:2px solid var(--line-2);border-radius:24px;overflow:hidden;
+    box-shadow:0 6px 20px rgba(31,31,31,.06);
+    transition:border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .variant.picked{border-color:var(--ph);box-shadow:0 20px 40px rgba(218,85,47,.2)}
+  .variant-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 24px;
+    background:linear-gradient(180deg,#FFF7ED,#FFF1E0);
+    border-bottom:1px solid var(--line);
+    font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);
+  }
+  .variant-head .label{color:var(--ph-deep);font-weight:700}
+  .variant-head .stack{color:var(--ink-3)}
+  .variant-body{padding:44px 44px 32px}
+  @media(max-width:600px){.variant-body{padding:28px 22px}}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border-radius:999px;
+    background:var(--paper-2);border:1px solid var(--line-2);
+    font-size:12px;font-weight:600;color:var(--ph-deep);
+  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ph)}
+  .headline{margin:14px 0 12px}
+  .sub{max-width:520px;color:var(--ink-2);margin:0 0 22px;font-size:17px}
+  .row-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:820px}
+  @media(max-width:720px){.row-cards{grid-template-columns:1fr}}
+  .mini{background:#fff;border:1px solid var(--line-2);border-radius:14px;padding:16px}
+  .mini h3{margin:0 0 4px}
+  .mini p{margin:0;color:var(--ink-2);font-size:13px}
+  .day{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+  .price{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ph-deep);background:#FFE9DC;padding:2px 7px;border-radius:5px;font-weight:600;margin-top:8px}
+  .cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 20px;border-radius:12px;
+    background:var(--ph);color:#fff;text-decoration:none;
+    font-weight:600;font-size:15px;margin-top:16px;
+    transition:transform .15s,background .15s;
+  }
+  .cta:hover{background:var(--ph-hover);transform:translateY(-2px)}
+  .pick-btn{
+    padding:8px 16px;background:var(--ph);color:#fff;
+    border:0;border-radius:8px;font-weight:600;font-size:13px;cursor:pointer;
+    font-family:"Inter",sans-serif;
+    transition:background .15s;
+  }
+  .pick-btn:hover{background:var(--ph-hover)}
+  .pick-btn.picked{background:var(--ok)}
+
+  /* ============ VARIANT 1 · Fraunces + Inter (editorial, warm) ============ */
+  .v1 .headline{
+    font-family:"Fraunces",serif;
+    font-optical-sizing:auto;
+    font-variation-settings:"SOFT" 100, "WONK" 0;
+    font-weight:600;
+    font-size:clamp(48px,7vw,84px);
+    line-height:.98;letter-spacing:-.025em;
+  }
+  .v1 .headline em{font-style:italic;color:var(--ph);font-weight:600}
+  .v1 h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .v1 .sub, .v1 p{font-family:"Inter",sans-serif}
+
+  /* ============ VARIANT 2 · Space Grotesk display + IBM Plex Sans body (modern, techy) ============ */
+  .v2 .headline{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    font-size:clamp(48px,7vw,84px);
+    line-height:1;letter-spacing:-.035em;
+  }
+  .v2 .headline em{font-style:normal;color:var(--ph);font-weight:700}
+  .v2 .headline em::after{content:"."}
+  .v2 h3{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em}
+  .v2 .sub, .v2 p{font-family:"IBM Plex Sans",sans-serif}
+  .v2 .day, .v2 .price{font-family:"IBM Plex Mono",monospace}
+  .v2 .kicker{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+
+  /* ============ VARIANT 3 · Inter Black + Inter (bold, PH-native, punchy) ============ */
+  .v3 .headline{
+    font-family:"Inter",sans-serif;
+    font-weight:900;
+    font-size:clamp(48px,7.4vw,88px);
+    line-height:.96;letter-spacing:-.045em;
+  }
+  .v3 .headline em{font-style:normal;color:var(--ph);font-weight:900}
+  .v3 h3{font-family:"Inter",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em}
+  .v3 .sub, .v3 p{font-family:"Inter",sans-serif}
+
+  /* Sample block preview */
+  .samples{
+    padding:20px 24px 28px;background:var(--paper-2);border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  }
+  @media(max-width:820px){.samples{grid-template-columns:1fr}}
+  .samples .grp h4{
+    margin:0 0 6px;font-family:"JetBrains Mono",monospace;font-size:11px;
+    color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase;font-weight:600;
+  }
+  .samples .grp .glyphs{font-size:18px;color:var(--ink-2);line-height:1.6}
+  .v1 .samples .grp.h4:not(.mono) .glyphs, .v1 .samples .grp:not(.mono) .glyphs{font-family:"Fraunces",serif}
+  .v2 .samples .grp:not(.mono) .glyphs{font-family:"Space Grotesk",sans-serif}
+  .v3 .samples .grp:not(.mono) .glyphs{font-family:"Inter",sans-serif;font-weight:800}
+  .samples .grp.mono .glyphs{font-family:"JetBrains Mono",monospace;font-size:14px}
+  .v2 .samples .grp.mono .glyphs{font-family:"IBM Plex Mono",monospace}
+
+  .back{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:10px;
+    background:#fff;border:1px solid var(--line-2);color:var(--ink);text-decoration:none;
+    font-size:14px;font-weight:500;margin-top:10px;
+  }
+  .back:hover{border-color:var(--ph);color:var(--ph)}
+
+  .selected-banner{
+    position:sticky;top:0;z-index:10;
+    background:var(--ok);color:#fff;padding:12px 20px;
+    text-align:center;font-size:14px;font-weight:600;
+    transform:translateY(-100%);transition:transform .3s;
+  }
+  .selected-banner.show{transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="selected-banner" id="banner">✓ Selection sent — reply "use variant X" in Perplexity to apply it</div>
+
+<div class="top">
+  <h1>Pick a typography direction</h1>
+  <p>Three options for the /ph landing page. Same PH-orange system, different type. Preview below · tap <code>Pick this one</code> to log your choice. · <a href="/" style="color:#B33A17;text-decoration:none;border-bottom:1px dashed #B33A17;font-weight:600">See current landing draft →</a></p>
+</div>
+
+<div class="wrap">
+
+  <!-- =============== V1 =============== -->
+  <div class="row"><div class="variant v1" id="variant-1">
+    <div class="variant-head">
+      <div><span class="label">Variant 1</span> · Editorial warm</div>
+      <div class="stack">Fraunces (display) + Inter (body) + JetBrains Mono (accent)</div>
+      <button class="pick-btn" onclick="pick(1)">Pick this one</button>
+    </div>
+    <div class="variant-body">
+      <span class="kicker"><span class="dot"></span>Kickoff · Mon 28 Sept 2026</span>
+      <h2 class="headline">Seven products.<br/>Seven days.<br/><em>Live on</em> Product Hunt.</h2>
+      <p class="sub">A one-person launch marathon. Every day of the week, one small, useful, opinionated product ships on Product Hunt.</p>
+      <div class="row-cards">
+        <div class="mini"><div class="day">Mon · Day 1</div><h3>Junk</h3><p>A native macOS scratchpad you open with one shortcut.</p><span class="price">≈ $8</span></div>
+        <div class="mini"><div class="day">Tue · Day 2</div><h3>ASE</h3><p>Uptime monitoring in one PHP file. Runs forever on your $4 host.</p><span class="price">≈ $11</span></div>
+        <div class="mini"><div class="day">Wed · Day 3</div><h3>Mang</h3><p>An AI-native shell command. Type <code style="font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--paper-2);padding:1px 5px;border-radius:4px">yo &lt;anything&gt;</code>.</p><span class="price">≈ $22</span></div>
+      </div>
+      <a href="#" class="cta">See the week →</a>
+    </div>
+    <div class="samples">
+      <div class="grp"><h4>Display · Fraunces 600</h4><div class="glyphs">The bigger thing. Ag Rg Qg gy jf<br/><em style="color:var(--ph)">Italic feels editorial &amp; friendly</em></div></div>
+      <div class="grp mono"><h4>Mono · JetBrains Mono 500</h4><div class="glyphs">MON · Sept 28 · 08:01 Lisbon<br/>≈ $22 · 4,800 LOC · Rust · MIT</div></div>
+    </div>
+  </div></div>
+
+  <!-- =============== V2 =============== -->
+  <div class="row"><div class="variant v2" id="variant-2">
+    <div class="variant-head">
+      <div><span class="label">Variant 2</span> · Modern techy</div>
+      <div class="stack">Space Grotesk (display) + IBM Plex Sans (body) + IBM Plex Mono (accent)</div>
+      <button class="pick-btn" onclick="pick(2)">Pick this one</button>
+    </div>
+    <div class="variant-body">
+      <span class="kicker"><span class="dot"></span>Kickoff · Mon 28 Sept 2026</span>
+      <h2 class="headline">Seven products.<br/>Seven days.<br/><em>Live on</em> Product Hunt</h2>
+      <p class="sub">A one-person launch marathon. Every day of the week, one small, useful, opinionated product ships on Product Hunt.</p>
+      <div class="row-cards">
+        <div class="mini"><div class="day">Mon · Day 1</div><h3>Junk</h3><p>A native macOS scratchpad you open with one shortcut.</p><span class="price">≈ $8</span></div>
+        <div class="mini"><div class="day">Tue · Day 2</div><h3>ASE</h3><p>Uptime monitoring in one PHP file. Runs forever on your $4 host.</p><span class="price">≈ $11</span></div>
+        <div class="mini"><div class="day">Wed · Day 3</div><h3>Mang</h3><p>An AI-native shell command. Type <code style="font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper-2);padding:1px 5px;border-radius:4px">yo &lt;anything&gt;</code>.</p><span class="price">≈ $22</span></div>
+      </div>
+      <a href="#" class="cta">See the week →</a>
+    </div>
+    <div class="samples">
+      <div class="grp"><h4>Display · Space Grotesk 700</h4><div class="glyphs">The bigger thing. Ag Rg Qg gy jf<br/><em style="color:var(--ph);font-style:normal">Geometric, dev-native, still human</em></div></div>
+      <div class="grp mono"><h4>Mono · IBM Plex Mono 500</h4><div class="glyphs">MON · Sept 28 · 08:01 Lisbon<br/>≈ $22 · 4,800 LOC · Rust · MIT</div></div>
+    </div>
+  </div></div>
+
+  <!-- =============== V3 =============== -->
+  <div class="row"><div class="variant v3" id="variant-3">
+    <div class="variant-head">
+      <div><span class="label">Variant 3</span> · Bold PH-native</div>
+      <div class="stack">Inter Black (display) + Inter (body) + JetBrains Mono (accent)</div>
+      <button class="pick-btn" onclick="pick(3)">Pick this one</button>
+    </div>
+    <div class="variant-body">
+      <span class="kicker"><span class="dot"></span>Kickoff · Mon 28 Sept 2026</span>
+      <h2 class="headline">Seven products.<br/>Seven days.<br/><em>Live on</em> Product Hunt.</h2>
+      <p class="sub">A one-person launch marathon. Every day of the week, one small, useful, opinionated product ships on Product Hunt.</p>
+      <div class="row-cards">
+        <div class="mini"><div class="day">Mon · Day 1</div><h3>Junk</h3><p>A native macOS scratchpad you open with one shortcut.</p><span class="price">≈ $8</span></div>
+        <div class="mini"><div class="day">Tue · Day 2</div><h3>ASE</h3><p>Uptime monitoring in one PHP file. Runs forever on your $4 host.</p><span class="price">≈ $11</span></div>
+        <div class="mini"><div class="day">Wed · Day 3</div><h3>Mang</h3><p>An AI-native shell command. Type <code style="font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--paper-2);padding:1px 5px;border-radius:4px">yo &lt;anything&gt;</code>.</p><span class="price">≈ $22</span></div>
+      </div>
+      <a href="#" class="cta">See the week →</a>
+    </div>
+    <div class="samples">
+      <div class="grp"><h4>Display · Inter 900</h4><div class="glyphs" style="font-weight:900">The bigger thing. Ag Rg Qg gy jf<br/><em style="color:var(--ph);font-style:normal">Punchy, PH-family, unmissable</em></div></div>
+      <div class="grp mono"><h4>Mono · JetBrains Mono 500</h4><div class="glyphs">MON · Sept 28 · 08:01 Lisbon<br/>≈ $22 · 4,800 LOC · Rust · MIT</div></div>
+    </div>
+  </div></div>
+
+</div>
+
+<script>
+function pick(n){
+  document.querySelectorAll('.variant').forEach(v=>v.classList.remove('picked'));
+  document.getElementById('variant-'+n).classList.add('picked');
+  document.querySelectorAll('.pick-btn').forEach(b=>{b.classList.remove('picked');b.textContent='Pick this one'});
+  const btn = document.querySelector('#variant-'+n+' .pick-btn');
+  btn.classList.add('picked');btn.textContent='✓ Picked';
+  const banner = document.getElementById('banner');
+  banner.textContent = '✓ Variant ' + n + ' picked — reply "use variant ' + n + '" in Perplexity to apply it';
+  banner.classList.add('show');
+}
+</script>
+</body>
+</html>

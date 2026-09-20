@@ -1,0 +1,2200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>The Weekathon — 7 products in 7 days · Paul Fleury</title>
+<meta name="description" content="Seven products in seven days, live on Product Hunt from Mon 28 Sep 2026. A side quest, a bigger reveal the following week, then the day job about two weeks later." />
+<meta name="theme-color" content="#DA552F" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Weekathon — 7 products in 7 days" />
+<meta property="og:description" content="Seven products in seven days on Product Hunt · a side quest · a bigger reveal the following week · the day job about two weeks later." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://paulfleury.com/ph" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --ph:#DA552F;              /* Product Hunt orange */
+    --ph-hover:#EA6338;
+    --ph-deep:#B33A17;
+    --ink:#1F1F1F;
+    --ink-2:#4A4A4A;
+    --ink-3:#8A8A8A;
+    --paper:#FFF7ED;           /* warm cream */
+    --paper-2:#FFF1E0;
+    --card:#FFFFFF;
+    --line:#F0E0CD;
+    --line-2:#E8D5BB;
+    --ok:#3F9E4F;
+    --warn:#FFB020;
+    --focus:#FF6A3D;
+
+    --shadow-sm: 0 1px 2px rgba(31,31,31,.06), 0 2px 6px rgba(31,31,31,.04);
+    --shadow-md: 0 6px 16px rgba(31,31,31,.08), 0 2px 4px rgba(31,31,31,.04);
+    --shadow-lg: 0 20px 40px rgba(218,85,47,.14), 0 8px 20px rgba(31,31,31,.06);
+
+    --r-sm:10px; --r-md:14px; --r-lg:22px; --r-xl:32px;
+    /* Variant 2 · Modern techy */
+    --font-display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-sans:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --font-italic:"Instrument Serif", ui-serif, Georgia, serif;   /* used sparingly for italic accents */
+    --font-serif:var(--font-display); /* legacy alias so existing rules pick up new display font */
+  }
+
+  /* ============ RESET ============ */
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    font-family:var(--font-sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--ph-deep);text-decoration:none}
+  a:hover{color:var(--ph)}
+  button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+  ::selection{background:var(--ph);color:#fff}
+
+  /* ============ LAYOUT ============ */
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .wrap-sm{max-width:820px;margin:0 auto;padding:0 24px}
+
+  /* ============ HEADER ============ */
+  header.nav{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:saturate(1.4) blur(10px);
+    -webkit-backdrop-filter:saturate(1.4) blur(10px);
+    background:rgba(255,247,237,.85);
+    border-bottom:1px solid var(--line);
+  }
+  header.nav .row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1200px;margin:0 auto;
+    gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .brand-mark{
+    width:32px;height:32px;border-radius:9px;
+    background:var(--ph);
+    display:grid;place-items:center;color:#fff;font-weight:900;font-size:16px;
+    box-shadow:var(--shadow-sm);
+  }
+  .brand-sep{color:var(--ink-3)}
+  .brand-tag{color:var(--ink-2);font-weight:500}
+  nav ul{list-style:none;padding:0;margin:0;display:flex;gap:22px;font-size:14px;font-weight:500}
+  nav a{color:var(--ink-2)}
+  nav a:hover{color:var(--ph)}
+  .nav-cta{
+    background:var(--ph);color:#fff;padding:8px 14px;border-radius:999px;
+    font-weight:600;font-size:13px;box-shadow:var(--shadow-sm);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .nav-cta:hover{background:var(--ph-hover);color:#fff;transform:translateY(-1px)}
+  @media (max-width:720px){
+    nav ul{display:none}
+    header.nav .row{ padding:10px 16px; gap:10px; }
+    .brand{ font-size:14px; gap:8px; min-width:0; }
+    .brand-mark{ width:28px; height:28px; font-size:14px; border-radius:8px; flex-shrink:0; }
+    .brand > span:not(.brand-mark):not(.brand-sep):not(.brand-tag){ white-space:nowrap; }
+    .brand-sep, .brand-tag{ display:none; }
+    .nav-cta{ padding:8px 12px; font-size:12.5px; white-space:nowrap; flex-shrink:0; }
+    /* Give sections room below the sticky nav so headings don't hide */
+    section[id]{ scroll-margin-top:64px; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding:64px 0 40px;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;
+  }
+  @media (max-width:900px){
+    .hero{padding:40px 0 24px}
+    .hero-inner{grid-template-columns:1fr;gap:32px}
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:6px 14px;border-radius:999px;
+    background:#fff;border:1px solid var(--line-2);
+    font-size:13px;font-weight:600;color:var(--ph-deep);
+    box-shadow:var(--shadow-sm);
+  }
+  .kicker .dot{
+    width:8px;height:8px;border-radius:50%;background:var(--ph);
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(218,85,47,.6)}
+    50%{box-shadow:0 0 0 8px rgba(218,85,47,0)}
+  }
+  h1.headline{
+    font-family:var(--font-display);
+    font-size:clamp(36px, 5.2vw, 64px);
+    line-height:1.02;letter-spacing:-.035em;
+    margin:18px 0 16px;
+    color:var(--ink);
+    font-weight:700;
+  }
+  h1 .accent{color:var(--ph);font-style:normal;font-weight:700}
+  h1 .accent-2{color:var(--ph-deep);font-weight:700}
+  .sub{
+    font-size:19px;color:var(--ink-2);max-width:560px;line-height:1.55;
+    margin:0 0 26px;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 22px;border-radius:12px;font-weight:600;font-size:15px;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    background:var(--ph);color:#fff;box-shadow:var(--shadow-md);
+  }
+  .btn-primary:hover{background:var(--ph-hover);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{
+    background:#fff;color:var(--ink);border:1px solid var(--line-2);
+  }
+  .btn-ghost:hover{border-color:var(--ph);color:var(--ph)}
+  .btn svg{width:16px;height:16px}
+
+  .hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
+  .hero-meta strong{color:var(--ink);font-weight:600}
+
+  /* Hero visual */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+  .hero-plate{
+    position:relative;width:100%;max-width:440px;aspect-ratio:1/1;
+    background:radial-gradient(circle at 30% 30%, #FFE0C4 0%, var(--paper-2) 55%, transparent 100%);
+    border-radius:50%;
+    display:grid;place-items:center;
+  }
+  .hero-plate::before{
+    content:"";position:absolute;inset:8%;
+    border:2px dashed rgba(218,85,47,.28);border-radius:50%;
+    animation:spin 60s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg) } }
+  .hero-kitty{
+    position:relative;width:74%;height:auto;filter:drop-shadow(0 14px 24px rgba(218,85,47,.22));
+    --tx:0px; --ty:0px;
+    animation:bob 4s ease-in-out infinite;
+    transition:transform .5s cubic-bezier(.16,1,.3,1);
+  }
+  @keyframes bob{
+    0%,100%{transform:translate(var(--tx),calc(var(--ty) + 0px))}
+    50%   {transform:translate(var(--tx),calc(var(--ty) - 10px))}
+  }
+
+  /* Ticker strip */
+  .strip{
+    background:var(--ink);color:#fff;
+    padding:14px 0;overflow:hidden;
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+  }
+  .strip-track{
+    display:flex;gap:60px;white-space:nowrap;
+    animation:scroll 40s linear infinite;
+    font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;
+  }
+  .strip-track span{display:inline-flex;align-items:center;gap:10px;color:#fff}
+  .strip-track span::before{content:"◆";color:var(--ph)}
+  @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:80px 0;position:relative}
+  @media (max-width:720px){ section{padding:56px 0} }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ph-deep);font-weight:600;margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--ph);border-radius:2px}
+  h2.section-title{
+    font-family:var(--font-serif);font-size:clamp(36px, 5vw, 56px);
+    line-height:1.02;letter-spacing:-.02em;margin:0 0 14px;color:var(--ink);font-weight:400;
+  }
+  h2 em{color:var(--ph);font-style:italic}
+  .section-sub{font-size:18px;color:var(--ink-2);max-width:640px;margin:0 0 40px;line-height:1.55}
+
+  /* ============ MANIFESTO ============ */
+  .manifesto{
+    background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .manifesto-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;
+  }
+  @media (max-width:820px){ .manifesto-grid{grid-template-columns:1fr} }
+  .mani-card{
+    background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);
+    padding:28px 26px;
+    box-shadow:var(--shadow-sm);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .mani-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .mani-num{
+    font-family:var(--font-serif);font-size:44px;color:var(--ph);line-height:1;
+    margin-bottom:8px;
+  }
+  .mani-card h3{
+    font-family:var(--font-serif);font-size:24px;font-weight:400;margin:0 0 8px;line-height:1.15;
+  }
+  .mani-card p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.55}
+
+  /* ============ THE WEEK GRID ============ */
+  .week-header{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+  .week-legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--ink-2)}
+  .legend-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--line-2)}
+  .legend-chip .lock-ico{width:12px;height:12px;color:var(--ph)}
+
+  .grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;
+  }
+  @media (max-width:1100px){ .grid{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:820px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+
+  .card{
+    position:relative;background:#fff;border:1px solid var(--line-2);
+    border-radius:var(--r-lg);overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    display:flex;flex-direction:column;min-height:360px;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--ph)}
+  .card-media{
+    position:relative;aspect-ratio:16/10;overflow:hidden;
+    background:linear-gradient(135deg, #FFF1E0 0%, #FFE0C4 100%);
+  }
+  .card-media img{
+    width:100%;height:100%;
+    transition:transform .35s ease;object-fit:cover;object-position:center;
+    display:block;
+  }
+  .card:hover .card-media img{transform:scale(1.04)}
+  .day-badge{
+    position:absolute;top:12px;left:12px;
+    background:#fff;border:1px solid var(--line-2);border-radius:999px;
+    padding:5px 10px;font-family:var(--font-mono);font-size:11px;font-weight:600;
+    color:var(--ink-2);letter-spacing:.04em;
+  }
+  .card-body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+  .card-title-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px}
+  .card h3{
+    font-family:var(--font-serif);font-weight:400;font-size:26px;line-height:1.1;margin:0;
+    color:var(--ink);
+  }
+  .card .price-tag{
+    font-family:var(--font-mono);font-size:11px;color:var(--ph-deep);
+    padding:3px 8px;border-radius:6px;background:#FFE9DC;font-weight:600;white-space:nowrap;
+  }
+  .card .tagline{font-size:14px;color:var(--ink-2);margin:6px 0 12px;line-height:1.45;flex:1}
+  .card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .chip{
+    font-family:var(--font-mono);font-size:11px;padding:4px 8px;border-radius:6px;
+    background:var(--paper-2);color:var(--ink-2);border:1px solid var(--line);
+  }
+  .chip.live{background:#E9F6EC;color:var(--ok);border-color:#C7E9CE}
+  .chip.locked{background:#FFF1E0;color:var(--ph-deep);border-color:#FFD9B8}
+  .chip.today{background:var(--ph);color:#fff;border-color:var(--ph)}
+
+  .card-link-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:12px;color:var(--ph);font-weight:600;font-size:13px;
+  }
+  .card-link-btn svg{width:14px;height:14px;transition:transform .2s ease}
+  .card:hover .card-link-btn svg{transform:translateX(3px)}
+
+  /* Blur / lock overlay */
+  .card.locked .card-media img,
+  .card.locked .card-body{
+    filter:blur(14px) saturate(.7);
+    user-select:none;
+    transition:filter .3s ease;
+  }
+  .card.locked.revealed .card-media img,
+  .card.locked.revealed .card-body{filter:none}
+  .lock-veil{
+    position:absolute;inset:0;display:none;flex-direction:column;
+    align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(180deg, rgba(255,247,237,.55) 0%, rgba(255,247,237,.85) 100%);
+    color:var(--ink);text-align:center;padding:16px;z-index:2;
+    cursor:pointer;transition:background .2s ease;
+  }
+  .card.locked .lock-veil{display:flex}
+  .card.locked.revealed .lock-veil{display:none}
+  .lock-veil:hover{background:linear-gradient(180deg, rgba(255,247,237,.35) 0%, rgba(255,247,237,.7) 100%)}
+  .lock-veil .lk-icon{
+    width:38px;height:38px;border-radius:50%;background:#fff;
+    display:grid;place-items:center;border:1px solid var(--line-2);
+    box-shadow:var(--shadow-sm);
+  }
+  .lock-veil .lk-icon svg{width:18px;height:18px;color:var(--ph)}
+  .lock-veil .lk-title{font-family:var(--font-serif);font-size:22px;line-height:1.1}
+  .lock-veil .lk-sub{font-size:12px;color:var(--ink-2);font-family:var(--font-mono);letter-spacing:.02em}
+  .lock-veil .lk-hint{
+    margin-top:4px;font-size:11px;padding:4px 10px;border-radius:999px;
+    background:#fff;border:1px solid var(--line-2);color:var(--ink-2);
+  }
+
+  /* Featured hero cards inside a subsection */
+  .featured-strip{
+    background:linear-gradient(180deg, transparent 0%, var(--paper-2) 60%);
+    padding-top:40px;padding-bottom:40px;
+  }
+
+  /* ============ FLANK CARDS (xnftables + openline) ============ */
+  .flank{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;
+  }
+  @media (max-width:820px){ .flank{grid-template-columns:1fr} }
+  .flank-card{
+    position:relative;overflow:hidden;
+    border-radius:var(--r-xl);
+    padding:32px 30px 30px;
+    border:1px solid var(--line-2);
+    background:#fff;
+    display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .flank-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+  .flank-card .fk-body h3{
+    font-family:var(--font-serif);font-size:32px;font-weight:400;margin:0 0 8px;line-height:1.1;
+  }
+  .flank-card .fk-body .fk-when{font-family:var(--font-mono);font-size:11px;color:var(--ph-deep);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+  .flank-card .fk-body p{margin:8px 0 12px;color:var(--ink-2);font-size:15px;line-height:1.5}
+  .flank-card .fk-body .chip{margin-right:6px}
+  .flank-kitty{width:150px;height:150px;flex-shrink:0;border-radius:18px;overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow-sm)}
+  .flank-kitty img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ============ ENKI FINALE ============ */
+  .enki{
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(218,85,47,.28), transparent 60%),
+      linear-gradient(180deg, #17130F 0%, #0B0906 100%);
+    color:#F8ECDE;
+    position:relative;overflow:hidden;
+    padding:120px 0 100px;
+  }
+  .enki::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 40%, rgba(255,180,120,.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(218,85,47,.09) 0%, transparent 45%);
+    pointer-events:none;
+  }
+  .enki-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+  @media (max-width:900px){ .enki-inner{grid-template-columns:1fr;gap:40px} }
+  .enki .eyebrow{color:#FFCFA5}
+  .enki .eyebrow::before{background:var(--ph)}
+  .enki h2{
+    font-family:var(--font-serif);
+    font-size:clamp(48px, 7vw, 88px);
+    line-height:.98;letter-spacing:-.02em;
+    color:#FFF1E0;margin:12px 0 20px;font-weight:400;
+  }
+  .enki h2 em{color:var(--ph);font-style:italic}
+  .enki p.lead{
+    font-size:19px;color:#E5D6C4;max-width:520px;line-height:1.55;
+    margin:0 0 22px;
+  }
+  .enki-meta{
+    display:flex;gap:16px;flex-wrap:wrap;
+    font-family:var(--font-mono);font-size:12px;color:#C8B29C;
+  }
+  .enki-meta div{padding:6px 12px;border:1px solid rgba(255,207,165,.2);border-radius:999px}
+  .enki-visual{
+    position:relative;display:flex;justify-content:center;align-items:center;
+    padding:20px;
+  }
+  .enki-plate{
+    position:relative;width:100%;max-width:460px;aspect-ratio:1/1;
+    background:radial-gradient(circle at 40% 40%, rgba(218,85,47,.25) 0%, transparent 60%);
+    border-radius:24px;overflow:hidden;
+    display:grid;place-items:center;
+    box-shadow:0 30px 60px rgba(0,0,0,.4), 0 0 0 1px rgba(255,207,165,.1);
+  }
+  .enki-plate::before{
+    content:"";position:absolute;inset:-20px;border-radius:50%;
+    background:conic-gradient(from 0deg, transparent 0%, rgba(218,85,47,.15) 25%, transparent 50%);
+    animation:spin 30s linear infinite;pointer-events:none;
+  }
+  .enki-kitty{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+
+  .enki-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--ph);color:#fff;padding:14px 24px;border-radius:12px;
+    font-weight:600;font-size:15px;margin-top:8px;
+    box-shadow:0 10px 30px rgba(218,85,47,.45);
+    transition:transform .2s ease, background .2s ease;
+  }
+  .enki-cta:hover{background:var(--ph-hover);color:#fff;transform:translateY(-2px)}
+
+  /* ============ TIMELINE ============ */
+  .timeline{
+    background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .tl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  @media (max-width:900px){ .tl-wrap{grid-template-columns:1fr;gap:24px} }
+  .tl-list{list-style:none;padding:0;margin:24px 0 0;position:relative}
+  .tl-list::before{content:"";position:absolute;top:6px;bottom:6px;left:12px;width:2px;background:var(--line-2);border-radius:2px}
+  .tl-list li{
+    position:relative;padding:10px 0 14px 44px;font-size:15px;color:var(--ink-2);
+  }
+  .tl-list li::before{
+    content:"";position:absolute;left:7px;top:16px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:2px solid var(--ph);
+  }
+  .tl-list li.done::before{background:var(--ph);border-color:var(--ph)}
+  .tl-list li strong{color:var(--ink);font-weight:600;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-right:8px}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink);color:#DCC9B4;padding:56px 0 40px;
+  }
+  footer .foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+  footer h4{font-family:var(--font-serif);font-size:24px;font-weight:400;color:#FFF;margin:0 0 8px}
+  footer p{margin:0 0 14px;font-size:14px;line-height:1.6;max-width:420px;color:#B8A692}
+  footer a{color:#F5D9BE}
+  footer a:hover{color:var(--ph)}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+  .foot-sub{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8C7C6C;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* ============ PIN MODAL ============ */
+  .modal-back{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(31,25,20,.55);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;padding:20px;
+    animation:fadeIn .2s ease;
+  }
+  .modal-back.open{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal{
+    background:#fff;border-radius:var(--r-xl);
+    max-width:400px;width:100%;padding:32px 28px;
+    box-shadow:0 40px 80px rgba(0,0,0,.3);
+    text-align:center;position:relative;
+    animation:pop .25s cubic-bezier(.16,1,.3,1);
+  }
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal .close{
+    position:absolute;top:12px;right:12px;
+    width:30px;height:30px;border-radius:50%;
+    display:grid;place-items:center;color:var(--ink-3);
+    transition:background .15s;
+  }
+  .modal .close:hover{background:var(--paper-2);color:var(--ink)}
+  .modal .close svg{width:16px;height:16px}
+  .modal-kitty{width:96px;height:96px;margin:0 auto 8px}
+  .modal-kitty img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(218,85,47,.2))}
+  .modal h3{font-family:var(--font-serif);font-weight:400;font-size:26px;margin:0 0 6px;line-height:1.1}
+  .modal p{margin:0 0 20px;color:var(--ink-2);font-size:14px}
+  .pin-inputs{display:flex;gap:10px;justify-content:center;margin-bottom:16px}
+  .pin-inputs input{
+    width:52px;height:60px;text-align:center;font-family:var(--font-mono);
+    font-size:24px;font-weight:600;
+    border:2px solid var(--line-2);border-radius:var(--r-md);
+    background:var(--paper-2);color:var(--ink);
+    transition:border-color .15s, background .15s, transform .1s;
+  }
+  .pin-inputs input:focus{
+    outline:none;border-color:var(--ph);background:#fff;
+    box-shadow:0 0 0 4px rgba(218,85,47,.15);
+  }
+  .pin-inputs.error input{border-color:#E24C3B;background:#FFEEEA;animation:shake .35s}
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    75%{transform:translateX(6px)}
+  }
+  .pin-hint{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+  .pin-hint strong{color:var(--ph-deep)}
+  .modal-status{font-size:13px;margin-top:12px;min-height:18px}
+  .modal-status.ok{color:var(--ok)}
+  .modal-status.err{color:#D0392B}
+
+  /* Toast */
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
+    background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;
+    font-size:14px;font-weight:500;box-shadow:var(--shadow-lg);
+    opacity:0;pointer-events:none;transition:all .3s ease;z-index:120;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ============================================================
+     VARIANT 2 OVERRIDES · Space Grotesk / IBM Plex / IBM Plex Mono
+     ============================================================ */
+  body{font-family:var(--font-sans);font-weight:400}
+  .brand, nav ul, .nav-cta{font-family:var(--font-display)}
+  .brand{letter-spacing:-.015em;font-weight:600}
+  .brand-tag{font-family:var(--font-sans);font-weight:400}
+
+  /* Display type: tighter, heavier, more geometric */
+  h1.headline{font-weight:700;letter-spacing:-.035em;line-height:1.02;font-size:clamp(36px, 5.2vw, 64px)}
+  h1 .accent{font-family:var(--font-display);font-style:normal;font-weight:700;color:var(--ph);letter-spacing:-.035em}
+  h1 .accent-2{font-weight:700;color:var(--ph-deep);font-style:normal}
+  h2.section-title{font-weight:700;letter-spacing:-.028em}
+  h2 em{font-family:var(--font-display);font-style:normal;font-weight:700;color:var(--ph);letter-spacing:-.035em}
+  .enki h2{font-weight:700;letter-spacing:-.035em}
+  .enki h2 em{font-family:var(--font-display);font-weight:700;color:var(--ph)}
+  .mani-num{font-family:var(--font-display);font-weight:700;letter-spacing:-.05em}
+  .mani-card h3{font-weight:600;letter-spacing:-.02em}
+  .card h3{font-weight:600;letter-spacing:-.02em;font-size:24px}
+  .flank-card .fk-body h3{font-weight:700;letter-spacing:-.028em}
+  .lock-veil .lk-title{font-weight:600;letter-spacing:-.02em;font-size:20px}
+  .modal h3{font-weight:700;letter-spacing:-.025em;font-size:24px}
+  footer h4{font-weight:700;letter-spacing:-.02em;font-size:22px}
+
+  /* Body: IBM Plex Sans is a hair wider than Inter, tighten a bit */
+  .sub, .section-sub, .enki p.lead{letter-spacing:-.005em}
+
+  /* Mono accents: IBM Plex Mono is a bit narrower, boost weight where needed */
+  .day-badge, .chip, .price-tag, .eyebrow, .strip-track,
+  .enki-meta, .tl-list li strong, .pin-hint, .lk-sub, .fk-when{font-family:var(--font-mono)}
+  .eyebrow{font-weight:500;letter-spacing:.16em}
+
+  /* Ticker: switch ornament to a slash for a more devy feel */
+  .strip-track span::before{content:"//";color:var(--ph);font-weight:700}
+  .strip{background:linear-gradient(180deg,#1F1F1F 0%, #14100D 100%)}
+  .strip-track{gap:44px}
+
+  /* ============ EXTRA ILLUSTRATIONS · ambient decoration ============ */
+  .grain{
+    position:fixed;inset:0;pointer-events:none;z-index:1;
+    background-image:
+      radial-gradient(rgba(31,31,31,.02) 1px, transparent 1px);
+    background-size:3px 3px;mix-blend-mode:multiply;opacity:.5;
+  }
+
+  /* Hero: floating chips + orbit dot + big glow blob */
+  .hero{position:relative;isolation:isolate}
+  .hero-blob{
+    position:absolute;top:-120px;right:-160px;width:520px;height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(218,85,47,.28), transparent 60%);
+    filter:blur(20px);z-index:-1;
+    animation:float 12s ease-in-out infinite alternate;
+  }
+  .hero-blob.b2{
+    top:auto;bottom:-160px;left:-140px;right:auto;width:380px;height:380px;
+    background:radial-gradient(circle at 60% 60%, rgba(255,180,120,.35), transparent 60%);
+    animation-duration:16s;animation-delay:-4s;
+  }
+  @keyframes float{
+    0%{transform:translate(0,0) scale(1)}
+    100%{transform:translate(30px,-20px) scale(1.06)}
+  }
+  .float-chip{
+    position:absolute;font-family:var(--font-mono);font-size:11px;font-weight:600;
+    background:#fff;color:var(--ink);padding:6px 12px;border-radius:999px;
+    border:1px solid var(--line-2);box-shadow:var(--shadow-md);
+    display:inline-flex;align-items:center;gap:8px;z-index:3;
+    animation:bob 5s ease-in-out infinite;
+  }
+  .float-chip .dt{width:6px;height:6px;border-radius:50%;background:var(--ph)}
+  .float-chip.fc-1{top:8%;left:-4%;animation-delay:-.4s}
+  .float-chip.fc-2{top:74%;right:-2%;animation-delay:-2s;background:var(--ink);color:#fff;border-color:var(--ink)}
+  .float-chip.fc-2 .dt{background:#8BE28B}
+  .float-chip.fc-3{top:38%;right:-8%;animation-delay:-3.5s}
+  @media (max-width:900px){ .float-chip{display:none} }
+
+  .hero-plate::after{
+    content:"";position:absolute;inset:22%;
+    border:1px solid rgba(218,85,47,.14);border-radius:50%;
+    animation:spin 90s linear infinite reverse;
+  }
+  .orbit-dot{
+    position:absolute;width:14px;height:14px;border-radius:50%;background:var(--ph);
+    top:50%;left:50%;margin:-7px 0 0 -7px;
+    box-shadow:0 0 0 4px rgba(218,85,47,.16), 0 6px 16px rgba(218,85,47,.35);
+    transform-origin:0 0;
+    animation:orbit 14s linear infinite;
+  }
+  @keyframes orbit{
+    from{transform:rotate(0deg) translate(200px) rotate(0deg)}
+    to  {transform:rotate(360deg) translate(200px) rotate(-360deg)}
+  }
+
+  /* Section decorators: numbered corner tag on titled sections */
+  .section-num{
+    display:inline-block;margin-bottom:14px;
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;font-weight:600;
+    background:var(--ph);color:#fff;padding:5px 10px;border-radius:6px;
+    box-shadow:var(--shadow-sm);
+  }
+
+  /* Manifesto: numeric badge + icon */
+  .mani-card{position:relative;overflow:hidden}
+  .mani-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 100% 0%, rgba(218,85,47,.06), transparent 40%);
+    pointer-events:none;opacity:0;transition:opacity .3s ease;
+  }
+  .mani-card:hover::before{opacity:1}
+  .mani-num{display:flex;align-items:center;gap:12px}
+  .mani-ico{
+    width:36px;height:36px;border-radius:10px;background:var(--paper-2);
+    display:grid;place-items:center;border:1px solid var(--line-2);
+  }
+  .mani-ico svg{width:20px;height:20px;color:var(--ph)}
+
+  /* Cards: subtle tilt + gloss on hover */
+  .card{transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .2s ease}
+  .card::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+    transform:translateX(-100%);transition:transform .8s ease;
+    mix-blend-mode:overlay;opacity:0;
+  }
+  .card:hover::after{transform:translateX(100%);opacity:.6}
+  .card:hover{transform:translateY(-6px) rotate(-.35deg)}
+  .card:nth-child(even):hover{transform:translateY(-6px) rotate(.35deg)}
+
+  /* Card corner: connector dot on shipped cards */
+  .card .ship-dot{
+    position:absolute;top:14px;right:14px;z-index:3;
+    width:10px;height:10px;border-radius:50%;background:#3F9E4F;
+    box-shadow:0 0 0 3px rgba(63,158,79,.15);
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+
+  /* Lock veil: extra sparkle icon */
+  .lock-veil .lk-icon{background:var(--ph);border-color:transparent}
+  .lock-veil .lk-icon svg{color:#fff}
+
+  /* Flank cards: prettier hover, kitty subtle rotate */
+  .flank-card{position:relative;overflow:hidden}
+  .flank-card::before{
+    content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;
+    border-radius:50%;background:radial-gradient(circle,rgba(218,85,47,.09),transparent 60%);
+    pointer-events:none;
+  }
+  .flank-kitty img{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .flank-card:hover .flank-kitty img{transform:scale(1.08) rotate(-3deg)}
+
+  /* Enki: add starfield */
+  .enki::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,220,180,.6), transparent 60%),
+      radial-gradient(1px 1px at 70% 20%, rgba(255,180,120,.5), transparent 60%),
+      radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,235,210,.6), transparent 60%),
+      radial-gradient(1px 1px at 85% 60%, rgba(255,200,140,.5), transparent 60%),
+      radial-gradient(1px 1px at 15% 70%, rgba(255,220,180,.55), transparent 60%),
+      radial-gradient(1.5px 1.5px at 60% 45%, rgba(255,220,180,.4), transparent 60%);
+    animation:twinkle 4s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle{0%{opacity:.4}100%{opacity:.9}}
+
+  /* ============ SCROLL REVEAL ============ */
+  [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+  [data-reveal][data-delay="1"]{transition-delay:.08s}
+  [data-reveal][data-delay="2"]{transition-delay:.16s}
+  [data-reveal][data-delay="3"]{transition-delay:.24s}
+  [data-reveal][data-delay="4"]{transition-delay:.32s}
+  @media (prefers-reduced-motion:reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none}
+    .hero-blob,.hero-plate::before,.hero-plate::after,.orbit-dot,.hero-kitty,.float-chip,.enki-plate::before,.enki::after,.strip-track,.kicker .dot,.ship-dot{animation:none !important}
+  }
+
+  /* ============ CONFETTI (PIN unlock) ============ */
+  .confetti-wrap{position:fixed;inset:0;pointer-events:none;z-index:130;overflow:hidden}
+  .confetti-wrap .c{
+    position:absolute;top:-20px;width:10px;height:14px;border-radius:2px;
+    animation:fall linear forwards;
+    opacity:.95;
+  }
+  @keyframes fall{
+    to{transform:translateY(110vh) rotate(720deg);opacity:0}
+  }
+
+  /* Section: 'the receipts' — added subtle grid of ticks */
+  .prog-row{
+    display:flex;gap:6px;margin-top:24px;flex-wrap:wrap;
+    font-family:var(--font-mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;
+    align-items:center;
+  }
+  .prog-row .p-dot{
+    width:36px;height:6px;border-radius:3px;background:var(--line-2);
+  }
+  .prog-row .p-dot.done{background:var(--ph)}
+  .prog-row .p-dot.today{background:var(--ph);box-shadow:0 0 0 3px rgba(218,85,47,.2);animation:pulse 1.6s ease-in-out infinite}
+
+  /* Focus ring for accessibility with new tokens */
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--focus);outline-offset:3px;border-radius:6px;
+  }
+
+/* ================= V4 SECTIONS ================= */
+
+/* ---- shared bits ---- */
+.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#DA552F;box-shadow:0 0 0 0 rgba(218,85,47,.55);animation:pulseRing 1.8s ease-out infinite;margin-right:8px;vertical-align:middle}
+.pulse-blue{background:#7FB3FF;box-shadow:0 0 0 0 rgba(127,179,255,.55);animation-name:pulseRingBlue}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(218,85,47,.55)}70%{box-shadow:0 0 0 12px rgba(218,85,47,0)}100%{box-shadow:0 0 0 0 rgba(218,85,47,0)}}
+@keyframes pulseRingBlue{0%{box-shadow:0 0 0 0 rgba(127,179,255,.55)}70%{box-shadow:0 0 0 12px rgba(127,179,255,0)}100%{box-shadow:0 0 0 0 rgba(127,179,255,0)}}
+
+/* ============ OPENLINE ============ */
+.ol { padding: clamp(80px,10vw,140px) 0; background: linear-gradient(180deg,#FFF3E4 0%, #FFEEDA 100%); }
+.ol-wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,3vw,32px); }
+.ol-head { max-width: 780px; margin-bottom: clamp(40px,5vw,60px); }
+.ol-eyebrow { display:inline-flex; align-items:center; gap:10px; color:#DA552F; font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; }
+.ol-title { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(40px,6vw,72px); line-height:1.02; letter-spacing:-0.035em; margin:16px 0 20px; color:#1A0F08; }
+.ol-title em { font-style:normal; color:#DA552F; }
+.ol-lede { font-family:"IBM Plex Sans",sans-serif; font-size:clamp(16px,1.4vw,19px); line-height:1.55; color:#5A4030; max-width:640px; }
+
+.ol-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap:clamp(20px,2.5vw,32px); align-items:stretch; }
+@media (max-width: 900px) { .ol-grid { grid-template-columns: 1fr; } }
+
+.ol-hero { position:relative; border-radius:24px; overflow:hidden; box-shadow: 0 20px 60px -20px rgba(90,40,10,.28), 0 4px 20px -8px rgba(0,0,0,.08); }
+.ol-hero-img { display:block; width:100%; height:100%; min-height:480px; object-fit:cover; }
+.ol-hero-overlay { position:absolute; left:0; right:0; bottom:0; padding:24px 28px; display:flex; gap:32px; justify-content:flex-start; align-items:baseline; background: linear-gradient(180deg, transparent 0%, rgba(26,15,8,.85) 100%); color:#FFF3E4; }
+.ol-hero-stat { display:flex; flex-direction:column; gap:2px; }
+.ol-hero-num { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(22px,2.4vw,32px); letter-spacing:-0.03em; color:#FFF3E4; }
+.ol-hero-cap { font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#FFC98A; }
+
+/* Locked plate */
+.ol-locked { position:relative; border-radius:24px; overflow:hidden; background:#FFFFFF; box-shadow: 0 20px 60px -20px rgba(90,40,10,.24), 0 4px 20px -8px rgba(0,0,0,.06); cursor:pointer; min-height:480px; }
+.ol-locked-inner { padding: clamp(28px,3vw,40px); height:100%; display:flex; flex-direction:column; opacity:0; transition: opacity .5s ease; position:relative; }
+.ol-locked-veil { position:absolute; inset:0; background: linear-gradient(180deg, rgba(255,247,238,.92) 0%, rgba(255,238,218,.94) 100%); backdrop-filter: blur(8px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; gap:12px; transition: opacity .5s ease, visibility .5s ease; z-index:2; }
+.ol-locked-lock { color:#DA552F; opacity:.7; margin-bottom:8px; }
+.ol-locked-lock svg { width:32px; height:32px; }
+.ol-locked-tag { font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#DA552F; }
+.ol-locked-title { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(28px,3vw,40px); letter-spacing:-0.03em; color:#1A0F08; margin-top:4px; }
+.ol-locked-sub { font-family:"IBM Plex Sans",sans-serif; font-size:15px; color:#7A5240; max-width:340px; line-height:1.5; }
+.ol-locked-cta { margin-top:16px; display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:24px; background:#1A0F08; color:#FFF3E4; border:none; font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:13px; cursor:pointer; transition: transform .2s ease; }
+.ol-locked-cta:hover { transform: translateY(-1px); }
+
+.ol-locked.is-open .ol-locked-veil { opacity:0; visibility:hidden; }
+.ol-locked.is-open .ol-locked-inner { opacity:1; }
+
+.ol-locked-eyebrow { font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#DA552F; margin-bottom:14px; }
+.ol-locked-brand { display:flex; align-items:baseline; gap:14px; margin-bottom:16px; flex-wrap:wrap; }
+.ol-locked-brand-name { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(26px,2.6vw,34px); letter-spacing:-0.03em; color:#DA552F; }
+.ol-locked-brand-url { font-family:"IBM Plex Mono",monospace; font-size:12px; color:#7A5240; text-decoration:none; border-bottom:1px dotted #7A5240; padding-bottom:2px; }
+.ol-locked-brand-url:hover { color:#DA552F; border-color:#DA552F; }
+.ol-locked-headline { font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:clamp(20px,1.9vw,26px); line-height:1.25; letter-spacing:-0.02em; color:#1A0F08; margin-bottom:20px; }
+.ol-locked-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+.ol-locked-list li { font-family:"IBM Plex Sans",sans-serif; font-size:15px; line-height:1.5; color:#3A2515; padding-left:22px; position:relative; }
+.ol-locked-list li::before { content:"→"; position:absolute; left:0; top:0; color:#DA552F; font-family:"IBM Plex Mono",monospace; }
+.ol-locked-kitty { position:absolute; bottom:20px; right:24px; width:92px; height:92px; object-fit:contain; opacity:.85; }
+
+/* Openline reveal: richer content (v6) */
+.ol-locked-lede { font-family:"IBM Plex Sans",sans-serif; font-size:14.5px; line-height:1.55; color:#5A4030; margin: -8px 0 22px; }
+.ol-locked-why { margin-bottom:20px; padding:18px 20px; background:linear-gradient(180deg,#FFF9F1 0%,#FFF3E4 100%); border-radius:14px; border:1px solid rgba(218,85,47,.10); }
+.ol-locked-why-title { font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#DA552F; margin-bottom:10px; }
+.ol-locked-featlist { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.ol-locked-featlist li { font-family:"IBM Plex Sans",sans-serif; font-size:13.5px; line-height:1.5; color:#3A2515; padding-left:16px; position:relative; }
+.ol-locked-featlist li::before { content:"→"; position:absolute; left:0; top:0; color:#DA552F; font-family:"IBM Plex Mono",monospace; font-size:12px; }
+.ol-locked-featlist strong { color:#1A0F08; font-weight:600; }
+.ol-locked-goodies { padding:16px 18px; background:#1A0F08; border-radius:14px; color:#FFF3E4; }
+.ol-locked-goodies-title { font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#FFC98A; margin-bottom:12px; }
+.ol-locked-goodies-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 14px; }
+.ol-goodie { display:flex; gap:10px; align-items:flex-start; font-family:"IBM Plex Sans",sans-serif; font-size:12px; line-height:1.4; color:#FFE0BF; }
+.ol-goodie strong { color:#FFF3E4; font-weight:600; font-size:12.5px; }
+.ol-goodie-icon { font-family:"IBM Plex Mono",monospace; color:#DA552F; font-size:14px; line-height:1.2; flex-shrink:0; padding-top:1px; }
+@media (max-width: 768px) { .ol-locked-goodies-grid { grid-template-columns:1fr; } }
+
+/* Side-quest badge to match other day-badges but with PH orange */
+.day-badge-side { background:var(--ph) !important; color:#fff !important; border-color:var(--ph) !important; }
+
+/* ============ WINTER · ENKI ============ */
+.wt { position:relative; padding: clamp(80px,10vw,140px) 0 clamp(100px,12vw,160px); background: #050C18; overflow:hidden; color:#EAF2FF; }
+.wt-sky { position:absolute; inset:0; overflow:hidden; }
+.wt-aurora { position:absolute; top:-20%; left:-10%; width:70%; height:70%; background: radial-gradient(ellipse at center, rgba(127,179,255,.18) 0%, transparent 60%); filter: blur(60px); animation: auroraDrift 22s ease-in-out infinite; }
+.wt-aurora.a2 { top:10%; left:50%; width:60%; height:60%; background: radial-gradient(ellipse at center, rgba(160,120,255,.14) 0%, transparent 60%); animation-duration: 28s; animation-direction: reverse; }
+@keyframes auroraDrift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-20px) scale(1.1); } }
+
+.wt-stars span { position:absolute; width:2px; height:2px; background:#FFF; border-radius:50%; box-shadow: 0 0 4px rgba(255,255,255,.6); animation: twinkle var(--d,3s) ease-in-out infinite; }
+@keyframes twinkle { 0%,100% { opacity:.3; transform: scale(1); } 50% { opacity:1; transform: scale(1.4); } }
+
+.wt-snow span { position:absolute; top:-10px; width:3px; height:3px; background:rgba(255,255,255,.7); border-radius:50%; animation: snowFall linear infinite; }
+.wt-snow span:nth-child(1) { left:3%; animation-duration:12s; animation-delay:0s; }
+.wt-snow span:nth-child(2) { left:8%; animation-duration:14s; animation-delay:1s; }
+.wt-snow span:nth-child(3) { left:13%; animation-duration:11s; animation-delay:.5s; }
+.wt-snow span:nth-child(4) { left:18%; animation-duration:15s; animation-delay:2s; }
+.wt-snow span:nth-child(5) { left:23%; animation-duration:13s; animation-delay:.8s; }
+.wt-snow span:nth-child(6) { left:28%; animation-duration:16s; animation-delay:1.5s; }
+.wt-snow span:nth-child(7) { left:33%; animation-duration:12s; animation-delay:3s; }
+.wt-snow span:nth-child(8) { left:38%; animation-duration:14s; animation-delay:.3s; }
+.wt-snow span:nth-child(9) { left:43%; animation-duration:11s; animation-delay:2.5s; }
+.wt-snow span:nth-child(10) { left:48%; animation-duration:15s; animation-delay:1.2s; }
+.wt-snow span:nth-child(11) { left:53%; animation-duration:13s; animation-delay:.6s; }
+.wt-snow span:nth-child(12) { left:58%; animation-duration:16s; animation-delay:2.8s; }
+.wt-snow span:nth-child(13) { left:63%; animation-duration:12s; animation-delay:1.8s; }
+.wt-snow span:nth-child(14) { left:68%; animation-duration:14s; animation-delay:.9s; }
+.wt-snow span:nth-child(15) { left:73%; animation-duration:11s; animation-delay:2.2s; }
+.wt-snow span:nth-child(16) { left:78%; animation-duration:15s; animation-delay:.4s; }
+.wt-snow span:nth-child(17) { left:83%; animation-duration:13s; animation-delay:1.6s; }
+.wt-snow span:nth-child(18) { left:88%; animation-duration:16s; animation-delay:2.6s; }
+.wt-snow span:nth-child(19) { left:93%; animation-duration:12s; animation-delay:.7s; }
+.wt-snow span:nth-child(20) { left:5%; animation-duration:14s; animation-delay:3.2s; }
+.wt-snow span:nth-child(21) { left:15%; animation-duration:11s; animation-delay:2.9s; }
+.wt-snow span:nth-child(22) { left:25%; animation-duration:15s; animation-delay:.1s; }
+.wt-snow span:nth-child(23) { left:35%; animation-duration:13s; animation-delay:1.9s; }
+.wt-snow span:nth-child(24) { left:45%; animation-duration:16s; animation-delay:3.5s; }
+.wt-snow span:nth-child(25) { left:55%; animation-duration:12s; animation-delay:.2s; }
+.wt-snow span:nth-child(26) { left:65%; animation-duration:14s; animation-delay:2.1s; }
+.wt-snow span:nth-child(27) { left:75%; animation-duration:11s; animation-delay:1.1s; }
+.wt-snow span:nth-child(28) { left:85%; animation-duration:15s; animation-delay:2.7s; }
+.wt-snow span:nth-child(29) { left:95%; animation-duration:13s; animation-delay:.5s; }
+.wt-snow span:nth-child(30) { left:2%; animation-duration:16s; animation-delay:1.4s; }
+.wt-snow span:nth-child(31) { left:22%; animation-duration:12s; animation-delay:3.1s; }
+.wt-snow span:nth-child(32) { left:42%; animation-duration:14s; animation-delay:.8s; }
+@keyframes snowFall { to { transform: translateY(105vh); } }
+
+.wt-wrap { position:relative; max-width:1200px; margin:0 auto; padding:0 clamp(16px,3vw,32px); display:grid; grid-template-columns: 1.1fr 1fr; gap:clamp(32px,5vw,64px); align-items:center; z-index:2; }
+@media (max-width: 900px) { .wt-wrap { grid-template-columns: minmax(0, 1fr); } }
+
+.wt-copy, .wt-visual { min-width:0; }
+.wt-eyebrow { display:inline-flex; align-items:center; gap:10px; color:#7FB3FF; font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; }
+.pulse-blue { display:inline-block; width:8px; height:8px; border-radius:50%; background:#7FB3FF; box-shadow: 0 0 12px #7FB3FF; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity:.5; transform:scale(1); } 50% { opacity:1; transform:scale(1.3); } }
+.wt-title { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(52px,7.5vw,104px); line-height:.95; letter-spacing:-0.04em; margin:16px 0 24px; color:#F5FAFF; }
+.wt-title em { font-style:normal; color:#7FB3FF; }
+.wt-sub { font-family:"IBM Plex Sans",sans-serif; font-size:clamp(15px,1.3vw,17px); line-height:1.6; color:#A5B8D4; max-width:520px; }
+.wt-oath { margin:28px 0; padding-left:16px; border-left: 2px solid rgba(127,179,255,.4); }
+.wt-oath-line { font-family:"IBM Plex Sans",sans-serif; font-style:italic; font-size:15px; color:#C4D4EC; line-height:1.6; }
+.wt-cta-row { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+.wt-cta { background:#7FB3FF !important; color:#050C18 !important; border:none !important; padding:14px 26px !important; border-radius:8px !important; font-family:"IBM Plex Sans",sans-serif !important; font-weight:600 !important; font-size:14px !important; display:inline-flex !important; align-items:center; gap:10px; cursor:pointer; transition: transform .2s ease; }
+.wt-cta:hover { transform: translateY(-1px); background:#9EC5FF !important; }
+.btn-ghost-dark { background:transparent !important; color:#EAF2FF !important; border:1px solid rgba(234,242,255,.25) !important; padding:14px 22px !important; border-radius:8px !important; font-family:"IBM Plex Sans",sans-serif !important; font-weight:500 !important; font-size:14px !important; text-decoration:none; transition: border-color .2s ease, background .2s ease; }
+.btn-ghost-dark:hover { border-color: rgba(234,242,255,.5); background: rgba(234,242,255,.05); }
+
+/* Enki plate w/ Jon Snow hero */
+.wt-plate { position:relative; border-radius:20px; overflow:hidden; background:#0A1524; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(127,179,255,.15); cursor:pointer; min-height:520px; }
+.wt-plate-frame { position:relative; width:100%; height:100%; min-height:520px; overflow:hidden; }
+.wt-hero-img { display:block; width:100%; height:100%; min-height:520px; object-fit:cover; filter: blur(6px) brightness(.55); transition: filter .8s ease; }
+.wt-plate.is-open .wt-hero-img { filter: blur(0px) brightness(.75); }
+.wt-lantern { position:absolute; top:40%; left:32%; width:100px; height:100px; background: radial-gradient(circle, rgba(255,180,80,.55) 0%, rgba(255,140,40,.15) 40%, transparent 70%); filter: blur(12px); animation: lantern 3.5s ease-in-out infinite; }
+@keyframes lantern { 0%,100% { opacity:.7; transform: scale(1); } 50% { opacity:1; transform: scale(1.15); } }
+
+.wt-plate-veil { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; gap:8px; background: linear-gradient(180deg, rgba(5,12,24,.55) 0%, rgba(5,12,24,.7) 100%); backdrop-filter: blur(2px); transition: opacity .5s ease, visibility .5s ease; z-index:2; }
+.wt-plate-lock { color:#7FB3FF; opacity:.6; margin-bottom:8px; }
+.wt-plate-lock svg { width:32px; height:32px; }
+.wt-plate-title { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(28px,3vw,40px); letter-spacing:-0.03em; color:#EAF2FF; }
+.wt-plate-sub { font-family:"IBM Plex Sans",sans-serif; font-style:italic; font-size:18px; color:#7FB3FF; opacity:.9; }
+.wt-plate-open { position:absolute; inset:auto 0 0 0; padding:28px 28px 24px; background: linear-gradient(180deg, transparent 0%, rgba(5,12,24,.92) 40%, rgba(5,12,24,.98) 100%); opacity:0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; z-index:3; }
+.wt-plate.is-open .wt-plate-veil { opacity:0; visibility:hidden; }
+.wt-plate.is-open .wt-plate-open { opacity:1; transform: translateY(0); }
+.wt-open-eyebrow { font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7FB3FF; margin-bottom:10px; }
+.wt-open-headline { font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:clamp(18px,1.7vw,22px); line-height:1.3; letter-spacing:-0.02em; color:#F5FAFF; margin-bottom:16px; }
+.wt-open-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.wt-open-list li { font-family:"IBM Plex Sans",sans-serif; font-size:13.5px; line-height:1.4; color:#C4D4EC; padding-left:18px; position:relative; }
+.wt-open-list li::before { content:"→"; position:absolute; left:0; top:0; color:#7FB3FF; font-family:"IBM Plex Mono",monospace; font-size:12px; }
+
+/* ============ PIPELINE — unified rail ============ */
+.pl { padding: clamp(80px,10vw,140px) 0; background: #FFF7EE; }
+.pl-legend { display:flex; gap:12px; flex-wrap:wrap; margin: 24px 0 48px; }
+.pl-chip { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; border-radius:24px; background:#FFF; border:1px solid rgba(26,15,8,.08); font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#1A0F08; }
+.pl-dot { width:8px; height:8px; border-radius:50%; }
+.pl-dot-week { background:#2B7A3D; }
+.pl-dot-side { background:#E5A61A; }
+.pl-dot-bridge { background:#DA552F; }
+.pl-dot-final { background:#4A7BFF; }
+
+.pl-rail { position:relative; margin-top:24px; }
+.pl-line { position:absolute; top:44px; left:0; right:0; height:2px; background: rgba(26,15,8,.1); border-radius:2px; z-index:0; }
+.pl-line-fill { position:absolute; top:0; left:0; height:100%; width:35%; background: linear-gradient(90deg, #2B7A3D 0%, #DA552F 100%); border-radius:2px; }
+
+.pl-stops { position:relative; display:grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap:8px; z-index:1; }
+@media (max-width: 1100px) { .pl-stops { grid-template-columns: repeat(5, minmax(0, 1fr)); gap:20px 12px; } .pl-line { display:none; } }
+@media (max-width: 640px)  { .pl-stops { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.pl-stop { position:relative; min-width:0; padding-top:64px; display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
+.pl-name, .pl-tag { max-width:100%; overflow-wrap:anywhere; }
+.pl-stop .pl-redacted { max-width:100%; overflow:hidden; white-space:nowrap; vertical-align:top; }
+.pl-mark { position:absolute; top:32px; left:0; width:24px; height:24px; border-radius:50%; background:#FFF7EE; border: 3px solid rgba(26,15,8,.15); display:flex; align-items:center; justify-content:center; z-index:2; }
+.pl-mark span { width:8px; height:8px; border-radius:50%; background: rgba(26,15,8,.2); }
+.pl-stop.t-week.s-done .pl-mark { border-color:#2B7A3D; background:#2B7A3D; }
+.pl-stop.t-week.s-done .pl-mark span { background:#FFF; }
+.pl-stop.t-week.s-next .pl-mark { border-color:#DA552F; background:#DA552F; animation: markerPulse 2s ease-in-out infinite; }
+.pl-stop.t-week.s-next .pl-mark span { background:#FFF; }
+.pl-stop.t-side .pl-mark { border-color:#E5A61A; background:#E5A61A; }
+.pl-stop.t-side .pl-mark span { background:#FFF; }
+.pl-stop.t-bridge .pl-mark { border-color:#DA552F; background:#FFF; }
+.pl-stop.t-bridge .pl-mark span { background:#DA552F; }
+.pl-stop.t-final .pl-mark { border-color:#4A7BFF; background:#FFF; }
+.pl-stop.t-final .pl-mark span { background:#4A7BFF; }
+@keyframes markerPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(218,85,47,.4); } 50% { box-shadow: 0 0 0 8px rgba(218,85,47,0); } }
+
+.pl-when { font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#7A5240; line-height:1.4; margin-bottom:8px; }
+.pl-when b { display:block; font-weight:600; font-size:12px; color:#1A0F08; letter-spacing:.06em; }
+.pl-name { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:16px; letter-spacing:-0.02em; color:#1A0F08; margin-bottom:4px; }
+.pl-tag { font-family:"IBM Plex Sans",sans-serif; font-size:11.5px; line-height:1.35; color:#5A4030; margin-bottom:8px; min-height:30px; }
+.pl-state { font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; padding:3px 8px; border-radius:4px; align-self:flex-start; }
+.pl-stop.t-week.s-done .pl-state { background: rgba(43,122,61,.14); color:#2B7A3D; }
+.pl-stop.t-week.s-next .pl-state { background: rgba(218,85,47,.16); color:#DA552F; }
+.pl-stop.t-week.s-locked .pl-state { background: rgba(26,15,8,.06); color:#7A5240; }
+.pl-stop.t-side .pl-state { background: rgba(229,166,26,.16); color:#8A5F0F; }
+.pl-stop.t-bridge .pl-state { background: rgba(218,85,47,.16); color:#DA552F; }
+.pl-stop.t-final .pl-state { background: rgba(74,123,255,.14); color:#4A7BFF; }
+
+/* Classified stops in the calendar (bridge + winter) */
+.pl-redacted {
+  display:inline-block;
+  color:transparent;
+  background: linear-gradient(90deg, rgba(26,15,8,.85), rgba(26,15,8,.7));
+  border-radius:3px;
+  padding:1px 6px;
+  filter: blur(3px);
+  user-select:none;
+  transition: filter .35s ease;
+}
+.pl-classified:hover .pl-redacted { filter: blur(2.5px); }
+.pl-classified .pl-state.pl-locked-state { background: rgba(26,15,8,.08) !important; color:#5A4030 !important; }
+
+/* Classified product cards — cover the kitty until unlock */
+.card-classified .card-media { position:relative; background:linear-gradient(135deg,#F5EBDE 0%,#EAE0D2 100%); min-height:200px; }
+.card-classified .card-media img { display:none; }
+.card-classified-cover {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(122,82,64,.35);
+}
+.card-classified .card-classified-cover::after {
+  content:"CLASSIFIED";
+  position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.24em;
+  color:rgba(122,82,64,.5); font-weight:600;
+}
+.card-classified .card-body h3 .pl-redacted { font-family:"Space Grotesk",sans-serif; font-weight:700; }
+.card-classified:hover .pl-redacted { filter: blur(2px); }
+
+/* Openline hero — blurred until unlock */
+.ol-hero-locked { position:relative; overflow:hidden; }
+.ol-hero-locked .ol-hero-img { filter: blur(28px) saturate(.6); transform: scale(1.1); transition: filter .5s ease, transform .5s ease; }
+.ol-hero-locked .ol-hero-overlay { display:none; }
+.ol-hero-lock {
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; color:#FFF7EE; text-align:center;
+  background: linear-gradient(180deg, rgba(26,15,8,.35), rgba(26,15,8,.55));
+  backdrop-filter: blur(2px);
+  z-index:2;
+  pointer-events:none;
+}
+.ol-hero-lock-cap {
+  font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  padding:6px 14px; border:1px solid rgba(255,247,238,.35); border-radius:999px;
+  background: rgba(26,15,8,.4);
+}
+body.is-unlocked .ol-hero-locked .ol-hero-img { filter:none; transform:none; }
+body.is-unlocked .ol-hero-locked .ol-hero-lock { opacity:0; pointer-events:none; transition: opacity .4s ease; }
+body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
+/* ---- FOLLOW ---- */
+.fl{padding:120px 0 130px;background:linear-gradient(180deg,#FFF7EE,#FFEEDA);position:relative}
+.fl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media (max-width:820px){.fl-grid{grid-template-columns:1fr}}
+.fl-card{position:relative;background:#fff;border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--ink);border:1px solid rgba(0,0,0,.06);box-shadow:0 20px 40px -25px rgba(0,0,0,.15);transition:transform .3s ease,box-shadow .3s ease;overflow:hidden}
+.fl-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:transparent;transition:background .3s ease}
+.fl-ph::after{background:#DA552F}
+.fl-li::after{background:#0A66C2}
+.fl-x::after{background:#000}
+.fl-card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -25px rgba(0,0,0,.25)}
+.fl-ico{width:56px;height:56px}
+.fl-ico svg{width:100%;height:100%;border-radius:12px}
+.fl-body{flex:1;display:flex;flex-direction:column;gap:6px}
+.fl-name{font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--ink)}
+.fl-handle{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);letter-spacing:.06em}
+.fl-desc{font-family:var(--font-body);font-size:14px;color:var(--ink-2);line-height:1.5;margin:6px 0 0}
+.fl-cta{align-self:flex-start;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:#DA552F;text-transform:uppercase;font-weight:700;margin-top:auto}
+.fl-li .fl-cta{color:#0A66C2}
+.fl-x .fl-cta{color:#000}
+.fl-note{margin-top:28px;padding:14px 18px;background:#fff;border-radius:12px;border:1px dashed rgba(0,0,0,.12);font-family:var(--font-body);font-size:14px;color:var(--ink-2);text-align:center}
+.fl-note strong{color:var(--ink);font-weight:600}
+
+/* ---- FOOTER MOMENT ---- */
+.fm{position:relative;background:#0A0A0A;color:#FFF7EE;overflow:hidden}
+.fm-marquee{position:relative;overflow:hidden;padding:22px 0;border-bottom:1px solid rgba(255,247,238,.08);background:#050505}
+.fm-track{display:inline-flex;gap:44px;white-space:nowrap;animation:fmScroll 30s linear infinite;font-family:var(--font-display);font-weight:700;font-size:36px;letter-spacing:-.02em;color:rgba(255,247,238,.14)}
+.fm-dot{color:#DA552F !important;opacity:.7}
+@keyframes fmScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.fm-stage{position:relative;padding:100px 24px 60px;text-align:center;isolation:isolate}
+.fm-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:900px;max-width:100%;height:400px;background:radial-gradient(ellipse,rgba(218,85,47,.35),transparent 60%);filter:blur(60px);pointer-events:none;z-index:0}
+.fm-glow.g2{top:60%;background:radial-gradient(ellipse,rgba(255,176,32,.18),transparent 60%);filter:blur(80px)}
+
+.fm-eyebrow{position:relative;z-index:1;font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;color:rgba(255,247,238,.55);text-transform:uppercase;margin-bottom:24px}
+
+.fm-word{position:relative;z-index:1;display:flex;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:clamp(64px,14vw,180px);letter-spacing:-.05em;line-height:.9;user-select:none}
+.fm-word span{display:inline-block;background:linear-gradient(180deg,#FFE0C4 0%,#DA552F 60%,#7A2A10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fmBob 4s ease-in-out infinite}
+.fm-word span:nth-child(1){animation-delay:0s}
+.fm-word span:nth-child(2){animation-delay:.1s}
+.fm-word span:nth-child(3){animation-delay:.2s}
+.fm-word span:nth-child(4){animation-delay:.3s}
+.fm-word span:nth-child(5){animation-delay:.4s}
+.fm-word span:nth-child(6){animation-delay:.5s}
+.fm-word span:nth-child(7){animation-delay:.6s}
+.fm-word span:nth-child(8){animation-delay:.7s}
+.fm-word span:nth-child(9){animation-delay:.8s}
+@keyframes fmBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+.fm-rotator{position:relative;z-index:1;margin-top:14px;font-family:var(--font-display);font-weight:500;font-size:clamp(20px,2.2vw,32px);color:rgba(255,247,238,.75);display:flex;justify-content:center;gap:12px;align-items:baseline;letter-spacing:-.02em}
+.fm-rot-static{color:rgba(255,247,238,.55)}
+.fm-rot-words{display:inline-block;height:1.2em;overflow:hidden;position:relative;min-width:200px;text-align:left}
+.fm-rot-words span{display:block;height:1.2em;line-height:1.2em;color:#DA552F;font-weight:700;animation:fmRotate 10s cubic-bezier(.6,.15,.4,.85) infinite}
+@keyframes fmRotate{0%,15%{transform:translateY(0)}20%,35%{transform:translateY(-1.2em)}40%,55%{transform:translateY(-2.4em)}60%,75%{transform:translateY(-3.6em)}80%,100%{transform:translateY(-4.8em)}}
+
+.fm-cta-row{position:relative;z-index:1;margin-top:34px;display:flex;justify-content:center}
+.fm-btn{background:#DA552F;color:#fff;padding:14px 22px;font-size:15px;box-shadow:0 10px 30px -8px rgba(218,85,47,.55)}
+.fm-btn:hover{background:#EA6338;transform:translateY(-2px)}
+
+.fm-grid{position:relative;z-index:1;margin:64px auto 0;max-width:1000px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,247,238,.08);border-radius:14px;overflow:hidden}
+@media (max-width:820px){.fm-grid{grid-template-columns:repeat(2,1fr)}}
+.fm-link{padding:22px 18px;background:#0A0A0A;text-decoration:none;color:#FFF7EE;display:flex;flex-direction:column;gap:6px;transition:background .25s ease;border-bottom:2px solid transparent}
+.fm-link:hover{background:#141414;border-bottom-color:#DA552F}
+.fm-link-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;color:rgba(255,247,238,.4)}
+.fm-link-t{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.02em;color:#FFF7EE}
+.fm-link-h{font-family:var(--font-mono);font-size:11px;color:rgba(255,247,238,.55);letter-spacing:.04em;word-break:break-all}
+
+.fm-sign{position:relative;z-index:1;margin:60px auto 0;max-width:600px;display:flex;align-items:center;gap:16px;padding:0 24px 40px}
+.fm-sign-l{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(255,247,238,.2),transparent)}
+.fm-sign-t{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:rgba(255,247,238,.5);text-transform:uppercase;white-space:nowrap}
+
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="row">
+    <a href="#" class="brand">
+      <span class="brand-mark">PF</span>
+      <span>Paul Fleury</span>
+      <span class="brand-sep">·</span>
+      <span class="brand-tag">The Weekathon</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#week">The Week</a></li>
+        <li><a href="#enki">The next chapter</a></li>
+        <li><a href="#openline">The day job</a></li>
+        <li><a href="#pipeline">Calendar</a></li>
+        <li><a href="#follow">Follow</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener">Follow on PH →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-blob b2" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div data-reveal>
+      <span class="kicker"><span class="dot"></span>Kickoff · Mon 28 Sept 2026 · <span id="countdown" style="font-family:var(--font-mono);color:var(--ph-deep);font-weight:600">15d</span></span>
+      <h1 class="headline">
+        Seven products.<br />
+        Seven days.<br />
+        <span class="accent">Live on</span> <span class="accent-2">Product Hunt.</span>
+      </h1>
+      <p class="sub">
+        A one-person launch marathon. Every day of the week 28 Sept → 4 Oct 2026, one small, useful, opinionated product ships on Product Hunt. A side quest follows, alongside a bigger reveal the week after the Weekathon. About two weeks after that, the day job gets its own moment.
+      </p>
+      <div class="hero-actions">
+        <a href="#week" class="btn btn-primary">
+          See the week
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 8h4.5a2.5 2.5 0 0 1 0 5H9V8zm0 5v3"/></svg>
+          Follow the launches
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>7</strong> Product Hunt launches</div>
+        <div><strong>+ 1</strong> side quest</div>
+        <div><strong>+ 1</strong> bigger reveal · Oct 5–11</div>
+        <div><strong>+ 1</strong> day-job reveal · about 2 weeks later</div>
+      </div>
+      <div class="prog-row" aria-label="Week progress">
+        <span style="margin-right:6px">Progress</span>
+        <span class="p-dot done" title="Junk"></span>
+        <span class="p-dot done" title="ASE"></span>
+        <span class="p-dot done" title="Mang"></span>
+        <span class="p-dot" title="Hollr"></span>
+        <span class="p-dot" title="Clippy"></span>
+        <span class="p-dot" title="Mercury"></span>
+        <span class="p-dot" title="Cup of News"></span>
+        <span style="margin-left:6px;color:var(--ph-deep);font-weight:600">3&nbsp;/&nbsp;7 shipped</span>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal data-delay="1">
+      <span class="float-chip fc-1"><span class="dt"></span>7 launches</span>
+      <span class="float-chip fc-2"><span class="dt"></span>MIT · open source</span>
+      <span class="float-chip fc-3"><span class="dt"></span>Ships daily · 08:01 Lisbon</span>
+      <div class="hero-plate">
+        <div class="orbit-dot" aria-hidden="true"></div>
+        <img src="assets/kitties/hero-master.webp" alt="Waving kitty mascot" class="hero-kitty" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>▓▓▓▓ · ▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓ ▓▓ ▓▓▓▓</span><span>+ SIDE QUEST · ▓▓▓▓▓▓▓▓▓</span><span>NEXT CHAPTER · ▓▓▓▓▓▓</span><span>+ DAY JOB · ▓▓▓▓▓▓▓▓</span>
+    <span>▓▓▓▓ · ▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓▓▓▓▓</span><span>▓▓▓▓ · ▓▓▓ ▓▓ ▓▓▓▓</span><span>+ SIDE QUEST · ▓▓▓▓▓▓▓▓▓</span><span>NEXT CHAPTER · ▓▓▓▓▓▓</span><span>+ DAY JOB · ▓▓▓▓▓▓▓▓</span>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto">
+  <div class="wrap" style="position:relative">
+    <span class="section-num">§ 01</span>
+    <span class="eyebrow" data-reveal>What this actually is</span>
+    <h2 class="section-title" data-reveal data-delay="1">Not a stunt. A <em>rhythm</em>.</h2>
+    <p class="section-sub" data-reveal data-delay="2">Seven small things I've been wanting to build for years, shipped in the open, on a fixed clock, with the receipts on the table.</p>
+    <div class="manifesto-grid">
+      <div class="mani-card" data-reveal data-delay="1">
+        <div class="mani-num">
+          <span>01</span>
+          <span class="mani-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+            </svg>
+          </span>
+        </div>
+        <h3>Small on purpose.</h3>
+        <p>Each product does one thing sharply. No dashboards, no logins, no SaaS traps. Install-and-use in under a minute.</p>
+      </div>
+      <div class="mani-card" data-reveal data-delay="2">
+        <div class="mani-num">
+          <span>02</span>
+          <span class="mani-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><circle cx="12" cy="13" r="1.5" fill="currentColor"/>
+            </svg>
+          </span>
+        </div>
+        <h3>Free forever.</h3>
+        <p>Every Weekathon product ships MIT (or a similar open license). No paywall. If it needs to earn money one day, it'll do it as a fork under a different name.</p>
+      </div>
+      <div class="mani-card" data-reveal data-delay="3">
+        <div class="mani-num">
+          <span>03</span>
+          <span class="mani-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3h9l3 3v15l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h4"/>
+            </svg>
+          </span>
+        </div>
+        <h3>Receipts on the table.</h3>
+        <p>Every launch page publishes the real cost table — AI tokens, infra, hours. If it took $22 to build, the page says $22. If it took two weekends, the page says two weekends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE WEEK ============ -->
+<section id="week">
+  <div class="wrap">
+    <span class="section-num">§ 02</span>
+    <div class="week-header">
+      <div>
+        <span class="eyebrow" data-reveal>The 7 launches · Sept 28 → Oct 4, 2026</span>
+        <h2 class="section-title" data-reveal data-delay="1">One product a <em>day</em>.</h2>
+      </div>
+      <div class="week-legend">
+        <span class="legend-chip"><span style="width:8px;height:8px;background:var(--ok);border-radius:50%"></span> Live</span>
+        <span class="legend-chip"><span style="width:8px;height:8px;background:var(--ph);border-radius:50%"></span> Today</span>
+        <span class="legend-chip">
+          <svg class="lock-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Locked · tap to unlock
+        </span>
+      </div>
+    </div>
+
+    <div class="grid" id="grid-week">
+
+      <!-- DAY 1 · JUNK -->
+            <article class="card locked card-classified" data-key="junk" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIkp1bmsiLCAidGFnbGluZSI6ICJBIG5hdGl2ZSBtYWNPUyBzY3JhdGNocGFkIHlvdSBvcGVuIHdpdGggb25lIHNob3J0Y3V0LiBOb3RoaW5nIHRvIG5hbWUuIE5vdGhpbmcgdG8gc2F2ZS4gWmVybyBmcmljdGlvbi4iLCAicHJpY2UiOiAi4omIICQ4IiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzEtanVuay53ZWJwIiwgImtpdHR5QWx0IjogIkp1bmsga2l0dHkiLCAiZGF5TGFiZWwiOiAiTW9uIMK3IERheSAxIiwgImNoaXBzIjogW3sidGV4dCI6ICJtYWNPUyDCtyBNSVQiLCAibG9ja2VkIjogdHJ1ZX0sIHsidGV4dCI6ICJOYXRpdmUiLCAibG9ja2VkIjogZmFsc2V9XX0="
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Mon · Day 1</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 2 · ASE -->
+            <article class="card locked card-classified" data-key="ase" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIkFTRSIsICJ0YWdsaW5lIjogIlRoZSBBbGwtU2VlaW5nIEV5ZS4gVXB0aW1lIG1vbml0b3JpbmcgaW4gb25lIFBIUCBmaWxlLiBEcm9wcyBvbiB5b3VyICQ0IGhvc3QsIHJ1bnMgZm9yZXZlciwgdGVsbHMgeW91IHdoZW4gdGhpbmdzIGJyZWFrLiIsICJwcmljZSI6ICLiiYggJDExIiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzItYXNlLndlYnAiLCAia2l0dHlBbHQiOiAiQVNFIGtpdHR5IiwgImRheUxhYmVsIjogIlR1ZSDCtyBEYXkgMiIsICJjaGlwcyI6IFt7InRleHQiOiAiU2luZ2xlIGZpbGUgwrcgUEhQIiwgImxvY2tlZCI6IHRydWV9LCB7InRleHQiOiAiU2VsZi1ob3N0IiwgImxvY2tlZCI6IGZhbHNlfV19"
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Tue · Day 2</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 3 · MANG -->
+            <article class="card locked card-classified" data-key="mang" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIk1hbmciLCAidGFnbGluZSI6ICJBbiBBSS1uYXRpdmUgc2hlbGwgY29tbWFuZC4gVHlwZSB5byA8YW55dGhpbmc+IOKAlCBpdCBhbnN3ZXJzLiBSdXN0IGJpbmFyeSwgb2ZmbGluZS1jYXBhYmxlLiIsICJwcmljZSI6ICLiiYggJDIyIiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzMtbWFuZy53ZWJwIiwgImtpdHR5QWx0IjogIk1hbmcga2l0dHkiLCAiZGF5TGFiZWwiOiAiV2VkIMK3IERheSAzIiwgImNoaXBzIjogW3sidGV4dCI6ICJSdXN0IMK3IE1JVCIsICJsb2NrZWQiOiB0cnVlfSwgeyJ0ZXh0IjogIkNMSSIsICJsb2NrZWQiOiBmYWxzZX1dLCAidGFnbGluZUh0bWwiOiAiQW4gQUktbmF0aXZlIHNoZWxsIGNvbW1hbmQuIFR5cGUgPGNvZGUgc3R5bGU9XCJmb250LWZhbWlseTp2YXIoLS1mb250LW1vbm8pO2JhY2tncm91bmQ6dmFyKC0tcGFwZXItMik7cGFkZGluZzoxcHggNXB4O2JvcmRlci1yYWRpdXM6NHB4O2ZvbnQtc2l6ZToxMnB4XCI+eW8gJmx0O2FueXRoaW5nJmd0OzwvY29kZT4g4oCUIGl0IGFuc3dlcnMuIFJ1c3QgYmluYXJ5LCBvZmZsaW5lLWNhcGFibGUuIn0="
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Wed · Day 3</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 4 · HOLLR (locked) -->
+            <article class="card locked card-classified" data-key="hollr" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIkhvbGxyIiwgInRhZ2xpbmUiOiAiRW5jcnlwdGVkIG1lc3NhZ2VzIHRoYXQgc2VsZi1kZXN0cnVjdCBvbiBhIHRpbWVyLiBaZXJvLWtub3dsZWRnZSwgbm8gbG9naW4sIG9uZSBsaW5rLiIsICJwcmljZSI6ICLiiYggJDE4IiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzQtaG9sbHIud2VicCIsICJraXR0eUFsdCI6ICJIb2xsciBraXR0eSIsICJkYXlMYWJlbCI6ICJUaHUgwrcgRGF5IDQiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIldlYiDCtyBaZXJvLWtub3dsZWRnZSIsICJsb2NrZWQiOiB0cnVlfSwgeyJ0ZXh0IjogIkVwaGVtZXJhbCIsICJsb2NrZWQiOiBmYWxzZX1dfQ=="
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Thu · Day 4</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">█████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 5 · CLIPPY (locked) -->
+            <article class="card locked card-classified" data-key="clippy" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIkNsaXBweSIsICJ0YWdsaW5lIjogIkEgbGl2ZS1zY29yaW5nIGNvLXBpbG90IGZvciB5b3VyIHdyaXRpbmcuIEZpdmUgZGltZW5zaW9ucywgb24gdGhlIHNpZGUuIFNpbGVudCB3aGVuIHlvdSdyZSBpbiB0aGUgem9uZSwgc2hhcnAgd2hlbiB5b3UncmUgbm90LiIsICJwcmljZSI6ICLiiYggJDE2IiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzUtY2xpcHB5LndlYnAiLCAia2l0dHlBbHQiOiAiQ2xpcHB5IGtpdHR5IiwgImRheUxhYmVsIjogIkZyaSDCtyBEYXkgNSIsICJjaGlwcyI6IFt7InRleHQiOiAibWFjT1MgwrcgTmF0aXZlIiwgImxvY2tlZCI6IHRydWV9LCB7InRleHQiOiAiQUkiLCAibG9ja2VkIjogZmFsc2V9XX0="
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Fri · Day 5</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">██████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 6 · MERCURY (locked) -->
+            <article class="card locked card-classified" data-key="mercury" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIk1lcmN1cnkiLCAidGFnbGluZSI6ICJBIGxpdmUgZGViYXRlIGFyZW5hIGJldHdlZW4gdHdvIEFJIG1vZGVscy4gRml2ZSBwaGFzZXMsIHRpbWVkIHJvdW5kcywgYSByZWFsIHRyYW5zY3JpcHQgYXQgdGhlIGVuZC4iLCAicHJpY2UiOiAi4omIICQyNCIsICJraXR0eUltZyI6ICJhc3NldHMva2l0dGllcy82LW1lcmN1cnkud2VicCIsICJraXR0eUFsdCI6ICJNZXJjdXJ5IGtpdHR5IiwgImRheUxhYmVsIjogIlNhdCDCtyBEYXkgNiIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IExpdmUiLCAibG9ja2VkIjogdHJ1ZX0sIHsidGV4dCI6ICJNdWx0aS1tb2RlbCIsICJsb2NrZWQiOiBmYWxzZX1dfQ=="
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Sat · Day 6</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">███████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- DAY 7 · CUP OF NEWS (locked) -->
+            <article class="card locked card-classified" data-key="cup-of-news" data-locked data-reveal
+               data-payload="eyJuYW1lIjogIkN1cCBvZiBOZXdzIiwgInRhZ2xpbmUiOiAiQW4gQUkgZGlnZXN0IGZvciB5b3VyIG1vcm5pbmcgY29mZmVlLiBDdXJhdGVkIGZvciB0YXN0ZSwgbm90IGNsaWNrcy4gRW5kcyB3aXRoIGEgcGhpbG9zb3BoZXIncyBxdW90ZSBpbiB5b3VyIGxhbmd1YWdlLiIsICJwcmljZSI6ICLiiYggJDE5IiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzctY3VwLW9mLW5ld3Mud2VicCIsICJraXR0eUFsdCI6ICJDdXAgb2YgTmV3cyBraXR0eSIsICJkYXlMYWJlbCI6ICJTdW4gwrcgRGF5IDciLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIldlYiDCtyBEaWdlc3QiLCAibG9ja2VkIjogdHJ1ZX0sIHsidGV4dCI6ICJNdWx0aS1saW5ndWFsIiwgImxvY2tlZCI6IGZhbHNlfV19"
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge">Sun · Day 7</span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">███████████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+      <!-- SIDE QUEST · xnftables (locked, same PIN, ships shortly after) -->
+            <article class="card locked card-classified" data-key="xnftables" data-locked data-reveal
+               data-payload="eyJuYW1lIjogInhuZnRhYmxlcyIsICJ0YWdsaW5lIjogIkRlbnktYnktZGVmYXVsdCBXaXJlR3VhcmQtbWVzaCBmaXJld2FsbCBwb2xpY3kuIFNtYWxsLCBvcGluaW9uYXRlZCwgTUlULiBGb3IgdGhlIH4yMDAgc2VsZi1ob3N0ZXJzIHdobyBmZWVsIHRoaXMgaW4gdGhlaXIgYm9uZXMuIiwgInByaWNlIjogIuKJiCAkNiIsICJraXR0eUltZyI6ICJhc3NldHMva2l0dGllcy94bmZ0YWJsZXMtdjIud2VicCIsICJraXR0eUFsdCI6ICJ4bmZ0YWJsZXMga2l0dHkiLCAiZGF5TGFiZWwiOiAiIiwgImNoaXBzIjogW3sidGV4dCI6ICJuZnRhYmxlcyDCtyBSdXN0IiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW4gc291cmNlIiwgImxvY2tlZCI6IGZhbHNlfV19"
+               style="cursor:pointer" title="Classified — tap to unlock">
+        <div class="card-media">
+          <span class="day-badge"></span>
+          <div class="card-classified-cover" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3><span class="pl-redacted">█████████</span></h3>
+            <span class="price-tag"><span class="pl-redacted">≈ $██</span></span>
+          </div>
+          <p class="tagline"><span class="pl-redacted">██████████████████████████████████</span> <span class="pl-redacted">██████████████████████</span></p>
+          <div class="meta">
+            <span class="chip locked"><span class="pl-redacted">████████████</span></span>
+            <span class="chip"><span class="pl-redacted">██████</span></span>
+          </div>
+          <a class="card-link-btn" href="#" onclick="event.preventDefault(); openPin(true); return false;">
+            Peek early
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="lock-veil">
+          <div class="lk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="lk-title">Classified</div>
+          <div class="lk-sub">Tap to unlock</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT CHAPTER · ENKI ============ -->
+<section id="enki" class="wt">
+  <div class="wt-sky" aria-hidden="true">
+    <div class="wt-aurora"></div>
+    <div class="wt-aurora a2"></div>
+    <div class="wt-stars">
+      <span style="left:6%;top:12%;--d:2.8s"></span>
+      <span style="left:14%;top:22%;--d:3.4s"></span>
+      <span style="left:22%;top:7%;--d:4.1s"></span>
+      <span style="left:31%;top:18%;--d:2.6s"></span>
+      <span style="left:44%;top:9%;--d:3.9s"></span>
+      <span style="left:53%;top:24%;--d:2.9s"></span>
+      <span style="left:63%;top:11%;--d:3.6s"></span>
+      <span style="left:71%;top:21%;--d:4.2s"></span>
+      <span style="left:82%;top:8%;--d:3.1s"></span>
+      <span style="left:91%;top:19%;--d:3.7s"></span>
+    </div>
+    <div class="wt-snow" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="wrap wt-wrap">
+    <div class="wt-copy" data-reveal>
+      <span class="eyebrow wt-eyebrow"><span class="pulse pulse-blue"></span> The next chapter · Oct 5–11, 2026 · classified</span>
+      <h2 class="wt-title">Something <em>bigger</em><br/>the following week.</h2>
+      <p class="wt-sub">The Weekathon is the warm-up. The week after it ends, the next chapter isn't a product: it's a call. Details unlock at the reveal.</p>
+
+      <div class="wt-oath">
+        <div class="wt-oath-line">Small products by day.</div>
+        <div class="wt-oath-line">A bigger story the following week.</div>
+      </div>
+
+      <div class="wt-cta-row">
+        <button class="btn btn-primary wt-cta" onclick="event.preventDefault(); openPin(true)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Enter the vault
+        </button>
+        <a href="#follow" class="btn btn-ghost btn-ghost-dark">Follow the sprint →</a>
+      </div>
+    </div>
+
+    <div class="wt-visual" data-reveal data-delay="1">
+      <div class="wt-plate" data-locked>
+        <div class="wt-plate-frame">
+          <img src="assets/hero/winter-v4.png" alt="Classified visual" class="wt-hero-img"/>
+          <div class="wt-lantern" aria-hidden="true"></div>
+        </div>
+        <div class="wt-plate-veil">
+          <div class="wt-plate-lock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+          <div class="wt-plate-title">Classified.</div>
+          <div class="wt-plate-sub">Unlocks at the reveal.</div>
+        </div>
+        <div class="wt-plate-open">
+          <div class="wt-open-eyebrow">The brief</div>
+          <div class="wt-open-headline">Not a product. A call to build a founding team of 300 — for a public-good NGO offering an alternative to datacenter-first AI.</div>
+          <ul class="wt-open-list">
+            <li>A non-profit association, not a startup — public good, no capture, no equity</li>
+            <li>Intelligence that runs on devices people already own — the datacenter as a licensed exception, not the default</li>
+            <li>Open standard, open cost data, DAO-voted governance — the 300 pick where it lives and what it becomes</li>
+            <li>You're not signing up as a user. You're signing up as a founder.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPENLINE (locked teaser) ============ -->
+<!-- ============ OPENLINE — later October reveal ============ -->
+<section id="openline" class="ol">
+  <div class="wrap ol-wrap">
+
+    <div class="ol-head" data-reveal>
+      <span class="eyebrow ol-eyebrow">
+        <span class="pulse"></span> The day job · around the week of 19 Oct 2026 · classified
+      </span>
+      <h2 class="ol-title">The day job, <em>reintroduced</em>.</h2>
+      <p class="ol-lede">About two weeks after the next chapter, the day job gets its own moment: a proper reintroduction of what I actually work on when I'm not shipping side projects. Details unlock at the reveal. The exact launch day is still to be confirmed.</p>
+    </div>
+
+    <div class="ol-grid">
+
+      <!-- Left: the editorial hero (blurred until unlock) -->
+      <div class="ol-hero ol-hero-locked" data-reveal data-delay="1" data-locked>
+        <img src="assets/hero/bridge-v4.png" alt="Classified visual" class="ol-hero-img"/>
+        <div class="ol-hero-lock" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span class="ol-hero-lock-cap">Classified · around the week of Oct 19</span>
+        </div>
+        <div class="ol-hero-overlay">
+          <div class="ol-hero-stat">
+            <span class="ol-hero-num">210+</span>
+            <span class="ol-hero-cap">countries</span>
+          </div>
+          <div class="ol-hero-stat">
+            <span class="ol-hero-num">4G/5G</span>
+            <span class="ol-hero-cap">full speed</span>
+          </div>
+          <div class="ol-hero-stat">
+            <span class="ol-hero-num">$2.99</span>
+            <span class="ol-hero-cap">from</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: the locked "next release" plate -->
+      <div class="ol-locked" data-locked data-reveal data-delay="2">
+        <div class="ol-locked-veil">
+          <div class="ol-locked-lock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+          <div class="ol-locked-tag">Day-job reveal · around the week of Oct 19</div>
+          <div class="ol-locked-title">Coming shortly</div>
+          <div class="ol-locked-sub">with great, great treats for kitties.</div>
+          <button class="ol-locked-cta" onclick="event.preventDefault(); openPin(true)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Peek early
+          </button>
+        </div>
+        <div class="ol-locked-inner" id="ol-locked-inner">
+          <div class="ol-locked-eyebrow">Classified</div>
+          <div class="ol-locked-brand">
+            <span class="ol-locked-brand-name"><span class="pl-redacted">████████</span></span>
+            <span class="ol-locked-brand-url"><span class="pl-redacted">█████████████</span></span>
+          </div>
+          <div class="ol-locked-headline"><span class="pl-redacted">█████████████████████████████████</span></div>
+          <p class="ol-locked-lede"><span class="pl-redacted">███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████</span></p>
+          <div class="ol-locked-why">
+            <div class="ol-locked-why-title"><span class="pl-redacted">███████████████████████</span></div>
+            <ul class="ol-locked-featlist">
+              <li><span class="pl-redacted">███████████████████████████████████████████</span></li>
+              <li><span class="pl-redacted">███████████████████████████████████████████</span></li>
+              <li><span class="pl-redacted">██████████████████████████████████████████████████████</span></li>
+              <li><span class="pl-redacted">█████████████████████████████████████████████████</span></li>
+            </ul>
+          </div>
+          <div class="ol-locked-goodies">
+            <div class="ol-locked-goodies-title"><span class="pl-redacted">███████████████████████████████</span></div>
+            <div class="ol-locked-goodies-grid">
+              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
+              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
+              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
+              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/plain" id="ol-classified-payload">eyJleWVicm93IjogIlRoZSByZXZlYWwiLCAiYnJhbmROYW1lIjogIk9wZW5saW5lIiwgImJyYW5kVXJsIjogImh0dHBzOi8vb3BlbmxpbmUuY29tIiwgImJyYW5kVXJsTGFiZWwiOiAib3BlbmxpbmUuY29tIOKGlyIsICJoZWFkbGluZSI6ICJPbmUgZVNJTS4gRXZlcnkgY291bnRyeS4gTm8gcm9hbWluZyBiaWxscy4iLCAibGVkZSI6ICJOb3QgYW5vdGhlciBzaW5nbGUtY2FycmllciByZXNlbGxlci4gT3BlbmxpbmUgaG9wcyBhY3Jvc3MgbXVsdGlwbGUgdGllci0xIG5ldHdvcmtzIGluIHJlYWwgdGltZSwgc28geW91IGFsd2F5cyBnZXQgdGhlIGJlc3Qgc2lnbmFsIOKAlCBmcm9tIExpc2JvbiB0byBMYWdvcyB0byBMaW1hLiIsICJ3aHlUaXRsZSI6ICJXaHkgT3BlbmxpbmUgaXMgZGlmZmVyZW50IiwgImZlYXR1cmVzIjogW3siaCI6ICJNdWx0aS1jYXJyaWVyIHN3aXRjaGluZyIsICJ0IjogIm5ldmVyIHN0dWNrIG9uIG9uZSB0b3dlciJ9LCB7ImgiOiAiMjEwKyBjb3VudHJpZXMiLCAidCI6ICJmdWxsIDRHLzVHLCBubyB0aHJvdHRsaW5nIn0sIHsiaCI6ICJObyBJRCwgbm8gY29udHJhY3QiLCAidCI6ICJidXkgaW4gNjAgc2Vjb25kcywgaW5zdGFsbCBieSBRUiJ9LCB7ImgiOiAiRnJvbSAkMi45OSIsICJ0IjogIm5vIHJvYW1pbmcsIG5vIGJpbGwgc2hvY2sifV0sICJnb29kaWVzVGl0bGUiOiAiRnJlZSBnb29kaWVzIGZvciBlYXJseSBjdXN0b21lcnMiLCAiZ29vZGllcyI6IFt7Imljb24iOiAi4peIIiwgImgiOiAiU3RhcnRlciBkYXRhIHBhY2siLCAidCI6ICJGcmVlIGZpcnN0IEdCLCBvbiB0aGUgaG91c2UifSwgeyJpY29uIjogIuKXhiIsICJoIjogIkxpZmV0aW1lIGludHJvIHByaWNpbmciLCAidCI6ICJMb2NrZWQgZm9yZXZlciwgbm8gcmVuZXdhbHMgc3VycHJpc2VzIn0sIHsiaWNvbiI6ICLil4ciLCAiaCI6ICJSZWZlcnJhbCBjcmVkaXQiLCAidCI6ICJCcmluZyBhIGZyaWVuZCwgYm90aCBnZXQgZGF0YSJ9LCB7Imljb24iOiAi4peJIiwgImgiOiAiQ29tcGFueSBPUyBhY2Nlc3MiLCAidCI6ICJQZWVrIHRoZSB0b29scyB3ZSBzaGlwIHdpdGgifV19</script>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PIPELINE — one unified calendar rail ============ -->
+<section id="pipeline" class="pl">
+  <div class="wrap">
+    <span class="section-num">§ 04</span>
+    <span class="eyebrow" data-reveal>The full pipeline · Sept → Oct 2026</span>
+    <h2 class="section-title" data-reveal data-delay="1">One <em>calendar</em>.</h2>
+    <p class="section-sub" data-reveal data-delay="2">Seven Weekathon launches, Sept 28–Oct 4. A side quest on Oct 7. A bigger reveal during Oct 5–11. Then the day job about two weeks later, around the week of Oct 19. Exact reveal days are still to be confirmed.</p>
+
+    <!-- Legend -->
+    <div class="pl-legend" data-reveal data-delay="1">
+      <span class="pl-chip"><i class="pl-dot pl-dot-week"></i> The Weekathon</span>
+      <span class="pl-chip"><i class="pl-dot pl-dot-side"></i> Side quest</span>
+      <span class="pl-chip"><i class="pl-dot pl-dot-final"></i> The next chapter</span>
+      <span class="pl-chip"><i class="pl-dot pl-dot-bridge"></i> The day job</span>
+    </div>
+
+    <!-- Unified rail: 10 stops on one grid -->
+    <div class="pl-rail" data-reveal data-delay="2">
+
+      <!-- The rail line -->
+      <div class="pl-line"><div class="pl-line-fill"></div></div>
+
+      <!-- 10 stops -->
+      <div class="pl-stops">
+        <div class="pl-stop t-week s-done pl-classified" data-key="junk" data-locked
+             data-n="SnVuaw==" data-t="bWFjT1Mgc2NyYXRjaHBhZA==" data-s="U2hpcHBlZA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Mon<br/><b>28 Sept</b></div>
+          <div class="pl-name"><span class="pl-redacted">████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">████████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-done pl-classified" data-key="ase" data-locked
+             data-n="QVNF" data-t="VXB0aW1lIGluIG9uZSBQSFAgZmlsZQ==" data-s="U2hpcHBlZA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Tue<br/><b>29 Sept</b></div>
+          <div class="pl-name"><span class="pl-redacted">███</span></div>
+          <div class="pl-tag"><span class="pl-redacted">██████████████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-done pl-classified" data-key="mang" data-locked
+             data-n="TWFuZw==" data-t="QUktbmF0aXZlIHNoZWxs" data-s="U2hpcHBlZA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Wed<br/><b>30 Sept</b></div>
+          <div class="pl-name"><span class="pl-redacted">████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">███████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-next pl-classified" data-key="hollr" data-locked
+             data-n="SG9sbHI=" data-t="RW5jcnlwdGVkLCB0aW1lLWJveGVk" data-s="TmV4dCBkcm9w"
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Thu<br/><b>1 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">█████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">██████████████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-locked pl-classified" data-key="clippy" data-locked
+             data-n="Q2xpcHB5" data-t="V3JpdGluZyBjby1waWxvdA==" data-s="TG9ja2Vk"
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Fri<br/><b>2 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">██████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">█████████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-locked pl-classified" data-key="mercury" data-locked
+             data-n="TWVyY3VyeQ==" data-t="TGl2ZSBBSSBkZWJhdGU=" data-s="TG9ja2Vk"
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Sat<br/><b>3 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">███████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">███████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-week s-locked pl-classified" data-key="cofn" data-locked
+             data-n="Q3VwIG9mIE5ld3M=" data-t="TW9ybmluZyBkaWdlc3Q=" data-s="TG9ja2Vk"
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Sun<br/><b>4 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">███████████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">███████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-side s-locked pl-classified" data-key="xnft" data-locked
+             data-n="eG5mdGFibGVz" data-t="RGVueS1ieS1kZWZhdWx0IGZpcmV3YWxs" data-s="U2lkZSBxdWVzdA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Wed<br/><b>7 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">█████████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">████████████████████████</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-final s-locked pl-classified" data-key="winter" data-locked
+             data-n="RW5raS5uZ28=" data-t="Rm91bmRpbmcgdGVhbSBvZiAzMDA=" data-s="UGxhbm5lZA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Week of<br/><b>5 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">██████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">The next chapter · classified</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+        <div class="pl-stop t-bridge s-locked pl-classified" data-key="bridge" data-locked
+             data-n="T3BlbmxpbmU=" data-t="RGF5LWpvYiByZXZlYWw=" data-s="UGxhbm5lZA=="
+             style="cursor:pointer" title="Classified — tap to unlock">
+          <div class="pl-mark"><span></span></div>
+          <div class="pl-when">Week of<br/><b>~19 Oct</b></div>
+          <div class="pl-name"><span class="pl-redacted">████████</span></div>
+          <div class="pl-tag"><span class="pl-redacted">Day-job reveal · classified</span></div>
+          <div class="pl-state pl-locked-state">🔒 Locked</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ============ FOLLOW THE SPRINT ============ -->
+<section id="follow" class="fl">
+  <div class="wrap">
+    <span class="section-num">§ 05</span>
+    <span class="eyebrow" data-reveal>Follow the sprint</span>
+    <h2 class="section-title" data-reveal data-delay="1">Three feeds. <em>One</em> marathon.</h2>
+    <p class="section-sub" data-reveal data-delay="2">Every launch drops on Product Hunt at 08:01 Lisbon, gets a story on LinkedIn, and a live thread on X. Pick your lane — or take all three.</p>
+
+    <div class="fl-grid">
+      <a class="fl-card fl-ph" href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener" data-reveal data-delay="1">
+        <div class="fl-ico">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#DA552F"/><path d="M15 12h7a5 5 0 0 1 0 10h-4v6h-3V12zm3 3v4h4a2 2 0 0 0 0-4h-4z" fill="#fff"/></svg>
+        </div>
+        <div class="fl-body">
+          <div class="fl-name">Product Hunt</div>
+          <div class="fl-handle">@paulfxyz</div>
+          <p class="fl-desc">Live launches every day at 08:01 Lisbon. Upvote the ones that make you smile.</p>
+        </div>
+        <div class="fl-cta">Follow →</div>
+      </a>
+
+      <a class="fl-card fl-li" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener" data-reveal data-delay="2">
+        <div class="fl-ico">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="6" fill="#0A66C2"/><path d="M13 16h4v14h-4V16zm2-6a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM20 16h4v2h.1c.6-1 2-2.3 4.4-2.3 4.7 0 5.5 3 5.5 7v7.3h-4V24c0-1.7 0-4-2.5-4s-2.9 2-2.9 4v6h-4V16z" fill="#fff"/></svg>
+        </div>
+        <div class="fl-body">
+          <div class="fl-name">LinkedIn</div>
+          <div class="fl-handle">/in/paulfxyz</div>
+          <p class="fl-desc">The story behind each ship — what worked, what broke, what got cut.</p>
+        </div>
+        <div class="fl-cta">Follow →</div>
+      </a>
+
+      <a class="fl-card fl-x" href="https://x.com/paulfxyz" target="_blank" rel="noopener" data-reveal data-delay="3">
+        <div class="fl-ico">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="6" fill="#000"/><path d="M25.5 11h3.6l-7.9 9 9.3 12h-7.3l-5.7-7.5L11 32H7.4l8.4-9.6L7 11h7.4l5.2 6.9L25.5 11zm-1.3 18.4h2L15.9 13H13.8l10.4 16.4z" fill="#fff"/></svg>
+        </div>
+        <div class="fl-body">
+          <div class="fl-name">X</div>
+          <div class="fl-handle">@paulfxyz</div>
+          <p class="fl-desc">Live threads, receipts, and the daily chaos of shipping in public.</p>
+        </div>
+        <div class="fl-cta">Follow →</div>
+      </a>
+    </div>
+
+    <div class="fl-note" data-reveal>
+      Each launch has a kit: <strong>Product Hunt gallery</strong>, <strong>LinkedIn post</strong>, <strong>X thread</strong>. All open, all remixable.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER — kinetic ============ -->
+<footer class="fm">
+  <div class="fm-marquee" aria-hidden="true">
+    <div class="fm-track">
+      <span>SHIP.</span><span class="fm-dot">·</span>
+      <span>REPEAT.</span><span class="fm-dot">·</span>
+      <span>SHIP.</span><span class="fm-dot">·</span>
+      <span>REPEAT.</span><span class="fm-dot">·</span>
+      <span>SHIP.</span><span class="fm-dot">·</span>
+      <span>REPEAT.</span><span class="fm-dot">·</span>
+      <span>SHIP.</span><span class="fm-dot">·</span>
+      <span>REPEAT.</span><span class="fm-dot">·</span>
+      <span>SHIP.</span><span class="fm-dot">·</span>
+      <span>REPEAT.</span><span class="fm-dot">·</span>
+    </div>
+  </div>
+
+  <div class="fm-stage">
+    <div class="fm-glow" aria-hidden="true"></div>
+    <div class="fm-glow g2" aria-hidden="true"></div>
+
+    <div class="fm-eyebrow">SEVEN PRODUCTS · SEVEN DAYS · ONE PERSON</div>
+
+    <div class="fm-word" aria-label="Weekathon">
+      <span>W</span><span>E</span><span>E</span><span>K</span><span>A</span><span>T</span><span>H</span><span>O</span><span>N</span>
+    </div>
+
+    <div class="fm-rotator" aria-hidden="true">
+      <span class="fm-rot-static">Made to be</span>
+      <span class="fm-rot-words">
+        <span>shipped.</span>
+        <span>remixed.</span>
+        <span>forked.</span>
+        <span>used.</span>
+        <span>shipped.</span>
+      </span>
+    </div>
+
+    <div class="fm-cta-row">
+      <a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener" class="btn btn-primary fm-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 8h4.5a2.5 2.5 0 0 1 0 5H9V8zm0 5v3"/></svg>
+        Come follow along
+      </a>
+    </div>
+
+    <div class="fm-grid">
+      <a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener" class="fm-link">
+        <div class="fm-link-k">01</div>
+        <div class="fm-link-t">Product Hunt</div>
+        <div class="fm-link-h">@paulfxyz</div>
+      </a>
+      <a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener" class="fm-link">
+        <div class="fm-link-k">02</div>
+        <div class="fm-link-t">LinkedIn</div>
+        <div class="fm-link-h">/in/paulfxyz</div>
+      </a>
+      <a href="https://x.com/paulfxyz" target="_blank" rel="noopener" class="fm-link">
+        <div class="fm-link-k">03</div>
+        <div class="fm-link-t">X</div>
+        <div class="fm-link-h">@paulfxyz</div>
+      </a>
+      <a href="https://github.com/paulfxyz" target="_blank" rel="noopener" class="fm-link">
+        <div class="fm-link-k">04</div>
+        <div class="fm-link-t">GitHub</div>
+        <div class="fm-link-h">paulfxyz</div>
+      </a>
+      <a href="https://paulfleury.com/contact" class="fm-link">
+        <div class="fm-link-k">05</div>
+        <div class="fm-link-t">Email</div>
+        <div class="fm-link-h">paulfleury.com/contact</div>
+      </a>
+    </div>
+
+    <div class="fm-sign">
+      <span class="fm-sign-l"></span>
+      <span class="fm-sign-t">Live from the marathon</span>
+      <span class="fm-sign-l"></span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============ PIN MODAL ============ -->
+<div class="modal-back" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+  <div class="modal">
+    <button class="close" onclick="closePin()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+    <div class="modal-kitty"><img src="assets/kitties/hero-master.webp" alt="" /></div>
+    <h3 id="pinTitle">Peek early?</h3>
+    <p>Enter the PIN to unlock all upcoming launch cards for this session.</p>
+    <div class="pin-inputs" id="pinInputs">
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 1" />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 2" />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 3" />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 4" />
+    </div>
+    <div class="pin-hint">Hint · try <strong>0 0 0 0</strong></div>
+    <div class="modal-status" id="pinStatus"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">Unlocked for this session ✨</div>
+
+<script>
+(() => {
+  const modal = document.getElementById('pinModal');
+  const inputs = [...document.querySelectorAll('#pinInputs input')];
+  const status = document.getElementById('pinStatus');
+  const pinBox = document.getElementById('pinInputs');
+  const toast = document.getElementById('toast');
+  const PIN = '0000';
+  let sessionUnlocked = false;
+
+  function showToast(msg='Unlocked for this session ✨'){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(()=> toast.classList.remove('show'), 2400);
+  }
+
+  function unlockAll(){
+    sessionUnlocked = true;
+    document.body.classList.add('is-unlocked');
+    document.querySelectorAll('.card.locked').forEach(c => c.classList.add('revealed'));
+    document.querySelectorAll('[data-locked]').forEach(c => c.classList.add('is-open'));
+    // Inject Openline classified payload into ol-locked-inner
+    const olPayload = document.getElementById('ol-classified-payload');
+    const olInner = document.getElementById('ol-locked-inner');
+    if (olPayload && olInner && !olInner.dataset.revealed) {
+      try {
+        const d = JSON.parse(atob(olPayload.textContent.trim()));
+        olInner.innerHTML = `
+          <div class="ol-locked-eyebrow">${d.eyebrow}</div>
+          <div class="ol-locked-brand">
+            <span class="ol-locked-brand-name">${d.brandName}</span>
+            <a href="${d.brandUrl}" target="_blank" rel="noopener" class="ol-locked-brand-url">${d.brandUrlLabel}</a>
+          </div>
+          <div class="ol-locked-headline">${d.headline}</div>
+          <p class="ol-locked-lede">${d.lede}</p>
+          <div class="ol-locked-why">
+            <div class="ol-locked-why-title">${d.whyTitle}</div>
+            <ul class="ol-locked-featlist">
+              ${d.features.map(f=>`<li><strong>${f.h}</strong> · ${f.t}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="ol-locked-goodies">
+            <div class="ol-locked-goodies-title">${d.goodiesTitle}</div>
+            <div class="ol-locked-goodies-grid">
+              ${d.goodies.map(g=>`<div class="ol-goodie"><span class="ol-goodie-icon">${g.icon}</span><span><strong>${g.h}</strong><br/>${g.t}</span></div>`).join('')}
+            </div>
+          </div>`;
+        olInner.dataset.revealed = '1';
+      } catch(e) { console.warn('ol payload parse failed', e); }
+    }
+    // Inject product card payloads (all 8 classified cards)
+    document.querySelectorAll('.card-classified').forEach(card => {
+      if (card.dataset.revealed) return;
+      const b64 = card.getAttribute('data-payload');
+      if (!b64) return;
+      try {
+        const d = JSON.parse(atob(b64));
+        const media = card.querySelector('.card-media');
+        if (media) {
+          const cover = media.querySelector('.card-classified-cover');
+          if (cover) cover.remove();
+          const img = new Image();
+          img.src = d.kittyImg;
+          img.alt = d.kittyAlt;
+          img.loading = 'lazy';
+          media.appendChild(img);
+        }
+        const h3 = card.querySelector('h3');
+        if (h3) h3.textContent = d.name;
+        const price = card.querySelector('.price-tag');
+        if (price) price.textContent = d.price;
+        const tagline = card.querySelector('.tagline');
+        if (tagline) {
+          if (d.taglineHtml) tagline.innerHTML = d.taglineHtml;
+          else tagline.textContent = d.tagline;
+        }
+        const meta = card.querySelector('.meta');
+        if (meta && d.chips) {
+          meta.innerHTML = d.chips.map(c => `<span class="chip${c.locked?' locked':''}">${c.text}</span>`).join('');
+        }
+        const veil = card.querySelector('.lock-veil');
+        if (veil) veil.remove();
+        card.classList.remove('locked');
+        card.classList.remove('card-classified');
+        card.style.cursor = '';
+        card.removeAttribute('title');
+        card.dataset.revealed = '1';
+      } catch(e) { console.warn('card payload parse failed', card.dataset.key, e); }
+    });
+    // Reveal classified calendar rows (bridge + winter)
+    document.querySelectorAll('.pl-classified').forEach(row => {
+      const dec = s => { try { return atob(s); } catch(_){ return s; } };
+      const name  = dec(row.getAttribute('data-n')  || '');
+      const tag   = dec(row.getAttribute('data-t')  || '');
+      const state = dec(row.getAttribute('data-s')  || '');
+      const nameEl  = row.querySelector('.pl-name .pl-redacted');
+      const tagEl   = row.querySelector('.pl-tag .pl-redacted');
+      const stateEl = row.querySelector('.pl-state');
+      if (nameEl  && name)  { nameEl.textContent  = name;  nameEl.classList.remove('pl-redacted'); }
+      if (tagEl   && tag)   { tagEl.textContent   = tag;   tagEl.classList.remove('pl-redacted'); }
+      if (stateEl && state) {
+        stateEl.textContent = state;
+        stateEl.classList.remove('pl-locked-state');
+      }
+    });
+    closePin();
+    confetti();
+    showToast();
+  }
+
+  // Confetti burst on unlock
+  function confetti(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'confetti-wrap';
+    document.body.appendChild(wrap);
+    const colors = ['#DA552F','#EA6338','#FFB020','#3F9E4F','#1F1F1F','#FFF1E0'];
+    const N = 90;
+    for(let i=0;i<N;i++){
+      const c = document.createElement('span');
+      c.className = 'c';
+      c.style.left = Math.random()*100 + 'vw';
+      c.style.background = colors[i%colors.length];
+      c.style.width = (6 + Math.random()*8) + 'px';
+      c.style.height = (10 + Math.random()*12) + 'px';
+      c.style.animationDuration = (1.6 + Math.random()*1.6) + 's';
+      c.style.animationDelay = (Math.random()*.4) + 's';
+      c.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+      wrap.appendChild(c);
+    }
+    setTimeout(() => wrap.remove(), 3400);
+  }
+
+  window.openPin = (force=false) => {
+    if(sessionUnlocked && !force){ return; }
+    inputs.forEach(i => i.value = '');
+    pinBox.classList.remove('error');
+    status.textContent = '';
+    status.className = 'modal-status';
+    modal.classList.add('open');
+    setTimeout(() => inputs[0]?.focus(), 60);
+  };
+  window.closePin = () => modal.classList.remove('open');
+
+  // Modal close on backdrop click / Esc
+  modal.addEventListener('click', e => { if(e.target === modal) closePin(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closePin(); });
+
+  // Any locked card OR data-locked region click opens the PIN
+  document.querySelectorAll('.card.locked, [data-locked]').forEach(card => {
+    card.addEventListener('click', e => {
+      if(sessionUnlocked) return;
+      // don't hijack real links inside
+      if(e.target.closest('a[href^="http"]')) return;
+      e.preventDefault();
+      openPin();
+    });
+  });
+
+  // Auto-advance PIN inputs
+  inputs.forEach((inp, i) => {
+    inp.addEventListener('input', () => {
+      inp.value = inp.value.replace(/[^0-9]/g,'').slice(0,1);
+      if(inp.value && i < inputs.length - 1) inputs[i+1].focus();
+      const code = inputs.map(x => x.value).join('');
+      if(code.length === 4){
+        if(code === PIN){
+          status.textContent = 'Correct. Welcome inside.';
+          status.className = 'modal-status ok';
+          setTimeout(unlockAll, 320);
+        } else {
+          status.textContent = 'Nope. Hint: it\'s four zeroes.';
+          status.className = 'modal-status err';
+          pinBox.classList.add('error');
+          setTimeout(() => {
+            pinBox.classList.remove('error');
+            inputs.forEach(x => x.value = '');
+            inputs[0].focus();
+          }, 700);
+        }
+      }
+    });
+    inp.addEventListener('keydown', e => {
+      if(e.key === 'Backspace' && !inp.value && i > 0) inputs[i-1].focus();
+      if(e.key === 'ArrowLeft' && i > 0) inputs[i-1].focus();
+      if(e.key === 'ArrowRight' && i < inputs.length - 1) inputs[i+1].focus();
+    });
+    inp.addEventListener('paste', e => {
+      const t = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g,'').slice(0,4);
+      if(!t) return;
+      e.preventDefault();
+      t.split('').forEach((d, idx) => { if(inputs[idx]) inputs[idx].value = d; });
+      inputs[Math.min(t.length, 3)].focus();
+      inputs[Math.min(t.length-1, 3)].dispatchEvent(new Event('input'));
+    });
+  });
+
+  // "Learn more" links: for locked ones, open PIN. For unlocked, no-op (placeholder).
+  document.querySelectorAll('[data-open]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const card = a.closest('.card');
+      if(card?.classList.contains('locked') && !sessionUnlocked){ openPin(); }
+      // otherwise: individual product pages will be added later; for now this is a no-op
+    });
+  });
+
+  // ============ SCROLL REVEAL ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: .12, rootMargin: '0px 0px -6% 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+  // ============ COUNTDOWN TO KICKOFF ============
+  const kickoff = new Date('2026-09-28T08:01:00+01:00').getTime();
+  const cd = document.getElementById('countdown');
+  function tick(){
+    if(!cd) return;
+    const now = Date.now();
+    const diff = kickoff - now;
+    if(diff <= 0){
+      cd.textContent = 'live now';
+      cd.style.color = 'var(--ok)';
+      return;
+    }
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    if(d > 1){ cd.textContent = d + 'd ' + h + 'h'; }
+    else if(d === 1){ cd.textContent = '1d ' + h + 'h'; }
+    else if(h > 0){ cd.textContent = h + 'h ' + m + 'm'; }
+    else { cd.textContent = m + 'm'; }
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  // ============ HERO PARALLAX (mouse) ============
+  const plate = document.querySelector('.hero-plate');
+  const orbit = document.querySelector('.orbit-dot');
+  const kitty = document.querySelector('.hero-kitty');
+  if(plate && kitty && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelector('.hero').addEventListener('mousemove', (e) => {
+      const r = plate.getBoundingClientRect();
+      const cx = r.left + r.width/2;
+      const cy = r.top + r.height/2;
+      const dx = (e.clientX - cx) / r.width;
+      const dy = (e.clientY - cy) / r.height;
+      kitty.style.setProperty('--tx', (dx*8) + 'px');
+      kitty.style.setProperty('--ty', (dy*6) + 'px');
+    });
+    document.querySelector('.hero').addEventListener('mouseleave', () => {
+      kitty.style.setProperty('--tx', '0px');
+      kitty.style.setProperty('--ty', '0px');
+    });
+  }
+
+  // ============ EASTER: Konami reveals confetti ============
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let ki = 0;
+  document.addEventListener('keydown', (e) => {
+    if(e.key.toLowerCase() === seq[ki].toLowerCase()){ ki++; if(ki === seq.length){ ki = 0; confetti(); showToast('You found the secret ✨'); } }
+    else ki = 0;
+  });
+})();
+</script>
+
+</body>
+</html>
