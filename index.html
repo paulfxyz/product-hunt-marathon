@@ -1248,6 +1248,11 @@ body.is-unlocked .peek-all{display:none}
 @media(max-width:540px){#grid-week{grid-template-columns:1fr}.card[data-key="cup-of-news"],#bonus .card{display:flex;flex-direction:column}.card[data-key="cup-of-news"] .card-media,#bonus .card-media{min-height:0;aspect-ratio:16/9}.card[data-key="cup-of-news"] .card-body{padding:24px}.card.locked .card-media{aspect-ratio:2.4}.card.locked .card-body{min-height:130px}.hero-actions{gap:10px}.hero-actions .btn{font-size:13px;padding:13px 16px}.venture-main h2{font-size:36px}.venture-public-good .venture-main h2{font-size:32px}.pl-stop{padding:14px 10px}.venture-chapter{font-size:10px}.fm-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important}}
 
+/* BONUS BACKSTORY */
+.bonus-backstory{border-top:1px solid var(--line-2);margin-top:24px;padding-top:8px}
+.bonus-copy .bonus-backstory p{font-size:15px;line-height:1.65}
+.bonus-backstory a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.bonus-backstory small{font-size:12px;color:var(--ink-2)}
 </style>
 <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
 </head>
@@ -1650,7 +1655,7 @@ body.is-unlocked .peek-all{display:none}
 <section id="bonus"><div class="wrap bonus-layout"><div class="bonus-copy">
 <span class="eyebrow">After the seven launches</span><h2>One more useful thing.</h2>
 <p>A bonus code drop, separate from the seven-day line-up. Same spirit: something practical you can inspect, adapt and take further.</p>
-<p class="bonus-date">Tuesday 20 October · 08:01 Lisbon</p></div><article class="card locked card-classified" data-key="xnftables" data-locked data-reveal
+<p class="bonus-date">Tuesday 20 October · 08:01 Lisbon</p><div id="bonus-backstory" data-context-payload="PGRpdiBjbGFzcz0iYm9udXMtYmFja3N0b3J5Ij48cD5JIHVzZWQgdG8gd29yayBpbiBjeWJlcnNlY3VyaXR5LCBhbmQgSSBzdGlsbCBkbyBmcm9tIHRpbWUgdG8gdGltZS4gVGhpcyByZWxlYXNlIGNvbWVzIGZyb20gdGhhdCBwYXJ0IG9mIG15IGxpZmUuPC9wPjxwPk5lZWQgaGVscCB3aXRoIGEgY3liZXJzZWN1cml0eSBpc3N1ZSBvciBhIHNlY3VyZSBzdGFjaz8gQXQgPGEgaHJlZj0iaHR0cHM6Ly9tZWdhc3RhY2suc2giIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPm1lZ2FzdGFjay5zaCDihpc8L2E+LCBJ4oCZdmUgYnJvdWdodCB0b2dldGhlciBhIGdyb3VwIG9mIGZyaWVuZHMsIHNvbWUgb2YgdGhlIGJlc3Qgc3BlY2lhbGlzdHMgSSBrbm93IGluIHRoZWlyIGZpZWxkcy48L3A+PHNtYWxsPlRoZSBjb2RlIHN0YW5kcyBvbiBpdHMgb3duLiBPdXIgaGVscCBpcyBvcHRpb25hbC48L3NtYWxsPjwvZGl2Pg=="></div></div><article class="card locked card-classified" data-key="xnftables" data-locked data-reveal
                data-payload="eyJuYW1lIjogInhuZnRhYmxlcyIsICJ0YWdsaW5lIjogIkEgTGludXggbmZ0YWJsZXMgcG9saWN5IHRlbXBsYXRlLiBEZW55IGJ5IGRlZmF1bHQuIERvY3VtZW50IGV2ZXJ5IGV4Y2VwdGlvbi4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQzMDAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMveG5mdGFibGVzLXYyLndlYnAiLCAia2l0dHlBbHQiOiAieG5mdGFibGVzIGtpdHR5IiwgImRheUxhYmVsIjogIlR1ZSAyMCBPY3QgwrcgQm9udXMiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIkxpbnV4IMK3IG5mdGFibGVzIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIldpcmVHdWFyZCDCtyBNSVQiLCAibG9ja2VkIjogZmFsc2V9XSwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJidWlsZCI6IHsibmFtZSI6ICJ4bmZ0YWJsZXMiLCAib3JjaGVzdHJhdG9yIjogIk9wZW5BSSBDb2RleCIsICJtb2RlbHMiOiBbIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40Il0sICJlc3RpbWF0ZSI6IDMwMCwgImxvdyI6IDIwMCwgImhpZ2giOiA0NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyJ9LCAiZGVzdGluYXRpb24iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJsaW5rTGFiZWwiOiAiVmlldyBzb3VyY2Ugb24gR2l0SHViIOKGlyJ9"
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
@@ -2060,6 +2065,10 @@ body.is-unlocked .peek-all{display:none}
       if (!content || content.dataset.revealed) return;
       content.innerHTML = decodeBase64Utf8(section.dataset.venturePayload);
       content.dataset.revealed = '1';
+    });
+    // Reveal optional project backstories.
+    document.querySelectorAll('[data-context-payload]').forEach(el => {
+      el.innerHTML = decodeBase64Utf8(el.dataset.contextPayload);
     });
     // Inject product card payloads (all 8 classified cards)
     document.querySelectorAll('.card-classified').forEach(card => {
