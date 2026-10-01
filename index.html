@@ -322,6 +322,9 @@
   .card:hover .card-link-btn svg{transform:translateX(3px)}
   .card[data-revealed="1"] .card-link-btn::after{content:"";position:absolute;inset:0;z-index:1}
   .card:focus-within{outline:3px solid var(--ph);outline-offset:4px}
+  .product-story{position:relative;z-index:2;margin:0 0 16px;font-size:13px;line-height:1.55;color:var(--ink-2)}
+  .product-story summary{font-weight:600;color:var(--ph-deep);cursor:pointer}
+  .product-story p{margin:12px 0 0}
   .build-stack{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
   .build-stack-label{font:600 12px/1.5 var(--font-mono);margin:0 0 8px;color:var(--ink-2)}
   .build-badges{display:flex;flex-wrap:wrap;gap:6px}
@@ -1081,6 +1084,47 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 .fm-sign-l{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(255,247,238,.2),transparent)}
 .fm-sign-t{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:rgba(255,247,238,.5);text-transform:uppercase;white-space:nowrap}
 
+/* VENTURE DESIGN START */
+.venture-section{padding:72px 0 88px}
+.venture-business{--venture-accent:#ce480e;--venture-text:#251d17;--venture-muted:#65564b;--venture-line:#e8d6c5;--venture-panel:#fff8ef;background:#f3e8da;color:var(--venture-text)}
+.venture-public-good{--venture-accent:#abd2b8;--venture-text:#f1f1e7;--venture-muted:#c2d0c6;--venture-line:#405c4c;--venture-panel:#243e30;background:#16291f;color:var(--venture-text)}
+.venture-chapter{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 0 20px;font:500 12px/1.6 var(--font-mono);letter-spacing:.06em;color:var(--venture-muted)}
+.venture-shell{border:1px solid var(--venture-line);border-radius:24px;overflow:hidden;background:var(--venture-panel)}
+.venture-veil{padding:clamp(28px,5vw,64px);max-width:850px}
+.venture-veil h2{font:600 clamp(32px,4vw,52px)/1.05 var(--font-display);letter-spacing:-.04em;margin:14px 0}
+.venture-veil p{font-size:17px;line-height:1.65;color:var(--venture-muted);max-width:56ch}
+.venture-content{display:none}
+.venture-shell.is-open .venture-content{display:block}
+.venture-shell.is-open .venture-veil{display:none}
+.venture-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,5vw,72px);padding:clamp(28px,5vw,64px)}
+.venture-brand{font:600 40px/1 var(--font-display);letter-spacing:-.045em;display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.brand-square{height:12px;width:12px;background:#ff6817;border-radius:3px}
+.enki-streams{display:inline-flex;background:#e7efe3;border-radius:50%;padding:7px}
+.enki-brand{font-family:"Instrument Serif",serif;font-weight:400;font-size:48px}
+.venture-kicker{font:500 12px/1.7 var(--font-mono);color:var(--venture-accent);letter-spacing:.06em;margin:0 0 12px}
+.venture-main h2{font:600 clamp(34px,4.5vw,54px)/1.03 var(--font-display);letter-spacing:-.045em;margin:0 0 24px;color:var(--venture-text)}
+.venture-public-good .venture-main h2{font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:-.025em;font-size:clamp(42px,4.6vw,60px)}
+.venture-main p,.venture-aside p{font:400 16px/1.65 var(--font-sans);color:var(--venture-muted)}
+.venture-main .venture-lead{font-size:19px;line-height:1.5;color:var(--venture-text)}
+.venture-cta{display:inline-flex;align-items:center;gap:28px;background:var(--venture-accent);color:#fff;font:600 15px/1.4 var(--font-sans);padding:15px 20px;border-radius:10px;margin-top:20px;transition:transform .15s}
+.venture-cta:hover{color:#fff;transform:translateY(-2px)}
+.venture-cta:focus-visible{outline:3px solid var(--venture-text);outline-offset:5px}
+.venture-public-good .venture-cta{color:#14271b}
+.venture-domain{font:400 12px/1.5 var(--font-mono)!important;margin:10px 0 0!important}
+.venture-aside{align-self:center;padding:30px;border:1px solid var(--venture-line);border-radius:16px;background:rgba(255,255,255,.28)}
+.venture-aside .venture-aside-title{font:500 12px/1.6 var(--font-mono);letter-spacing:.04em;color:var(--venture-accent);margin:0 0 26px}
+.journey-step{display:flex;gap:16px;border-top:1px solid var(--venture-line);padding:20px 0}
+.journey-step>span{font:400 12px/1.6 var(--font-mono);color:var(--venture-accent);padding-top:2px}
+.journey-step h3{font:600 18px/1.3 var(--font-sans);margin:0 0 6px}
+.journey-step p{font-size:14px;margin:0}
+.venture-aside .venture-small{font-size:12px;line-height:1.5;margin:0}
+.venture-public-good .venture-aside{background:rgba(8,23,15,.3)}
+.founder-note h3{font:400 34px/1.08 "Instrument Serif",serif;margin:0 0 24px;letter-spacing:-.015em;color:var(--venture-text)}
+.founder-note p{font-size:15px}
+.founder-signature{font:500 12px/1.6 var(--font-mono);color:var(--venture-accent);display:block;margin-top:26px}
+.venture-footer{border-top:1px solid var(--venture-line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px clamp(28px,5vw,64px);font:400 12px/1.6 var(--font-mono);color:var(--venture-muted)}
+@media(max-width:800px){.venture-grid{grid-template-columns:1fr;gap:28px}.venture-section{padding:48px 0}.venture-aside{padding:24px}.venture-brand{margin-bottom:26px}}
+/* VENTURE DESIGN END */
 </style>
 </head>
 <body>
@@ -1154,7 +1198,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
     </div>
     <div class="hero-visual" data-reveal data-delay="1">
       <span class="float-chip fc-1"><span class="dt"></span>7 launches</span>
-      <span class="float-chip fc-2"><span class="dt"></span>MIT · open source</span>
+      <span class="float-chip fc-2"><span class="dt"></span>Open-source roots</span>
       <span class="float-chip fc-3"><span class="dt"></span>Ships daily · 08:01 Lisbon</span>
       <div class="hero-plate">
         <div class="orbit-dot" aria-hidden="true"></div>
@@ -1202,7 +1246,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
           </span>
         </div>
         <h3>Code to take further.</h3>
-        <p>The seven releases have MIT source you can inspect, extend or commercialise, keeping the required notices. Open-source code is not a promise of free hosting or model usage. Commercial services are separate.</p>
+        <p>The sprint has open-source roots: code to inspect, extend or commercialise under its licence. One project grew beyond the original experiment into a freemium app. That commercial product and its MIT foundation are different things.</p>
       </div>
       <div class="mani-card" data-reveal data-delay="3">
         <div class="mani-num">
@@ -1239,12 +1283,12 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
       </div>
     </div>
 
-    <p class="week-draft-note">Seven days, seven ships. No launch squad or upvote campaign: just an open experiment. Unlock the cards to inspect each repository. Budgets are illustrative USD figures for AI-assisted build work, excluding my time and ongoing operations; tool and model badges are unconfirmed examples.</p>
+    <p class="week-draft-note">Seven days, seven ships. No launch squad or upvote campaign: just an open experiment. Unlock the cards to explore each project: repositories for the code drops, the product website for the final app. Budgets are illustrative USD figures for AI-assisted build work, excluding my time and ongoing operations; tool and model badges are unconfirmed examples.</p>
     <div class="grid" id="grid-week">
 
       <!-- DAY 1 · JUNK -->
             <article class="card locked card-classified" data-key="junk" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIkp1bmsiLCAidGFnbGluZSI6ICJTdW1tb24gaXQuIFR5cGUsIHBhc3RlLCB0aGluay4gRGlzbWlzcyBpdC4gWW91ciB0ZXh0IHN0YXlzIG9uIHlvdXIgbWFjaGluZS4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQyNTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMS1qdW5rLndlYnAiLCAia2l0dHlBbHQiOiAiSnVuayBraXR0eSIsICJkYXlMYWJlbCI6ICJNb24gwrcgRGF5IDEiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIm1hY09TIMK3IE5hdGl2ZSIsICJsb2NrZWQiOiBmYWxzZX0sIHsidGV4dCI6ICJXaW5kb3dzIC8gTGludXggwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9qdW5rIiwgImJ1aWxkIjogeyJuYW1lIjogIkp1bmsiLCAib3JjaGVzdHJhdG9yIjogIkNsYXVkZSBDb2RlIiwgIm1vZGVscyI6IFsiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42IiwgIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iXSwgImVzdGltYXRlIjogMjUwLCAibG93IjogMjAwLCAiaGlnaCI6IDM1MCwgInNjb3BlIjogIkFJLWFzc2lzdGVkIHByb2R1Y3QgYnVpbGQiLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovanVuayIsICJ1cmwiOiAiaHR0cHM6Ly90aGVqdW5rLmFwcCJ9fQ=="
+               data-payload="eyJuYW1lIjogIkp1bmsiLCAidGFnbGluZSI6ICJTdW1tb24gaXQuIFR5cGUsIHBhc3RlLCB0aGluay4gRGlzbWlzcyBpdC4gWW91ciB0ZXh0IHN0YXlzIG9uIHlvdXIgbWFjaGluZS4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQyNTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMS1qdW5rLndlYnAiLCAia2l0dHlBbHQiOiAiSnVuayBraXR0eSIsICJkYXlMYWJlbCI6ICJNb24gwrcgRGF5IDEiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIm1hY09TIMK3IE5hdGl2ZSIsICJsb2NrZWQiOiBmYWxzZX0sIHsidGV4dCI6ICJXaW5kb3dzIC8gTGludXggwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9qdW5rIiwgImJ1aWxkIjogeyJuYW1lIjogIkp1bmsiLCAib3JjaGVzdHJhdG9yIjogIkNsYXVkZSBDb2RlIiwgIm1vZGVscyI6IFsiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42IiwgIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iXSwgImVzdGltYXRlIjogMjUwLCAibG93IjogMjAwLCAiaGlnaCI6IDM1MCwgInNjb3BlIjogIkFJLWFzc2lzdGVkIHByb2R1Y3QgYnVpbGQiLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovanVuayIsICJ1cmwiOiAiaHR0cHM6Ly90aGVqdW5rLmFwcCJ9LCAiZGVzdGluYXRpb24iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2p1bmsiLCAibGlua0xhYmVsIjogIlZpZXcgc291cmNlIG9uIEdpdEh1YiDihpcifQ=="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Mon · Day 1</span>
@@ -1276,7 +1320,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 2 · ASE -->
             <article class="card locked card-classified" data-key="ase" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIkFTRSIsICJ0YWdsaW5lIjogIlVwdGltZSwgRE5TLCBTU0wgYW5kIGVtYWlsIGFsZXJ0cy4gQSBjbGVhcmVyIHZpZXcgb2YgdGhlIGRvbWFpbnMgeW91IG1hbmFnZS4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQzNTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMi1hc2Uud2VicCIsICJraXR0eUFsdCI6ICJBU0Uga2l0dHkiLCAiZGF5TGFiZWwiOiAiVHVlIMK3IERheSAyIiwgImNoaXBzIjogW3sidGV4dCI6ICJQSFAgwrcgV2ViIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIkRvbWFpbiBtb25pdG9yaW5nIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovYXNlIiwgImJ1aWxkIjogeyJuYW1lIjogIkFTRSIsICJvcmNoZXN0cmF0b3IiOiAiUGVycGxleGl0eSBDb21wdXRlciIsICJtb2RlbHMiOiBbIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40IiwgIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42Il0sICJlc3RpbWF0ZSI6IDM1MCwgImxvdyI6IDI1MCwgImhpZ2giOiA1MDAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2FzZSIsICJ1cmwiOiAiaHR0cHM6Ly9hc2Uuc28ifX0="
+               data-payload="eyJuYW1lIjogIkFTRSIsICJ0YWdsaW5lIjogIlVwdGltZSwgRE5TLCBTU0wgYW5kIGVtYWlsIGFsZXJ0cy4gQSBjbGVhcmVyIHZpZXcgb2YgdGhlIGRvbWFpbnMgeW91IG1hbmFnZS4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQzNTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMi1hc2Uud2VicCIsICJraXR0eUFsdCI6ICJBU0Uga2l0dHkiLCAiZGF5TGFiZWwiOiAiVHVlIMK3IERheSAyIiwgImNoaXBzIjogW3sidGV4dCI6ICJQSFAgwrcgV2ViIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIkRvbWFpbiBtb25pdG9yaW5nIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovYXNlIiwgImJ1aWxkIjogeyJuYW1lIjogIkFTRSIsICJvcmNoZXN0cmF0b3IiOiAiUGVycGxleGl0eSBDb21wdXRlciIsICJtb2RlbHMiOiBbIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40IiwgIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42Il0sICJlc3RpbWF0ZSI6IDM1MCwgImxvdyI6IDI1MCwgImhpZ2giOiA1MDAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2FzZSIsICJ1cmwiOiAiaHR0cHM6Ly9hc2Uuc28ifSwgImRlc3RpbmF0aW9uIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9hc2UiLCAibGlua0xhYmVsIjogIlZpZXcgc291cmNlIG9uIEdpdEh1YiDihpcifQ=="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Tue · Day 2</span>
@@ -1308,7 +1352,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 3 · MANG -->
             <article class="card locked card-classified" data-key="mang" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIk1hbmciLCAidGFnbGluZSI6ICJEZXNjcmliZSB3aGF0IHlvdSBuZWVkLiBNYW5nIHByb3Bvc2VzIHRoZSBjb21tYW5kLiBZb3UgY29uZmlybSBiZWZvcmUgaXQgcnVucy4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQ0MDAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMy1tYW5nLndlYnAiLCAia2l0dHlBbHQiOiAiTWFuZyBraXR0eSIsICJkYXlMYWJlbCI6ICJXZWQgwrcgRGF5IDMiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIlJ1c3QgwrcgQ0xJIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW5Sb3V0ZXIgLyBPbGxhbWEgwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9tYW5nIiwgImJ1aWxkIjogeyJuYW1lIjogIk1hbmciLCAib3JjaGVzdHJhdG9yIjogIk9wZW5BSSBDb2RleCIsICJtb2RlbHMiOiBbIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iLCAiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42Il0sICJlc3RpbWF0ZSI6IDQwMCwgImxvdyI6IDMwMCwgImhpZ2giOiA1NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L21hbmciLCAidXJsIjogImh0dHBzOi8vbWFuZy5zaCJ9fQ=="
+               data-payload="eyJuYW1lIjogIk1hbmciLCAidGFnbGluZSI6ICJEZXNjcmliZSB3aGF0IHlvdSBuZWVkLiBNYW5nIHByb3Bvc2VzIHRoZSBjb21tYW5kLiBZb3UgY29uZmlybSBiZWZvcmUgaXQgcnVucy4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQ0MDAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvMy1tYW5nLndlYnAiLCAia2l0dHlBbHQiOiAiTWFuZyBraXR0eSIsICJkYXlMYWJlbCI6ICJXZWQgwrcgRGF5IDMiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIlJ1c3QgwrcgQ0xJIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW5Sb3V0ZXIgLyBPbGxhbWEgwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9tYW5nIiwgImJ1aWxkIjogeyJuYW1lIjogIk1hbmciLCAib3JjaGVzdHJhdG9yIjogIk9wZW5BSSBDb2RleCIsICJtb2RlbHMiOiBbIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iLCAiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42Il0sICJlc3RpbWF0ZSI6IDQwMCwgImxvdyI6IDMwMCwgImhpZ2giOiA1NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L21hbmciLCAidXJsIjogImh0dHBzOi8vbWFuZy5zaCJ9LCAiZGVzdGluYXRpb24iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L21hbmciLCAibGlua0xhYmVsIjogIlZpZXcgc291cmNlIG9uIEdpdEh1YiDihpcifQ=="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Wed · Day 3</span>
@@ -1340,7 +1384,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 4 · HOLLR (locked) -->
             <article class="card locked card-classified" data-key="hollr" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIkhvbGxyIiwgInRhZ2xpbmUiOiAiQ2xhaW0gYSBoYW5kbGUuIFNoYXJlIHlvdXIgbGluay4gUmVjZWl2ZSBtZXNzYWdlcyBlbmNyeXB0ZWQgaW4gdGhlIHNlbmRlcuKAmXMgYnJvd3Nlci4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQ0NTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvNC1ob2xsci53ZWJwIiwgImtpdHR5QWx0IjogIkhvbGxyIGtpdHR5IiwgImRheUxhYmVsIjogIlRodSDCtyBEYXkgNCIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IFBHUCIsICJsb2NrZWQiOiBmYWxzZX0sIHsidGV4dCI6ICJJbmJveCBsaW5rIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovaG9sbHIiLCAiYnVpbGQiOiB7Im5hbWUiOiAiSG9sbHIiLCAib3JjaGVzdHJhdG9yIjogIkN1cnNvciBBZ2VudCIsICJtb2RlbHMiOiBbIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40Il0sICJlc3RpbWF0ZSI6IDQ1MCwgImxvdyI6IDM1MCwgImhpZ2giOiA2NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2hvbGxyIiwgInVybCI6ICJodHRwczovL2hvbGxyLnRvIn19"
+               data-payload="eyJuYW1lIjogIkhvbGxyIiwgInRhZ2xpbmUiOiAiQ2xhaW0gYSBoYW5kbGUuIFNoYXJlIHlvdXIgbGluay4gUmVjZWl2ZSBtZXNzYWdlcyBlbmNyeXB0ZWQgaW4gdGhlIHNlbmRlcuKAmXMgYnJvd3Nlci4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQ0NTAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMvNC1ob2xsci53ZWJwIiwgImtpdHR5QWx0IjogIkhvbGxyIGtpdHR5IiwgImRheUxhYmVsIjogIlRodSDCtyBEYXkgNCIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IFBHUCIsICJsb2NrZWQiOiBmYWxzZX0sIHsidGV4dCI6ICJJbmJveCBsaW5rIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovaG9sbHIiLCAiYnVpbGQiOiB7Im5hbWUiOiAiSG9sbHIiLCAib3JjaGVzdHJhdG9yIjogIkN1cnNvciBBZ2VudCIsICJtb2RlbHMiOiBbIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40Il0sICJlc3RpbWF0ZSI6IDQ1MCwgImxvdyI6IDM1MCwgImhpZ2giOiA2NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2hvbGxyIiwgInVybCI6ICJodHRwczovL2hvbGxyLnRvIn0sICJkZXN0aW5hdGlvbiI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovaG9sbHIiLCAibGlua0xhYmVsIjogIlZpZXcgc291cmNlIG9uIEdpdEh1YiDihpcifQ=="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Thu · Day 4</span>
@@ -1372,7 +1416,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 5 · CLIPPY (locked) -->
             <article class="card locked card-classified" data-key="clippy" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIkNsaXBweSIsICJ0YWdsaW5lIjogIlVwbG9hZCBhIGNvbnRyYWN0LiBDaG9vc2UgeW91ciBtb2RlbHMuIFJldmlldyB0aGVpciBhbmFseXNlcyBzaWRlIGJ5IHNpZGUuIiwgInByaWNlIjogIklsbHVzdHJhdGl2ZSBBSSBidWRnZXQgwrcgVVMkNTUwIiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzUtY2xpcHB5LndlYnAiLCAia2l0dHlBbHQiOiAiQ2xpcHB5IGtpdHR5IiwgImRheUxhYmVsIjogIkZyaSDCtyBEYXkgNSIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IENvbnRyYWN0IGFuYWx5c2lzIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW5Sb3V0ZXIgwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jbGlwcHkiLCAiYnVpbGQiOiB7Im5hbWUiOiAiQ2xpcHB5IiwgIm9yY2hlc3RyYXRvciI6ICJDbGF1ZGUgQ29kZSIsICJtb2RlbHMiOiBbIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40IiwgIkdlbWluaSAzLjEgUHJvIl0sICJlc3RpbWF0ZSI6IDU1MCwgImxvdyI6IDQwMCwgImhpZ2giOiA3NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2NsaXBweSIsICJ1cmwiOiAiaHR0cHM6Ly9jbGlwcHkubGVnYWwifX0="
+               data-payload="eyJuYW1lIjogIkNsaXBweSIsICJ0YWdsaW5lIjogIlVwbG9hZCBhIGNvbnRyYWN0LiBDaG9vc2UgeW91ciBtb2RlbHMuIFJldmlldyB0aGVpciBhbmFseXNlcyBzaWRlIGJ5IHNpZGUuIiwgInByaWNlIjogIklsbHVzdHJhdGl2ZSBBSSBidWRnZXQgwrcgVVMkNTUwIiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzUtY2xpcHB5LndlYnAiLCAia2l0dHlBbHQiOiAiQ2xpcHB5IGtpdHR5IiwgImRheUxhYmVsIjogIkZyaSDCtyBEYXkgNSIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IENvbnRyYWN0IGFuYWx5c2lzIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW5Sb3V0ZXIgwrcgTUlUIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jbGlwcHkiLCAiYnVpbGQiOiB7Im5hbWUiOiAiQ2xpcHB5IiwgIm9yY2hlc3RyYXRvciI6ICJDbGF1ZGUgQ29kZSIsICJtb2RlbHMiOiBbIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40IiwgIkdlbWluaSAzLjEgUHJvIl0sICJlc3RpbWF0ZSI6IDU1MCwgImxvdyI6IDQwMCwgImhpZ2giOiA3NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2NsaXBweSIsICJ1cmwiOiAiaHR0cHM6Ly9jbGlwcHkubGVnYWwifSwgImRlc3RpbmF0aW9uIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jbGlwcHkiLCAibGlua0xhYmVsIjogIlZpZXcgc291cmNlIG9uIEdpdEh1YiDihpcifQ=="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Fri · Day 5</span>
@@ -1404,7 +1448,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 6 · MERCURY (locked) -->
             <article class="card locked card-classified" data-key="mercury" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIk1lcmN1cnkiLCAidGFnbGluZSI6ICJTdGFydCB3aXRoIGFuIGFuc3dlci4gRXNjYWxhdGUgdG8gYSBjb25maWd1cmFibGUgcGFuZWwgb2YgQUkgbW9kZWxzIHdoZW4gdGhlIHF1ZXN0aW9uIGRlc2VydmVzIGl0LiIsICJwcmljZSI6ICJJbGx1c3RyYXRpdmUgQUkgYnVkZ2V0IMK3IFVTJDY1MCIsICJraXR0eUltZyI6ICJhc3NldHMva2l0dGllcy82LW1lcmN1cnkud2VicCIsICJraXR0eUFsdCI6ICJNZXJjdXJ5IGtpdHR5IiwgImRheUxhYmVsIjogIlNhdCDCtyBEYXkgNiIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IE11bHRpLW1vZGVsIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIlNlbGYtaG9zdGVkIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovbWVyY3VyeSIsICJidWlsZCI6IHsibmFtZSI6ICJNZXJjdXJ5IiwgIm9yY2hlc3RyYXRvciI6ICJDdXJzb3IgQWdlbnQiLCAibW9kZWxzIjogWyJDbGF1ZGUgT3B1cyA0LjYiLCAiR1BULTUuNCIsICJHZW1pbmkgMy4xIFBybyIsICJDbGF1ZGUgU29ubmV0IDQuNiJdLCAiZXN0aW1hdGUiOiA2NTAsICJsb3ciOiA1MDAsICJoaWdoIjogOTAwLCAic2NvcGUiOiAiQUktYXNzaXN0ZWQgcHJvZHVjdCBidWlsZCIsICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9tZXJjdXJ5IiwgInVybCI6ICJodHRwczovL21lcmN1cnkuc2gifX0="
+               data-payload="eyJuYW1lIjogIk1lcmN1cnkiLCAidGFnbGluZSI6ICJTdGFydCB3aXRoIGFuIGFuc3dlci4gRXNjYWxhdGUgdG8gYSBjb25maWd1cmFibGUgcGFuZWwgb2YgQUkgbW9kZWxzIHdoZW4gdGhlIHF1ZXN0aW9uIGRlc2VydmVzIGl0LiIsICJwcmljZSI6ICJJbGx1c3RyYXRpdmUgQUkgYnVkZ2V0IMK3IFVTJDY1MCIsICJraXR0eUltZyI6ICJhc3NldHMva2l0dGllcy82LW1lcmN1cnkud2VicCIsICJraXR0eUFsdCI6ICJNZXJjdXJ5IGtpdHR5IiwgImRheUxhYmVsIjogIlNhdCDCtyBEYXkgNiIsICJjaGlwcyI6IFt7InRleHQiOiAiV2ViIMK3IE11bHRpLW1vZGVsIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIlNlbGYtaG9zdGVkIMK3IE1JVCIsICJsb2NrZWQiOiBmYWxzZX1dLCAicmVwbyI6ICJodHRwczovL2dpdGh1Yi5jb20vcGF1bGZ4eXovbWVyY3VyeSIsICJidWlsZCI6IHsibmFtZSI6ICJNZXJjdXJ5IiwgIm9yY2hlc3RyYXRvciI6ICJDdXJzb3IgQWdlbnQiLCAibW9kZWxzIjogWyJDbGF1ZGUgT3B1cyA0LjYiLCAiR1BULTUuNCIsICJHZW1pbmkgMy4xIFBybyIsICJDbGF1ZGUgU29ubmV0IDQuNiJdLCAiZXN0aW1hdGUiOiA2NTAsICJsb3ciOiA1MDAsICJoaWdoIjogOTAwLCAic2NvcGUiOiAiQUktYXNzaXN0ZWQgcHJvZHVjdCBidWlsZCIsICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9tZXJjdXJ5IiwgInVybCI6ICJodHRwczovL21lcmN1cnkuc2gifSwgImRlc3RpbmF0aW9uIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9tZXJjdXJ5IiwgImxpbmtMYWJlbCI6ICJWaWV3IHNvdXJjZSBvbiBHaXRIdWIg4oaXIn0="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Sat · Day 6</span>
@@ -1436,7 +1480,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- DAY 7 · CUP OF NEWS (locked) -->
             <article class="card locked card-classified" data-key="cup-of-news" data-locked data-reveal
-               data-payload="eyJuYW1lIjogIkN1cCBvZiBOZXdzIiwgInRhZ2xpbmUiOiAiRml4ZWQgbmV3cyBlZGl0aW9ucywgbGlua2VkIG9yaWdpbmFsIGFydGljbGVzIGFuZCBhIGNsZWFyIHN0b3BwaW5nIHBvaW50LiIsICJwcmljZSI6ICJJbGx1c3RyYXRpdmUgQUkgYnVkZ2V0IMK3IFVTJDc1MCIsICJraXR0eUltZyI6ICJhc3NldHMva2l0dGllcy83LWN1cC1vZi1uZXdzLndlYnAiLCAia2l0dHlBbHQiOiAiQ3VwIG9mIE5ld3Mga2l0dHkiLCAiZGF5TGFiZWwiOiAiU3VuIMK3IERheSA3IiwgImNoaXBzIjogW3sidGV4dCI6ICJXZWIgwrcgTmV3cyBicmllZmluZyIsICJsb2NrZWQiOiBmYWxzZX0sIHsidGV4dCI6ICJNSVQgY29yZSDCtyBQcmVtaXVtIHNlcGFyYXRlIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jdXAtb2YtbmV3cyIsICJidWlsZCI6IHsibmFtZSI6ICJDdXAgb2YgTmV3cyIsICJvcmNoZXN0cmF0b3IiOiAiUGVycGxleGl0eSBDb21wdXRlciIsICJtb2RlbHMiOiBbIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iLCAiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42Il0sICJlc3RpbWF0ZSI6IDc1MCwgImxvdyI6IDU1MCwgImhpZ2giOiAxMDAwLCAic2NvcGUiOiAiQUktYXNzaXN0ZWQgcHJvZHVjdCBidWlsZCIsICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jdXAtb2YtbmV3cyIsICJ1cmwiOiAiaHR0cHM6Ly9yZWFkLmN1cG9mLm5ld3MifX0="
+               data-payload="eyJuYW1lIjogIkN1cCBvZiBOZXdzIiwgInRhZ2xpbmUiOiAiVGhlIGxhc3Qgb3Blbi1zb3VyY2Ugc2hpcCBncmV3IGludG8gYSBmcmVlbWl1bSBuZXdzIGFwcC4gQSBnZW51aW5lbHkgbmljZSBicmllZmluZyBmb3IgeW91ciBwaG9uZSwgd2l0aCBwcm9kdWN0IHF1YWxpdHkgZmlyc3QuIiwgInByaWNlIjogIklsbHVzdHJhdGl2ZSBBSSBidWRnZXQgwrcgVVMkNzUwIiwgImtpdHR5SW1nIjogImFzc2V0cy9raXR0aWVzLzctY3VwLW9mLW5ld3Mud2VicCIsICJraXR0eUFsdCI6ICJDdXAgb2YgTmV3cyBraXR0eSIsICJkYXlMYWJlbCI6ICJTdW4gwrcgRGF5IDciLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIkZyZWVtaXVtIG5ld3MgYXBwIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIk9wZW4tc291cmNlIHJvb3RzIiwgImxvY2tlZCI6IGZhbHNlfV0sICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jdXAtb2YtbmV3cyIsICJidWlsZCI6IHsibmFtZSI6ICJDdXAgb2YgTmV3cyIsICJvcmNoZXN0cmF0b3IiOiAiUGVycGxleGl0eSBDb21wdXRlciIsICJtb2RlbHMiOiBbIkdQVC01LjQiLCAiR2VtaW5pIDMuMSBQcm8iLCAiQ2xhdWRlIFNvbm5ldCA0LjYiLCAiQ2xhdWRlIE9wdXMgNC42Il0sICJlc3RpbWF0ZSI6IDc1MCwgImxvdyI6IDU1MCwgImhpZ2giOiAxMDAwLCAic2NvcGUiOiAiQUktYXNzaXN0ZWQgcHJvZHVjdCBidWlsZCIsICJyZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9wYXVsZnh5ei9jdXAtb2YtbmV3cyIsICJ1cmwiOiAiaHR0cHM6Ly9jdXBvZi5uZXdzIn0sICJkZXN0aW5hdGlvbiI6ICJodHRwczovL2N1cG9mLm5ld3MiLCAibGlua0xhYmVsIjogIkV4cGxvcmUgQ3VwIG9mIE5ld3Mg4oaXIiwgInN0b3J5IjogWyJJIGxpa2VkIHRoZSBmaW5hbCBvcGVuLXNvdXJjZSBzaGlwIGVub3VnaCB0byB0dXJuIGl0IGludG8gYSBjb21tZXJjaWFsIGFwcC4gSSB3YW50IHNvbWV0aGluZyBnZW51aW5lbHkgbmljZSBvbiBvdXIgcGhvbmVzOiBtb3JlIGNvbnNpZGVyZWQgdGhhbiBhIHF1aWNrIEFJIHByb21wdCwgbGlnaHRlciB0aGFuIHRoZSBiaWcgcHVibGlzaGVyIGFwcHMsIHdpdGggbGlua3MgYmFjayB0byB0aGUgb3JpZ2luYWwgcmVwb3J0aW5nLiIsICJGcmVlbWl1bSBpcyB0aGUgZGlyZWN0aW9uLiBBbiBhZC1zdXBwb3J0ZWQgYWx0ZXJuYXRpdmUgb3Igb3RoZXIgcGxhbnM/IFBlcmhhcHMgbGF0ZXIsIG5vdCBhIHByb21pc2UuIEkgcHJlZmVyIHRvIGZvY3VzIG9uIHRoZSBwcm9kdWN0IGZpcnN0LiBUaGUgTUlUIGZvdW5kYXRpb24gcmVtYWlucyBhdmFpbGFibGUgc2VwYXJhdGVseS4iXX0="
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge">Sun · Day 7</span>
@@ -1468,7 +1512,7 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 
       <!-- SIDE QUEST · xnftables (locked, same PIN, ships shortly after) -->
             <article class="card locked card-classified" data-key="xnftables" data-locked data-reveal
-               data-payload="eyJuYW1lIjogInhuZnRhYmxlcyIsICJ0YWdsaW5lIjogIkEgTGludXggbmZ0YWJsZXMgcG9saWN5IHRlbXBsYXRlLiBEZW55IGJ5IGRlZmF1bHQuIERvY3VtZW50IGV2ZXJ5IGV4Y2VwdGlvbi4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQzMDAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMveG5mdGFibGVzLXYyLndlYnAiLCAia2l0dHlBbHQiOiAieG5mdGFibGVzIGtpdHR5IiwgImRheUxhYmVsIjogIlR1ZSAyMCBPY3QgwrcgQm9udXMiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIkxpbnV4IMK3IG5mdGFibGVzIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIldpcmVHdWFyZCDCtyBNSVQiLCAibG9ja2VkIjogZmFsc2V9XSwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJidWlsZCI6IHsibmFtZSI6ICJ4bmZ0YWJsZXMiLCAib3JjaGVzdHJhdG9yIjogIk9wZW5BSSBDb2RleCIsICJtb2RlbHMiOiBbIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40Il0sICJlc3RpbWF0ZSI6IDMwMCwgImxvdyI6IDIwMCwgImhpZ2giOiA0NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyJ9fQ=="
+               data-payload="eyJuYW1lIjogInhuZnRhYmxlcyIsICJ0YWdsaW5lIjogIkEgTGludXggbmZ0YWJsZXMgcG9saWN5IHRlbXBsYXRlLiBEZW55IGJ5IGRlZmF1bHQuIERvY3VtZW50IGV2ZXJ5IGV4Y2VwdGlvbi4iLCAicHJpY2UiOiAiSWxsdXN0cmF0aXZlIEFJIGJ1ZGdldCDCtyBVUyQzMDAiLCAia2l0dHlJbWciOiAiYXNzZXRzL2tpdHRpZXMveG5mdGFibGVzLXYyLndlYnAiLCAia2l0dHlBbHQiOiAieG5mdGFibGVzIGtpdHR5IiwgImRheUxhYmVsIjogIlR1ZSAyMCBPY3QgwrcgQm9udXMiLCAiY2hpcHMiOiBbeyJ0ZXh0IjogIkxpbnV4IMK3IG5mdGFibGVzIiwgImxvY2tlZCI6IGZhbHNlfSwgeyJ0ZXh0IjogIldpcmVHdWFyZCDCtyBNSVQiLCAibG9ja2VkIjogZmFsc2V9XSwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJidWlsZCI6IHsibmFtZSI6ICJ4bmZ0YWJsZXMiLCAib3JjaGVzdHJhdG9yIjogIk9wZW5BSSBDb2RleCIsICJtb2RlbHMiOiBbIkdlbWluaSAzLjEgUHJvIiwgIkNsYXVkZSBTb25uZXQgNC42IiwgIkNsYXVkZSBPcHVzIDQuNiIsICJHUFQtNS40Il0sICJlc3RpbWF0ZSI6IDMwMCwgImxvdyI6IDIwMCwgImhpZ2giOiA0NTAsICJzY29wZSI6ICJBSS1hc3Npc3RlZCBwcm9kdWN0IGJ1aWxkIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyJ9LCAiZGVzdGluYXRpb24iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L3huZnRhYmxlcyIsICJsaW5rTGFiZWwiOiAiVmlldyBzb3VyY2Ugb24gR2l0SHViIOKGlyJ9"
                style="cursor:pointer" title="Classified — tap to unlock">
         <div class="card-media">
           <span class="day-badge"></span>
@@ -1502,167 +1546,34 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
   </div>
 </section>
 
-<!-- ============ OPENLINE (locked teaser) ============ -->
-<!-- ============ OPENLINE — later October reveal ============ -->
-<section id="openline" class="ol">
-  <div class="wrap ol-wrap">
-
-    <div class="ol-head" data-reveal>
-      <span class="eyebrow ol-eyebrow">
-        <span class="pulse"></span> The day job · Tue 27 Oct 2026 · classified
-      </span>
-      <h2 class="ol-title">The day job, <em>reintroduced</em>.</h2>
-      <p class="ol-lede">One week after the bonus drop, the day job gets its own moment: a proper reintroduction of what I actually work on when I'm not shipping side projects. Details unlock at the reveal. The launch is set for Tuesday 27 October.</p>
-    </div>
-
-    <div class="ol-grid">
-
-      <!-- Left: the editorial hero (blurred until unlock) -->
-      <div class="ol-hero ol-hero-locked" data-reveal data-delay="1" data-locked>
-        <img src="assets/hero/bridge-v4.png" alt="Classified visual" class="ol-hero-img"/>
-        <div class="ol-hero-lock" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          <span class="ol-hero-lock-cap">Classified · Oct 27</span>
-        </div>
-        <div class="ol-hero-overlay">
-          <div class="ol-hero-stat">
-            <span class="ol-hero-num">210+</span>
-            <span class="ol-hero-cap">countries</span>
-          </div>
-          <div class="ol-hero-stat">
-            <span class="ol-hero-num">4G/5G</span>
-            <span class="ol-hero-cap">full speed</span>
-          </div>
-          <div class="ol-hero-stat">
-            <span class="ol-hero-num">$2.99</span>
-            <span class="ol-hero-cap">from</span>
-          </div>
-        </div>
+<!-- VENTURE CHAPTERS START -->
+<section id="openline" class="venture-section venture-business">
+  <div class="wrap">
+    <div class="venture-chapter"><span>After the experiment · The main business</span><span>Tuesday 27 October 2026</span></div>
+    <div class="venture-shell" data-locked data-venture="openline" data-venture-payload="PGRpdiBjbGFzcz0idmVudHVyZS1ncmlkIj4KICA8ZGl2IGNsYXNzPSJ2ZW50dXJlLW1haW4iPgogICAgPGRpdiBjbGFzcz0idmVudHVyZS1icmFuZCBvcGVubGluZS1icmFuZCI+T3BlbmxpbmU8c3BhbiBjbGFzcz0iYnJhbmQtc3F1YXJlIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PC9zcGFuPjwvZGl2PgogICAgPHAgY2xhc3M9InZlbnR1cmUta2lja2VyIj5NeSBtYWluIGJ1c2luZXNzIMK3IFRyYXZlbCBjb25uZWN0aXZpdHk8L3A+CiAgICA8aDI+VGhlIHdvcmsgYmV5b25kPGJyPnRoZSBXZWVrYXRob24uPC9oMj4KICAgIDxwIGNsYXNzPSJ2ZW50dXJlLWxlYWQiPlRoZSBzcHJpbnQgaXMgYSBzaWRlIGV4cGVyaW1lbnQuIE9wZW5saW5lIGlzIHRoZSBidXNpbmVzcyBJ4oCZbSBidWlsZGluZyBmb3IgdGhlIGxvbmcgdGVybS48L3A+CiAgICA8cD5XZSBoZWxwIHRyYXZlbGxlcnMgZ2V0IGNvbm5lY3RlZCB3aXRoIGRpZ2l0YWwgZVNJTXMgYW5kIG11bHRpLW5ldHdvcmsgY29ubmVjdGl2aXR5LiBDaG9vc2UgYSBkZXN0aW5hdGlvbiBwbGFuLCBjaGVjayBjb21wYXRpYmlsaXR5LCBhbmQgZ2V0IG9ubGluZSB3aXRob3V0IHN3YXBwaW5nIGEgcGh5c2ljYWwgU0lNLjwvcD4KICAgIDxhIGNsYXNzPSJ2ZW50dXJlLWN0YSIgaHJlZj0iaHR0cHM6Ly9vcGVubGluZS5jb20iIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPkRpc2NvdmVyIE9wZW5saW5lIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7ihpc8L3NwYW4+PC9hPgogICAgPHAgY2xhc3M9InZlbnR1cmUtZG9tYWluIj5vcGVubGluZS5jb208L3A+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0idmVudHVyZS1hc2lkZSI+CiAgICA8cCBjbGFzcz0idmVudHVyZS1hc2lkZS10aXRsZSI+QXJyaXZlLiBDb25uZWN0LiBDYXJyeSBvbi48L3A+CiAgICA8ZGl2IGNsYXNzPSJqb3VybmV5LXN0ZXAiPjxzcGFuPjAxPC9zcGFuPjxkaXY+PGgzPkEgcGxhbiBmb3IgeW91ciB0cmlwPC9oMz48cD5TdGFydCB3aXRoIHRoZSBkZXN0aW5hdGlvbiwgdGhlIGRhdGEgeW91IG5lZWQgYW5kIHRoZSBkZXZpY2UgeW91IGNhcnJ5LjwvcD48L2Rpdj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImpvdXJuZXktc3RlcCI+PHNwYW4+MDI8L3NwYW4+PGRpdj48aDM+RGlnaXRhbCBzZXR1cDwvaDM+PHA+SW5zdGFsbCB0aHJvdWdoIHRoZSBzdXBwb3J0ZWQgc2V0dXAgZmxvdyBvciBRUiBjb2RlLiBObyBwaHlzaWNhbCBTSU0gc3dhcC48L3A+PC9kaXY+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJqb3VybmV5LXN0ZXAiPjxzcGFuPjAzPC9zcGFuPjxkaXY+PGgzPkEgc2VydmljZSwgbm90IGEgZGVtbzwvaDM+PHA+Q292ZXJhZ2UsIGluc3RhbGxhdGlvbiBhbmQgc3VwcG9ydCBhcmUgcGFydCBvZiB0aGUgcHJvZHVjdCwgbm90IGFuIGFmdGVydGhvdWdodC48L3A+PC9kaXY+PC9kaXY+CiAgICA8cCBjbGFzcz0idmVudHVyZS1zbWFsbCI+Q292ZXJhZ2UsIG5ldHdvcmsgYWNjZXNzIGFuZCBjb21wYXRpYmlsaXR5IGRlcGVuZCBvbiB0aGUgZGVzdGluYXRpb24sIGRldmljZSBhbmQgcGxhbi4gQ2hlY2sgdGhlIGxpdmUgc2VydmljZSBmb3IgY3VycmVudCB0ZXJtcy48L3A+CiAgPC9kaXY+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJ2ZW50dXJlLWZvb3RlciI+PHNwYW4+QnVpbHQgZm9yIHRoZSBsb25nIHRlcm0uPC9zcGFuPjxzcGFuPkEgY29tbWVyY2lhbCBidXNpbmVzcywgbm90IGEgc3ByaW50IGNvZGUgZHJvcC48L3NwYW4+PC9kaXY+">
+      <div class="venture-veil">
+        <span class="venture-kicker">A different chapter</span>
+        <h2>Beyond the sprint.</h2><p>An introduction to my main business, with its own customers, responsibilities and long-term ambition.</p>
+        <button class="venture-cta" onclick="event.preventDefault(); openPin(true)">Unlock the story <span aria-hidden="true">↗</span></button>
       </div>
-
-      <!-- Right: the locked "next release" plate -->
-      <div class="ol-locked" data-locked data-reveal data-delay="2">
-        <div class="ol-locked-veil">
-          <div class="ol-locked-lock">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          </div>
-          <div class="ol-locked-tag">Day-job reveal · Oct 27</div>
-          <div class="ol-locked-title">Coming shortly</div>
-          <div class="ol-locked-sub">A separate commercial chapter.</div>
-          <button class="ol-locked-cta" onclick="event.preventDefault(); openPin(true)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            Peek early
-          </button>
-        </div>
-        <div class="ol-locked-inner" id="ol-locked-inner">
-          <div class="ol-locked-eyebrow">Classified</div>
-          <div class="ol-locked-brand">
-            <span class="ol-locked-brand-name"><span class="pl-redacted">████████</span></span>
-            <span class="ol-locked-brand-url"><span class="pl-redacted">█████████████</span></span>
-          </div>
-          <div class="ol-locked-headline"><span class="pl-redacted">█████████████████████████████████</span></div>
-          <p class="ol-locked-lede"><span class="pl-redacted">███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████</span></p>
-          <div class="ol-locked-why">
-            <div class="ol-locked-why-title"><span class="pl-redacted">███████████████████████</span></div>
-            <ul class="ol-locked-featlist">
-              <li><span class="pl-redacted">███████████████████████████████████████████</span></li>
-              <li><span class="pl-redacted">███████████████████████████████████████████</span></li>
-              <li><span class="pl-redacted">██████████████████████████████████████████████████████</span></li>
-              <li><span class="pl-redacted">█████████████████████████████████████████████████</span></li>
-            </ul>
-          </div>
-          <div class="ol-locked-goodies">
-            <div class="ol-locked-goodies-title"><span class="pl-redacted">███████████████████████████████</span></div>
-            <div class="ol-locked-goodies-grid">
-              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
-              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
-              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
-              <div class="ol-goodie"><span class="ol-goodie-icon">█</span><span><span class="pl-redacted">████████████████████████████████████</span></span></div>
-            </div>
-          </div>
-        </div>
-        <script type="text/plain" id="ol-classified-payload">eyJleWVicm93IjogIlRoZSByZXZlYWwiLCAiYnJhbmROYW1lIjogIk9wZW5saW5lIiwgImJyYW5kVXJsIjogImh0dHBzOi8vb3BlbmxpbmUuY29tIiwgImJyYW5kVXJsTGFiZWwiOiAib3BlbmxpbmUuY29tIOKGlyIsICJoZWFkbGluZSI6ICJUcmF2ZWwgZVNJTXMuIEEgY2xlYXJlciB3YXkgdG8gZ2V0IGNvbm5lY3RlZC4iLCAibGVkZSI6ICJEaWdpdGFsIHRyYXZlbCBlU0lNcywgbXVsdGktbmV0d29yayBjb25uZWN0aXZpdHkgYW5kIHN0cmFpZ2h0Zm9yd2FyZCBzZXR1cC4iLCAid2h5VGl0bGUiOiAiV2hhdCB0byBjaGVjayBiZWZvcmUgeW91IHRyYXZlbCIsICJmZWF0dXJlcyI6IFt7ImgiOiAiQ2hvb3NlIHRoZSBkZXN0aW5hdGlvbiIsICJ0IjogIkZpbmQgdGhlIGRhdGEgcGxhbiB0aGF0IGZpdHMgd2hlcmUgeW91IGFyZSBnb2luZy4ifSwgeyJoIjogIkluc3RhbGwgZGlnaXRhbGx5IiwgInQiOiAiVXNlIHN1cHBvcnRlZCBhdXRvbWF0aWMgc2V0dXAgb3IgdGhlIHN1cHBsaWVkIFFSIGNvZGUuIn0sIHsiaCI6ICJNdWx0aXBsZSBuZXR3b3JrcyIsICJ0IjogIkNvbm5lY3QgdGhyb3VnaCBhdmFpbGFibGUgcGFydG5lciBuZXR3b3JrcyByYXRoZXIgdGhhbiBhIHBoeXNpY2FsIFNJTSBzd2FwLiJ9LCB7ImgiOiAiS2VlcCB0aGUgb2ZmZXIgY2xlYXIiLCAidCI6ICJDaGVjayBkZXN0aW5hdGlvbiBjb3ZlcmFnZSwgZGV2aWNlIGNvbXBhdGliaWxpdHkgYW5kIHBsYW4gdGVybXMgYmVmb3JlIHB1cmNoYXNpbmcuIn1dLCAiZ29vZGllc1RpdGxlIjogIktlZXAgdGhlIHNlcnZpY2UgZGV0YWlscyBjbGVhciIsICJnb29kaWVzIjogW3siaWNvbiI6ICLihpIiLCAiaCI6ICJQbGFuIHRlcm1zIiwgInQiOiAiQ292ZXJhZ2UsIGFsbG93YW5jZXMgYW5kIGNvbXBhdGliaWxpdHkgZGVwZW5kIG9uIHRoZSBwbGFuLiJ9LCB7Imljb24iOiAi4oaSIiwgImgiOiAiTm8gaW52ZW50ZWQgbGF1bmNoIG9mZmVyIiwgInQiOiAiVXNlIHRoZSBsaXZlIHNlcnZpY2UgZm9yIGN1cnJlbnQgcGxhbnMgYW5kIHRlcm1zLiJ9XSwgImJ1aWxkIjogeyJuYW1lIjogIk9wZW5saW5lIiwgIm9yY2hlc3RyYXRvciI6ICJDdXJzb3IgQWdlbnQiLCAibW9kZWxzIjogWyJDbGF1ZGUgU29ubmV0IDQuNiIsICJDbGF1ZGUgT3B1cyA0LjYiLCAiR1BULTUuNCIsICJHZW1pbmkgMy4xIFBybyJdLCAiZXN0aW1hdGUiOiA5MDAsICJsb3ciOiA3MDAsICJoaWdoIjogMTIwMCwgInNjb3BlIjogIndlYi9wcm90b3R5cGUgd29ya3N0cmVhbSBvbmx5LCBOT1QgdGhlIGNvbXBhbnkgb3IgZnVsbCBwbGF0Zm9ybSIsICJyZXBvIjogIiIsICJ1cmwiOiAiaHR0cHM6Ly9vcGVubGluZS5jb20ifX0=</script>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ NEXT CHAPTER · ENKI ============ -->
-<section id="enki" class="wt">
-  <div class="wt-sky" aria-hidden="true">
-    <div class="wt-aurora"></div>
-    <div class="wt-aurora a2"></div>
-    <div class="wt-stars">
-      <span style="left:6%;top:12%;--d:2.8s"></span>
-      <span style="left:14%;top:22%;--d:3.4s"></span>
-      <span style="left:22%;top:7%;--d:4.1s"></span>
-      <span style="left:31%;top:18%;--d:2.6s"></span>
-      <span style="left:44%;top:9%;--d:3.9s"></span>
-      <span style="left:53%;top:24%;--d:2.9s"></span>
-      <span style="left:63%;top:11%;--d:3.6s"></span>
-      <span style="left:71%;top:21%;--d:4.2s"></span>
-      <span style="left:82%;top:8%;--d:3.1s"></span>
-      <span style="left:91%;top:19%;--d:3.7s"></span>
-    </div>
-    <div class="wt-snow" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-  </div>
-
-  <div class="wrap wt-wrap">
-    <div class="wt-copy" data-reveal>
-      <span class="eyebrow wt-eyebrow"><span class="pulse pulse-blue"></span> The next chapter · Tue 03 Nov 2026 · classified</span>
-      <h2 class="wt-title">Something <em>bigger</em><br/>on 3 November.</h2>
-      <p class="wt-sub">The Weekathon is the warm-up. After the bonus drop and the day job, the final chapter isn't a product: it's a call. Details unlock at the reveal.</p>
-
-      <div class="wt-oath">
-        <div class="wt-oath-line">Small products by day.</div>
-        <div class="wt-oath-line">A bigger story on 3 November.</div>
-      </div>
-
-      <div class="wt-cta-row">
-        <button class="btn btn-primary wt-cta" onclick="event.preventDefault(); openPin(true)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          Enter the vault
-        </button>
-        <a href="#follow" class="btn btn-ghost btn-ghost-dark">Follow the sprint →</a>
-      </div>
-    </div>
-
-    <div class="wt-visual" data-reveal data-delay="1">
-      <div class="wt-plate" data-locked>
-        <div class="wt-plate-frame">
-          <img src="assets/hero/winter-v4.png" alt="Classified visual" class="wt-hero-img"/>
-          <div class="wt-lantern" aria-hidden="true"></div>
-        </div>
-        <div class="wt-plate-veil">
-          <div class="wt-plate-lock">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          </div>
-          <div class="wt-plate-title">Classified.</div>
-          <div class="wt-plate-sub">Unlocks at the reveal.</div>
-        </div>
-        <div class="wt-plate-open">
-          <div class="wt-open-eyebrow">The brief</div>
-          <div class="wt-open-headline">Not a product. A call to build a founding team of 300 — for a public-good NGO offering an alternative to datacenter-first AI.</div>
-          <ul class="wt-open-list">
-            <li>A non-profit association, not a startup — public good, no capture, no equity</li>
-            <li>Intelligence that runs on devices people already own — the datacenter as a licensed exception, not the default</li>
-            <li>Open standard, open cost data, DAO-voted governance — the 300 pick where it lives and what it becomes</li>
-            <li>You're not signing up as a user. You're signing up as a founder.</li>
-          </ul>
-        </div>
-      </div>
+      <div class="venture-content"></div>
     </div>
   </div>
 </section>
-
-<script type="text/plain" id="enki-build-payload">eyJuYW1lIjogIkVua2kiLCAib3JjaGVzdHJhdG9yIjogIlBlcnBsZXhpdHkgQ29tcHV0ZXIiLCAibW9kZWxzIjogWyJDbGF1ZGUgT3B1cyA0LjYiLCAiR1BULTUuNCIsICJHZW1pbmkgMy4xIFBybyIsICJDbGF1ZGUgU29ubmV0IDQuNiJdLCAiZXN0aW1hdGUiOiA2MDAsICJsb3ciOiA0NTAsICJoaWdoIjogODUwLCAic2NvcGUiOiAid2Vic2l0ZS9tYW5pZmVzdG8gcHJvdG90eXBlIG9ubHksIE5PVCBoYXJkd2FyZSBvciB0aGUgZnVsbCBpbml0aWF0aXZlIiwgInJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL3BhdWxmeHl6L2Vua2kiLCAidXJsIjogImh0dHBzOi8vZW5raS5uZ28ifQ==</script>
+<section id="enki" class="venture-section venture-public-good">
+  <div class="wrap">
+    <div class="venture-chapter"><span>The final chapter · A public good</span><span>Tuesday 3 November 2026</span></div>
+    <div class="venture-shell" data-locked data-venture="enki" data-venture-payload="PGRpdiBjbGFzcz0idmVudHVyZS1ncmlkIj4KICA8ZGl2IGNsYXNzPSJ2ZW50dXJlLW1haW4iPgogICAgPGRpdiBjbGFzcz0idmVudHVyZS1icmFuZCBlbmtpLWJyYW5kIj5FbmtpPHNwYW4gY2xhc3M9ImVua2ktc3RyZWFtcyIgYXJpYS1oaWRkZW49InRydWUiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgYXJpYS1sYWJlbD0iRW5raSBsb2dvIOKAlCB0d28gc3RyZWFtcyBvZiBmcmVzaCB3YXRlciIgcm9sZT0iaW1nIj4KICAgICAgICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iNyIgcj0iMy42IiBmaWxsPSIjMmE1YzNmIiAvPgogICAgICAgICAgPHBhdGggZD0iTTEzIDEyYy0yLjUgMy41LTcgNS03IDEwIDAgMyAyIDUuNSA1IDYuNSIgc3Ryb2tlPSIjMmE1YzNmIiBzdHJva2Utd2lkdGg9IjEuNyIgLz4KICAgICAgICAgIDxwYXRoIGQ9Ik0xOSAxMmMyLjUgMy41IDcgNSA3IDEwIDAgMy0yIDUuNS01IDYuNSIgc3Ryb2tlPSIjMmE1YzNmIiBzdHJva2Utd2lkdGg9IjEuNyIgLz4KICAgICAgICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iMjIiIHI9IjEuNiIgZmlsbD0iIzJhNWMzZiIgb3BhY2l0eT0iMC41NSIgLz4KICAgICAgICA8L3N2Zz48L3NwYW4+PC9kaXY+CiAgICA8cCBjbGFzcz0idmVudHVyZS1raWNrZXIiPkxvY2FsLWZpcnN0IEFJIMK3IEEgcHVibGljLWdvb2QgaW5pdGlhdGl2ZTwvcD4KICAgIDxoMj5BIHB1YmxpYyBnb29kLjxicj5Ob3QgYSBwcm9kdWN0IHBpdGNoLjwvaDI+CiAgICA8cCBjbGFzcz0idmVudHVyZS1sZWFkIj5Nb3JlIGludGVsbGlnZW5jZSBvbiB0aGUgZGV2aWNlcyB3ZSBvd24uIExlc3MgZGVwZW5kZW5jZSBvbiByZW50aW5nIGV2ZXJ5IGludGVyYWN0aW9uIGZyb20gYSBkaXN0YW50IGRhdGFjZW50ZXIuPC9wPgogICAgPHA+RW5raSBicmluZ3MgdG9nZXRoZXIgb3BlbiBtb2RlbHMsIGFuIG9wZW4gc3RhbmRhcmQgZm9yIGxvY2FsIEFJIGNhcGFjaXR5LCBhbmQgcGVvcGxlIHdobyB3YW50IHRvIGJ1aWxkIGFuIGFsdGVybmF0aXZlLiBUaGUgZGV2aWNlIGlzIGEgbG9uZ2VyLXRlcm0gb2JqZWN0aXZlLCBub3QgYSBmaW5pc2hlZCBwcm9kdWN0IHNoaXBwaW5nIHRvZGF5LjwvcD4KICAgIDxhIGNsYXNzPSJ2ZW50dXJlLWN0YSIgaHJlZj0iaHR0cHM6Ly9lbmtpLm5nbyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+RXhwbG9yZSBFbmtpICZhbXA7IHRoZSBtaXNzaW9uIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7ihpc8L3NwYW4+PC9hPgogICAgPHAgY2xhc3M9InZlbnR1cmUtZG9tYWluIj5lbmtpLm5nbzwvcD4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJ2ZW50dXJlLWFzaWRlIGZvdW5kZXItbm90ZSI+CiAgICA8cCBjbGFzcz0idmVudHVyZS1hc2lkZS10aXRsZSI+QSBub3RlIG9uIG15IHBsYWNlIGluIHRoZSAzMDA8L3A+CiAgICA8aDM+SGVscCBzdGFydCBpdC48YnI+RG9u4oCZdCBjbGFpbSB0byBvd24gaXQuPC9oMz4KICAgIDxwPknigJlsbCBiZSBvbmUgb2YgdGhlIDMwMCBtZW1iZXJzIGluIHRoZSBmaXJzdCB5ZWFyLiBJIGRvIG5vdCBhc3N1bWUgb3IgZXhwZWN0IGEgcGVybWFuZW50IHNlYXQuPC9wPgogICAgPHA+TG9uZ2VyIHRlcm0sIEkgc2VlIG15c2VsZiBhcyBhbiBob25vcmFyeSBmb3VuZGVyLiBFbmtpIG5lZWRzIGFuIGV4dHJhb3JkaW5hcnkgcmFuZ2Ugb2YgdGFsZW50OyBiZWluZyBpdHMgaW5pdGlhdG9yIGRvZXNu4oCZdCBtZWFuIEnigJlsbCBhbHdheXMgYmUgdGhlIHJpZ2h0IHBlcnNvbiBmb3Igb25lIG9mIHRob3NlIHNlYXRzLjwvcD4KICAgIDxwPkkgd2FudCBpdCB0byBncm93IGJleW9uZCBtZSwgc2hhcGVkIGJ5IHRoZSBwZW9wbGUgYmVzdCBhYmxlIHRvIGNhcnJ5IHRoZSB3b3JrIGZvcndhcmQuPC9wPgogICAgPHNwYW4gY2xhc3M9ImZvdW5kZXItc2lnbmF0dXJlIj5QYXVsIEZsZXVyeSDCtyBJbml0aWF0b3I8L3NwYW4+CiAgPC9kaXY+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJ2ZW50dXJlLWZvb3RlciI+PHNwYW4+Q29udHJpYnV0aW9uLCBub3QgYSBtZW1iZXJzaGlwIGZlZS48L3NwYW4+PHNwYW4+QSBub24tcHJvZml0IG1pc3Npb24sIG5vdCBhbiBlcXVpdHkgcGl0Y2guPC9zcGFuPjwvZGl2Pg==">
+      <div class="venture-veil">
+        <span class="venture-kicker">A different chapter</span>
+        <h2>Something to build together.</h2><p>Not another finished app. An invitation to shape a local-first AI public good, beyond its initiator.</p>
+        <button class="venture-cta" onclick="event.preventDefault(); openPin(true)">Unlock the story <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="venture-content"></div>
+    </div>
+  </div>
+</section>
+<!-- VENTURE CHAPTERS END -->
 
 <!-- ============ PIPELINE — one unified calendar rail ============ -->
 <section id="pipeline" class="pl">
@@ -1996,36 +1907,13 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
     document.body.classList.add('is-unlocked');
     document.querySelectorAll('.card.locked').forEach(c => c.classList.add('revealed'));
     document.querySelectorAll('[data-locked]').forEach(c => c.classList.add('is-open'));
-    // Inject Openline classified payload into ol-locked-inner
-    const olPayload = document.getElementById('ol-classified-payload');
-    const olInner = document.getElementById('ol-locked-inner');
-    if (olPayload && olInner && !olInner.dataset.revealed) {
-      try {
-        const d = JSON.parse(decodeBase64Utf8(olPayload.textContent.trim()));
-        olInner.innerHTML = `
-          <div class="ol-locked-eyebrow">${d.eyebrow}</div>
-          <div class="ol-locked-brand">
-            <span class="ol-locked-brand-name">${d.brandName}</span>
-            <a href="${d.brandUrl}" target="_blank" rel="noopener" class="ol-locked-brand-url">${d.brandUrlLabel}</a>
-          </div>
-          <div class="ol-locked-headline">${d.headline}</div>
-          <p class="ol-locked-lede">${d.lede}</p>
-          <div class="ol-locked-why">
-            <div class="ol-locked-why-title">${d.whyTitle}</div>
-            <ul class="ol-locked-featlist">
-              ${d.features.map(f=>`<li><strong>${f.h}</strong> · ${f.t}</li>`).join('')}
-            </ul>
-          </div>
-          <div class="ol-locked-goodies">
-            <div class="ol-locked-goodies-title">${d.goodiesTitle}</div>
-            <div class="ol-locked-goodies-grid">
-              ${d.goodies.map(g=>`<div class="ol-goodie"><span class="ol-goodie-icon">${g.icon}</span><span><strong>${g.h}</strong><br/>${g.t}</span></div>`).join('')}
-            </div>
-          </div>`;
-        if (d.build) olInner.appendChild(makeBuildStack(d.build, true));
-        olInner.dataset.revealed = '1';
-      } catch(e) { console.warn('ol payload parse failed', e); }
-    }
+    // Reveal editorial venture chapters without AI-cost or model badges.
+    document.querySelectorAll('[data-venture]').forEach(section => {
+      const content = section.querySelector('.venture-content');
+      if (!content || content.dataset.revealed) return;
+      content.innerHTML = decodeBase64Utf8(section.dataset.venturePayload);
+      content.dataset.revealed = '1';
+    });
     // Inject product card payloads (all 8 classified cards)
     document.querySelectorAll('.card-classified').forEach(card => {
       if (card.dataset.revealed) return;
@@ -2052,6 +1940,19 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
           if (d.taglineHtml) tagline.innerHTML = d.taglineHtml;
           else tagline.textContent = d.tagline;
         }
+        if (d.story && tagline) {
+          const details = document.createElement('details');
+          details.className = 'product-story';
+          const summary = document.createElement('summary');
+          summary.textContent = 'Why this became a news app';
+          details.appendChild(summary);
+          d.story.forEach(text => {
+            const p = document.createElement('p');
+            p.textContent = text;
+            details.appendChild(p);
+          });
+          tagline.after(details);
+        }
         const meta = card.querySelector('.meta');
         if (meta && d.chips) {
           meta.innerHTML = d.chips.map(c => `<span class="chip${c.locked?' locked':''}">${c.text}</span>`).join('');
@@ -2060,11 +1961,11 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
         const repoLink = card.querySelector('.card-link-btn');
         if (repoLink && d.repo) {
           repoLink.removeAttribute('onclick');
-          repoLink.href = d.repo;
+          repoLink.href = d.destination || d.repo;
           repoLink.target = '_blank';
           repoLink.rel = 'noopener noreferrer';
-          repoLink.textContent = 'View source on GitHub ↗';
-          repoLink.setAttribute('aria-label', `View ${d.name} source on GitHub (opens in a new tab)`);
+          repoLink.textContent = d.linkLabel || 'View source on GitHub ↗';
+          repoLink.setAttribute('aria-label', `${d.linkLabel || 'View source on GitHub'} for ${d.name} (opens in a new tab)`);
         }
         const dayBadge = card.querySelector('.day-badge');
         if (dayBadge && d.dayLabel) dayBadge.textContent = d.dayLabel;
@@ -2077,19 +1978,6 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
         card.dataset.revealed = '1';
       } catch(e) { console.warn('card payload parse failed', card.dataset.key, e); }
     });
-    const enkiBuild = document.getElementById('enki-build-payload');
-    const enkiPanel = document.querySelector('.wt-plate-open');
-    if (enkiBuild && enkiPanel && !enkiPanel.querySelector('.build-stack')) {
-      const d = JSON.parse(decodeBase64Utf8(enkiBuild.textContent.trim()));
-      enkiPanel.appendChild(makeBuildStack(d, true));
-      const sourceLink = document.createElement('a');
-      sourceLink.href = d.repo;
-      sourceLink.target = '_blank';
-      sourceLink.rel = 'noopener noreferrer';
-      sourceLink.textContent = 'Explore the public repository ↗';
-      sourceLink.className = 'card-link-btn';
-      enkiPanel.appendChild(sourceLink);
-    }
     // Reveal classified calendar rows (bridge + winter)
     document.querySelectorAll('.pl-classified').forEach(row => {
       const dec = s => { try { return decodeBase64Utf8(s); } catch(_){ return s; } };
