@@ -1,3 +1,4 @@
+DirectoryIndex index.html
 # Force fresh HTML on every load (no cache) - assets still cache normally
 <FilesMatch "\.(html|htm)$">
   Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"

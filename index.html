@@ -11,7 +11,12 @@
 <meta property="og:title" content="The Weekathon — 7 products in 7 days" data-i18n-content="The Weekathon — 7 products in 7 days" />
 <meta property="og:description" content="Seven products in seven days on Product Hunt · a bonus drop · the day job · a public-good reveal on three successive Tuesdays." data-i18n-content="Seven products in seven days on Product Hunt · a bonus drop · the day job · a public-good reveal on three successive Tuesdays." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://paulfleury.com/ph" />
+<meta property="og:url" content="https://ph.paulfleury.com/" />
+<link rel="canonical" href="https://ph.paulfleury.com/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#DA552F" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2620,7 +2625,7 @@ html[data-theme=dark] .pl-followups .pl-mark{background:var(--card)}
   };
   const store = (key,value) => {
     try { localStorage.setItem('ph-'+key,value); } catch(_) {}
-    try {document.cookie='ph-'+key+'='+encodeURIComponent(value)+'; Max-Age=31536000; Path=/ph; SameSite=Lax; Secure';} catch(_) {}
+    try {document.cookie='ph-'+key+'='+encodeURIComponent(value)+'; Max-Age=31536000; Path=/; SameSite=Lax; Secure';} catch(_) {}
   };
   const matchLanguage = input => {
     const value=(input||'').toLowerCase();
