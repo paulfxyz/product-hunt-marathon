@@ -5,3 +5,9 @@ DirectoryIndex index.html
   Header set Pragma "no-cache"
   Header set Expires "0"
 </FilesMatch>
+# Read-only public schedule. Subscribers refresh at their provider's cadence.
+AddType text/calendar .ics
+<Files "calendar.ics">
+  Header set Content-Type "text/calendar; charset=utf-8"
+  Header set Cache-Control "public, max-age=300, must-revalidate"
+</Files>
