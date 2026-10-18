@@ -1053,6 +1053,9 @@ body.is-unlocked .ol-hero-locked .ol-hero-overlay { display:flex; }
 .fl-x .fl-cta{color:#000}
 .fl-note{margin-top:28px;padding:14px 18px;background:#fff;border-radius:12px;border:1px dashed rgba(0,0,0,.12);font-family:var(--font-body);font-size:14px;color:var(--ink-2);text-align:center}
 .fl-note strong{color:var(--ink);font-weight:600}
+.fl-contact{display:flex;justify-content:center;margin-top:20px}
+.hollr-contact{max-width:100%;flex-wrap:wrap;justify-content:center;text-transform:none}
+.fm-cta-row{flex-wrap:wrap;gap:12px}
 
 /* ---- FOOTER MOMENT ---- */
 .fm{position:relative;background:#0A0A0A;color:#FFF7EE;overflow:hidden}
@@ -1737,12 +1740,14 @@ html[data-theme=dark] .thesis-panel .cho-link:hover{background:var(--paper-2);bo
 @media(prefers-reduced-motion:reduce){#openline .openline-investor-link{transition:none}}
 </style>
 <style id="megamesh-prelude-style">
-#prelude{background:var(--paper);padding:clamp(48px,6vw,80px) 0;border-top:1px solid var(--line)}
+#prelude{background:var(--paper);padding:clamp(28px,3.2vw,48px) 0;border-top:1px solid var(--line)}
 .prelude-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
 .prelude-copy .eyebrow{color:#2c56f5}.prelude-copy .section-sub{max-width:38ch}
 .prelude-note{font-size:14px;color:var(--ink-2);margin-top:22px}
-#prelude .card{min-width:0}#prelude .card-media{aspect-ratio:16/9;min-height:0;background:#f2f4f6}
-#prelude .card-media img{width:100%;height:100%;object-fit:cover;padding:0}
+#prelude .card{min-width:0}#prelude .card-media{aspect-ratio:auto;height:clamp(160px,14vw,200px);min-height:0;background:#f2f4f6}
+#prelude .card-media img{width:100%;height:100%;object-fit:contain;padding:0}
+#prelude .card-body{padding:20px 24px}
+#prelude .card-link-btn{margin-top:14px}
 #prelude .price-tag{font-size:12px;white-space:normal;text-align:end}
 .pl-prelude{margin-bottom:32px}.pl-prelude .pl-stop{padding:22px 24px;border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:100px 1fr 1fr auto;gap:20px;align-items:center}
 .pl-prelude .pl-mark{display:none}.pl-prelude .pl-when,.pl-prelude .pl-name,.pl-prelude .pl-tag{margin:0}
@@ -2340,6 +2345,9 @@ html[data-theme=dark] .thesis-panel .cho-link:hover{background:var(--paper-2);bo
 <div class="fl-cta">Follow →</div>
 </a>
 </div>
+<div class="fl-contact" data-reveal="">
+<a class="btn btn-ghost hollr-contact" href="https://hollr.to/paulfxyz" rel="noopener noreferrer" target="_blank" title="Talk to Paul"><span data-i18n-skip="" dir="ltr">hollr.to (@paulfxyz)</span><span aria-hidden="true">↗</span></a>
+</div>
 <div class="fl-note" data-reveal="">
       Try a project. Share a bug. Build on the open-source code. Or start your own little Weekathon.
     </div>
@@ -2371,6 +2379,7 @@ html[data-theme=dark] .thesis-panel .cho-link:hover{background:var(--paper-2);bo
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9 8h4.5a2.5 2.5 0 0 1 0 5H9V8zm0 5v3"></path></svg>
         Come follow along
       </a>
+<a class="btn fm-btn hollr-contact" href="https://hollr.to/paulfxyz" rel="noopener noreferrer" target="_blank" title="Talk to Paul"><span data-i18n-skip="" dir="ltr">hollr.to (@paulfxyz)</span><span aria-hidden="true">↗</span></a>
 </div>
 <div class="fm-grid">
 <a class="fm-link" href="https://www.producthunt.com/@paulfxyz" rel="noopener" target="_blank">
