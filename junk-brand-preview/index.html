@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <!-- thejunk.app v3.1.7 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junk — The flying scratchpad</title>
+  <meta name="description" content="A global-hotkey scratchpad for macOS, Windows and Linux. Hit ⌘J. Type. Escape. Done." />
+  <meta property="og:title" content="Junk — The flying scratchpad" />
+  <meta property="og:description" content="One shortcut. No chrome. No cloud. Just a place to dump your brain." />
+  <meta property="og:url" content="https://thejunk.app" />
+  <meta property="og:image" content="https://thejunk.app/junk-brand-20261006.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=brand-20261006" />
+  <link rel="icon" href="junk-mark-20261006.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="junk-icon-180.png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Junk home">
+      <img src="junk-mark-20261006.svg" width="28" height="28" alt="" aria-hidden="true" />
+      <span>junk</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://github.com/paulfxyz/junk" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="View on GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+
+      <!-- Language picker — opens full flag modal -->
+      <button class="lang-btn" aria-label="Change language" aria-haspopup="dialog">
+        <span class="lang-current-flag">🌍</span>
+        <span class="lang-current-name">EN</span>
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+
+      <a href="#download" class="btn-nav" data-i18n="nav.download">Download</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badges">
+        <span class="hero-badge">v3.1.7 — macOS · Windows · Linux</span>
+        <span class="hero-badge hero-badge-rust">Rust + Tauri v2</span>
+      </div>
+      <h1 class="hero-title" aria-label="The flying scratchpad.">
+        <!-- data-final holds the plain text with literal \n for the scramble engine -->
+        <!-- data-i18n updates it on language switch; scramble re-runs automatically -->
+        <span class="scramble" data-i18n="hero.title" data-final="The flying&#10;scratchpad.">The flying<br>scratchpad.</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero.sub">Hit <kbd>⌘J</kbd>. A clean window flies in. Type, paste, think. Hit <kbd>Esc</kbd>. Gone.<br>Your text is still there when you need it.</p>
+      <div class="hero-actions">
+        <a href="#download" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="nav.download">Download free</span>
+        </a>
+        <a href="https://github.com/paulfxyz/junk" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          <span data-i18n="hero.source">View source</span>
+        </a>
+      </div>
+
+      <!-- Window preview -->
+      <div class="window-preview" aria-hidden="true">
+        <div class="window-preview-inner">
+          <textarea class="window-preview-pad" readonly tabindex="-1">api key for staging: sk-ant-api03-...
+notes from 4pm call — ask about the deadline
+rsync -avz --delete ./dist/ user@server:/var/www/
+remember to ping @marc about the invoice</textarea>
+          <div class="window-preview-footer">
+            <span><kbd>⌘J</kbd> toggle &nbsp;·&nbsp; <kbd>esc</kbd> close &nbsp;·&nbsp; auto-saved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL FEATURES — unified animated grid -->
+  <section class="section features-section" aria-label="Features" id="features">
+    <div class="container">
+      <h2 class="section-title" data-i18n="features.title">Everything you need.<br>Nothing you don't.</h2>
+      <p class="section-sub" data-i18n="features.sub">Open <kbd class="inline-kbd">⌘,</kbd> — every setting is live. No restart, no config file.</p>
+
+      <div class="feat-grid">
+
+        <!-- ── Row 1: One shortcut (wide) + Stays open (narrow) ── -->
+
+        <!-- One shortcut — 2-col wide, OS-tabs demo -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">⚡</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.shortcut.title">One shortcut</h3>
+              <p data-i18n="features.shortcut.body"><kbd>⌘J</kbd> on Mac, <kbd>Ctrl+J</kbd> on Windows and Linux. Change it to any key in Preferences — no restart needed.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-osbadges">
+              <div class="os-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span>⌘J</span>
+              </div>
+              <div class="os-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                <span>Ctrl+J</span>
+              </div>
+              <div class="os-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.275 1.807 1.715 2.971 3.146 3.738 2.358 1.274 5.591 1.524 8.065.979 1.135-.26 2.125-.694 2.71-1.324.67-.72.79-1.701.507-2.503-.37-1.036-1.236-1.596-2.177-1.839l.007-.026c.31-.519.688-1.099 1.15-1.757 1.132-1.601 1.89-3.05 1.998-4.604.09-1.246-.24-2.527-1.165-3.596-.865-.995-2.205-1.624-3.767-1.694C12.779.012 12.64 0 12.503 0zm.356 3.646c.42.283.748.668.95 1.099.203.43.27.908.188 1.359-.163.9-.806 1.631-1.6 2.018-.778.381-1.68.41-2.8.093-.82-.318-1.5-.959-1.845-1.764-.337-.79-.344-1.701-.018-2.493.318-.777.98-1.403 1.8-1.699.394-.143.806-.207 1.222-.207.582 0 1.157.151 1.803.594zm-5.13 10.357c-.245 0-.49.016-.73.048-.99.137-1.8.64-2.25 1.41-.45.769-.53 1.75-.23 2.63.31.88 1.01 1.61 1.88 2.06.87.45 1.89.61 2.87.44.98-.17 1.89-.68 2.53-1.45.58-.7.86-1.59.79-2.49-.07-.9-.5-1.75-1.17-2.33-.67-.58-1.55-.88-2.69-.87zm10.038 0c-.685 0-1.385.18-2.01.52-.625.34-1.13.85-1.44 1.48-.31.63-.41 1.35-.28 2.04.13.69.49 1.33 1.02 1.79.53.46 1.22.72 1.96.72.34 0 .68-.05 1.01-.16.67-.22 1.25-.69 1.63-1.31.38-.62.54-1.37.45-2.1-.09-.73-.43-1.42-.96-1.93-.53-.51-1.23-.8-2.38-.85z"/></svg>
+                <span>Ctrl+J</span>
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.shortcut.demo">Works from any app, any fullscreen, any Space.</p>
+          </div>
+        </div>
+
+        <!-- Custom shortcut — narrow -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h4"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.shortcut.title">Custom shortcut</h3>
+              <p data-i18n="v3.shortcut.body">Tired of <kbd>⌘J</kbd>? Click the shortcut field, press any key combo. Junk re-registers the OS hotkey instantly — no restart, no config file.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-shortcut">
+              <span class="shortcut-key">⌘</span>
+              <span class="shortcut-sep">+</span>
+              <span class="shortcut-key shortcut-key-active">J</span>
+              <span class="shortcut-arrow">→</span>
+              <span class="shortcut-key shortcut-key-new">Space</span>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.shortcut.demo">Change it to anything. Live.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 2: Stays open (narrow) + Auto-saves (narrow) ── -->
+
+        <!-- Stays open -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">🔒</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.persistent.title">Stays open</h3>
+              <p data-i18n="features.persistent.body">Switching apps doesn't close Junk. Copy text, run a clipboard tool, come back — it's exactly where you left it.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-persist">
+              <div class="persist-app persist-app-dim">
+                <div class="persist-app-dot"></div><span>Safari</span>
+              </div>
+              <div class="persist-app persist-app-dim">
+                <div class="persist-app-dot"></div><span>Slack</span>
+              </div>
+              <div class="persist-app persist-app-junk">
+                <div class="persist-app-dot persist-app-dot-green"></div><span>Junk ✓</span>
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.persistent.demo">Switch apps freely. Junk never closes.</p>
+          </div>
+        </div>
+
+        <!-- Auto-saves -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">💾</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.autosave.title">Auto-saves</h3>
+              <p data-i18n="features.autosave.body">Content persists between restarts. No manual save, no prompt, no lost work. Stored locally, never leaves your machine.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-save">
+              <div class="save-dot save-dot-pulse"></div>
+              <span class="save-label" data-i18n="features.autosave.demo">Saved locally · never leaves your machine</span>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.autosave.sub">No prompt. No manual save. Always there.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 3: Position memory (wide) ── -->
+
+        <!-- Position memory — wide -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.position.title">Position memory</h3>
+              <p data-i18n="v3.position.body">Drag Junk to your corner of choice. It remembers — across sessions, across reboots. Always comes back exactly where you left it.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-screen">
+              <div class="demo-screen-bg"></div>
+              <div class="demo-window demo-window-a">J</div>
+              <div class="demo-window demo-window-b">J</div>
+              <div class="demo-pin">📌</div>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.position.demo">Stays where you put it.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 4: Truly invisible (narrow) + Frosted glass (narrow) ── -->
+
+        <!-- Truly invisible -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">🫥</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.invisible.title">Truly invisible</h3>
+              <p data-i18n="features.invisible.body">No Dock icon. No tray icon. No menu bar entry. Junk is a ghost — until you need it.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-invisible">
+              <div class="inv-dock">
+                <div class="inv-dock-item inv-dock-item-dim"></div>
+                <div class="inv-dock-item inv-dock-item-dim"></div>
+                <div class="inv-dock-item inv-dock-item-dim"></div>
+                <div class="inv-dock-sep"></div>
+                <div class="inv-dock-item inv-dock-item-ghost">?</div>
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.invisible.demo">No icon anywhere. Junk is a ghost.</p>
+          </div>
+        </div>
+
+        <!-- Frosted glass -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">🪟</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.glass.title">Frosted glass</h3>
+              <p data-i18n="features.glass.body">Native backdrop blur. Clean white-glass window that layers over your desktop. Looks right at home anywhere.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-glass">
+              <div class="glass-bg"></div>
+              <div class="glass-window">
+                <div class="glass-line glass-line-lg"></div>
+                <div class="glass-line glass-line-md"></div>
+                <div class="glass-line glass-line-sm"></div>
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.glass.demo">Native blur. Adapts to light and dark.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 5: Dark mode (wide) ── -->
+
+        <!-- Dark mode — wide -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.darkmode.title">Dark mode</h3>
+              <p data-i18n="v3.darkmode.body">Light, Auto, or Dark. Auto follows <code>prefers-color-scheme</code> live — the frosted glass deepens naturally when your desktop goes dark.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-theme">
+              <div class="theme-pill theme-pill-light" data-i18n="v3.darkmode.light">Light</div>
+              <div class="theme-pill theme-pill-auto theme-active" data-i18n="v3.darkmode.auto">Auto</div>
+              <div class="theme-pill theme-pill-dark" data-i18n="v3.darkmode.dark">Dark</div>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.darkmode.demo">Frosted glass in every mode.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 6: Font size (narrow) + Markdown (narrow) ── -->
+
+        <!-- Font size -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20h3l5-12 5 12h3"/><path d="M6.5 15h7"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.fontsize.title">Font size</h3>
+              <p data-i18n="v3.fontsize.body">A slider from 14 to 28 px. Space Grotesk at any size — instantly applied, no relaunch.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-fontsize">
+              <span class="font-sm">Aa</span>
+              <div class="font-slider-track"><div class="font-slider-thumb"></div></div>
+              <span class="font-lg">Aa</span>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.fontsize.demo">14 px → 28 px. Your call.</p>
+          </div>
+        </div>
+
+        <!-- Markdown preview -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8 15V9l2 3 2-3v6"/><path d="M16 9v6"/><path d="M13.5 12H16"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.markdown.title">Markdown preview</h3>
+              <p data-i18n="v3.markdown.body">Hit <kbd>⌘M</kbd> to flip between raw text and rendered output. Headings, bold, code blocks, links — inline parser, zero external library.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-md">
+              <div class="md-raw"><span class="md-syntax">## </span>Quick note<br><span class="md-syntax">**</span>Bold<span class="md-syntax">**</span> idea<br><span class="md-syntax">`</span>code<span class="md-syntax">`</span> here</div>
+              <div class="md-arrow">⌘M</div>
+              <div class="md-rendered"><strong class="md-h">Quick note</strong><br><strong>Bold</strong> idea<br><code class="md-code">code</code> here</div>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.markdown.demo">Raw ↔ rendered. One shortcut.</p>
+          </div>
+        </div>
+
+        <!-- ── Row 7: Export (narrow) + Cross-platform (narrow) ── -->
+
+        <!-- One-click export -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon-svg" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </div>
+            <div class="feat-text">
+              <h3 data-i18n="v3.export.title">One-click export</h3>
+              <p data-i18n="v3.export.body">Copy button in the footer — or in Preferences. Everything goes to clipboard as plain text, ready to paste anywhere. "Copied!" confirms it worked.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="v3-demo-copy">
+              <div class="copy-mock-btn" data-i18n="v3.export.btn">Copy all text</div>
+              <div class="copy-mock-confirm" data-i18n="v3.export.confirm">Copied!</div>
+            </div>
+            <p class="feat-demo-label" data-i18n="v3.export.demo">Paste it anywhere. Always raw text.</p>
+          </div>
+        </div>
+
+        <!-- Cross-platform -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">🌍</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.cross.title">Cross-platform</h3>
+              <p data-i18n="features.cross.body">macOS (Apple Silicon + Intel), Windows, and Linux. One Rust codebase, native feel on every OS.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="feat-demo-platforms">
+              <div class="plat-chip">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                macOS
+              </div>
+              <div class="plat-chip">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                Windows
+              </div>
+              <div class="plat-chip">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.275 1.807 1.715 2.971 3.146 3.738 2.358 1.274 5.591 1.524 8.065.979 1.135-.26 2.125-.694 2.71-1.324.67-.72.79-1.701.507-2.503-.37-1.036-1.236-1.596-2.177-1.839l.007-.026c.31-.519.688-1.099 1.15-1.757 1.132-1.601 1.89-3.05 1.998-4.604.09-1.246-.24-2.527-1.165-3.596-.865-.995-2.205-1.624-3.767-1.694C12.779.012 12.64 0 12.503 0zm.356 3.646c.42.283.748.668.95 1.099.203.43.27.908.188 1.359-.163.9-.806 1.631-1.6 2.018-.778.381-1.68.41-2.8.093-.82-.318-1.5-.959-1.845-1.764-.337-.79-.344-1.701-.018-2.493.318-.777.98-1.403 1.8-1.699.394-.143.806-.207 1.222-.207.582 0 1.157.151 1.803.594zm-5.13 10.357c-.245 0-.49.016-.73.048-.99.137-1.8.64-2.25 1.41-.45.769-.53 1.75-.23 2.63.31.88 1.01 1.61 1.88 2.06.87.45 1.89.61 2.87.44.98-.17 1.89-.68 2.53-1.45.58-.7.86-1.59.79-2.49-.07-.9-.5-1.75-1.17-2.33-.67-.58-1.55-.88-2.69-.87zm10.038 0c-.685 0-1.385.18-2.01.52-.625.34-1.13.85-1.44 1.48-.31.63-.41 1.35-.28 2.04.13.69.49 1.33 1.02 1.79.53.46 1.22.72 1.96.72.34 0 .68-.05 1.01-.16.67-.22 1.25-.69 1.63-1.31.38-.62.54-1.37.45-2.1-.09-.73-.43-1.42-.96-1.93-.53-.51-1.23-.8-2.38-.85z"/></svg>
+                Linux
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.cross.demo">One Rust codebase. Native on every OS.</p>
+          </div>
+        </div>
+
+        <!-- ── Dim on blur ── -->
+        <div class="feat-card reveal">
+          <div class="feat-card-body">
+            <div class="feat-icon" aria-hidden="true">🌫️</div>
+            <div class="feat-text">
+              <h3 data-i18n="features.dim.title">Fades when idle</h3>
+              <p data-i18n="features.dim.body">Switch to another app and Junk dims to 50% opacity — visible but unobtrusive. Native opacity on macOS &amp; Windows. Toggleable in Preferences.</p>
+            </div>
+          </div>
+          <div class="feat-card-demo">
+            <div class="dim-demo">
+              <div class="dim-demo-window dim-demo-focused">
+                <div class="dim-demo-bar"></div>
+                <div class="dim-demo-line"></div>
+                <div class="dim-demo-line dim-demo-line-short"></div>
+              </div>
+              <div class="dim-demo-arrow">→</div>
+              <div class="dim-demo-window dim-demo-blurred">
+                <div class="dim-demo-bar"></div>
+                <div class="dim-demo-line"></div>
+                <div class="dim-demo-line dim-demo-line-short"></div>
+              </div>
+            </div>
+            <p class="feat-demo-label" data-i18n="features.dim.demo">Dims on blur. Snaps back on focus.</p>
+          </div>
+        </div>
+
+      </div><!-- /feat-grid -->
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="section download-section" id="download" aria-label="Download">
+    <div class="container">
+      <h2 class="section-title" data-i18n="download.title">Download Junk</h2>
+      <p class="section-sub" data-i18n="download.sub">Free. Open source. MIT licensed.</p>
+      <div class="platforms">
+
+        <div class="platform-card reveal" role="button" tabindex="0" onclick="openModal('mac')" onkeydown="if(event.key==='Enter'||event.key===' ')openModal('mac')" aria-label="Download for macOS">
+          <div class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </div>
+          <div class="platform-info">
+            <h3>macOS</h3>
+            <p data-i18n="platform.mac.sub">Universal binary · v3.1.7</p>
+          </div>
+          <div class="platform-arrow" aria-hidden="true">→</div>
+        </div>
+
+        <div class="platform-card reveal" role="button" tabindex="0" onclick="openModal('windows')" onkeydown="if(event.key==='Enter'||event.key===' ')openModal('windows')" aria-label="Download for Windows">
+          <div class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          </div>
+          <div class="platform-info">
+            <h3>Windows</h3>
+            <p data-i18n="platform.win.sub">x64 installer · v3.1.7</p>
+          </div>
+          <div class="platform-arrow" aria-hidden="true">→</div>
+        </div>
+
+        <div class="platform-card reveal" role="button" tabindex="0" onclick="openModal('linux')" onkeydown="if(event.key==='Enter'||event.key===' ')openModal('linux')" aria-label="Download for Linux">
+          <div class="platform-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.275 1.807 1.715 2.971 3.146 3.738 2.358 1.274 5.591 1.524 8.065.979 1.135-.26 2.125-.694 2.71-1.324.67-.72.79-1.701.507-2.503-.37-1.036-1.236-1.596-2.177-1.839l.007-.026c.31-.519.688-1.099 1.15-1.757 1.132-1.601 1.89-3.05 1.998-4.604.09-1.246-.24-2.527-1.165-3.596-.865-.995-2.205-1.624-3.767-1.694C12.779.012 12.64 0 12.503 0zm.356 3.646c.42.283.748.668.95 1.099.203.43.27.908.188 1.359-.163.9-.806 1.631-1.6 2.018-.778.381-1.68.41-2.8.093-.82-.318-1.5-.959-1.845-1.764-.337-.79-.344-1.701-.018-2.493.318-.777.98-1.403 1.8-1.699.394-.143.806-.207 1.222-.207.582 0 1.157.151 1.803.594zm-5.13 10.357c-.245 0-.49.016-.73.048-.99.137-1.8.64-2.25 1.41-.45.769-.53 1.75-.23 2.63.31.88 1.01 1.61 1.88 2.06.87.45 1.89.61 2.87.44.98-.17 1.89-.68 2.53-1.45.58-.7.86-1.59.79-2.49-.07-.9-.5-1.75-1.17-2.33-.67-.58-1.55-.88-2.69-.87zm10.038 0c-.685 0-1.385.18-2.01.52-.625.34-1.13.85-1.44 1.48-.31.63-.41 1.35-.28 2.04.13.69.49 1.33 1.02 1.79.53.46 1.22.72 1.96.72.34 0 .68-.05 1.01-.16.67-.22 1.25-.69 1.63-1.31.38-.62.54-1.37.45-2.1-.09-.73-.43-1.42-.96-1.93-.53-.51-1.23-.8-2.38-.85z"/></svg>
+          </div>
+          <div class="platform-info">
+            <h3>Linux</h3>
+            <p data-i18n="platform.linux.sub">AppImage + .deb · v3.1.7</p>
+          </div>
+          <div class="platform-arrow" aria-hidden="true">→</div>
+        </div>
+      </div>
+
+      <div class="github-cta">
+        <a href="https://github.com/paulfxyz/junk/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-ghost-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="download.allreleases">View all releases on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OSS SECTION -->
+  <section class="section oss-section" aria-label="Open source">
+    <div class="container oss-inner">
+      <div class="oss-text">
+        <h2 data-i18n="oss.title">Open source.<br>MIT licensed.</h2>
+        <p data-i18n="oss.body">Junk is fully open source. Read the code, fork it, contribute, or build on top of it. No telemetry, no accounts, no cloud — your text stays on your machine.</p>
+        <a href="https://github.com/paulfxyz/junk" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          paulfxyz/junk
+        </a>
+      </div>
+      <div class="oss-code" aria-hidden="true">
+        <pre class="code-block"><code><span class="c">// ⌘J / Ctrl+J — platform-specific modifier</span>
+#[cfg(target_os = <span class="s">"macos"</span>)]
+let modifiers = Modifiers::SUPER;
+#[cfg(not(target_os = <span class="s">"macos"</span>))]
+let modifiers = Modifiers::CONTROL;
+
+<span class="c">// v3.1.7: ⌘, / Ctrl+, — open Preferences panel.</span>
+<span class="c">// Bypasses WebView. Always fires.</span>
+let esc = Shortcut::new(None, Code::Escape);
+
+<span class="c">// Window stays open on blur — by design.</span>
+<span class="c">// Copy text, switch apps, paste, come back.</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="nav-logo" aria-label="Junk home">
+          <img src="junk-mark-20261006.svg" width="22" height="22" alt="" aria-hidden="true" />
+          <span>junk</span>
+        </a>
+        <span class="footer-copy">MIT © <a href="https://paulfleury.com" target="_blank" rel="noopener noreferrer">Paul Fleury</a></span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/paulfxyz/junk" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/paulfxyz/junk/releases" target="_blank" rel="noopener noreferrer">Releases</a>
+        <a href="https://github.com/paulfxyz/junk/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL OVERLAY (platform download) -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- MODAL TEMPLATES -->
+  <template id="tpl-mac">
+    <div class="modal-platform">
+      <div class="modal-header">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div>
+          <h2 id="modal-title">Download for macOS</h2>
+          <p class="modal-version">v3.1.7 — Free &amp; open source</p>
+        </div>
+      </div>
+      <div class="modal-downloads">
+        <a href="https://github.com/paulfxyz/junk/releases/download/v3.1.7/Junk_3.1.7_universal.dmg" class="download-btn">
+          <div class="download-btn-icon" aria-hidden="true">↓</div>
+          <div>
+            <strong>Universal Binary</strong>
+            <span>Apple Silicon + Intel · .dmg</span>
+          </div>
+        </a>
+      </div>
+      <div class="modal-install">
+        <h3>First-time setup</h3>
+        <p>Drag <strong>Junk.app</strong> to <strong>Applications</strong>, then open Terminal and run:</p>
+        <div class="code-cmd">
+          <code>xattr -rd com.apple.quarantine /Applications/Junk.app<br>open /Applications/Junk.app</code>
+          <button class="copy-btn" onclick="copyCmd(this, 'xattr -rd com.apple.quarantine /Applications/Junk.app\nopen /Applications/Junk.app')">Copy</button>
+        </div>
+        <p class="modal-note"><strong>Why?</strong> macOS Gatekeeper quarantines apps not signed with a paid Apple Developer certificate. This removes the flag. You only do it once.</p>
+        <p class="modal-note">Then press <kbd>⌘J</kbd> from anywhere.</p>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-windows">
+    <div class="modal-platform">
+      <div class="modal-header">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+        <div>
+          <h2 id="modal-title">Download for Windows</h2>
+          <p class="modal-version">v3.1.7 — Free &amp; open source</p>
+        </div>
+      </div>
+      <div class="modal-downloads">
+        <a href="https://github.com/paulfxyz/junk/releases/download/v3.1.7/Junk_3.1.7_x64-setup.exe" class="download-btn">
+          <div class="download-btn-icon" aria-hidden="true">↓</div>
+          <div>
+            <strong>Installer</strong>
+            <span>x64 · .exe · recommended</span>
+          </div>
+        </a>
+        <a href="https://github.com/paulfxyz/junk/releases/download/v3.1.7/Junk_3.1.7_x64_en-US.msi" class="download-btn download-btn-secondary">
+          <div class="download-btn-icon" aria-hidden="true">↓</div>
+          <div>
+            <strong>MSI Package</strong>
+            <span>x64 · .msi · enterprise</span>
+          </div>
+        </a>
+      </div>
+      <div class="modal-install">
+        <h3>Setup</h3>
+        <p>Run the installer. SmartScreen may warn — click <strong>More info → Run anyway</strong>.</p>
+        <p class="modal-note">Press <kbd>Ctrl+J</kbd> from anywhere to open Junk.</p>
+        <p class="modal-note">To launch on startup, add a shortcut to <code>Junk.exe</code> in <code>shell:startup</code>.</p>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-linux">
+    <div class="modal-platform">
+      <div class="modal-header">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.275 1.807 1.715 2.971 3.146 3.738 2.358 1.274 5.591 1.524 8.065.979 1.135-.26 2.125-.694 2.71-1.324.67-.72.79-1.701.507-2.503-.37-1.036-1.236-1.596-2.177-1.839l.007-.026c.31-.519.688-1.099 1.15-1.757 1.132-1.601 1.89-3.05 1.998-4.604.09-1.246-.24-2.527-1.165-3.596-.865-.995-2.205-1.624-3.767-1.694C12.779.012 12.64 0 12.503 0zm.356 3.646c.42.283.748.668.95 1.099.203.43.27.908.188 1.359-.163.9-.806 1.631-1.6 2.018-.778.381-1.68.41-2.8.093-.82-.318-1.5-.959-1.845-1.764-.337-.79-.344-1.701-.018-2.493.318-.777.98-1.403 1.8-1.699.394-.143.806-.207 1.222-.207.582 0 1.157.151 1.803.594zm-5.13 10.357c-.245 0-.49.016-.73.048-.99.137-1.8.64-2.25 1.41-.45.769-.53 1.75-.23 2.63.31.88 1.01 1.61 1.88 2.06.87.45 1.89.61 2.87.44.98-.17 1.89-.68 2.53-1.45.58-.7.86-1.59.79-2.49-.07-.9-.5-1.75-1.17-2.33-.67-.58-1.55-.88-2.69-.87zm10.038 0c-.685 0-1.385.18-2.01.52-.625.34-1.13.85-1.44 1.48-.31.63-.41 1.35-.28 2.04.13.69.49 1.33 1.02 1.79.53.46 1.22.72 1.96.72.34 0 .68-.05 1.01-.16.67-.22 1.25-.69 1.63-1.31.38-.62.54-1.37.45-2.1-.09-.73-.43-1.42-.96-1.93-.53-.51-1.23-.8-2.38-.85z"/></svg>
+        <div>
+          <h2 id="modal-title">Download for Linux</h2>
+          <p class="modal-version">v3.1.7 — Free &amp; open source</p>
+        </div>
+      </div>
+      <div class="modal-downloads">
+        <a href="https://github.com/paulfxyz/junk/releases/download/v3.1.7/Junk_3.1.7_amd64.AppImage" class="download-btn">
+          <div class="download-btn-icon" aria-hidden="true">↓</div>
+          <div>
+            <strong>AppImage</strong>
+            <span>x64 · no install needed</span>
+          </div>
+        </a>
+        <a href="https://github.com/paulfxyz/junk/releases/download/v3.1.7/Junk_3.1.7_amd64.deb" class="download-btn download-btn-secondary">
+          <div class="download-btn-icon" aria-hidden="true">↓</div>
+          <div>
+            <strong>Debian / Ubuntu</strong>
+            <span>x64 · .deb</span>
+          </div>
+        </a>
+      </div>
+      <div class="modal-install">
+        <h3>Setup</h3>
+        <p><strong>AppImage</strong> — no install needed:</p>
+        <div class="code-cmd">
+          <code>chmod +x Junk_3.1.7_amd64.AppImage<br>./Junk_3.1.7_amd64.AppImage</code>
+          <button class="copy-btn" onclick="copyCmd(this, 'chmod +x Junk_3.1.7_amd64.AppImage
+./Junk_3.1.7_amd64.AppImage')">Copy</button>
+        </div>
+        <p><strong>Debian / Ubuntu:</strong></p>
+        <div class="code-cmd">
+          <code>sudo dpkg -i Junk_3.1.7_amd64.deb</code>
+          <button class="copy-btn" onclick="copyCmd(this, 'sudo dpkg -i Junk_3.1.7_amd64.deb')">Copy</button>
+        </div>
+        <p class="modal-note">Press <kbd>Ctrl+J</kbd> from anywhere once running.</p>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js?v=3.1.7"></script>
+</body>
+</html>
