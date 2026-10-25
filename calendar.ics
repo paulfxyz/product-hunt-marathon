@@ -103,24 +103,24 @@ STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:weekathon-2026-bonus@ph.paulfleury.com
-DTSTAMP:20261020T014707Z
-LAST-MODIFIED:20261011T174214Z
-SEQUENCE:3
-DTSTART:20261110T080100Z
-SUMMARY:Weekathon - Bonus drop
+UID:weekathon-2026-public-good@ph.paulfleury.com
+DTSTAMP:20261025T050000Z
+LAST-MODIFIED:20261025T050000Z
+SEQUENCE:4
+DTSTART:20261110T080000Z
+SUMMARY:Weekathon - Public-good launch on Product Hunt
 DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:weekathon-2026-public-good@ph.paulfleury.com
-DTSTAMP:20261020T014707Z
-LAST-MODIFIED:20261011T174214Z
-SEQUENCE:3
-DTSTART:20261117T080000Z
-SUMMARY:Weekathon - Public-good launch on Product Hunt
+UID:weekathon-2026-bonus@ph.paulfleury.com
+DTSTAMP:20261025T050000Z
+LAST-MODIFIED:20261025T050000Z
+SEQUENCE:4
+DTSTART:20261117T080100Z
+SUMMARY:Weekathon - Bonus drop
 DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
