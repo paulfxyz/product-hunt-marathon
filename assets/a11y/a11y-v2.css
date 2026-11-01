@@ -89,3 +89,10 @@ html.a11y-contrast .grain,html.a11y-contrast .confetti-wrap{display:none!importa
 html.a11y-contrast body :where(a,li,input,textarea,.kicker,.legend-chip,.day-badge,.pl-chip):not(.a11y-modal *):not(.a11y-fab):not(.song-fab){background-color:#000!important;background-image:none!important}
 html.a11y-contrast body button.song-fab.song-fab.song-fab{background:#ffe84a!important;color:#000!important;box-shadow:0 0 0 4px #000,0 0 0 6px #fff!important}
 html.a11y-contrast body .a11y-fab{box-shadow:0 0 0 4px #000,0 0 0 6px #fff}
+/* ph.paulfleury.com: both corner buttons use the main CTA orange */
+.a11y-fab,.song-fab{background:#DA552F;color:#fff}
+[data-theme=dark] .a11y-fab,[data-theme=dark] .song-fab{background:#d9562b;color:#fff}
+.a11y-fab:hover,.song-fab:hover{background:#EA6338}
+[data-theme=dark] .a11y-fab:hover,[data-theme=dark] .song-fab:hover{background:#e3653a}
+/* Slightly smaller on mobile */
+@media(max-width:520px){.a11y-fab,.song-fab{width:44px;height:44px;bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,.24),0 0 0 3px var(--a-bg)}.a11y-fab{left:12px}.song-fab{right:12px}.a11y-fab svg{width:24px;height:24px}.song-fab svg{width:22px;height:22px}.song-bars{height:19px;gap:3px}.song-bars i{width:4px}}
