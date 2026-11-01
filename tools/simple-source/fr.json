@@ -1,0 +1,37 @@
+{
+ "metaTitle": "Le Weekathon, en toute simplicité",
+ "metaDescription": "Un résumé court et posé du Weekathon de Paul Fleury : sept lancements gratuits et open source en sept jours, avec l'audio dans votre langue.",
+ "skip": "Aller au contenu",
+ "tag": "Langage simple · 1 minute",
+ "title": "Le Weekathon, en toute simplicité",
+ "lead": "Je m'appelle Paul Fleury et je vis à Lisbonne, au Portugal. Du 9 au 15 novembre 2026, je lance un nouveau projet chaque jour sur Product Hunt, un site où l'on découvre de nouveaux produits.",
+ "listen": "Écouter cette page",
+ "pause": "Pause",
+ "language": "Langue",
+ "audioError": "Impossible de lire l'audio. Vous pouvez tout de même lire la page.",
+ "fullLink": "Voir le site complet",
+ "calendarLink": "Ajouter les dates à votre agenda",
+ "footer": "Paul Fleury · Weekathon · Lisbonne",
+ "sections": [
+  {
+   "heading": "Sept jours, sept produits",
+   "text": "Chaque matin, un nouveau produit est mis en ligne. Tous les sept sont gratuits et open source : tout le monde peut les utiliser, lire leur code et les améliorer. Je les ai créés avec l'aide de l'intelligence artificielle."
+  },
+  {
+   "heading": "Pourquoi cette semaine",
+   "text": "C'est la semaine du Web Summit, une grande conférence technologique à Lisbonne. Je dédie le Weekathon au Web Summit et à tous ceux qui aiment construire des choses. Pas d'équipe de lancement, pas de campagne de votes. Juste des outils utiles, partagés au grand jour."
+  },
+  {
+   "heading": "Votre avis compte",
+   "text": "Après chaque lancement, je lis les signalements de bugs et les idées. Je corrige en priorité ce qui compte le plus, puis je continue d'améliorer les projets en public."
+  },
+  {
+   "heading": "La suite",
+   "text": "Du 16 au 18 novembre, trois bonus gratuits supplémentaires. Le 24 novembre, Enki, un projet à but non lucratif pour une intelligence artificielle que chacun peut posséder. Le 27 novembre, Cup of News, une application d'actualités. Le 1er décembre, mon activité principale, Openline."
+  },
+  {
+   "heading": "Rencontrons-nous",
+   "text": "Je serai au Web Summit à Lisbonne du 9 au 12 novembre. Venez me dire bonjour ou envoyez-moi un message sur X ou LinkedIn."
+  }
+ ]
+}

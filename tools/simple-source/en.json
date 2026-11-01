@@ -1,0 +1,22 @@
+{
+ "metaTitle": "The Weekathon, in simple words",
+ "metaDescription": "A short, calm summary of Paul Fleury's Weekathon: seven free, open-source launches in seven days, with audio in your language.",
+ "skip": "Skip to content",
+ "tag": "Plain language · 1 minute",
+ "title": "The Weekathon, in simple words",
+ "lead": "I am Paul Fleury, and I live in Lisbon, Portugal. From 9 to 15 November 2026, I am launching one new project every day on Product Hunt, a website where people discover new products.",
+ "listen": "Listen to this page",
+ "pause": "Pause",
+ "language": "Language",
+ "audioError": "The audio could not be played. You can still read the page.",
+ "fullLink": "See the full website",
+ "calendarLink": "Add the dates to your calendar",
+ "footer": "Paul Fleury · The Weekathon · Lisbon",
+ "sections": [
+  {"heading": "Seven days, seven products", "text": "Every morning, a new product goes live. All seven are free and open source: anyone can use them, read their code and improve them. I made them with the help of artificial intelligence."},
+  {"heading": "Why this week", "text": "It is the week of Web Summit, a big technology conference in Lisbon. I dedicate the Weekathon to Web Summit and to everyone who loves to build things. No launch team, no campaign for votes. Just useful tools, shared in the open."},
+  {"heading": "Your feedback counts", "text": "After each launch, I read the bug reports and ideas. I fix what matters first, then keep improving the projects in public."},
+  {"heading": "What comes next", "text": "From 16 to 18 November, three more free extras. On 24 November, Enki, a non-profit project for artificial intelligence that people can own. On 27 November, Cup of News, a news app. On 1 December, my main business, Openline."},
+  {"heading": "Meet me", "text": "I will be at Web Summit in Lisbon from 9 to 12 November. Come and say hello, or send me a message on X or LinkedIn."}
+ ]
+}
