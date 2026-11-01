@@ -142,11 +142,23 @@ STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:weekathon-2026-freemium@ph.paulfleury.com
-DTSTAMP:20261030T200000Z
-LAST-MODIFIED:20261030T200000Z
+UID:weekathon-2026-warmup@ph.paulfleury.com
+DTSTAMP:20261101T200000Z
+LAST-MODIFIED:20261101T200000Z
 SEQUENCE:0
-DTSTART:20261127T080100Z
+DTSTART:20261122T080100Z
+SUMMARY:Weekathon - Sunday warm-up
+DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+URL:https://ph.paulfleury.com/#pipeline
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:weekathon-2026-freemium@ph.paulfleury.com
+DTSTAMP:20261101T200000Z
+LAST-MODIFIED:20261101T200000Z
+SEQUENCE:1
+DTSTART:20261215T080100Z
 SUMMARY:Weekathon - Freemium app launch
 DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
 URL:https://ph.paulfleury.com/#pipeline

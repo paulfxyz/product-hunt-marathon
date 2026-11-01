@@ -3,8 +3,8 @@
   "sample": false,
   "model": "google/gemini-3.8-flash-tts",
   "voice": "Achird",
-  "sourceCharacters": 1179,
-  "duration": 102.56,
-  "bytes": 821036,
-  "generationId": "gen-tts-1793536277-Js1PAAkc7DQPMz3rpbiA"
+  "sourceCharacters": 1225,
+  "duration": 107.64,
+  "bytes": 861548,
+  "generationId": "gen-tts-1793572328-iW8jvW81ENqT3aMa1ay6"
 }
