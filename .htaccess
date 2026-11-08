@@ -4,6 +4,12 @@ RewriteEngine On
 # Private editorial workspace; both /social and /social/ use the Fly login.
 RewriteRule ^social/?$ https://ph-social-manager.fly.dev/ [R=302,L,QSD]
 RewriteRule ^calendar/?$ calendar.php [L]
+# Language pages (/fr/, /es/ ...) share root assets and endpoints: serve /xx/<file> from /<file> when it does not exist.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(fr|zh|es|pt|ar|he|hi|bn|id)/(.+)$ /$2 [L]
+# Bare language slugs get their trailing slash.
+RewriteRule ^(fr|zh|es|pt|ar|he|hi|bn|id)$ /$1/ [R=301,L]
 # Force fresh HTML on every load (no cache) - assets still cache normally
 <FilesMatch "\.(html|htm)$">
   Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"

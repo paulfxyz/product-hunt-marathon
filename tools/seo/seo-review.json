@@ -1,0 +1,57 @@
+{
+ "fr": {
+  "desc": "Sept lancements Product Hunt gratuits et open source en sept jours, du 9 au 15 novembre, pendant la semaine du Web Summit à Lisbonne. Puis quatre bonus gratuits, suivis d’Enki, Openline et Cup of News.",
+  "alt": "The Weekathon par Paul Fleury : sept lancements gratuits et open source en sept jours, du 9 au 15 novembre 2026",
+  "changed": true,
+  "note": "Corrected 'la Web Summit' to 'la semaine du Web Summit' (restoring 'week' and standard masculine gender for the event), ensured non-breaking space before the colon in alt, and rendered 'by Paul Fleury' naturally as 'par Paul Fleury'."
+ },
+ "zh": {
+  "desc": "11月9日至15日里斯本Web Summit期间，7天内在Product Hunt连续推出7款免费开源产品。随后是4个免费附加项目，再之后是Enki、Openline和Cup of News。",
+  "alt": "Paul Fleury的The Weekathon：2026年11月9日至15日，7天推出7款免费开源产品",
+  "changed": true,
+  "note": "Fixed unnatural date order ('9至15日11月' -> '11月9日至15日'), improved phrasing for 'launches' and 'extras', and polished rhythm for native concise product copy."
+ },
+ "es": {
+  "desc": "Siete lanzamientos gratuitos y de código abierto en Product Hunt en siete días, del 9 al 15 de noviembre, durante la semana del Web Summit en Lisboa. Después, cuatro extras gratuitos, seguidos de Enki, Openline y Cup of News.",
+  "alt": "The Weekathon de Paul Fleury: siete lanzamientos gratuitos y de código abierto en siete días, del 9 al 15 de noviembre de 2026",
+  "changed": true,
+  "note": "Polished the description with more natural phrasing ('durante la semana del Web Summit' and 'seguidos de') while maintaining exact meaning and conciseness."
+ },
+ "pt": {
+  "desc": "Sete lançamentos gratuitos e de código aberto no Product Hunt em sete dias, de 9 a 15 de novembro, durante a semana da Web Summit em Lisboa. Depois, quatro extras gratuitos, seguidos de Enki, Openline e Cup of News.",
+  "alt": "The Weekathon, de Paul Fleury: sete lançamentos gratuitos e de código aberto em sete dias, de 9 a 15 de novembro de 2026",
+  "changed": true,
+  "note": "Polished into natural European Portuguese editorial style: translated 'open-source' as 'de código aberto', used 'seguidos de' for 'followed by', and harmonised terminology with 'gratuitos'."
+ },
+ "ar": {
+  "desc": "سبعة إطلاقات مجانية ومفتوحة المصدر على Product Hunt في سبعة أيام، من 9 إلى 15 نوفمبر، خلال أسبوع Web Summit في لشبونة. ثم أربع إضافات مجانية، تليها Enki وOpenline وCup of News.",
+  "alt": "The Weekathon من Paul Fleury: سبعة إطلاقات مجانية ومفتوحة المصدر في سبعة أيام، من 9 إلى 15 نوفمبر 2026",
+  "changed": true,
+  "note": "Adjusted preposition phrasing for natural flow ('خلال أسبوع Web Summit في لشبونة') and corrected grammatical gender agreement in 'تليها' referencing 'إضافات'."
+ },
+ "he": {
+  "desc": "שבע השקות חינמיות בקוד פתוח ב-Product Hunt בשבעה ימים, 9–15 בנובמבר, במהלך שבוע Web Summit בליסבון. לאחר מכן ארבע תוספות חינמיות, ואחריהן Enki, Openline ו-Cup of News.",
+  "alt": "The Weekathon מאת Paul Fleury: שבע השקות חינמיות בקוד פתוח בשבעה ימים, 9–15 בנובמבר 2026",
+  "changed": true,
+  "note": "Smoothed phrasing by removing the awkward 'ו-' in 'חינמיות ובקוד פתוח', changed 'בשבוע' to 'במהלך שבוע' for natural flow, used 'לאחר מכן', and refined 'by Paul Fleury' to 'מאת Paul Fleury'."
+ },
+ "hi": {
+  "desc": "सात दिनों में Product Hunt पर सात मुफ़्त, ओपन-सोर्स लॉन्च, 9–15 नवंबर, लिस्बन में Web Summit वीक के दौरान। फिर चार मुफ़्त एक्स्ट्रा, उसके बाद Enki, Openline और Cup of News।",
+  "alt": "Paul Fleury का The Weekathon: सात दिनों में सात मुफ़्त, ओपन-सोर्स लॉन्च, 9–15 नवंबर 2026",
+  "changed": true,
+  "note": "Refined 'Web Summit वाले हफ़्ते में' to 'Web Summit वीक के दौरान' for a smoother, natural modern Indian tech register."
+ },
+ "bn": {
+  "desc": "সাত দিনে Product Hunt-এ সাতটি ফ্রি, ওপেন-সোর্স লঞ্চ—৯–১৫ নভেম্বর, লিসবনে Web Summit সপ্তাহে। এরপর চারটি ফ্রি এক্সট্রা, আর তারপর Enki, Openline ও Cup of News।",
+  "alt": "Paul Fleury-র The Weekathon: সাত দিনে সাতটি ফ্রি, ওপেন-সোর্স লঞ্চ, ৯–১৫ নভেম্বর ২০২৬",
+  "changed": true,
+  "note": "Replaced the stiff and literal 'বিনামূল্যের' with the natural tech loanword 'ফ্রি', and smoothed punctuation and conjunction flow to sound natural rather than translated while preserving all names, numbers, and dates."
+ },
+ "id": {
+  "desc": "Tujuh peluncuran Product Hunt gratis dan bersumber terbuka dalam tujuh hari, 9–15 November, selama pekan Web Summit di Lisbon. Lalu empat bonus gratis, disusul Enki, Openline, dan Cup of News.",
+  "alt": "The Weekathon oleh Paul Fleury: tujuh peluncuran gratis dan bersumber terbuka dalam tujuh hari, 9–15 November 2026",
+  "changed": true,
+  "note": "Replaced 'open source' with standard KBBI 'bersumber terbuka' and smoothed 'saat pekan' to 'selama pekan' for natural phrasing."
+ },
+ "cost": 0.04550025
+}
