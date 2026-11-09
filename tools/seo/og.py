@@ -28,7 +28,7 @@ h1{{margin-top:44px;font-size:84px;line-height:1.02;font-weight:700;letter-spaci
 .kitty{{position:absolute;{'left' if rtl else 'right'}:20px;top:150px;width:470px;}}
 html[dir=rtl] .prods{{justify-content:flex-end;margin-left:auto}}
 </style></head><body><img class="kitty" src="data:image/webp;base64,{kitty}"><div class="wrap">
-<div class="top"><div class="brand">PF <b>&#10084;</b> PH · The Weekathon</div><div class="pill">{t('9–15 NOVEMBER')} · {t('Web Summit Lisbon')}</div></div>
+<div class="top"><div class="brand">PF <b>&#10084;</b> PH · The Weekathon</div><div class="pill">{t('10–16 NOVEMBER')} · {t('Web Summit Lisbon')}</div></div>
 <h1>{t('Seven products.')}<em>{t('Seven days.')}</em></h1>
 <div class="sub">{t('100% free and open source')}</div>
 <div class="prods">{prods}</div></div><div class="url">ph.paulfleury.com</div></body></html>'''

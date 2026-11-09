@@ -8,8 +8,8 @@ LANGS=['en','fr','zh','es','pt','ar','he','hi','bn','id']
 HL={'zh':'zh-Hans','pt':'pt-PT'}
 LOC={'en':'en_US','fr':'fr_FR','zh':'zh_CN','es':'es_ES','pt':'pt_PT','ar':'ar_AR','he':'he_IL','hi':'hi_IN','bn':'bn_IN','id':'id_ID'}
 FONT={'zh':'Noto+Sans+SC','ar':'Noto+Sans+Arabic','he':'Noto+Sans+Hebrew','hi':'Noto+Sans+Devanagari','bn':'Noto+Sans+Bengali'}
-DESC='Seven free, open-source Product Hunt launches in seven days, 9–15 November, during Web Summit week in Lisbon. Then four free extras, followed by Enki, Openline and Cup of News.'
-ALT='The Weekathon by Paul Fleury: seven free, open-source launches in seven days, 9–15 November 2026'
+DESC='Seven free, open-source Product Hunt launches in seven days, 10–16 November, during Web Summit week in Lisbon. Then four free extras, followed by Enki, Openline and Cup of News.'
+ALT='The Weekathon by Paul Fleury: seven free, open-source launches in seven days, 10–16 November 2026'
 OGT='The Weekathon — 7 products in 7 days'; TITLE=OGT+' · Paul Fleury'
 OLD_DESC='Seven free, open-source launches, 9–15 November, during Web Summit week in Lisbon. Then four free extras on 16, 17, 18 and 22 November, a serious proposal with the non-profit Enki on 24 November, my main startup on 1 December and, later, a side commercial project, Cup of News, on 15 December.'
 rev=json.loads((T/'seo-review.json').read_text())

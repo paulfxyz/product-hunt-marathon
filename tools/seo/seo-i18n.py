@@ -4,8 +4,8 @@ from pathlib import Path
 R=Path('/home/user/workspace/ph-social-manager');OUT=Path('/home/user/workspace/pf-ph-site/tools/seo')
 src=(R/'scripts/site-i18n-openrouter.py').read_text()
 GUIDE=eval(src[src.index('GUIDE = {')+8:src.index('}\nSITE')+1])
-SRC={"desc":"Seven free, open-source Product Hunt launches in seven days, 9–15 November, during Web Summit week in Lisbon. Then four free extras, followed by Enki, Openline and Cup of News.",
-     "alt":"The Weekathon by Paul Fleury: seven free, open-source launches in seven days, 9–15 November 2026"}
+SRC={"desc":"Seven free, open-source Product Hunt launches in seven days, 10–16 November, during Web Summit week in Lisbon. Then four free extras, followed by Enki, Openline and Cup of News.",
+     "alt":"The Weekathon by Paul Fleury: seven free, open-source launches in seven days, 10–16 November 2026"}
 ROLE={"desc":"search-result meta description and social share description; at most ~165 characters in Latin scripts (shorter for zh); every fact kept",
       "alt":"alt text of the social share image; plain and descriptive"}
 LANGS=['fr','zh','es','pt','ar','he','hi','bn','id']
