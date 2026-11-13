@@ -8,9 +8,9 @@ LANGS=['en','fr','zh','es','pt','ar','he','hi','bn','id']
 HL={'zh':'zh-Hans','pt':'pt-PT'}
 LOC={'en':'en_US','fr':'fr_FR','zh':'zh_CN','es':'es_ES','pt':'pt_PT','ar':'ar_AR','he':'he_IL','hi':'hi_IN','bn':'bn_IN','id':'id_ID'}
 FONT={'zh':'Noto+Sans+SC','ar':'Noto+Sans+Arabic','he':'Noto+Sans+Hebrew','hi':'Noto+Sans+Devanagari','bn':'Noto+Sans+Bengali'}
-DESC='Seven free, open-source Product Hunt launches in seven days, 10–16 November, during Web Summit week in Lisbon. Then four free extras, followed by Enki, Openline and Cup of News.'
-ALT='The Weekathon by Paul Fleury: seven free, open-source launches in seven days, 10–16 November 2026'
-OGT='The Weekathon — 7 products in 7 days'; TITLE=OGT+' · Paul Fleury'
+DESC='Eleven free, open-source Product Hunt launches in eleven days, 10–20 November 2026. Plus five ventures from Paul Fleury: Enki, Openline, Iris, Digital Spot and Cup of News.'
+ALT='The Product Hunt Marathon by Paul Fleury: eleven free, open-source launches in eleven days, 10–20 November 2026'
+OGT='The Product Hunt Marathon — 11 products in 11 days'; TITLE=OGT+' · Paul Fleury'
 OLD_DESC='Seven free, open-source launches, 9–15 November, during Web Summit week in Lisbon. Then four free extras on 16, 17, 18 and 22 November, a serious proposal with the non-profit Enki on 24 November, my main startup on 1 December and, later, a side commercial project, Cup of News, on 15 December.'
 rev=json.loads((T/'seo-review.json').read_text())
 url=lambda L:B+('/' if L=='en' else f'/{L}/')
@@ -20,8 +20,6 @@ i=s.find('window.PH_TRANSLATIONS=')+len('window.PH_TRANSLATIONS=');j=s.find(';</
 D=json.loads(s[i:j])
 PREV='Seven free, open-source Product Hunt launches in seven days, 9–15 November, during Web Summit week in Lisbon. Then four free extras, Enki, Openline and Cup of News.'
 for L in LANGS: D[L].pop(PREV,None)
-for L in LANGS[1:]:
-    D[L][DESC]=rev[L]['desc'].replace('\\xa0','\xa0'); D[L][ALT]=rev[L]['alt'].replace('\\xa0','\xa0')
 D['en'][DESC]=DESC; D['en'][ALT]=ALT
 s=s[:i]+json.dumps(D,ensure_ascii=False,separators=(',',':'))+s[j:]
 t=lambda L,k: k if L=='en' else D[L].get(k,k)
@@ -32,7 +30,7 @@ def block(L):
     h=['<!-- SEO START -->',
     f'<meta content="{esc(OGT)}" data-i18n-content="{esc(OGT)}" property="og:title"/>',
     f'<meta content="{esc(DESC)}" data-i18n-content="{esc(DESC)}" property="og:description"/>',
-    '<meta content="website" property="og:type"/>','<meta content="The Weekathon · Paul Fleury" property="og:site_name"/>',
+    '<meta content="website" property="og:type"/>','<meta content="The Product Hunt Marathon · Paul Fleury" property="og:site_name"/>',
     f'<meta content="{url(L)}" property="og:url"/>',f'<meta content="{LOC[L]}" property="og:locale"/>']
     h+= [f'<meta content="{LOC[x]}" property="og:locale:alternate"/>' for x in LANGS if x!=L]
     h+=[f'<meta content="{img}" property="og:image"/>',f'<meta content="{img}" property="og:image:secure_url"/>','<meta content="image/jpeg" property="og:image:type"/>',
@@ -46,7 +44,7 @@ def block(L):
     f'<link href="{url(L)}" rel="canonical"/>']
     h+=[f'<link href="{url(x)}" hreflang="{HL.get(x,x)}" rel="alternate"/>' for x in LANGS]+[f'<link href="{B}/" hreflang="x-default" rel="alternate"/>']
     ld={"@context":"https://schema.org","@graph":[
-      {"@type":"WebSite","@id":B+"/#website","url":B+"/","name":"The Weekathon","inLanguage":[HL.get(x,x) for x in LANGS],"publisher":{"@id":B+"/#paul"}},
+      {"@type":"WebSite","@id":B+"/#website","url":B+"/","name":"The Product Hunt Marathon","inLanguage":[HL.get(x,x) for x in LANGS],"publisher":{"@id":B+"/#paul"}},
       {"@type":"WebPage","@id":url(L)+"#webpage","url":url(L),"name":t(L,TITLE),"description":d,"inLanguage":HL.get(L,L),"isPartOf":{"@id":B+"/#website"},
        "primaryImageOfPage":{"@type":"ImageObject","url":img,"width":1200,"height":630,"caption":a},"author":{"@id":B+"/#paul"}},
       {"@type":"Person","@id":B+"/#paul","name":"Paul Fleury","url":"https://paulfleury.com/","sameAs":["https://x.com/paulfxyz","https://www.linkedin.com/in/paulfxyz/","https://paulfleury.com/"]}]}
@@ -96,7 +94,7 @@ for L in LANGS[1:]:
     for m in head.find_all('meta',attrs={'data-i18n-content':True}):
         v=tr(m['data-i18n-content']); 
         if v: m['content']=v
-    soup.title.string=d.get(TITLE,TITLE)
+    soup.title.string=d.get(TITLE) or (d.get(OGT,OGT)+' · Paul Fleury')
     NAMES={'fr':'Français','zh':'简体中文','es':'Español','pt':'Português','ar':'العربية','he':'עברית','hi':'हिन्दी','bn':'বাংলা','id':'Bahasa Indonesia'}
     cl=soup.find(id='current-language'); cl.string=NAMES[L]; cl['lang']=HL.get(L,L)
     for btn in soup.find_all(attrs={'data-language-option':True}): btn['aria-pressed']=str(btn['data-language-option']==L).lower()

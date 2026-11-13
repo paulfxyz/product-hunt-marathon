@@ -12,7 +12,7 @@ def html(L):
     rtl=L in('ar','he'); f=FONT.get(L)
     fam=("'%s',"%f) if f else ''
     q=('&family='+f.replace(' ','+')+':wght@500;700') if f else ''
-    prods=''.join(f'<span>{p}</span>' for p in ['Junk','ASE','Mang','Hollr','Clippy','Mercury','Megamesh'])
+    prods=''.join(f'<span>{p}</span>' for p in ['Junk','ASE','Mang','Hollr','Clippy','Mercury','Megamesh','AI Credit Checker','xnftables','Timescreen','Mars'])
     return f'''<!doctype html><html lang="{L}" dir="{'rtl' if rtl else 'ltr'}"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600{q}&display=block" rel="stylesheet">
 <style>*{{margin:0;box-sizing:border-box}}body{{width:1200px;height:630px;background:#FFF7ED;font-family:'Space Grotesk',{fam}sans-serif;color:#1F1A17;overflow:hidden;position:relative}}
@@ -23,13 +23,13 @@ def html(L):
 h1{{margin-top:44px;font-size:84px;line-height:1.02;font-weight:700;letter-spacing:-.02em;max-width:690px}}h1 em{{font-style:normal;color:#DA552F;display:block}}
 .sub{{margin-top:26px;font-size:28px;font-weight:500;color:#4A3F38;max-width:660px}}
 .prods{{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;max-width:700px;direction:ltr}}
-.prods span{{font:600 18px 'IBM Plex Mono',monospace;border:2px solid #1F1A17;border-radius:8px;padding:6px 12px;background:#fff}}
+.prods span{{font:600 17px 'IBM Plex Mono',monospace;border:2px solid #1F1A17;border-radius:8px;padding:5px 10px;background:#fff}}
 .url{{position:absolute;bottom:56px;{'left' if rtl else 'right'}:64px;font:600 20px 'IBM Plex Mono',monospace;color:#DA552F}}
 .kitty{{position:absolute;{'left' if rtl else 'right'}:20px;top:150px;width:470px;}}
 html[dir=rtl] .prods{{justify-content:flex-end;margin-left:auto}}
 </style></head><body><img class="kitty" src="data:image/webp;base64,{kitty}"><div class="wrap">
-<div class="top"><div class="brand">PF <b>&#10084;</b> PH · The Weekathon</div><div class="pill">{t('10–16 NOVEMBER')} · {t('Web Summit Lisbon')}</div></div>
-<h1>{t('Seven products.')}<em>{t('Seven days.')}</em></h1>
+<div class="top"><div class="brand">PF <b>&#10084;</b> PH · The Marathon</div><div class="pill">{t('10–20 NOVEMBER')} · {t('11 launches')}</div></div>
+<h1>{t('Eleven products.')}<em>{t('Eleven days.')}</em></h1>
 <div class="sub">{t('100% free and open source')}</div>
 <div class="prods">{prods}</div></div><div class="url">ph.paulfleury.com</div></body></html>'''
 async def main():

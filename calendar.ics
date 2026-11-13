@@ -1,9 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Paul Fleury//Weekathon//EN
+PRODID:-//Paul Fleury//Product Hunt Marathon//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:The Weekathon
+X-WR-CALNAME:The Product Hunt Marathon
 X-WR-TIMEZONE:Europe/Lisbon
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -13,92 +13,92 @@ DTSTAMP:20261030T200000Z
 LAST-MODIFIED:20261030T200000Z
 SEQUENCE:3
 DTSTART:20261108T080100Z
-SUMMARY:Weekathon - Prelude (cancelled)
-DESCRIPTION:Pre-weekathon launch reminder. Details on the campaign page.
+SUMMARY:Marathon - Prelude (cancelled)
+DESCRIPTION:Pre-Marathon launch reminder. Details on the campaign page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:CANCELLED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-1@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261110T160000Z
-SUMMARY:Weekathon - Day 1: Junk on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 1 of 11: Junk on Product Hunt
+DESCRIPTION:Day 1 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-2@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261111T160000Z
-SUMMARY:Weekathon - Day 2: ASE on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 2 of 11: ASE on Product Hunt
+DESCRIPTION:Day 2 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-3@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261112T160000Z
-SUMMARY:Weekathon - Day 3: Mang on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 3 of 11: Mang on Product Hunt
+DESCRIPTION:Day 3 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-4@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261113T160000Z
-SUMMARY:Weekathon - Day 4: Hollr on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 4 of 11: Hollr on Product Hunt
+DESCRIPTION:Day 4 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-5@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261114T160000Z
-SUMMARY:Weekathon - Day 5: Clippy on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 5 of 11: Clippy on Product Hunt
+DESCRIPTION:Day 5 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-6@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261115T160000Z
-SUMMARY:Weekathon - Day 6: Mercury on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 6 of 11: Mercury on Product Hunt
+DESCRIPTION:Day 6 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-week-7@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:6
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:7
 DTSTART:20261116T160000Z
-SUMMARY:Weekathon - Day 7: Megamesh on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 7 of 11: Megamesh on Product Hunt
+DESCRIPTION:Day 7 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
@@ -119,48 +119,60 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-encore@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:4
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:5
 DTSTART:20261117T160000Z
-SUMMARY:Weekathon - Free extra: AI Credit Checker on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 8 of 11: AI Credit Checker on Product Hunt
+DESCRIPTION:Day 8 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-warmup@ph.paulfleury.com
-DTSTAMP:20261112T100000Z
-LAST-MODIFIED:20261112T100000Z
-SEQUENCE:4
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:5
 DTSTART:20261120T160000Z
-SUMMARY:Weekathon - Free extra: Mars on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 11 of 11: Mars on Product Hunt
+DESCRIPTION:Day 11 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-weekend@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:5
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:6
 DTSTART:20261119T160000Z
-SUMMARY:Weekathon - Free extra: Timescreen on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 10 of 11: Timescreen on Product Hunt
+DESCRIPTION:Day 10 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:weekathon-2026-bonus@ph.paulfleury.com
-DTSTAMP:20261109T133000Z
-LAST-MODIFIED:20261109T133000Z
-SEQUENCE:9
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:10
 DTSTART:20261118T160000Z
-SUMMARY:Weekathon - Free extra: xnftables on Product Hunt
-DESCRIPTION:Launch reminder. Details and updates on the Weekathon page.
+SUMMARY:Marathon - Day 9 of 11: xnftables on Product Hunt
+DESCRIPTION:Day 9 of 11 in the Product Hunt Marathon. Launch reminder\, details and updates on the Marathon page.
+URL:https://ph.paulfleury.com/#pipeline
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-2026-full-report@ph.paulfleury.com
+DTSTAMP:20261113T010000Z
+LAST-MODIFIED:20261113T010000Z
+SEQUENCE:0
+DTSTART:20261123T170000Z
+SUMMARY:Marathon - Full Report on LinkedIn and X
+DESCRIPTION:A thorough analysis of what happened during the Product Hunt Marathon\, posted on LinkedIn and X.
 URL:https://ph.paulfleury.com/#pipeline
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
