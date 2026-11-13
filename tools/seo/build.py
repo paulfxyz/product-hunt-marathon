@@ -8,7 +8,7 @@ LANGS=['en','fr','zh','es','pt','ar','he','hi','bn','id']
 HL={'zh':'zh-Hans','pt':'pt-PT'}
 LOC={'en':'en_US','fr':'fr_FR','zh':'zh_CN','es':'es_ES','pt':'pt_PT','ar':'ar_AR','he':'he_IL','hi':'hi_IN','bn':'bn_IN','id':'id_ID'}
 FONT={'zh':'Noto+Sans+SC','ar':'Noto+Sans+Arabic','he':'Noto+Sans+Hebrew','hi':'Noto+Sans+Devanagari','bn':'Noto+Sans+Bengali'}
-DESC='Eleven free, open-source Product Hunt launches in eleven days, 10–20 November 2026. Plus five ventures from Paul Fleury: Enki, Openline, Iris, Digital Spot and Cup of News.'
+DESC='Eleven free, open-source Product Hunt launches in eleven days, 10–20 November 2026. Plus five ventures from Paul Fleury, led by Openline, his main startup: Openline, Iris, Digital Spot, Enki and Cup of News.'
 ALT='The Product Hunt Marathon by Paul Fleury: eleven free, open-source launches in eleven days, 10–20 November 2026'
 OGT='The Product Hunt Marathon — 11 products in 11 days'; TITLE=OGT+' · Paul Fleury'
 OLD_DESC='Seven free, open-source launches, 9–15 November, during Web Summit week in Lisbon. Then four free extras on 16, 17, 18 and 22 November, a serious proposal with the non-profit Enki on 24 November, my main startup on 1 December and, later, a side commercial project, Cup of News, on 15 December.'
