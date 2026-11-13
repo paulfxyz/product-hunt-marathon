@@ -277,12 +277,85 @@ h1 span,h2 span{display:block}
 [dir=rtl] .rule::before{text-align:end}
 .rule h3{font-family:var(--font-display);font-weight:800;font-size:1.45rem;letter-spacing:-.02em;line-height:1.15}
 .rule p{margin-top:8px;color:var(--band-ink-2);font-size:16.5px;text-wrap:pretty}
-.sig{display:grid;gap:16px;margin-top:48px;padding:22px;border-radius:var(--r-lg);background:color-mix(in srgb,var(--band-ink) 6%,transparent);border:1px solid var(--band-line)}
+.sig{display:grid;gap:28px;margin-top:48px;padding:22px;border-radius:var(--r-lg);background:color-mix(in srgb,var(--band-ink) 6%,transparent);border:1px solid var(--band-line)}
+.sig-main{display:grid;gap:16px;align-content:start}
 .sig-who{display:flex;align-items:center;gap:14px}
 .sig-who img{width:56px;flex:none}
 .sig-name{font-weight:700;font-size:15px;color:var(--band-ink-2)}
 .sig-role{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
 .sig p.sig-p{color:var(--band-ink-2);font-size:16.5px;max-width:60ch;text-wrap:pretty}
+.theses{display:grid;gap:10px;margin-top:4px}
+.thesis{display:grid;gap:4px;align-content:start;width:100%;padding:16px 18px;border-radius:var(--r-md);border:1px solid var(--band-line);background:color-mix(in srgb,var(--band-ink) 4%,transparent);color:inherit;font:inherit;text-align:start;cursor:pointer;transition:border-color .18s var(--ease),background-color .18s var(--ease),transform .18s var(--ease)}
+.thesis:hover{border-color:var(--band-accent);background:color-mix(in srgb,var(--band-accent) 9%,transparent)}
+.thesis:active{transform:scale(.985)}
+.thesis-t{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
+.thesis-p{color:var(--band-ink-2);font-size:15.5px;line-height:1.4;text-wrap:pretty}
+.thesis-go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-weight:700;font-size:15px;color:var(--band-accent)}
+.thesis-go .ico{transition:transform .18s var(--ease)}
+.thesis:hover .thesis-go .ico{transform:translateX(3px)}
+[dir=rtl] .thesis:hover .thesis-go .ico{transform:scaleX(-1) translateX(3px)}
+.week{display:grid;gap:16px;align-content:start;padding-top:26px;border-top:1px solid var(--band-line)}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 16px}
+.week-head h3{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
+.week-head span{font-size:14.5px;font-weight:700;color:var(--band-ink-2)}
+.week-bar{display:flex;gap:3px;height:14px}
+.week-bar i{flex:var(--w) 1 0;min-width:0;border-radius:3px;background:var(--band-ink);transform-origin:left center}
+[dir=rtl] .week-bar i{transform-origin:right center}
+.week-bar i:first-child{border-start-start-radius:7px;border-end-start-radius:7px}
+.week-bar i:last-child{border-start-end-radius:7px;border-end-end-radius:7px}
+.week-bar .is-open{background:var(--band-accent)}
+.week-bar .is-side{background:color-mix(in srgb,var(--band-ink) 34%,transparent)}
+.js .sig .week-bar i{transform:scaleX(0);transition:transform .8s var(--ease) .3s}
+.js .sig .week-bar i:nth-child(2){transition-delay:.5s}
+.js .sig .week-bar i:nth-child(3){transition-delay:.7s}
+.js .sig.in .week-bar i{transform:none}
+.week-list{list-style:none;display:grid}
+.week-list li{display:grid;grid-template-columns:10px minmax(0,1fr) auto;align-items:center;gap:1px 12px;padding:11px 0;border-bottom:1px solid var(--band-line)}
+.week-list li::before{content:"";grid-row:1;width:10px;height:10px;border-radius:3px;background:var(--band-ink)}
+.week-list .is-open::before{background:var(--band-accent)}
+.week-list .is-side::before{background:color-mix(in srgb,var(--band-ink) 34%,transparent)}
+.week-list b{grid-column:2;grid-row:1;font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.015em;line-height:1.2;font-variant-numeric:tabular-nums}
+.week-list span{grid-column:2;grid-row:2;color:var(--band-ink-2);font-size:15.5px;line-height:1.4}
+.week-list em{grid-column:3;grid-row:1/span 2;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:var(--r-full);border:1.5px solid color-mix(in srgb,var(--band-accent) 55%,transparent);color:var(--band-accent);font-style:normal;font-weight:700;font-size:13px;line-height:1.2;white-space:nowrap}
+.week-list em::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:blink 2.4s var(--ease) infinite}
+@keyframes blink{50%{opacity:.35}}
+.week-open{color:var(--band-ink);font-size:16.5px;text-wrap:pretty}
+.week .btn{justify-self:start}
+
+/* Dialogs (SaaS is dead, CHO) */
+html:has(dialog.dlg[open]){overflow:hidden;padding-inline-end:var(--sbw,0px)}
+.dlg{position:fixed;inset:0;margin:auto 0 0;width:100%;max-width:100%;height:auto;max-height:calc(100dvh - 28px);padding:0;border:0;border-radius:var(--r-lg) var(--r-lg) 0 0;background:var(--surface);color:var(--ink);box-shadow:0 -24px 64px -24px rgba(0,0,0,.55);overflow:hidden;opacity:0;transform:translateY(28px);transition:opacity .26s var(--ease),transform .32s var(--ease),overlay .32s allow-discrete,display .32s allow-discrete}
+.dlg[open]{display:flex;opacity:1;transform:none}
+@starting-style{.dlg[open]{opacity:0;transform:translateY(28px)}}
+.dlg::backdrop{background:rgba(18,12,8,.66);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .26s var(--ease),overlay .32s allow-discrete,display .32s allow-discrete}
+.dlg[open]::backdrop{opacity:1}
+@starting-style{.dlg[open]::backdrop{opacity:0}}
+.dlg-in{display:flex;flex-direction:column;width:100%;min-height:0}
+.dlg-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 14px 14px 20px;padding-inline:20px 14px;border-bottom:1px solid var(--line)}
+.dlg-head h2{font-size:clamp(1.35rem,5.4vw,1.8rem);line-height:1.08;letter-spacing:-.03em}
+.dlg-x{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer;transition:border-color .15s,background-color .15s,transform .18s var(--ease)}
+.dlg-x:hover{border-color:var(--ink);transform:rotate(90deg)}
+.dlg-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:20px 20px calc(24px + env(safe-area-inset-bottom));color:var(--ink-2);font-size:16.5px;line-height:1.6;outline:0}
+.dlg-body p{text-wrap:pretty}
+.dlg-body > p + p{margin-top:12px}
+.dlg-lead{font-family:var(--font-display);font-weight:800;font-size:clamp(1.3rem,4.6vw,1.55rem);letter-spacing:-.025em;line-height:1.15;color:var(--accent-ink)}
+.dlg-body h3{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
+.dlg-sec{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.dlg-sec p{margin-top:8px}
+.dlg-aside{padding-inline-start:14px;border-inline-start:3px solid var(--accent);font-size:15.5px}
+.dlg-aside a{display:inline-flex;align-items:center;gap:4px;font-weight:700;color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.dlg-tools{list-style:none;display:grid;gap:10px;margin-top:14px}
+.dlg-tools li{display:grid;gap:3px;padding:14px 16px;border-radius:var(--r-md);background:var(--bg);border:1px solid var(--line)}
+.dlg-tools b{color:var(--ink);font-weight:700}
+.dlg-tools span{font-size:15.5px;line-height:1.45}
+.dlg-impact{margin-top:24px;padding:20px;border-radius:var(--r-md);background:var(--accent-soft)}
+.dlg-impact h3{color:var(--accent-ink)}
+.dlg-impact p{margin-top:8px;color:var(--ink)}
+.dlg-note{margin-top:14px;padding:22px 20px;border-radius:var(--r-md);background:var(--band);color:var(--band-ink-2);border:1px solid var(--band-line)}
+.dlg-note h3{color:var(--band-ink)}
+.dlg-note p{margin-top:10px}
+.dlg-note .btn{margin-top:18px}
+.dlg-done{width:100%;margin-top:22px}
 
 /* Ventures */
 .feature{display:grid;gap:24px;padding:22px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);scroll-margin-top:76px}
@@ -358,7 +431,14 @@ h1 span,h2 span{display:block}
   .sec{padding-block:88px}
   .band{padding-block:96px}
   .rules{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-  .sig{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:32px;padding:28px}
+  .sig{padding:28px}
+  .theses{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .dlg{margin:auto;width:min(720px,100% - 48px);max-height:min(88dvh,900px);border-radius:var(--r-lg);box-shadow:0 32px 80px -24px rgba(0,0,0,.6)}
+  .dlg-head{padding:20px 20px 18px 32px;padding-inline:32px 20px}
+  .dlg-body{padding:28px 32px 32px}
+  .dlg-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dlg-impact,.dlg-note{padding:24px 26px}
+  .dlg-done{width:auto}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .follow{grid-template-columns:repeat(2,minmax(0,1fr))}
   .feature{padding:28px}
@@ -368,6 +448,10 @@ h1 span,h2 span{display:block}
 }
 /* ≥ 960 */
 @media (min-width:960px){
+  .sig{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:44px;padding:36px}
+  .sig-main{grid-template-rows:auto auto 1fr}
+  .theses{align-self:end}
+  .week{padding-top:0;border-top:0;padding-inline-start:44px;border-inline-start:1px solid var(--band-line)}
   body{font-size:18px}
   .top-in{min-height:68px}
   .top-nav{display:flex}
@@ -647,8 +731,22 @@ h1 span,h2 span{display:block}
 <div class="rule rv"><h3>Comentarios antes que votos.</h3><p>Dime qué falló o qué falta. Primero los fallos, luego el cambio útil más pequeño. Evalúo cada petición. No prometo todas las funciones.</p></div>
 </div>
 <div class="sig rv">
+<div class="sig-main">
 <div class="sig-who"><img src="../assets/brand/pfph-head-v1.webp" alt="" width="272" height="201" loading="lazy"><div><p class="sig-name">Paul Fleury</p><p class="sig-role">Fundador. CEO. Chief Hacking Officer.</p></div></div>
 <p class="sig-p">Un Chief Hacking Officer usa la IA para convertir tareas repetitivas en herramientas que pertenecen a todo el equipo. Mi apuesta: más empresas crearán los flujos de trabajo que antes alquilaban.</p>
+<div class="theses"><button type="button" class="thesis" data-open="dlg-saas" commandfor="dlg-saas" command="show-modal" aria-haspopup="dialog"><span class="thesis-t"><bdi>El SaaS ha muerto.</bdi></span><span class="thesis-p">Sé dueño de tu flujo de trabajo. Cuestiona la factura recurrente.</span><span class="thesis-go">Explora el argumento<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button type="button" class="thesis" data-open="dlg-cho" commandfor="dlg-cho" command="show-modal" aria-haspopup="dialog"><span class="thesis-t"><bdi>CHO.</bdi></span><span class="thesis-p">Una persona responsable. Herramientas para todo el equipo.</span><span class="thesis-go">Explora el rol<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+</div>
+<div class="week">
+<div class="week-head"><h3>Cómo reparto mi semana</h3><span>Unas 100 horas</span></div>
+<div class="week-bar" aria-hidden="true"><i style="--w:60"></i><i class="is-open" style="--w:30"></i><i class="is-side" style="--w:12.5"></i></div>
+<ul class="week-list">
+<li><b>60 h</b><span>Openline, mi startup principal</span></li>
+<li class="is-open"><b>Hasta 30 h</b><span>Consultoría como CHO</span><em>Disponible</em></li>
+<li class="is-side"><b>10–15 h</b><span>Código abierto y proyectos paralelos</span></li>
+</ul>
+<p class="week-open">Estas once herramientas son mi carta de presentación. Tengo hasta 30 horas semanales disponibles para hacer lo mismo en tu empresa.</p>
+<a class="btn btn-primary" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">Construyamos juntos<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
 </div>
 </div>
 </section>
@@ -725,6 +823,7 @@ h1 span,h2 span{display:block}
 <p class="foot-note">© 2026 Paul Fleury. Las once herramientas son gratuitas y con licencia MIT.</p>
 </div>
 </footer>
+<dialog class="dlg" id="dlg-saas" aria-labelledby="dlg-saas-t" closedby="any"><div class="dlg-in"><header class="dlg-head"><h2 id="dlg-saas-t">El SaaS ha muerto.</h2><button type="button" class="dlg-x" data-close commandfor="dlg-saas" command="close" aria-label="Cerrar la explicación del argumento"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div class="dlg-body" tabindex="-1"><p class="dlg-lead">¿Alquilar por defecto? Ya no.</p><p>Apuesto a que más empresas construirán y serán dueñas de los flujos de trabajo que antes alquilaban. Pero cambiar licencias de SaaS por llamadas de IA sin fin no es la solución. Usa la IA para crear herramientas reutilizables y haz que cada coste recurrente se gane su sitio.</p><section class="dlg-sec"><h3>Para empresas</h3><p>Cambiar suscripciones por una factura de IA descontrolada no es soberanía. Quiero que un CHO convierta los prompts repetidos en apps propias, use código normal para los pasos predecibles y pruebe modelos pequeños autoalojados para tareas acotadas. Compara el coste por resultado logrado, incluyendo hardware, energía, alojamiento, licencias, seguridad, mantenimiento y tiempo humano. Autoalojar no es automáticamente más barato ni más privado.</p></section><section class="dlg-sec"><h3>Para fundadores e inversores de SaaS</h3><p>Mi creencia, deliberadamente agresiva: la IA ya puede reproducir la funcionalidad de software de toda la gama de productos de cualquier empresa SaaS, pequeña o grande, por menos de un mes de sus ingresos. Pronto, quizá antes de lo que pensamos, creo que ese presupuesto podría bajar a la factura anual de un solo cliente y, con el tiempo, a su factura mensual. Si tengo razón, la economía del SaaS basada solo en funciones reproducibles podría quedar reducida a polvo. Es una predicción mía, no un referente del sector. Recrear software no es reconstruir datos propios, infraestructura, cumplimiento normativo ni la confianza de los clientes.</p></section><section class="dlg-impact"><h3>Software bajo demanda. Responsabilidad incluida.</h3><p>Construye donde ser dueño genera ventaja. Sigue pagando donde un proveedor aporta un valor que no podrías replicar de forma razonable. Este Maratón es un experimento público, no la prueba de que todas las suscripciones deban desaparecer.</p></section><button type="button" class="btn btn-ghost dlg-done" data-close commandfor="dlg-saas" command="close">Volver a la página</button></div></div></dialog><dialog class="dlg" id="dlg-cho" aria-labelledby="dlg-cho-t" closedby="any"><div class="dlg-in"><header class="dlg-head"><h2 id="dlg-cho-t">¿Qué es un Chief Hacking Officer?</h2><button type="button" class="dlg-x" data-close commandfor="dlg-cho" command="close" aria-label="Cerrar la explicación del rol"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div class="dlg-body" tabindex="-1"><p class="dlg-lead">¿Por qué «hacking»?</p><p>Piensa en los life hacks y el biohacking: encontrar un camino más ingenioso para resolver un problema, no solo ciberseguridad. Atajos que sortean la fricción, no el consentimiento, la seguridad ni la calidad.</p><p>Un Chief Hacking Officer usa la IA para que una organización trabaje más rápido y mejor: software soberano, flujos de trabajo reutilizables y herramientas que las personas puedan mantener. Una persona responsable o un equipo pequeño, con el respaldo de los expertos adecuados. No hace falta ser fundador para llegar a este rol.</p><section class="dlg-sec"><h3>IA + las personas adecuadas</h3><p>Centraliza la propiedad, los presupuestos y la evaluación, no todas las decisiones. Trabaja con especialistas internos y con profesionales externos expertos. Mantén un acceso útil a la IA, define permisos y haz que los traspasos sean reales. Un CHO impulsa a ingeniería, ventas, marketing, legal y operaciones; nadie sustituye toda su experiencia.</p></section><section class="dlg-sec"><h3>Construye con IA. Gestiona con criterio.</h3><p>Convierte los prompts recurrentes en flujos de trabajo reutilizables. Usa código convencional para los pasos predecibles. Prueba modelos pequeños para tareas acotadas y modelos más grandes para carencias reales. Mide la calidad y el coste total, incluidos el mantenimiento y la revisión humana. El entregable es una herramienta con soporte y un responsable, no una transcripción de chat.</p><p class="dlg-aside">Una comparación útil: el CEO de Paysend describe pruebas selectivas de IA, ampliación una vez demostrado un valor medible y un agente de programación interno compartido. No una prohibición generalizada para recortar costes. <a href="https://fintechly.com/five-minutes-with-ben-chisell-ceo-of-paysend/" target="_blank" rel="noopener">Leer la entrevista al CEO de Paysend<svg class="ico flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></p></section><section class="dlg-sec"><h3>Un único hogar para tu código</h3><p>Guarda el código, las pruebas, la documentación y las recetas de despliegue de cada herramienta en repositorios Git propiedad de la organización: GitHub, GitLab o, mejor aún, una forja local o autoalojada. Una única fuente de verdad gobernada, con control de accesos, copias de seguridad y réplicas, no un servidor frágil. Deja fuera los secretos y los datos personales.</p></section><section class="dlg-sec"><h3>Privado donde haga falta. Abierto donde resulte útil.</h3><p>Publica todo el código reutilizable y no sensible que permitan los derechos y la seguridad. Mantén privados los sistemas internos críticos. Licencias claras, pruebas y versiones documentadas permiten que otras organizaciones mejoren una base compartida en lugar de reconstruirla.</p></section><section class="dlg-sec"><h3>Haz fork de evidencias, no de promesas.</h3><p>Da a tus equipos y asistentes de IA código revisado, resultados de pruebas y limitaciones conocidas sobre los que construir. Haz fork de una versión relevante, adáptala, valídala en tu contexto y envía las mejoras útiles al proyecto original. Un punto de partida compartido para las personas y el trabajo asistido por IA, no una prueba automática de seguridad.</p></section><section class="dlg-sec"><h3>Herramientas que podrías lanzar</h3><p>Empieza por un cuello de botella recurrente. Son ejemplos, no la promesa de construirlo todo.</p><ul class="dlg-tools"><li><b>Marketing</b><span>Landing pages de campaña, paneles de experimentos y flujos creativos reutilizables.</span></li><li><b>Ventas</b><span>Generadores de propuestas, herramientas de investigación de cuentas y automatizaciones de traspaso al CRM.</span></li><li><b>Operaciones</b><span>Portales de onboarding, flujos de aprobación, seguimiento de proveedores y paneles internos.</span></li><li><b>Ingeniería</b><span>Herramientas de publicación de versiones, asistentes de QA, guías de actuación ante incidentes y utilidades para desarrolladores.</span></li><li><b>Legal</b><span>Recepción de contratos, bibliotecas de cláusulas y flujos de revisión, con profesionales del derecho a cargo del criterio.</span></li><li><b>Redes sociales</b><span>Calendarios editoriales, bibliotecas de borradores, colas de aprobación y paneles de rendimiento. Las personas aprueban lo que se publica.</span></li><li><b>Lanzamientos públicos</b><span>Apps para clientes, pequeñas utilidades y proyectos de código abierto seleccionados, con un responsable real del soporte y las mejoras.</span></li></ul></section><section class="dlg-impact"><h3>Impacto, no volumen de producción</h3><p>Apunta a menos trabajo repetitivo, mejores traspasos y herramientas que los equipos puedan mantener. Mide el resultado, incluye el coste total de funcionamiento y mantén dentro del alcance las pruebas, la seguridad y la aprobación humana. A menudo, la decisión acertada es construir, ser dueño del código y mantenerlo soberano.</p></section><section class="dlg-note"><h3>Un título desenfadado. La consultoría, muy en serio.</h3><p>¿Una gran empresa o una startup ambiciosa, un producto que valga la pena, confianza mutua y un presupuesto modesto? Estoy abierto a trabajar como CHO en calidad de consultor, hasta 30 horas semanales. Trae un problema real y un mandato y escríbeme por LinkedIn.</p><p>Mi reparto personal es de unas 100 horas semanales: 60 para Openline, hasta 30 para consultoría y de 10 a 15 para código abierto y proyectos paralelos como este Maratón, Cup of News y Enki. Es mi elección, no una exigencia para tu equipo. La consultoría es independiente de la captación de fondos de Openline.</p><a class="btn btn-primary" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">Construyamos juntos<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></section><button type="button" class="btn btn-ghost dlg-done" data-close commandfor="dlg-cho" command="close">Volver a la página</button></div></div></dialog>
 <script>window.PH_DATA={"launches":[{"name":"Junk","line":"Un bloc de notas para macOS. Llámalo, escribe y ciérralo.","icon":"../assets/icons/junk.webp","art":"../assets/kitties/1-junk.webp","site":"https://thejunk.app","gh":"https://github.com/paulfxyz/junk","ph":"https://www.producthunt.com/products/junk"},{"name":"ASE","line":"Monitorización de disponibilidad, DNS y SSL en un solo archivo PHP.","icon":"../assets/icons/ase.webp","art":"../assets/kitties/2-ase.webp","site":"https://ase.so","gh":"https://github.com/paulfxyz/ase","ph":"https://www.producthunt.com/products/ase-2"},{"name":"Mang","line":"Describe lo que necesitas. Obtén el comando de terminal.","icon":"../assets/icons/mang.webp","art":"../assets/kitties/3-mang.webp","site":"https://mang.sh","gh":"https://github.com/paulfxyz/mang","ph":"https://www.producthunt.com/products/mang-sh"},{"name":"Hollr","line":"Tu enlace de bandeja de entrada. Los mensajes se cifran en el navegador de quien los envía.","icon":"../assets/icons/hollr.webp","art":"../assets/kitties/4-hollr.webp","site":"https://hollr.to","gh":"https://github.com/paulfxyz/hollr","ph":"https://www.producthunt.com/products/hollr-2"},{"name":"Clippy","line":"Varios modelos de IA revisan tu contrato, lado a lado.","icon":"../assets/icons/clippy.webp","art":"../assets/kitties/5-clippy.webp","site":"https://clippy.legal","gh":"https://github.com/paulfxyz/clippy","ph":"https://www.producthunt.com/products/clippy-11"},{"name":"Mercury","line":"Una pregunta, debatida por un panel de modelos de IA.","icon":"../assets/icons/mercury.webp","art":"../assets/kitties/6-mercury.webp","site":"https://mercury.sh","gh":"https://github.com/paulfxyz/mercury","ph":"https://www.producthunt.com/products/mercury-414"},{"name":"Megamesh","line":"Tu propia VPN WireGuard, en tu propio servidor.","icon":"../assets/icons/megamesh.webp","art":"../assets/kitties/7-megamesh.webp","site":"https://megamesh.sh","gh":"https://github.com/paulfxyz/megamesh","ph":"https://www.producthunt.com/products/megamesh-sh"},{"name":"AI Credit Checker","line":"Tus saldos de créditos de IA, en la barra de menús del Mac.","icon":"../assets/icons/ai-credit-checker.webp","art":"../assets/kitties/ai-credit-checker.webp","site":"","gh":"https://github.com/paulfxyz/ai-credit-checker","ph":"https://www.producthunt.com/products/ai-credit-checker"},{"name":"xnftables","line":"Una plantilla de firewall para Linux que bloquea todo por defecto.","icon":"../assets/icons/xnftables.webp","art":"../assets/kitties/xnftables-v2.webp","site":"https://xnftables.net","gh":"https://github.com/paulfxyz/xnftables","ph":"https://www.producthunt.com/products/xnftables"},{"name":"Timescreen","line":"Un reloj para tu pantalla secundaria, con una Tierra viva.","icon":"../assets/icons/timescreen.webp","art":"../assets/kitties/timescreen.webp","site":"https://time.paulfleury.com","gh":"https://github.com/paulfxyz/timescreen","ph":"https://www.producthunt.com/products/timescreen"},{"name":"Mars","line":"Análisis de malware tranquilos y bajo demanda para tu Mac.","icon":"../assets/icons/mars.webp","art":"../assets/kitties/mars-goodie.webp","site":"","gh":"https://github.com/paulfxyz/mars","ph":"https://www.producthunt.com/products/mars-2031"}],"dates":["mar 10 nov","mié 11 nov","jue 12 nov","vie 13 nov","sáb 14 nov","dom 15 nov","lun 16 nov","mar 17 nov","mié 18 nov","jue 19 nov","vie 20 nov"],"wrapArt":"../assets/kitties/kitty-laptop.webp","t":{"status_live":"En vivo","status_shipped":"Lanzado","status_today":"Hoy, 16:00","shipped_of":"{n} de 11 lanzadas","live_now":"En vivo ahora","up_next":"A continuación","day_of":"Día {n} de 11","today_at":"hoy a las 16:00, hora de Lisboa","at_time":"16:00, hora de Lisboa","see_on_ph":"Ver en Product Hunt","link_gh":"GitHub","next":"Siguiente","report_name":"Informe completo","report_date":"lun 23 nov","done_title":"Las once, lanzadas.","done_line":"El Informe completo llega el lunes 23 de noviembre, en LinkedIn y X: lo que dejaron once lanzamientos.","done_cta":"Seguir en LinkedIn","sep":", ","colon":": "}};</script>
 <script>
 (function(){
@@ -846,6 +945,24 @@ h1 span,h2 span{display:block}
   setInterval(function(){if(still||hover||inside||!seen||document.hidden||Date.now()<hold)return;go(cur+1)},3000);
 
   update();setInterval(update,30000);
+
+  /* Dialogs: thesis triggers open native modals; backdrop, close buttons and Esc dismiss them */
+  document.querySelectorAll('[data-open]').forEach(function(b){
+    var d=document.getElementById(b.getAttribute('data-open'));
+    if(!d||!d.showModal)return;
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(d.open)return;
+      document.documentElement.style.setProperty('--sbw',(window.innerWidth-document.documentElement.clientWidth)+'px');
+      d.showModal();
+      d.querySelector('.dlg-body').scrollTop=0;
+    });
+  });
+  document.querySelectorAll('dialog.dlg').forEach(function(d){
+    d.addEventListener('click',function(e){
+      if(e.target===d||e.target.closest('[data-close]')){e.preventDefault();if(d.open)d.close()}
+    });
+  });
 
   /* Reveal on scroll */
   var rv=document.querySelectorAll('.rv');

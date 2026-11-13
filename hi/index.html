@@ -277,12 +277,85 @@ h1 span,h2 span{display:block}
 [dir=rtl] .rule::before{text-align:end}
 .rule h3{font-family:var(--font-display);font-weight:800;font-size:1.45rem;letter-spacing:-.02em;line-height:1.15}
 .rule p{margin-top:8px;color:var(--band-ink-2);font-size:16.5px;text-wrap:pretty}
-.sig{display:grid;gap:16px;margin-top:48px;padding:22px;border-radius:var(--r-lg);background:color-mix(in srgb,var(--band-ink) 6%,transparent);border:1px solid var(--band-line)}
+.sig{display:grid;gap:28px;margin-top:48px;padding:22px;border-radius:var(--r-lg);background:color-mix(in srgb,var(--band-ink) 6%,transparent);border:1px solid var(--band-line)}
+.sig-main{display:grid;gap:16px;align-content:start}
 .sig-who{display:flex;align-items:center;gap:14px}
 .sig-who img{width:56px;flex:none}
 .sig-name{font-weight:700;font-size:15px;color:var(--band-ink-2)}
 .sig-role{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
 .sig p.sig-p{color:var(--band-ink-2);font-size:16.5px;max-width:60ch;text-wrap:pretty}
+.theses{display:grid;gap:10px;margin-top:4px}
+.thesis{display:grid;gap:4px;align-content:start;width:100%;padding:16px 18px;border-radius:var(--r-md);border:1px solid var(--band-line);background:color-mix(in srgb,var(--band-ink) 4%,transparent);color:inherit;font:inherit;text-align:start;cursor:pointer;transition:border-color .18s var(--ease),background-color .18s var(--ease),transform .18s var(--ease)}
+.thesis:hover{border-color:var(--band-accent);background:color-mix(in srgb,var(--band-accent) 9%,transparent)}
+.thesis:active{transform:scale(.985)}
+.thesis-t{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
+.thesis-p{color:var(--band-ink-2);font-size:15.5px;line-height:1.4;text-wrap:pretty}
+.thesis-go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-weight:700;font-size:15px;color:var(--band-accent)}
+.thesis-go .ico{transition:transform .18s var(--ease)}
+.thesis:hover .thesis-go .ico{transform:translateX(3px)}
+[dir=rtl] .thesis:hover .thesis-go .ico{transform:scaleX(-1) translateX(3px)}
+.week{display:grid;gap:16px;align-content:start;padding-top:26px;border-top:1px solid var(--band-line)}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 16px}
+.week-head h3{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.15}
+.week-head span{font-size:14.5px;font-weight:700;color:var(--band-ink-2)}
+.week-bar{display:flex;gap:3px;height:14px}
+.week-bar i{flex:var(--w) 1 0;min-width:0;border-radius:3px;background:var(--band-ink);transform-origin:left center}
+[dir=rtl] .week-bar i{transform-origin:right center}
+.week-bar i:first-child{border-start-start-radius:7px;border-end-start-radius:7px}
+.week-bar i:last-child{border-start-end-radius:7px;border-end-end-radius:7px}
+.week-bar .is-open{background:var(--band-accent)}
+.week-bar .is-side{background:color-mix(in srgb,var(--band-ink) 34%,transparent)}
+.js .sig .week-bar i{transform:scaleX(0);transition:transform .8s var(--ease) .3s}
+.js .sig .week-bar i:nth-child(2){transition-delay:.5s}
+.js .sig .week-bar i:nth-child(3){transition-delay:.7s}
+.js .sig.in .week-bar i{transform:none}
+.week-list{list-style:none;display:grid}
+.week-list li{display:grid;grid-template-columns:10px minmax(0,1fr) auto;align-items:center;gap:1px 12px;padding:11px 0;border-bottom:1px solid var(--band-line)}
+.week-list li::before{content:"";grid-row:1;width:10px;height:10px;border-radius:3px;background:var(--band-ink)}
+.week-list .is-open::before{background:var(--band-accent)}
+.week-list .is-side::before{background:color-mix(in srgb,var(--band-ink) 34%,transparent)}
+.week-list b{grid-column:2;grid-row:1;font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.015em;line-height:1.2;font-variant-numeric:tabular-nums}
+.week-list span{grid-column:2;grid-row:2;color:var(--band-ink-2);font-size:15.5px;line-height:1.4}
+.week-list em{grid-column:3;grid-row:1/span 2;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:var(--r-full);border:1.5px solid color-mix(in srgb,var(--band-accent) 55%,transparent);color:var(--band-accent);font-style:normal;font-weight:700;font-size:13px;line-height:1.2;white-space:nowrap}
+.week-list em::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:blink 2.4s var(--ease) infinite}
+@keyframes blink{50%{opacity:.35}}
+.week-open{color:var(--band-ink);font-size:16.5px;text-wrap:pretty}
+.week .btn{justify-self:start}
+
+/* Dialogs (SaaS is dead, CHO) */
+html:has(dialog.dlg[open]){overflow:hidden;padding-inline-end:var(--sbw,0px)}
+.dlg{position:fixed;inset:0;margin:auto 0 0;width:100%;max-width:100%;height:auto;max-height:calc(100dvh - 28px);padding:0;border:0;border-radius:var(--r-lg) var(--r-lg) 0 0;background:var(--surface);color:var(--ink);box-shadow:0 -24px 64px -24px rgba(0,0,0,.55);overflow:hidden;opacity:0;transform:translateY(28px);transition:opacity .26s var(--ease),transform .32s var(--ease),overlay .32s allow-discrete,display .32s allow-discrete}
+.dlg[open]{display:flex;opacity:1;transform:none}
+@starting-style{.dlg[open]{opacity:0;transform:translateY(28px)}}
+.dlg::backdrop{background:rgba(18,12,8,.66);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .26s var(--ease),overlay .32s allow-discrete,display .32s allow-discrete}
+.dlg[open]::backdrop{opacity:1}
+@starting-style{.dlg[open]::backdrop{opacity:0}}
+.dlg-in{display:flex;flex-direction:column;width:100%;min-height:0}
+.dlg-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 14px 14px 20px;padding-inline:20px 14px;border-bottom:1px solid var(--line)}
+.dlg-head h2{font-size:clamp(1.35rem,5.4vw,1.8rem);line-height:1.08;letter-spacing:-.03em}
+.dlg-x{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer;transition:border-color .15s,background-color .15s,transform .18s var(--ease)}
+.dlg-x:hover{border-color:var(--ink);transform:rotate(90deg)}
+.dlg-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:20px 20px calc(24px + env(safe-area-inset-bottom));color:var(--ink-2);font-size:16.5px;line-height:1.6;outline:0}
+.dlg-body p{text-wrap:pretty}
+.dlg-body > p + p{margin-top:12px}
+.dlg-lead{font-family:var(--font-display);font-weight:800;font-size:clamp(1.3rem,4.6vw,1.55rem);letter-spacing:-.025em;line-height:1.15;color:var(--accent-ink)}
+.dlg-body h3{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
+.dlg-sec{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.dlg-sec p{margin-top:8px}
+.dlg-aside{padding-inline-start:14px;border-inline-start:3px solid var(--accent);font-size:15.5px}
+.dlg-aside a{display:inline-flex;align-items:center;gap:4px;font-weight:700;color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.dlg-tools{list-style:none;display:grid;gap:10px;margin-top:14px}
+.dlg-tools li{display:grid;gap:3px;padding:14px 16px;border-radius:var(--r-md);background:var(--bg);border:1px solid var(--line)}
+.dlg-tools b{color:var(--ink);font-weight:700}
+.dlg-tools span{font-size:15.5px;line-height:1.45}
+.dlg-impact{margin-top:24px;padding:20px;border-radius:var(--r-md);background:var(--accent-soft)}
+.dlg-impact h3{color:var(--accent-ink)}
+.dlg-impact p{margin-top:8px;color:var(--ink)}
+.dlg-note{margin-top:14px;padding:22px 20px;border-radius:var(--r-md);background:var(--band);color:var(--band-ink-2);border:1px solid var(--band-line)}
+.dlg-note h3{color:var(--band-ink)}
+.dlg-note p{margin-top:10px}
+.dlg-note .btn{margin-top:18px}
+.dlg-done{width:100%;margin-top:22px}
 
 /* Ventures */
 .feature{display:grid;gap:24px;padding:22px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);scroll-margin-top:76px}
@@ -358,7 +431,14 @@ h1 span,h2 span{display:block}
   .sec{padding-block:88px}
   .band{padding-block:96px}
   .rules{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-  .sig{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:32px;padding:28px}
+  .sig{padding:28px}
+  .theses{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .dlg{margin:auto;width:min(720px,100% - 48px);max-height:min(88dvh,900px);border-radius:var(--r-lg);box-shadow:0 32px 80px -24px rgba(0,0,0,.6)}
+  .dlg-head{padding:20px 20px 18px 32px;padding-inline:32px 20px}
+  .dlg-body{padding:28px 32px 32px}
+  .dlg-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dlg-impact,.dlg-note{padding:24px 26px}
+  .dlg-done{width:auto}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .follow{grid-template-columns:repeat(2,minmax(0,1fr))}
   .feature{padding:28px}
@@ -368,6 +448,10 @@ h1 span,h2 span{display:block}
 }
 /* ≥ 960 */
 @media (min-width:960px){
+  .sig{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:44px;padding:36px}
+  .sig-main{grid-template-rows:auto auto 1fr}
+  .theses{align-self:end}
+  .week{padding-top:0;border-top:0;padding-inline-start:44px;border-inline-start:1px solid var(--band-line)}
   body{font-size:18px}
   .top-in{min-height:68px}
   .top-nav{display:flex}
@@ -647,8 +731,22 @@ h1 span,h2 span{display:block}
 <div class="rule rv"><h3>वोट नहीं, फ़ीडबैक।</h3><p>बताइए क्या टूटा या क्या कम है। पहले बग, फिर सबसे छोटा काम का बदलाव। हर अनुरोध पर विचार होगा, पर हर फ़ीचर का वादा नहीं।</p></div>
 </div>
 <div class="sig rv">
+<div class="sig-main">
 <div class="sig-who"><img src="../assets/brand/pfph-head-v1.webp" alt="" width="272" height="201" loading="lazy"><div><p class="sig-name">Paul Fleury</p><p class="sig-role">संस्थापक। CEO। Chief Hacking Officer।</p></div></div>
 <p class="sig-p">Chief Hacking Officer AI की मदद से बार-बार होने वाले काम को ऐसे टूल में बदलता है, जो पूरी टीम के अपने हों। मेरा दाँव: और कंपनियाँ वे वर्कफ़्लो खुद बनाएँगी, जो अब तक किराये पर लेती थीं।</p>
+<div class="theses"><button type="button" class="thesis" data-open="dlg-saas" commandfor="dlg-saas" command="show-modal" aria-haspopup="dialog"><span class="thesis-t"><bdi>SaaS मर चुका है।</bdi></span><span class="thesis-p">वर्कफ़्लो अपने हाथ में रखें। बार-बार आने वाले बिल पर सवाल उठाएँ।</span><span class="thesis-go">तर्क समझें<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button type="button" class="thesis" data-open="dlg-cho" commandfor="dlg-cho" command="show-modal" aria-haspopup="dialog"><span class="thesis-t"><bdi>CHO.</bdi></span><span class="thesis-p">एक जवाबदेह लीड। पूरी टीम के लिए टूल।</span><span class="thesis-go">भूमिका के बारे में जानें<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+</div>
+<div class="week">
+<div class="week-head"><h3>मेरा हफ़्ता कैसे बँटता है</h3><span>करीब 100 घंटे</span></div>
+<div class="week-bar" aria-hidden="true"><i style="--w:60"></i><i class="is-open" style="--w:30"></i><i class="is-side" style="--w:12.5"></i></div>
+<ul class="week-list">
+<li><b>60 घंटे</b><span>Openline, मेरा मुख्य स्टार्टअप</span></li>
+<li class="is-open"><b>30 घंटे तक</b><span>CHO कंसल्टिंग</span><em>उपलब्ध</em></li>
+<li class="is-side"><b>10–15 घंटे</b><span>ओपन सोर्स और साइड प्रोजेक्ट्स</span></li>
+</ul>
+<p class="week-open">ये ग्यारह टूल मेरे काम का सबूत हैं। आपकी कंपनी के लिए भी ऐसा ही काम करने के लिए मेरे हफ़्ते के 30 घंटे तक उपलब्ध हैं।</p>
+<a class="btn btn-primary" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">आइए साथ मिलकर बनाएँ<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
 </div>
 </div>
 </section>
@@ -725,6 +823,7 @@ h1 span,h2 span{display:block}
 <p class="foot-note">© 2026 Paul Fleury। ग्यारहों टूल मुफ़्त हैं और MIT लाइसेंस के साथ हैं।</p>
 </div>
 </footer>
+<dialog class="dlg" id="dlg-saas" aria-labelledby="dlg-saas-t" closedby="any"><div class="dlg-in"><header class="dlg-head"><h2 id="dlg-saas-t">SaaS मर चुका है।</h2><button type="button" class="dlg-x" data-close commandfor="dlg-saas" command="close" aria-label="तर्क की व्याख्या बंद करें"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div class="dlg-body" tabindex="-1"><p class="dlg-lead">किराए पर लेना ही डिफ़ॉल्ट? अब नहीं।</p><p>मेरा दाँव है कि ज़्यादा कंपनियाँ वे वर्कफ़्लो खुद बनाएँगी और अपने पास रखेंगी, जो अब तक वे किराए पर लेती थीं। लेकिन SaaS सीटों की जगह अंतहीन AI कॉल्स लगा देना असल बात से चूकना है। AI से दोबारा इस्तेमाल होने वाले टूल बनवाएँ, फिर हर रेकरिंग खर्च को अपनी जगह साबित करने दें।</p><section class="dlg-sec"><h3>कंपनियों के लिए</h3><p>सब्सक्रिप्शन की जगह बेक़ाबू AI बिल ले आना संप्रभुता नहीं है। मैं चाहता हूँ कि कोई CHO बार-बार दोहराए जाने वाले प्रॉम्प्ट्स को अपने खुद के ऐप्स में बदले, तय स्टेप्स के लिए साधारण कोड इस्तेमाल करे, और सीमित कामों के लिए छोटे सेल्फ-होस्टेड मॉडल्स आज़माए। हर सफल नतीजे की लागत की तुलना करें, जिसमें हार्डवेयर, बिजली, होस्टिंग, लाइसेंस, सुरक्षा, रखरखाव और इंसानी समय सब शामिल हों। सेल्फ-होस्टिंग अपने आप सस्ती या प्राइवेट नहीं हो जाती।</p></section><section class="dlg-sec"><h3>SaaS संस्थापकों और निवेशकों के लिए</h3><p>मेरा जान-बूझकर आक्रामक यक़ीन: AI आज भी किसी भी SaaS कंपनी की पूरी प्रोडक्ट लाइन की सॉफ़्टवेयर फ़ंक्शनैलिटी, चाहे कंपनी छोटी हो या बड़ी, उसके एक महीने के रेवेन्यू से कम में दोबारा बना सकता है। मुझे लगता है कि जल्द ही, शायद उम्मीद से भी जल्दी, यह बजट एक ग्राहक के सालाना बिल जितना रह जाएगा, और आगे चलकर उसके मासिक बिल जितना। अगर मैं सही हूँ, तो सिर्फ़ दोहराए जा सकने वाले फ़ीचर्स पर टिकी SaaS इकोनॉमिक्स धूल में मिल सकती है। यह मेरी भविष्यवाणी है, इंडस्ट्री का कोई बेंचमार्क नहीं। सॉफ़्टवेयर दोबारा बना लेना प्रोप्राइटरी डेटा, इंफ्रास्ट्रक्चर, कंप्लायंस या ग्राहकों का भरोसा दोबारा खड़ा कर लेना नहीं है।</p></section><section class="dlg-impact"><h3>ज़रूरत पर सॉफ़्टवेयर। ज़िम्मेदारी के साथ।</h3><p>वहाँ खुद बनाएँ जहाँ मालिकाना हक़ से फ़ायदा मिलता है। वहाँ भुगतान करते रहें जहाँ कोई सप्लायर ऐसी वैल्यू देता है जिसे आप समझदारी से दोहरा नहीं सकते। यह मैराथन एक सार्वजनिक प्रयोग है, इस बात का सबूत नहीं कि हर सब्सक्रिप्शन ख़त्म हो जाना चाहिए।</p></section><button type="button" class="btn btn-ghost dlg-done" data-close commandfor="dlg-saas" command="close">पेज पर वापस जाएँ</button></div></div></dialog><dialog class="dlg" id="dlg-cho" aria-labelledby="dlg-cho-t" closedby="any"><div class="dlg-in"><header class="dlg-head"><h2 id="dlg-cho-t">Chief Hacking Officer क्या होता है?</h2><button type="button" class="dlg-x" data-close commandfor="dlg-cho" command="close" aria-label="रोल की जानकारी बंद करें"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div class="dlg-body" tabindex="-1"><p class="dlg-lead">“हैकिंग” क्यों?</p><p>लाइफ़ हैक और बायोहैक की तरह सोचें: किसी समस्या से निकलने का ज़्यादा समझदार रास्ता, सिर्फ़ साइबर सिक्योरिटी नहीं। अड़चनों से निकलने के शॉर्टकट, सहमति, सुरक्षा या क्वालिटी को किनारे करके नहीं।</p><p>Chief Hacking Officer AI की मदद से संगठन को तेज़ और बेहतर ढंग से काम करने लायक बनाता है: अपने नियंत्रण वाला सॉफ़्टवेयर, दोबारा इस्तेमाल होने वाले वर्कफ़्लो और ऐसे टूल जिन्हें लोग खुद संभाल सकें। एक जवाबदेह लीड या छोटी टीम, सही विशेषज्ञों के साथ। इस रोल तक पहुँचने के लिए आपका फ़ाउंडर होना ज़रूरी नहीं।</p><section class="dlg-sec"><h3>AI + सही लोग</h3><p>मालिकाना हक़, बजट और मूल्यांकन एक जगह रखें, हर फ़ैसला नहीं। अंदरूनी विशेषज्ञों और बाहरी एक्सपर्ट कॉन्ट्रैक्टर के साथ काम करें। काम के AI टूल तक पहुँच बनाए रखें, अनुमतियाँ तय करें और हैंडऑफ़ को सच में काम का बनाएँ। CHO इंजीनियरिंग, सेल्स, मार्केटिंग, लीगल और ऑपरेशंस टीमों को सक्षम बनाता है; उनकी पूरी विशेषज्ञता की जगह कोई अकेला नहीं ले सकता।</p></section><section class="dlg-sec"><h3>AI से बनाएँ। समझदारी से चलाएँ।</h3><p>बार-बार दोहराए जाने वाले प्रॉम्प्ट को दोबारा इस्तेमाल होने वाले वर्कफ़्लो में बदलें। तय क़दमों के लिए साधारण कोड इस्तेमाल करें। सीमित कामों के लिए छोटे मॉडल आज़माएँ और असली कमी होने पर ही बड़े मॉडल लें। क्वालिटी और पूरी लागत मापें, जिसमें रखरखाव और इंसानी रिव्यू भी शामिल हों। नतीजा ऐसा टूल हो जिसका कोई ज़िम्मेदार मालिक हो और जिसे सपोर्ट मिले, सिर्फ़ चैट का रिकॉर्ड नहीं।</p><p class="dlg-aside">एक काम की तुलना: Paysend के CEO चुनिंदा AI ट्रायल, मापने लायक फ़ायदा दिखने के बाद विस्तार और साझा इंटरनल कोडिंग एजेंट की बात करते हैं। लागत घटाने के लिए सब पर रोक नहीं। <a href="https://fintechly.com/five-minutes-with-ben-chisell-ceo-of-paysend/" target="_blank" rel="noopener">Paysend के CEO का इंटरव्यू पढ़ें<svg class="ico flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></p></section><section class="dlg-sec"><h3>आपके कोड का एक ठिकाना</h3><p>हर टूल का कोड, टेस्ट, डॉक्यूमेंटेशन और डिप्लॉयमेंट रेसिपी संगठन के अपने Git रिपॉज़िटरी में रखें: GitHub, GitLab या बेहतर हो तो सेल्फ़-होस्टेड/लोकल फ़ोर्ज। एक नियंत्रित, भरोसेमंद स्रोत, जिसमें एक्सेस कंट्रोल, बैकअप और मिरर हों, किसी एक कमज़ोर सर्वर पर निर्भरता नहीं। सीक्रेट और निजी डेटा इसमें न रखें।</p></section><section class="dlg-sec"><h3>ज़रूरत हो तो निजी। काम का हो तो खुला।</h3><p>जितना दोबारा इस्तेमाल लायक, गैर-संवेदनशील कोड अधिकार और सुरक्षा के दायरे में संभव हो, उतना प्रकाशित करें। अहम अंदरूनी हिस्से निजी रखें। साफ़ लाइसेंस, टेस्ट और डॉक्यूमेंटेड रिलीज़ से दूसरे संगठन साझा नींव को खुद दोबारा बनाने की जगह उसे बेहतर कर सकते हैं।</p></section><section class="dlg-sec"><h3>सबूतों को फ़ोर्क करें, वादों को नहीं।</h3><p>अपनी टीमों और AI असिस्टेंट को रिव्यू किया हुआ कोड, टेस्ट नतीजे और ज्ञात सीमाएँ दें, जिन पर वे आगे बनाएँ। किसी काम की रिलीज़ को फ़ोर्क करें, उसे अपने हिसाब से ढालें, अपने संदर्भ में जाँचें और काम के सुधार अपस्ट्रीम में भेजें। यह लोगों और AI की मदद से होने वाले काम की साझा शुरुआत है, सुरक्षा का अपने-आप मिला सबूत नहीं।</p></section><section class="dlg-sec"><h3>ऐसे टूल जो आप शिप कर सकते हैं</h3><p>किसी बार-बार आने वाली अड़चन से शुरुआत करें। ये सिर्फ़ उदाहरण हैं, सब कुछ बनाने का वादा नहीं।</p><ul class="dlg-tools"><li><b>मार्केटिंग</b><span>कैंपेन लैंडिंग पेज, एक्सपेरिमेंट डैशबोर्ड और दोबारा इस्तेमाल होने वाले क्रिएटिव वर्कफ़्लो।</span></li><li><b>सेल्स</b><span>प्रपोज़ल बनाने वाले टूल, अकाउंट-रिसर्च टूल और CRM हैंडऑफ़ ऑटोमेशन।</span></li><li><b>ऑपरेशंस</b><span>ऑनबोर्डिंग पोर्टल, अप्रूवल फ़्लो, वेंडर ट्रैकिंग और इंटरनल डैशबोर्ड।</span></li><li><b>इंजीनियरिंग</b><span>रिलीज़ टूलिंग, QA असिस्टेंट, इंसिडेंट रनबुक और डेवलपर यूटिलिटी।</span></li><li><b>लीगल</b><span>कॉन्ट्रैक्ट इनटेक, क्लॉज़ लाइब्रेरी और रिव्यू वर्कफ़्लो, जिनमें फ़ैसला लीगल प्रोफ़ेशनल के हाथ में रहे।</span></li><li><b>सोशल मीडिया</b><span>एडिटोरियल कैलेंडर, ड्राफ़्ट लाइब्रेरी, अप्रूवल क्यू और परफ़ॉर्मेंस डैशबोर्ड। क्या प्रकाशित होगा, यह इंसान तय करें।</span></li><li><b>पब्लिक रिलीज़</b><span>ग्राहकों के लिए ऐप, छोटी यूटिलिटी और चुनिंदा ओपन-सोर्स प्रोजेक्ट, जिनके सपोर्ट और सुधार का कोई असली ज़िम्मेदार हो।</span></li></ul></section><section class="dlg-impact"><h3>असर मायने रखता है, आउटपुट की मात्रा नहीं</h3><p>लक्ष्य रखें कम दोहराव वाला काम, बेहतर हैंडऑफ़ और ऐसे टूल जिन्हें टीमें संभाल सकें। नतीजा मापें, चलाने की पूरी लागत गिनें, और टेस्टिंग, सुरक्षा व इंसानी मंज़ूरी को दायरे में रखें। अक्सर सही फ़ैसला यही होता है कि खुद बनाएँ, उसके मालिक रहें और उसे अपने नियंत्रण में रखें।</p></section><section class="dlg-note"><h3>हल्का-फुल्का टाइटल। कंसल्टिंग पर पूरी गंभीरता।</h3><p>बढ़िया कंपनी या महत्वाकांक्षी स्टार्टअप, सार्थक प्रोडक्ट, आपसी भरोसा और सीमित बजट? मैं हफ़्ते में 30 घंटे तक के कंसल्टिंग CHO रोल के लिए तैयार हूँ। कोई असली समस्या और फ़ैसले का अधिकार लेकर आएँ और मुझे LinkedIn पर मैसेज भेजें।</p><p>मेरे समय का बँटवारा लगभग हफ़्ते के 100 घंटों का है: 60 Openline के लिए, 30 तक कंसल्टिंग के लिए और 10 से 15 ओपन सोर्स और साइड प्रोजेक्ट्स के लिए, जैसे यह मैराथन, Cup of News और Enki। यह मेरा चुनाव है, आपकी टीम से ऐसी कोई उम्मीद नहीं। कंसल्टिंग Openline की फ़ंडरेज़िंग से अलग है।</p><a class="btn btn-primary" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">आइए साथ मिलकर बनाएँ<svg class="ico go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></section><button type="button" class="btn btn-ghost dlg-done" data-close commandfor="dlg-cho" command="close">पेज पर वापस जाएँ</button></div></div></dialog>
 <script>window.PH_DATA={"launches":[{"name":"Junk","line":"macOS के लिए स्क्रैचपैड। बुलाइए, लिखिए, हटा दीजिए।","icon":"../assets/icons/junk.webp","art":"../assets/kitties/1-junk.webp","site":"https://thejunk.app","gh":"https://github.com/paulfxyz/junk","ph":"https://www.producthunt.com/products/junk"},{"name":"ASE","line":"अपटाइम, DNS और SSL की निगरानी, सिर्फ़ एक PHP फ़ाइल में।","icon":"../assets/icons/ase.webp","art":"../assets/kitties/2-ase.webp","site":"https://ase.so","gh":"https://github.com/paulfxyz/ase","ph":"https://www.producthunt.com/products/ase-2"},{"name":"Mang","line":"बताइए क्या चाहिए। टर्मिनल कमांड पाइए।","icon":"../assets/icons/mang.webp","art":"../assets/kitties/3-mang.webp","site":"https://mang.sh","gh":"https://github.com/paulfxyz/mang","ph":"https://www.producthunt.com/products/mang-sh"},{"name":"Hollr","line":"आपका इनबॉक्स लिंक। संदेश भेजने वाले के ब्राउज़र में ही एन्क्रिप्ट हो जाते हैं।","icon":"../assets/icons/hollr.webp","art":"../assets/kitties/4-hollr.webp","site":"https://hollr.to","gh":"https://github.com/paulfxyz/hollr","ph":"https://www.producthunt.com/products/hollr-2"},{"name":"Clippy","line":"कई AI मॉडल आपके कॉन्ट्रैक्ट की समीक्षा करते हैं, एक साथ आमने-सामने।","icon":"../assets/icons/clippy.webp","art":"../assets/kitties/5-clippy.webp","site":"https://clippy.legal","gh":"https://github.com/paulfxyz/clippy","ph":"https://www.producthunt.com/products/clippy-11"},{"name":"Mercury","line":"एक सवाल, जिस पर AI मॉडलों का पैनल बहस करता है।","icon":"../assets/icons/mercury.webp","art":"../assets/kitties/6-mercury.webp","site":"https://mercury.sh","gh":"https://github.com/paulfxyz/mercury","ph":"https://www.producthunt.com/products/mercury-414"},{"name":"Megamesh","line":"आपका अपना WireGuard VPN, आपके अपने सर्वर पर।","icon":"../assets/icons/megamesh.webp","art":"../assets/kitties/7-megamesh.webp","site":"https://megamesh.sh","gh":"https://github.com/paulfxyz/megamesh","ph":"https://www.producthunt.com/products/megamesh-sh"},{"name":"AI Credit Checker","line":"आपके AI क्रेडिट का बैलेंस, Mac के मेन्यू बार में।","icon":"../assets/icons/ai-credit-checker.webp","art":"../assets/kitties/ai-credit-checker.webp","site":"","gh":"https://github.com/paulfxyz/ai-credit-checker","ph":"https://www.producthunt.com/products/ai-credit-checker"},{"name":"xnftables","line":"Linux के लिए डिफ़ॉल्ट रूप से सब कुछ ब्लॉक करने वाला फ़ायरवॉल टेम्पलेट।","icon":"../assets/icons/xnftables.webp","art":"../assets/kitties/xnftables-v2.webp","site":"https://xnftables.net","gh":"https://github.com/paulfxyz/xnftables","ph":"https://www.producthunt.com/products/xnftables"},{"name":"Timescreen","line":"आपकी खाली स्क्रीन के लिए घड़ी, जिसमें जीती-जागती पृथ्वी है।","icon":"../assets/icons/timescreen.webp","art":"../assets/kitties/timescreen.webp","site":"https://time.paulfleury.com","gh":"https://github.com/paulfxyz/timescreen","ph":"https://www.producthunt.com/products/timescreen"},{"name":"Mars","line":"आपके Mac के लिए शांत, ज़रूरत पड़ने पर चलने वाले मैलवेयर स्कैन।","icon":"../assets/icons/mars.webp","art":"../assets/kitties/mars-goodie.webp","site":"","gh":"https://github.com/paulfxyz/mars","ph":"https://www.producthunt.com/products/mars-2031"}],"dates":["मंगल 10 नव","बुध 11 नव","गुरु 12 नव","शुक्र 13 नव","शनि 14 नव","रवि 15 नव","सोम 16 नव","मंगल 17 नव","बुध 18 नव","गुरु 19 नव","शुक्र 20 नव"],"wrapArt":"../assets/kitties/kitty-laptop.webp","t":{"status_live":"अभी लाइव","status_shipped":"लॉन्च हुआ","status_today":"आज, 16:00","shipped_of":"11 में से {n} लॉन्च हुए","live_now":"अभी लाइव","up_next":"अगला","day_of":"दिन {n}/11","today_at":"आज 16:00 बजे, लिस्बन समय","at_time":"16:00 बजे, लिस्बन समय","see_on_ph":"Product Hunt पर देखें","link_gh":"GitHub","next":"अगला","report_name":"पूरी रिपोर्ट","report_date":"सोम 23 नव","done_title":"सभी ग्यारह लॉन्च हो गए।","done_line":"सोमवार 23 नवंबर को LinkedIn और X पर पूरी रिपोर्ट आएगी: ग्यारह लॉन्च से क्या हासिल हुआ।","done_cta":"LinkedIn पर फ़ॉलो करें","sep":", ","colon":": "}};</script>
 <script>
 (function(){
@@ -846,6 +945,24 @@ h1 span,h2 span{display:block}
   setInterval(function(){if(still||hover||inside||!seen||document.hidden||Date.now()<hold)return;go(cur+1)},3000);
 
   update();setInterval(update,30000);
+
+  /* Dialogs: thesis triggers open native modals; backdrop, close buttons and Esc dismiss them */
+  document.querySelectorAll('[data-open]').forEach(function(b){
+    var d=document.getElementById(b.getAttribute('data-open'));
+    if(!d||!d.showModal)return;
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(d.open)return;
+      document.documentElement.style.setProperty('--sbw',(window.innerWidth-document.documentElement.clientWidth)+'px');
+      d.showModal();
+      d.querySelector('.dlg-body').scrollTop=0;
+    });
+  });
+  document.querySelectorAll('dialog.dlg').forEach(function(d){
+    d.addEventListener('click',function(e){
+      if(e.target===d||e.target.closest('[data-close]')){e.preventDefault();if(d.open)d.close()}
+    });
+  });
 
   /* Reveal on scroll */
   var rv=document.querySelectorAll('.rv');
