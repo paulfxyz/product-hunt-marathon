@@ -104,20 +104,6 @@ STATUS:TENTATIVE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:weekathon-2026-web-summit@ph.paulfleury.com
-DTSTAMP:20261026T180000Z
-SEQUENCE:0
-DTSTART;VALUE=DATE:20261109
-DTEND;VALUE=DATE:20261113
-SUMMARY:Web Summit Lisbon - let's meet
-DESCRIPTION:Paul is at Web Summit in Lisbon\, 9-12 November (opening night 
- Monday 9). DM @paulfxyz on X or LinkedIn to meet in person.
-LOCATION:MEO Arena & FIL\, Parque das Nações\, Lisbon
-URL:https://ph.paulfleury.com/#web-summit
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:weekathon-2026-encore@ph.paulfleury.com
 DTSTAMP:20261113T010000Z
 LAST-MODIFIED:20261113T010000Z

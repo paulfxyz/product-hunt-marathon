@@ -21,7 +21,7 @@ export const SIMPLE = {
    },
    {
     "heading": "From a week to a marathon",
-    "text": "It began as a week of seven launches, which I called the Weekathon. It grew into a full marathon of eleven days, with four more products in the same run. The first launches fell during Web Summit, a big technology conference in Lisbon."
+    "text": "It began as a week of seven launches, which I called the Weekathon. It grew into a full marathon of eleven days, with four more products in the same run."
    },
    {
     "heading": "No team, no vote campaign",
@@ -48,7 +48,7 @@ export const SIMPLE = {
  },
  "fr": {
   "metaTitle": "Le Marathon, en toute simplicité",
-  "metaDescription": "Un résumé court et clair du Marathon Product Hunt de Paul Fleury : onze lancements gratuits et open source en onze jours, avec audio dans votre langue.",
+  "metaDescription": "Un résumé court et tranquille du Marathon Product Hunt de Paul Fleury : onze lancements gratuits et open source en onze jours, avec de l'audio dans votre langue.",
   "skip": "Aller au contenu",
   "tag": "Langage simple",
   "title": "Le Marathon, en toute simplicité",
@@ -63,23 +63,23 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "Onze jours, onze produits",
-    "text": "Chaque jour, un nouveau produit est mis en ligne. Les onze sont gratuits et open source : chacun peut les utiliser, lire leur code et les améliorer. Dans l'ordre : Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen et Mars. Je les ai créés avec l'aide de l'intelligence artificielle."
+    "text": "Chaque jour, un nouveau produit est mis en ligne. Les onze sont gratuits et open source : tout le monde peut les utiliser, lire leur code et les améliorer. Dans l'ordre : Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen et Mars. Je les ai créés avec l'aide de l'intelligence artificielle."
    },
    {
     "heading": "D'une semaine à un marathon",
-    "text": "Tout a commencé par une semaine de sept lancements, que j'avais appelée le Weekathon. Elle est devenue un vrai marathon de onze jours, avec quatre produits de plus dans la même série. Les premiers lancements ont eu lieu pendant le Web Summit, un grand salon de la technologie à Lisbonne."
+    "text": "Tout a commencé par une semaine de sept lancements, que j'avais appelée le Weekathon. Elle est devenue un vrai marathon de onze jours, avec quatre produits de plus dans la même série."
    },
    {
     "heading": "Pas d'équipe, pas de campagne de votes",
-    "text": "Pas d'équipe de lancement, pas de campagne pour récolter des votes. Juste des outils utiles, partagés au grand jour."
+    "text": "Pas d'équipe de lancement, pas de campagne pour obtenir des votes. Juste des outils utiles, partagés au grand jour."
    },
    {
     "heading": "Vos retours comptent",
-    "text": "Après chaque lancement, je lis les signalements de bugs et les idées. Je corrige d'abord l'essentiel, puis je continue d'améliorer les projets en public."
+    "text": "Après chaque lancement, je lis les rapports de bugs et les idées. Je corrige d'abord ce qui compte le plus, puis je continue d'améliorer les projets en public."
    },
    {
-    "heading": "Après le marathon",
-    "text": "Openline est mon projet principal, ma startup, et je cherche des investisseurs pour elle. Iris et Digital Spot sont des projets dérivés d'outils conçus pour Openline. Enki est une réflexion sur une intelligence artificielle que les gens pourraient posséder, et je cherche des philanthropes pour la soutenir. Cup of News est un passe-temps du dimanche après-midi qui devient une application d'actualités."
+    "heading": "Au-delà du marathon",
+    "text": "Openline est mon projet principal et ma startup, et je cherche des investisseurs pour elle. Iris et Digital Spot sont des projets dérivés d'outils créés pour Openline. Enki est une expérience de pensée sur une intelligence artificielle que les gens pourraient posséder, et je cherche des philanthropes pour la soutenir. Cup of News est un passe-temps du dimanche après-midi qui est en train de devenir une application d'actualités."
    },
    {
     "heading": "Le rapport complet",
@@ -87,14 +87,14 @@ export const SIMPLE = {
    },
    {
     "heading": "Dites bonjour",
-    "text": "Écrivez-moi sur X ou LinkedIn. Je lis tout."
+    "text": "Envoyez-moi un message sur X ou LinkedIn. Je lis tout."
    }
   ],
   "name": "Français"
  },
  "zh": {
   "metaTitle": "浅显易懂的马拉松介绍",
-  "metaDescription": "Paul Fleury 的 Product Hunt 马拉松简短说明：11天内发布11个免费开源项目，并提供您所用语言的音频。",
+  "metaDescription": "简短平和地介绍 Paul Fleury 的 Product Hunt 马拉松：11天内发布11个免费开源项目，并提供您所用语言的音频。",
   "skip": "跳至主要内容",
   "tag": "通俗易懂",
   "title": "浅显易懂的马拉松介绍",
@@ -109,30 +109,30 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "十一天，十一个产品",
-    "text": "每天都有一个新产品上线。这十一个产品全部免费且开源：任何人都可以使用、查看代码，也可以改进。依次是：Junk、ASE、Mang、Hollr、Clippy、Mercury、Megamesh、AI Credit Checker、xnftables、Timescreen 和 Mars。它们都是我借助人工智能做出来的。"
+    "text": "每天都有一个新产品上线。这十一个产品全部免费且开源：任何人都可以使用，查看代码，也可以改进它们。顺序依次是：Junk、ASE、Mang、Hollr、Clippy、Mercury、Megamesh、AI Credit Checker、xnftables、Timescreen 和 Mars。它们都是我借助人工智能做出来的。"
    },
    {
     "heading": "从一周到一场马拉松",
-    "text": "一开始只是一周七次发布，我把它叫作 Weekathon。后来它变成了为期十一天的完整马拉松，在同一轮里又多了四个产品。最初几次发布，正赶上里斯本的大型科技大会 Web Summit。"
+    "text": "最初只是一周七次发布，我把它叫作 Weekathon。后来它变成了为期十一天的完整马拉松，在同一轮中又多了四个产品。"
    },
    {
     "heading": "没有团队，不拉票",
-    "text": "没有发布团队，也不搞拉票活动。只有实用的工具，公开分享。"
+    "text": "没有发布团队，也不搞拉票活动。只是把实用的工具，公开地分享出来。"
    },
    {
-    "heading": "你的反馈很重要",
-    "text": "每次发布后，我都会阅读漏洞报告和大家的想法。我会先修复最要紧的问题，然后继续公开地改进这些项目。"
+    "heading": "您的反馈很重要",
+    "text": "每次发布之后，我都会阅读错误报告和大家的想法。我会先修复最要紧的问题，然后继续公开地改进这些项目。"
    },
    {
     "heading": "马拉松之外",
-    "text": "Openline 是我的主要事业和初创公司，我正在为它寻找投资人。Iris 和 Digital Spot 是从为 Openline 打造的工具中分出来的项目。Enki 是一个思想实验，探讨人们可以真正拥有的人工智能，我正在寻找慈善家来支持它。Cup of News 是我周日下午的业余爱好，正在慢慢变成一个新闻应用。"
+    "text": "Openline 是我的主要事业和创业项目，我正在为它寻找投资人。Iris 和 Digital Spot 是从为 Openline 打造的工具中衍生出来的项目。Enki 是一个思想实验，设想人人都能拥有的人工智能，我正在寻找慈善家来支持它。Cup of News 是我周日下午的小爱好，正在慢慢变成一个新闻应用。"
    },
    {
     "heading": "完整报告",
     "text": "11月23日星期一，我会在 LinkedIn 和 X 上分享一份详细的分析，讲讲马拉松期间发生了什么。"
    },
    {
-    "heading": "打个招呼",
+    "heading": "来打个招呼",
     "text": "欢迎在 X 或 LinkedIn 上给我发消息。我每条都会看。"
    }
   ],
@@ -159,27 +159,27 @@ export const SIMPLE = {
    },
    {
     "heading": "De una semana a un maratón",
-    "text": "Empezó como una semana de siete lanzamientos, a la que llamé Weekathon. Creció hasta ser un maratón completo de once días, con cuatro productos más en la misma tanda. Los primeros lanzamientos coincidieron con la Web Summit, una gran conferencia de tecnología en Lisboa."
+    "text": "Empezó como una semana de siete lanzamientos, a la que llamé Weekathon. Creció hasta convertirse en un maratón completo de once días, con cuatro productos más en la misma tanda."
    },
    {
     "heading": "Sin equipo, sin campaña de votos",
-    "text": "Sin equipo de lanzamiento, sin campaña para conseguir votos. Solo herramientas útiles, compartidas abiertamente."
+    "text": "Sin equipo de lanzamiento y sin campaña para conseguir votos. Solo herramientas útiles, compartidas abiertamente."
    },
    {
     "heading": "Tus comentarios cuentan",
-    "text": "Después de cada lanzamiento, leo los informes de errores y las ideas. Primero arreglo lo más importante y luego sigo mejorando los proyectos en público."
+    "text": "Después de cada lanzamiento, leo los informes de errores y las ideas. Primero arreglo lo más importante y luego sigo mejorando los proyectos a la vista de todos."
    },
    {
     "heading": "Más allá del maratón",
-    "text": "Openline es mi proyecto principal y mi startup, y busco inversores para ella. Iris y Digital Spot son proyectos derivados de herramientas creadas para Openline. Enki es un experimento mental sobre una inteligencia artificial que la gente pueda poseer, y busco filántropos que la apoyen. Cup of News es un pasatiempo de las tardes de domingo que se está convirtiendo en una aplicación de noticias."
+    "text": "Openline es mi proyecto principal y mi startup, y busco inversores para ella. Iris y Digital Spot nacieron de herramientas creadas para Openline. Enki es un experimento mental sobre una inteligencia artificial que la gente pueda tener como propia, y busco filántropos que la apoyen. Cup of News es un pasatiempo de domingo por la tarde que se está convirtiendo en una aplicación de noticias."
    },
    {
     "heading": "El informe completo",
-    "text": "El lunes 23 de noviembre compartiré un análisis detallado de lo que pasó durante el Maratón, en LinkedIn y X."
+    "text": "El lunes 23 de noviembre compartiré un análisis detallado de lo que ocurrió durante el Maratón, en LinkedIn y X."
    },
    {
-    "heading": "Saluda",
-    "text": "Escríbeme por X o LinkedIn. Lo leo todo."
+    "heading": "Di hola",
+    "text": "Escríbeme un mensaje en X o LinkedIn. Lo leo todo."
    }
   ],
   "name": "Español"
@@ -201,11 +201,11 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "Onze dias, onze produtos",
-    "text": "Todos os dias, sai um novo produto. Os onze são gratuitos e de código aberto: qualquer pessoa os pode usar, ler o código e melhorá-los. Por ordem: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen e Mars. Fi-los com a ajuda da inteligência artificial."
+    "text": "Todos os dias, um novo produto fica disponível. Os onze são gratuitos e de código aberto: qualquer pessoa os pode usar, ler o seu código e melhorá-los. Por ordem: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen e Mars. Fi-los com a ajuda da inteligência artificial."
    },
    {
     "heading": "De uma semana a uma maratona",
-    "text": "Começou como uma semana de sete lançamentos, a que chamei Weekathon. Cresceu até se tornar uma maratona completa de onze dias, com mais quatro produtos na mesma série. Os primeiros lançamentos coincidiram com a Web Summit, uma grande conferência de tecnologia em Lisboa."
+    "text": "Começou como uma semana com sete lançamentos, a que chamei Weekathon. Cresceu até se tornar uma maratona completa de onze dias, com mais quatro produtos na mesma sequência."
    },
    {
     "heading": "Sem equipa, sem campanha de votos",
@@ -213,11 +213,11 @@ export const SIMPLE = {
    },
    {
     "heading": "A sua opinião conta",
-    "text": "Depois de cada lançamento, leio os relatos de erros e as ideias. Corrijo primeiro o que é mais importante e depois continuo a melhorar os projetos em público."
+    "text": "Depois de cada lançamento, leio os relatórios de erros e as ideias. Resolvo primeiro o que é mais importante e depois continuo a melhorar os projetos em público."
    },
    {
     "heading": "Para lá da maratona",
-    "text": "A Openline é o meu projeto principal e a minha startup, e procuro investidores para ela. A Iris e a Digital Spot nasceram de ferramentas criadas para a Openline. A Enki é uma experiência de pensamento sobre uma inteligência artificial que as pessoas possam ter como sua, e procuro filantropos que a apoiem. A Cup of News é um passatempo das tardes de domingo que está a transformar-se numa aplicação de notícias."
+    "text": "A Openline é o meu projeto principal e a minha startup, e procuro investidores para ela. A Iris e o Digital Spot nasceram de ferramentas criadas para a Openline. O Enki é uma experiência de pensamento sobre uma inteligência artificial que as pessoas possam ter como sua, e procuro filantropos que o apoiem. O Cup of News é um passatempo de domingo à tarde que está a transformar-se numa aplicação de notícias."
    },
    {
     "heading": "O relatório completo",
@@ -232,7 +232,7 @@ export const SIMPLE = {
  },
  "ar": {
   "metaTitle": "الماراثون بكلمات بسيطة",
-  "metaDescription": "ملخص قصير وهادئ عن ماراثون Product Hunt الخاص بـ Paul Fleury: أحد عشر إطلاقًا مجانيًا ومفتوح المصدر في أحد عشر يومًا، مع صوت بلغتك.",
+  "metaDescription": "ملخص قصير وهادئ لماراثون Product Hunt الخاص بـ Paul Fleury: أحد عشر إطلاقًا مجانيًا ومفتوح المصدر في أحد عشر يومًا، مع تسجيل صوتي بلغتك.",
   "skip": "الانتقال إلى المحتوى",
   "tag": "لغة مبسطة",
   "title": "الماراثون بكلمات بسيطة",
@@ -247,23 +247,23 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "أحد عشر يومًا، أحد عشر منتجًا",
-    "text": "كل يوم يظهر منتج جديد. المنتجات الأحد عشر كلها مجانية ومفتوحة المصدر: يمكن لأي شخص استخدامها وقراءة شيفرتها وتحسينها. بالترتيب: Junk وASE وMang وHollr وClippy وMercury وMegamesh وAI Credit Checker وxnftables وTimescreen وMars. صنعتها بمساعدة الذكاء الاصطناعي."
+    "text": "كل يوم يظهر منتج جديد. المنتجات الأحد عشر كلها مجانية ومفتوحة المصدر: يستطيع أي شخص استخدامها وقراءة شيفرتها وتحسينها. بالترتيب: Junk وASE وMang وHollr وClippy وMercury وMegamesh وAI Credit Checker وxnftables وTimescreen وMars. صنعتها بمساعدة الذكاء الاصطناعي."
    },
    {
     "heading": "من أسبوع إلى ماراثون",
-    "text": "بدأ الأمر كأسبوع من سبعة إطلاقات، سميته Weekathon. ثم كبر حتى صار ماراثونًا كاملًا من أحد عشر يومًا، مع أربعة منتجات إضافية في السلسلة نفسها. وقعت الإطلاقات الأولى أثناء Web Summit، وهو مؤتمر تقني كبير في لشبونة."
+    "text": "بدأ الأمر بأسبوع من سبعة إطلاقات، سميته Weekathon. ثم كبر حتى صار ماراثونًا كاملًا من أحد عشر يومًا، مع أربعة منتجات إضافية في السلسلة نفسها."
    },
    {
     "heading": "بلا فريق، وبلا حملة تصويت",
-    "text": "لا فريق إطلاق، ولا حملة لجمع الأصوات. فقط أدوات مفيدة، أشاركها بشكل علني."
+    "text": "لا فريق للإطلاق، ولا حملة لجمع الأصوات. فقط أدوات مفيدة، تُشارَك علنًا."
    },
    {
-    "heading": "رأيك مهم",
+    "heading": "ملاحظاتك تهمني",
     "text": "بعد كل إطلاق، أقرأ تقارير الأخطاء والأفكار. أصلح الأهم أولًا، ثم أواصل تحسين المشاريع أمام الجميع."
    },
    {
     "heading": "ما بعد الماراثون",
-    "text": "Openline هو مشروعي الرئيسي وشركتي الناشئة، وأبحث عن مستثمرين لها. أما Iris وDigital Spot فمشروعان انبثقا من أدوات بُنيت من أجل Openline. وEnki تجربة فكرية حول ذكاء اصطناعي يمكن للناس امتلاكه، وأبحث عن فاعلي خير لدعمه. وCup of News هواية أقضيها بعد ظهر الأحد، وهي تتحول إلى تطبيق للأخبار."
+    "text": "Openline هو مشروعي الرئيسي وشركتي الناشئة، وأبحث عن مستثمرين لها. أما Iris وDigital Spot فهما مشروعان تفرّعا عن أدوات بُنيت من أجل Openline. وEnki تجربة فكرية حول ذكاء اصطناعي يمكن للناس أن يمتلكوه، وأبحث عن فاعلي خير لدعمها. أما Cup of News فهي هواية لعصر يوم الأحد، وقد بدأت تتحول إلى تطبيق للأخبار."
    },
    {
     "heading": "التقرير الكامل",
@@ -278,7 +278,7 @@ export const SIMPLE = {
  },
  "he": {
   "metaTitle": "המרתון, במילים פשוטות",
-  "metaDescription": "סיכום קצר ורגוע של המרתון של Paul Fleury ב-Product Hunt: אחת עשרה השקות חינמיות ובקוד פתוח בתוך אחד עשר ימים, עם שמע בשפה שלכם.",
+  "metaDescription": "סיכום קצר ורגוע של מרתון Product Hunt של Paul Fleury: אחד עשר השקות חינמיות ובקוד פתוח באחד עשר ימים, עם שמע בשפה שלכם.",
   "skip": "דילוג לתוכן המרכזי",
   "tag": "שפה פשוטה",
   "title": "המרתון, במילים פשוטות",
@@ -289,34 +289,34 @@ export const SIMPLE = {
   "audioError": "לא ניתן היה להשמיע את קובץ השמע. עדיין אפשר לקרוא את העמוד.",
   "fullLink": "מעבר לאתר המלא",
   "calendarLink": "הוספת התאריכים ליומן",
-  "footer": "Paul Fleury · המרתון של Product Hunt · ליסבון",
+  "footer": "Paul Fleury · מרתון Product Hunt · ליסבון",
   "sections": [
    {
     "heading": "אחד עשר ימים, אחד עשר מוצרים",
-    "text": "בכל יום עולה מוצר חדש. כל אחד עשר המוצרים חינמיים ובקוד פתוח: כל אחד יכול להשתמש בהם, לקרוא את הקוד שלהם ולשפר אותם. לפי הסדר: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen ו-Mars. יצרתי אותם בעזרת בינה מלאכותית."
+    "text": "בכל יום עולה מוצר חדש. כל האחד עשר חינמיים ובקוד פתוח: כל אחד יכול להשתמש בהם, לקרוא את הקוד שלהם ולשפר אותם. לפי הסדר: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen ו-Mars. יצרתי אותם בעזרת בינה מלאכותית."
    },
    {
     "heading": "משבוע למרתון",
-    "text": "זה התחיל כשבוע של שבע השקות, שקראתי לו Weekathon. הוא גדל למרתון שלם של אחד עשר ימים, עם ארבעה מוצרים נוספים באותה סדרה. ההשקות הראשונות התקיימו בזמן Web Summit, כנס טכנולוגיה גדול בליסבון."
+    "text": "הכול התחיל בשבוע של שבע השקות, שקראתי לו Weekathon. הוא גדל למרתון מלא של אחד עשר ימים, עם ארבעה מוצרים נוספים באותה סדרה."
    },
    {
     "heading": "בלי צוות, בלי קמפיין הצבעות",
-    "text": "אין צוות השקה ואין קמפיין לאיסוף הצבעות. רק כלים שימושיים, שמשותפים בגלוי."
+    "text": "בלי צוות השקה ובלי קמפיין לאיסוף הצבעות. רק כלים שימושיים, שמשותפים בגלוי."
    },
    {
     "heading": "המשוב שלכם חשוב",
-    "text": "אחרי כל השקה, אני קורא את דוחות התקלות והרעיונות. אני מתקן קודם את מה שהכי חשוב, ואז ממשיך לשפר את הפרויקטים לעיני כולם."
+    "text": "אחרי כל השקה אני קורא את דוחות הבאגים ואת הרעיונות. קודם אני מתקן את מה שהכי חשוב, ואז ממשיך לשפר את הפרויקטים בגלוי."
    },
    {
     "heading": "מעבר למרתון",
-    "text": "Openline הוא המיזם הראשי שלי והסטארטאפ שלי, ואני מחפש בשבילו משקיעים. Iris ו-Digital Spot הם מיזמי המשך של כלים שנבנו עבור Openline. Enki הוא ניסוי מחשבתי על בינה מלאכותית שאנשים יכולים להיות הבעלים שלה, ואני מחפש פילנתרופים שיתמכו בו. Cup of News הוא תחביב של יום ראשון אחר הצהריים שהופך לאפליקציית חדשות."
+    "text": "Openline הוא המיזם הראשי שלי והסטארטאפ שלי, ואני מחפש בשבילו משקיעים. Iris ו-Digital Spot הם פרויקטים שנולדו מכלים שנבנו עבור Openline. Enki הוא ניסוי מחשבתי על בינה מלאכותית שאנשים יוכלו להיות הבעלים שלה, ואני מחפש פילנתרופים שיתמכו בו. Cup of News הוא תחביב של יום ראשון אחר הצהריים שהופך לאפליקציית חדשות."
    },
    {
     "heading": "הדוח המלא",
     "text": "ביום שני, 23 בנובמבר, אשתף ניתוח מעמיק של מה שקרה במהלך המרתון, ב-LinkedIn וב-X."
    },
    {
-    "heading": "בואו נדבר",
+    "heading": "תגידו שלום",
     "text": "שלחו לי הודעה ב-X או ב-LinkedIn. אני קורא הכול."
    }
   ],
@@ -339,15 +339,15 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "ग्यारह दिन, ग्यारह प्रोडक्ट",
-    "text": "हर दिन एक नया प्रोडक्ट लाइव होता है। सभी ग्यारह मुफ़्त और ओपन-सोर्स हैं: कोई भी इन्हें इस्तेमाल कर सकता है, इनका कोड पढ़ सकता है और इन्हें बेहतर बना सकता है। क्रम से: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen और Mars। इन्हें मैंने आर्टिफ़िशियल इंटेलिजेंस की मदद से बनाया है।"
+    "text": "हर दिन एक नया प्रोडक्ट लाइव होता है। ग्यारहों मुफ़्त और ओपन सोर्स हैं: कोई भी इन्हें इस्तेमाल कर सकता है, इनका कोड पढ़ सकता है और इन्हें बेहतर बना सकता है। क्रम से: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen और Mars। मैंने इन्हें आर्टिफ़िशियल इंटेलिजेंस की मदद से बनाया है।"
    },
    {
     "heading": "एक हफ़्ते से मैराथन तक",
-    "text": "यह सात लॉन्च के एक हफ़्ते के रूप में शुरू हुआ था, जिसे मैंने Weekathon नाम दिया था। फिर यह ग्यारह दिनों का पूरा मैराथन बन गया, जिसमें उसी सिलसिले में चार प्रोडक्ट और जुड़ गए। पहले कुछ लॉन्च Web Summit के दौरान हुए, जो लिस्बन में होने वाला टेक्नोलॉजी का एक बड़ा सम्मेलन है।"
+    "text": "यह सात लॉन्च के एक हफ़्ते से शुरू हुआ था, जिसे मैंने Weekathon नाम दिया था। फिर यह ग्यारह दिनों का पूरा मैराथन बन गया, जिसमें उसी सिलसिले में चार प्रोडक्ट और जुड़ गए।"
    },
    {
-    "heading": "न कोई टीम, न वोट माँगने का अभियान",
-    "text": "कोई लॉन्च टीम नहीं, वोट जुटाने का कोई अभियान नहीं। बस काम के टूल, जो सबके सामने साझा किए गए हैं।"
+    "heading": "न टीम, न वोट माँगने का अभियान",
+    "text": "न कोई लॉन्च टीम, न वोट जुटाने का अभियान। बस काम के टूल, जो सबके सामने साझा किए गए हैं।"
    },
    {
     "heading": "आपकी राय मायने रखती है",
@@ -355,22 +355,22 @@ export const SIMPLE = {
    },
    {
     "heading": "मैराथन के आगे",
-    "text": "Openline मेरा मुख्य उद्यम और स्टार्टअप है, और मैं इसके लिए निवेशक ढूँढ रहा हूँ। Iris और Digital Spot उन टूल्स से निकले प्रोजेक्ट हैं जो Openline के लिए बनाए गए थे। Enki एक ऐसी आर्टिफ़िशियल इंटेलिजेंस के बारे में एक विचार-प्रयोग है, जिसके मालिक आम लोग हो सकें, और इसे सहारा देने के लिए मैं परोपकारी लोगों की तलाश में हूँ। Cup of News रविवार की दोपहर का मेरा एक शौक है, जो अब एक न्यूज़ ऐप बनता जा रहा है।"
+    "text": "Openline मेरा मुख्य उद्यम और स्टार्टअप है, और इसके लिए मैं निवेशक ढूँढ रहा हूँ। Iris और Digital Spot उन टूल्स से निकले प्रोजेक्ट हैं जो Openline के लिए बनाए गए थे। Enki एक विचार-प्रयोग है, ऐसी आर्टिफ़िशियल इंटेलिजेंस के बारे में जिसके मालिक आम लोग हो सकें, और इसे सहारा देने के लिए मैं परोपकारी लोगों की तलाश में हूँ। Cup of News रविवार दोपहर का एक शौक़ है, जो अब एक न्यूज़ ऐप बनता जा रहा है।"
    },
    {
     "heading": "पूरी रिपोर्ट",
-    "text": "सोमवार, 23 नवंबर को, मैं LinkedIn और X पर बताऊँगा कि मैराथन के दौरान क्या-क्या हुआ, पूरे विश्लेषण के साथ।"
+    "text": "सोमवार, 23 नवंबर को मैं LinkedIn और X पर बताऊँगा कि मैराथन के दौरान क्या-क्या हुआ, पूरे विश्लेषण के साथ।"
    },
    {
     "heading": "नमस्ते कहिए",
-    "text": "मुझे X या LinkedIn पर संदेश भेजिए। मैं हर संदेश पढ़ता हूँ।"
+    "text": "मुझे X या LinkedIn पर संदेश भेजिए। मैं सब कुछ पढ़ता हूँ।"
    }
   ],
   "name": "हिन्दी"
  },
  "bn": {
   "metaTitle": "ম্যারাথন, সহজ ভাষায়",
-  "metaDescription": "Paul Fleury-র Product Hunt ম্যারাথনের ছোট ও শান্ত সারাংশ: এগারো দিনে এগারোটি বিনামূল্যের ওপেন-সোর্স লঞ্চ, আপনার ভাষায় অডিও সহ।",
+  "metaDescription": "Paul Fleury-র Product Hunt ম্যারাথনের ছোট ও শান্ত সারসংক্ষেপ: এগারো দিনে এগারোটি বিনামূল্যের ওপেন-সোর্স উন্মোচন, আপনার ভাষায় অডিওসহ।",
   "skip": "সরাসরি মূল বিষয়ে যান",
   "tag": "সহজ ভাষায়",
   "title": "ম্যারাথন, সহজ ভাষায়",
@@ -385,31 +385,31 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "এগারো দিন, এগারোটি প্রডাক্ট",
-    "text": "প্রতিদিন একটি করে নতুন প্রডাক্ট চালু হয়। এগারোটিই বিনামূল্যের ও ওপেন-সোর্স: যে কেউ এগুলো ব্যবহার করতে, এদের কোড পড়তে এবং উন্নত করতে পারেন। ক্রম অনুযায়ী: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen এবং Mars। এগুলো আমি আর্টিফিশিয়াল ইন্টেলিজেন্সের সাহায্যে বানিয়েছি।"
+    "text": "প্রতিদিন একটি করে নতুন প্রডাক্ট চালু হয়। এগারোটিই বিনামূল্যের ও ওপেন সোর্স: যে কেউ এগুলো ব্যবহার করতে পারে, কোড পড়তে পারে এবং আরও ভালো করতে পারে। ক্রম অনুযায়ী: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen আর Mars। আমি এগুলো তৈরি করেছি কৃত্রিম বুদ্ধিমত্তার সাহায্যে।"
    },
    {
     "heading": "এক সপ্তাহ থেকে ম্যারাথন",
-    "text": "শুরুটা ছিল সাতটি লঞ্চের এক সপ্তাহ, যার নাম দিয়েছিলাম Weekathon। সেটাই বড় হয়ে এগারো দিনের পূর্ণ ম্যারাথন হলো, একই ধারায় আরও চারটি প্রডাক্ট যোগ হলো। প্রথম লঞ্চগুলো পড়েছিল Web Summit-এর সময়, যা লিসবনের একটি বড় প্রযুক্তি সম্মেলন।"
+    "text": "শুরুটা ছিল সাতটি উন্মোচনের এক সপ্তাহ, যার নাম দিয়েছিলাম Weekathon। সেটাই বড় হয়ে এগারো দিনের পুরো ম্যারাথন হয়েছে, একই ধারায় আরও চারটি প্রডাক্ট নিয়ে।"
    },
    {
-    "heading": "কোনো দল নেই, ভোট চাওয়ার প্রচারণাও নেই",
-    "text": "কোনো লঞ্চ টিম নেই, ভোট জোগাড়ের কোনো প্রচারণাও নেই। শুধু কাজের টুল, সবার সামনে খোলামেলাভাবে ভাগ করা।"
+    "heading": "কোনো দল নেই, ভোটের প্রচারও নেই",
+    "text": "কোনো লঞ্চ টিম নেই, ভোট চাওয়ার প্রচারও নেই। শুধু কাজের টুল, সবার সামনে খোলামেলাভাবে ভাগ করা।"
    },
    {
     "heading": "আপনার মতামত গুরুত্বপূর্ণ",
-    "text": "প্রতিটি লঞ্চের পর আমি বাগ রিপোর্ট আর আইডিয়াগুলো পড়ি। আগে সবচেয়ে জরুরি জিনিসগুলো ঠিক করি, তারপর সবার সামনেই প্রজেক্টগুলো আরও ভালো করতে থাকি।"
+    "text": "প্রতিটি উন্মোচনের পরে আমি বাগ রিপোর্ট আর পরামর্শ পড়ি। আগে সবচেয়ে জরুরি জিনিসগুলো ঠিক করি, তারপর সবার সামনেই প্রজেক্টগুলো আরও ভালো করতে থাকি।"
    },
    {
     "heading": "ম্যারাথনের পরে",
-    "text": "Openline আমার প্রধান উদ্যোগ ও স্টার্টআপ, আর এর জন্য আমি বিনিয়োগকারী খুঁজছি। Iris এবং Digital Spot হলো Openline-এর জন্য বানানো টুল থেকে জন্ম নেওয়া প্রজেক্ট। Enki হলো এমন আর্টিফিশিয়াল ইন্টেলিজেন্স নিয়ে একটি চিন্তার পরীক্ষা, যার মালিক হতে পারবে সাধারণ মানুষ; একে সহায়তা করার জন্য আমি দানশীল মানুষ খুঁজছি। Cup of News রবিবার বিকেলের আমার একটি শখ, যা এখন একটি নিউজ অ্যাপে রূপ নিচ্ছে।"
+    "text": "Openline আমার প্রধান উদ্যোগ ও স্টার্টআপ, আর এর জন্য আমি বিনিয়োগকারী খুঁজছি। Iris এবং Digital Spot হলো Openline-এর জন্য তৈরি টুল থেকে জন্ম নেওয়া প্রজেক্ট। Enki হলো এমন কৃত্রিম বুদ্ধিমত্তা নিয়ে একটি চিন্তার পরীক্ষা, যার মালিক হতে পারবে সাধারণ মানুষ; একে সহায়তা করার জন্য আমি লোকহিতৈষীদের খুঁজছি। Cup of News হলো রবিবার বিকেলের একটি শখ, যা এখন একটি নিউজ অ্যাপে রূপ নিচ্ছে।"
    },
    {
     "heading": "পূর্ণ প্রতিবেদন",
-    "text": "সোমবার ২৩ নভেম্বর, ম্যারাথনের সময় কী ঘটেছিল তার একটি বিস্তারিত বিশ্লেষণ আমি LinkedIn ও X-এ শেয়ার করব।"
+    "text": "সোমবার, ২৩ নভেম্বর, ম্যারাথনের সময় কী ঘটেছে তার একটি বিস্তারিত বিশ্লেষণ আমি LinkedIn ও X-এ শেয়ার করব।"
    },
    {
-    "heading": "একটু কথা বলুন",
-    "text": "X বা LinkedIn-এ আমাকে বার্তা পাঠান। আমি সব পড়ি।"
+    "heading": "একটু হ্যালো বলুন",
+    "text": "X বা LinkedIn-এ আমাকে বার্তা পাঠান। আমি সবকিছু পড়ি।"
    }
   ],
   "name": "বাংলা"
@@ -431,27 +431,27 @@ export const SIMPLE = {
   "sections": [
    {
     "heading": "Sebelas hari, sebelas produk",
-    "text": "Setiap hari, satu produk baru dirilis. Kesebelasnya gratis dan open source: siapa pun boleh memakainya, membaca kodenya, dan memperbaikinya. Urutannya: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen, dan Mars. Saya membuatnya dengan bantuan kecerdasan buatan."
+    "text": "Setiap hari, satu produk baru tayang. Kesebelasnya gratis dan open source: siapa pun boleh memakainya, membaca kodenya, dan memperbaikinya. Urutannya: Junk, ASE, Mang, Hollr, Clippy, Mercury, Megamesh, AI Credit Checker, xnftables, Timescreen, dan Mars. Saya membuatnya dengan bantuan kecerdasan buatan."
    },
    {
     "heading": "Dari seminggu menjadi maraton",
-    "text": "Awalnya hanya seminggu dengan tujuh peluncuran, yang saya sebut Weekathon. Lalu berkembang menjadi maraton penuh selama sebelas hari, dengan empat produk tambahan dalam rangkaian yang sama. Peluncuran pertama bertepatan dengan Web Summit, konferensi teknologi besar di Lisbon."
+    "text": "Awalnya hanya seminggu dengan tujuh peluncuran, yang saya sebut Weekathon. Lalu berkembang menjadi maraton penuh selama sebelas hari, dengan empat produk tambahan dalam rangkaian yang sama."
    },
    {
     "heading": "Tanpa tim, tanpa kampanye suara",
-    "text": "Tidak ada tim peluncuran, tidak ada kampanye untuk mencari suara. Hanya alat-alat yang berguna, dibagikan secara terbuka."
+    "text": "Tidak ada tim peluncuran, tidak ada kampanye untuk mengumpulkan suara. Hanya alat-alat yang berguna, dibagikan secara terbuka."
    },
    {
     "heading": "Masukan Anda berarti",
-    "text": "Setelah setiap peluncuran, saya membaca laporan bug dan ide-ide yang masuk. Saya memperbaiki hal yang paling penting lebih dulu, lalu terus menyempurnakan proyek-proyek ini secara terbuka."
+    "text": "Setelah setiap peluncuran, saya membaca laporan bug dan ide-ide yang masuk. Saya memperbaiki yang paling penting lebih dulu, lalu terus menyempurnakan proyek-proyek ini secara terbuka."
    },
    {
     "heading": "Setelah maraton",
-    "text": "Openline adalah usaha utama sekaligus startup saya, dan saya sedang mencari investor untuknya. Iris dan Digital Spot adalah proyek turunan dari alat yang dibuat untuk Openline. Enki adalah eksperimen pemikiran tentang kecerdasan buatan yang bisa dimiliki oleh masyarakat, dan saya sedang mencari dermawan untuk mendukungnya. Cup of News adalah hobi Minggu sore yang sedang berkembang menjadi aplikasi berita."
+    "text": "Openline adalah usaha utama dan startup saya, dan saya sedang mencari investor untuknya. Iris dan Digital Spot adalah proyek turunan dari alat yang dibuat untuk Openline. Enki adalah eksperimen pemikiran tentang kecerdasan buatan yang bisa dimiliki oleh orang-orang, dan saya mencari dermawan untuk mendukungnya. Cup of News adalah hobi Minggu sore yang kini berkembang menjadi aplikasi berita."
    },
    {
     "heading": "Laporan lengkap",
-    "text": "Pada Senin, 23 November, saya akan membagikan analisis mendalam tentang apa yang terjadi selama Maraton, di LinkedIn dan X."
+    "text": "Pada hari Senin, 23 November, saya akan membagikan analisis mendalam tentang apa yang terjadi selama Maraton, di LinkedIn dan X."
    },
    {
     "heading": "Sapa saya",
