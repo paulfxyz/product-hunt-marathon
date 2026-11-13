@@ -1,0 +1,11 @@
+# Archive of the long Marathon page (replaced 13 Nov 2026). Kept out of search engines.
+DirectoryIndex index.html
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+</IfModule>
+# Archived pages reuse the live site's assets and endpoints:
+# /archives/<file> and /archives/xx/<file> are served from /<file> when they do not exist here.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(?:(?:fr|zh|es|pt|ar|he|hi|bn|id)/)?(.+)$ /$1 [L]
