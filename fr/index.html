@@ -855,7 +855,7 @@ html:has(dialog.dlg[open]){overflow:hidden;padding-inline-end:var(--sbw,0px)}
   onS();window.addEventListener('scroll',onS,{passive:true});
 
   /* Marathon state, by the clock: each launch goes live at 16:00 Lisbon (UTC in November) */
-  var DAY=864e5,t0=Date.UTC(2026,10,10,16),EARLY={3:Date.UTC(2026,10,13,12,30)}; /* launches confirmed live before 16:00 */
+  var DAY=864e5,t0=Date.UTC(2026,10,10,16),EARLY={3:Date.UTC(2026,10,13,12,30),4:Date.UTC(2026,10,14,8)}; /* launches confirmed live before 16:00 */
   function at(i){return EARLY[i]||t0+i*DAY}
   function fmt(s,n){return s.replace('{n}',D.nums?D.nums[n]:n)}
   function pill(cls,txt){return '<span class="pill '+cls+'">'+txt+'</span>'}
@@ -864,7 +864,7 @@ html:has(dialog.dlg[open]){overflow:hidden;padding-inline-end:var(--sbw,0px)}
     var now=Date.now(),shipped=0,live=-1,i;
     for(i=0;i<11;i++){if(now>=at(i)){shipped++;if(now<t0+(i+1)*DAY)live=i}}
     var next=shipped<11?shipped:-1;
-    var nextToday=next>=0&&(at(next)-now)<16*36e5; /* after midnight Lisbon on launch day */
+    var nextToday=next>=0&&now>=at(next)-at(next)%DAY; /* from midnight Lisbon on launch day */
     var nodes=document.querySelectorAll('#course li'),rows=document.querySelectorAll('.row[data-i]');
     for(i=0;i<11;i++){
       var st=i===live?'is-live':i<shipped?'is-done':(i===next&&nextToday)?'is-today':'';
