@@ -154,9 +154,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:marathon-2026-full-report@ph.paulfleury.com
 DTSTAMP:20261113T010000Z
-LAST-MODIFIED:20261113T010000Z
-SEQUENCE:0
-DTSTART:20261123T170000Z
+LAST-MODIFIED:20261118T160000Z
+SEQUENCE:1
+DTSTART:20261124T170000Z
 SUMMARY:Marathon - Full Report on LinkedIn and X
 DESCRIPTION:A thorough analysis of what happened during the Product Hunt Marathon\, posted on LinkedIn and X.
 URL:https://ph.paulfleury.com/#pipeline
