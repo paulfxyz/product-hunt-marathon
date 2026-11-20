@@ -203,7 +203,7 @@ let page = 'home';
 PAGES.forEach((p, i) => {
   const s = document.getElementById(p), w = $('.wrap', s);
   const pv = PAGES[i - 1], nx = PAGES[i + 1];
-  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/">${ico('back')} The logbook</a><span class="crumb-r"><span>Chapter ${i + 1} of ${PAGES.length}</span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
+  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/" data-back>${ico('back')} The logbook</a><span class="crumb-r"><span class="crumb-step">${pv ? `<a class="cs-btn" href="#/${pv}" aria-label="Previous chapter: ${PAGE_T[pv]}" title="${PAGE_T[pv]}">${ico('back')}</a>` : `<span class="cs-btn" aria-hidden="true">${ico('back')}</span>`}<span>Chapter ${i + 1} of ${PAGES.length}</span>${nx ? `<a class="cs-btn" href="#/${nx}" aria-label="Next chapter: ${PAGE_T[nx]}" title="${PAGE_T[nx]}">${ico('go')}</a>` : `<span class="cs-btn" aria-hidden="true">${ico('go')}</span>`}</span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
   w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<a class="pg pg-n" href="/os/" data-os><small>Bonus ' + ico('go') + '</small><b>' + ico('os') + ' Boot TPHM OS</b></a>'}</nav>`);
 });
 /* "The 12" lights up only while the product grid is on screen */
@@ -213,7 +213,9 @@ new IntersectionObserver(es => es.forEach(e => {
   const h = navLinks.find(a => a.dataset.nav === 'home');
   h && h.setAttribute('aria-current', logSeen && page === 'home' ? 'page' : 'false');
 }), { rootMargin: '-35% 0px -45% 0px' }).observe(document.getElementById('log'));
+let homeY = 0;
 const showPage = (pg, target) => {
+  if (page === 'home' && pg !== 'home') homeY = scrollY;
   const changed = pg !== page; page = pg;
   $$('section[data-page]').forEach(s => { s.hidden = s.dataset.page !== pg; });
   document.body.dataset.page = pg;
@@ -221,6 +223,7 @@ const showPage = (pg, target) => {
   document.title = pg === 'home' ? BASE_T : `${PAGE_T[pg]} · TPHM`;
   const el = target && target !== 'top' && document.getElementById(target);
   if (el && target !== pg) requestAnimationFrame(() => el.scrollIntoView({ behavior: changed || reduce ? 'auto' : 'smooth', block: 'start' }));
+  else if (changed && pg === 'home' && !target) requestAnimationFrame(() => scrollTo({ top: homeY, behavior: 'instant' }));
   else if (changed || target === pg || target === 'top') scrollTo({ top: 0, behavior: 'auto' });
   if (changed) { const h = pg === 'home' ? null : $('h2', document.getElementById(pg)); h && (h.tabIndex = -1, h.focus({ preventScroll: true })); }
   onScroll();
@@ -241,7 +244,7 @@ const go = href => { if (pd.open) pd.close(); if (location.hash !== href) histor
 document.addEventListener('click', e => {
   const a = e.target.closest('a[href^="#"]'); if (!a || a.classList.contains('skip')) return;
   const href = a.getAttribute('href');
-  if (href === '#/' || /^#\/(hunt|saas|cho|invest|builders)$/.test(href) || PAGE_OF[href.slice(1)]) { e.preventDefault(); go(href === '#/' ? location.pathname + location.search : href); if (href === '#/') { showPage('home', 'top'); } }
+  if (href === '#/' || /^#\/(hunt|saas|cho|invest|builders)$/.test(href) || PAGE_OF[href.slice(1)]) { e.preventDefault(); go(href === '#/' ? location.pathname + location.search : href); if (href === '#/' && !a.hasAttribute('data-back')) { showPage('home', 'top'); } }
 }, true);
 addEventListener('popstate', route); addEventListener('hashchange', route); route();
 

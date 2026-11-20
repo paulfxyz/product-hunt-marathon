@@ -382,3 +382,12 @@ h2[tabindex="-1"]:focus{outline:none}
 .dlg{height:fit-content}
 .p-media{aspect-ratio:1}
 .p-media video{height:100%}
+
+/* Chapter stepper in the breadcrumb */
+.crumb-step{display:inline-flex;align-items:center;gap:6px}
+.crumb .cs-btn{display:inline-grid;place-items:center;width:36px;height:36px;min-height:36px;padding:0;border-radius:50%;border:1.5px solid var(--line-2);color:var(--ink)}
+.crumb .cs-btn .ico{font-size:16px}
+.crumb span.cs-btn{opacity:.35}
+.band .crumb .cs-btn{border-color:var(--band-line);color:var(--band-ink)}
+.crumb a.cs-btn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.band .crumb a.cs-btn:hover{border-color:var(--band-ink)}
