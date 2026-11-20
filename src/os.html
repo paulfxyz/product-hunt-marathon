@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TPHM OS · The Product Hunt Marathon · Paul Fleury</title>
+<meta name="description" content="Twelve free, open-source tools in twelve days, installed on a tiny operating system. Open the apps, read the field notes, decline the upvote sellers, and see why companies should build what they rent.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#140D0A">
+<meta property="og:title" content="TPHM OS · The Product Hunt Marathon">
+<meta property="og:description" content="Twelve tools. Twelve days. Built, not rented.">
+<meta property="og:image" content="https://tphm.io/assets/og.jpg">
+<link rel="icon" href="/assets/img/pfph-v1-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/img/pfph-v1-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Geist+Mono:wght@400..700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap">
+<script>(function(){var t;try{t=localStorage.getItem('tphmos-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="stylesheet" href="/os/os.css?v=202611201700">
+</head>
+<body>
+<a class="skip" href="/">Skip the desktop and read it as a page</a>
+
+<div class="boot" id="boot" aria-hidden="true">
+  <img src="/assets/brand/pfph-head-v1.webp" alt="" width="272" height="201">
+  <div class="boot-bar"><i></i></div>
+  <p class="boot-t" id="bootT">Booting TPHM OS 12.0</p>
+  <p class="boot-skip">Press any key to skip</p>
+</div>
+
+<header class="menubar" role="menubar" aria-label="Menu bar">
+  <b class="sb-time" id="sbTime" aria-hidden="true">9:41</b>
+  <span class="sb-island" aria-hidden="true"></span>
+  <div class="mb-l">
+    <div class="mb-menu"><button class="mb-btn mb-logo" aria-haspopup="true" aria-expanded="false" aria-label="TPHM menu"><img src="/assets/brand/pfph-head-v1.webp" alt="" width="272" height="201"></button>
+      <div class="mb-drop" role="menu">
+        <button role="menuitem" data-open="about">About TPHM OS</button>
+        <button role="menuitem" data-open="welcome">Welcome</button>
+        <hr>
+        <button role="menuitem" data-act="theme">Light or dark windows</button>
+        <a role="menuitem" href="/">Read it as a page</a>
+        <hr>
+        <button role="menuitem" data-act="restart">Restart…</button>
+      </div>
+    </div>
+    <b class="mb-app" id="mbApp">Finder</b>
+    <div class="mb-menu"><button class="mb-btn" aria-haspopup="true" aria-expanded="false">Apps</button>
+      <div class="mb-drop mb-apps" role="menu" id="mbApps"></div>
+    </div>
+    <div class="mb-menu"><button class="mb-btn" aria-haspopup="true" aria-expanded="false">Go</button>
+      <div class="mb-drop" role="menu">
+        <button role="menuitem" data-open="finder">The Marathon <kbd>12 apps</kbd></button>
+        <button role="menuitem" data-open="notes">Field notes</button>
+        <button role="menuitem" data-open="mail">Inbox</button>
+        <button role="menuitem" data-open="saas">SaaS is dead</button>
+        <button role="menuitem" data-open="calc">Rent or build</button>
+        <button role="menuitem" data-open="cho">What is a CHO?</button>
+        <button role="menuitem" data-open="hire">Hire me</button>
+        <button role="menuitem" data-open="pitch">Openline, for investors</button>
+        <button role="menuitem" data-open="builders">Run your own</button>
+        <button role="menuitem" data-open="terminal">Terminal</button>
+      </div>
+    </div>
+    <div class="mb-menu mb-hide-s"><button class="mb-btn" aria-haspopup="true" aria-expanded="false">Window</button>
+      <div class="mb-drop" role="menu">
+        <button role="menuitem" data-act="close">Close window <kbd>esc</kbd></button>
+        <button role="menuitem" data-act="closeall">Close all</button>
+        <button role="menuitem" data-act="tile">Tidy up</button>
+      </div>
+    </div>
+  </div>
+  <div class="mb-r">
+    <button class="mb-np" id="np" type="button" hidden aria-label="Pause the Free Software Song"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="mb-hide-s">Free Software Song</span></button>
+    <span class="mb-pill mb-hide-s" title="All twelve shipped">11 + 1 shipped</span>
+    <button class="mb-btn mb-spot" data-act="spot" aria-label="Search (Command K)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <time class="mb-clock" id="clock">Lisbon</time>
+    <span class="sb-icons" aria-hidden="true"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.3 1.3a4.6 4.6 0 0 0-6.6 0zM1 4.4a9.9 9.9 0 0 1 14 0l-1.3 1.3a8 8 0 0 0-11.4 0z"/></svg><span class="sb-bat"><i></i></span></span>
+    <button class="mb-exit" id="exitOS" type="button" hidden aria-label="Exit TPHM OS and go back to the logbook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Exit</span></button>
+  </div>
+</header>
+
+<main class="desk" id="desk" aria-label="Desktop">
+  <div class="wall-art" aria-hidden="true">
+    <div class="aurora"></div>
+    <p class="wall-big">TPHM</p>
+    <p class="wall-line">Twelve tools. Twelve days. <em>Built, not rented.</em></p>
+  </div>
+  <nav class="icons" id="icons" aria-label="Desktop icons"></nav>
+  <button class="pet" id="pet" type="button" aria-pressed="false" aria-label="DJ kitty: play the Free Software Song"><span class="pet-hint">Tap me</span><img src="/assets/kitty/kitty-dj.webp" alt="" width="413" height="520"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+  <div class="ios-hs" id="ios" aria-label="Home screen"></div>
+  <div class="wins" id="wins"></div>
+</main>
+<button class="ios-home" id="iosHome" type="button" aria-label="Go to the home screen"></button>
+
+<nav class="dock" id="dock" aria-label="Dock"></nav>
+
+<div class="notif-area" id="notifs" aria-live="polite"></div>
+
+<dialog class="spot" id="spot" aria-label="Search">
+  <div class="spot-in">
+    <div class="spot-f"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="spotQ" placeholder="Search apps, notes and actions" autocomplete="off" aria-label="Search" role="combobox" aria-controls="spotL" aria-expanded="true"></div>
+    <ul class="spot-l" id="spotL" role="listbox"></ul>
+  </div>
+</dialog>
+
+<script src="/assets/data.js?v=202611201700"></script>
+<script src="/os/os.js?v=202611201700" defer></script>
+</body>
+</html>

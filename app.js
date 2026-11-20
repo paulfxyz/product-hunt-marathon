@@ -3,6 +3,11 @@
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const LOG = window.TPHM_LOG || [];
+const BASE = document.documentElement.dataset.base || '';
+const T = window.T || (x => x);
+const SLUG = window.TPHM_SLUGS || {};
+const KEY_OF = Object.fromEntries(Object.entries(SLUG).map(([k, v]) => [v, k]));
+const U = k => k ? BASE + '/' + (SLUG[k] || k) : (BASE || '/');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion');
 const ico = id => `<svg class="ico"><use href="#i-${id}"/></svg>`;
 const money = n => 'US$' + Math.round(n).toLocaleString('en-US');
@@ -54,7 +59,7 @@ addEventListener('scroll', hideTip, { passive: true });
 /* Course + now carousel */
 const course = $('#course'), track = $('#nowTrack'), runner = $('#runner');
 let cur = LOG.length - 1;
-course.innerHTML = LOG.map((p, i) => `<li class="${p.encore ? 'is-encore' : 'is-done'}"><a href="#/${p.key}" data-i="${i}" aria-label="Day ${p.n}: ${p.name}">${p.encore ? ico('star') : p.n}</a></li>`).join('');
+course.innerHTML = LOG.map((p, i) => `<li class="${p.encore ? 'is-encore' : 'is-done'}"><a href="${U(p.key)}" data-i="${i}" aria-label="${T('Day')} ${p.n}: ${p.name}">${p.encore ? ico('star') : p.n}</a></li>`).join('');
 track.innerHTML = LOG.map((p, i) => `
   <article class="slide" aria-roledescription="slide" aria-label="${p.n} of 12" ${i === cur ? '' : 'inert'}>
     <div class="now-art"><img src="/assets/kitty/p/${p.key}.webp" alt="The Marathon kitty for ${p.name}" width="900" height="502" ${i < 9 ? 'loading="lazy"' : ''}><span class="pill ${p.encore ? 'pill-encore' : 'pill-done'}">${p.encore ? ico('star') + ' Encore' : ico('check') + ' Shipped'}</span></div>
@@ -182,9 +187,10 @@ const fill = i => {
 function openProduct(key, push = true) {
   const i = LOG.findIndex(p => p.key === key); if (i < 0) return;
   fill(i); openDlg(pd);
-  if (push && location.hash !== '#/' + key) history.replaceState(null, '', '#/' + key);
+  if (push && location.pathname !== U(key)) history.pushState(null, '', U(key));
+  document.title = `${LOG[i].name} · ${T(LOG[i].kind)} · TPHM`;
 }
-const step = d => { fill(pi + d); history.replaceState(null, '', '#/' + LOG[pi].key); };
+const step = d => { fill(pi + d); history.replaceState(null, '', U(LOG[pi].key)); document.title = `${LOG[pi].name} · ${T(LOG[pi].kind)} · TPHM`; };
 $('#p-prev').addEventListener('click', () => step(-1));
 $('#p-next').addEventListener('click', () => step(1));
 pd.addEventListener('keydown', e => {
@@ -192,7 +198,7 @@ pd.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
   if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
 });
-pd.addEventListener('close', () => { pv.pause(); if (LOG.some(p => location.hash === '#/' + p.key)) history.replaceState(null, '', page === 'home' ? location.pathname + location.search : '#/' + page); });
+pd.addEventListener('close', () => { pv.pause(); if (LOG.some(p => location.pathname === U(p.key))) history.replaceState(null, '', U(page === 'home' ? '' : page)); document.title = page === 'home' ? BASE_T : `${T(PAGE_T[page])} · TPHM`; });
 document.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) { e.preventDefault(); openProduct(b.dataset.open); } });
 /* Pages: a short landing plus one page per chapter */
 const PAGES = ['hunt', 'saas', 'cho', 'invest', 'builders'];
@@ -203,8 +209,8 @@ let page = 'home';
 PAGES.forEach((p, i) => {
   const s = document.getElementById(p), w = $('.wrap', s);
   const pv = PAGES[i - 1], nx = PAGES[i + 1];
-  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/" data-back>${ico('back')} The logbook</a><span class="crumb-r"><span class="crumb-step">${pv ? `<a class="cs-btn" href="#/${pv}" aria-label="Previous chapter: ${PAGE_T[pv]}">${ico('back')}<span>${PAGE_T[pv]}</span></a>` : ''}<span class="cs-n">Chapter ${i + 1} of ${PAGES.length}</span>${nx ? `<a class="cs-btn" href="#/${nx}" aria-label="Next chapter: ${PAGE_T[nx]}"><span>${PAGE_T[nx]}</span>${ico('go')}</a>` : ''}</span></span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
-  w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<a class="pg pg-n" href="/os/" data-os><small>Bonus ' + ico('go') + '</small><b>' + ico('os') + ' Boot TPHM OS</b></a>'}</nav>`);
+  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="${U('')}" data-back>${ico('back')} The logbook</a><span class="crumb-r"><span class="crumb-step">${pv ? `<a class="cs-btn" href="${U(pv)}" aria-label="Previous chapter: ${PAGE_T[pv]}">${ico('back')}<span>${PAGE_T[pv]}</span></a>` : ''}<span class="cs-n">Chapter ${i + 1} of ${PAGES.length}</span>${nx ? `<a class="cs-btn" href="${U(nx)}" aria-label="Next chapter: ${PAGE_T[nx]}"><span>${PAGE_T[nx]}</span>${ico('go')}</a>` : ''}</span></span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
+  w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="${U(pv)}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="' + U('') + '#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="${U(nx)}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<a class="pg pg-n" href="/os/" data-os><small>Bonus ' + ico('go') + '</small><b>' + ico('os') + ' Boot TPHM OS</b></a>'}</nav>`);
 });
 /* "The 12" lights up only while the product grid is on screen */
 let logSeen = false;
@@ -220,7 +226,7 @@ const showPage = (pg, target) => {
   $$('section[data-page]').forEach(s => { s.hidden = s.dataset.page !== pg; });
   document.body.dataset.page = pg;
   navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.nav === pg && (pg !== 'home' || logSeen) ? 'page' : 'false'));
-  document.title = pg === 'home' ? BASE_T : `${PAGE_T[pg]} · TPHM`;
+  if (!pd.open) document.title = pg === 'home' ? BASE_T : `${T(PAGE_T[pg])} · TPHM`;
   const el = target && target !== 'top' && document.getElementById(target);
   if (el && target !== pg) requestAnimationFrame(() => el.scrollIntoView({ behavior: changed || reduce ? 'auto' : 'smooth', block: 'start' }));
   else if (changed && pg === 'home' && !target) requestAnimationFrame(() => scrollTo({ top: homeY, behavior: 'instant' }));
@@ -229,24 +235,37 @@ const showPage = (pg, target) => {
   onScroll();
 };
 const route = () => {
-  const hs = location.hash;
-  const m = hs.match(/^#\/([\w-]*)/);
-  if (m) {
-    if (PAGES.includes(m[1])) return showPage(m[1], m[1]);
-    if (m[1] && LOG.some(p => p.key === m[1])) { if (page !== 'home' && !pd.open) showPage('home'); return openProduct(m[1], false); }
-    return showPage('home', m[1] ? null : 'top');
-  }
-  const id = hs.slice(1);
-  if (id && PAGE_OF[id]) return showPage(PAGE_OF[id], id);
+  const legacy = location.hash.match(/^#\/([\w-]*)/);
+  if (legacy) history.replaceState(null, '', U(legacy[1]));
+  const raw = decodeURIComponent((location.pathname.slice(BASE.length).match(/^\/([^/]+)/) || [])[1] || ''); const slug = KEY_OF[raw] || raw;
+  const hs = location.hash.slice(1);
+  if (PAGES.includes(slug)) return showPage(slug, hs && PAGE_OF[hs] === slug ? hs : slug);
+  if (slug && LOG.some(p => p.key === slug)) { if (page !== 'home' && !pd.open) showPage('home'); return openProduct(slug, false); }
+  if (pd.open) pd.close();
+  if (hs && PAGE_OF[hs]) return showPage(PAGE_OF[hs], hs);
   showPage('home');
 };
-const go = href => { if (pd.open) pd.close(); if (location.hash !== href) history.pushState(null, '', href); route(); };
+const go = href => {
+  const u = new URL(href, location.href);
+  if (pd.open) pd.close();
+  if (u.pathname + u.hash !== location.pathname + location.hash) history.pushState(null, '', u.pathname + u.hash);
+  route();
+};
+const internal = h => { const u = new URL(h, location.href); if (u.origin !== location.origin) return false; const p = u.pathname.replace(/\/$/, '') || '/'; if (p === (BASE || '/')) return true; const r = decodeURIComponent(p.slice(BASE.length + 1)); return PAGES.includes(KEY_OF[r] || r) && p.startsWith(BASE + '/'); };
 document.addEventListener('click', e => {
-  const a = e.target.closest('a[href^="#"]'); if (!a || a.classList.contains('skip')) return;
-  const href = a.getAttribute('href');
-  if (href === '#/' || /^#\/(hunt|saas|cho|invest|builders)$/.test(href) || PAGE_OF[href.slice(1)]) { e.preventDefault(); go(href === '#/' ? location.pathname + location.search : href); if (href === '#/' && !a.hasAttribute('data-back')) { showPage('home', 'top'); } }
+  const a = e.target.closest('a[href]'); if (!a || a.classList.contains('skip') || a.target || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  let href = a.getAttribute('href');
+  if (href.startsWith('#')) {
+    const id = href.slice(1);
+    if (!PAGE_OF[id]) return;
+    href = U(PAGE_OF[id] === 'home' ? '' : PAGE_OF[id]) + (PAGE_OF[id] === id ? '' : href);
+    if (PAGE_OF[id] === 'home') href = U('') + '#' + id;
+  }
+  if (!internal(href)) return;
+  e.preventDefault(); go(href);
+  if (href === U('') && !a.hasAttribute('data-back')) showPage('home', 'top');
 }, true);
-addEventListener('popstate', route); addEventListener('hashchange', route); route();
+addEventListener('popstate', route); route();
 
 /* Text dialogs */
 const td = $('#tdlg'), tpl = $('#tpl-dlg').content;
@@ -368,11 +387,11 @@ const kd = $('#kdlg'), kq = $('#kq'), kl = $('#klist');
 const ITEMS = [
   ...LOG.map(p => ({ g: 'The 12', t: p.name, s: p.kind, img: `/assets/icons/${p.key}.webp`, run: () => openProduct(p.key) })),
   ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Invest in Openline', 'invest'], ['Run your own marathon', 'builders'], ['Follow along', 'follow']]
-    .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? '#/' + id : '#' + id) })),
+    .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? U(id) : U(PAGE_OF[id] === 'home' ? '' : PAGE_OF[id]) + '#' + id) })),
   { g: 'Sections', t: 'Boot TPHM OS', s: 'The Marathon as a desktop', ic: 'play', run: () => openOS() },
   { g: 'Read', t: 'What is a CHO?', ic: 'info', run: () => openText('cho') },
   { g: 'Read', t: 'The upvote black market', ic: 'info', run: () => openText('market') },
-  { g: 'Read', t: 'The editors didn\u2019t pick it up', ic: 'info', run: () => openText('editors') },
+  { g: 'Read', t: 'The editors featured Mang, not the Marathon', ic: 'info', run: () => openText('editors') },
   { g: 'Actions', t: 'Switch light or dark', ic: 'moon', run: () => $('.theme').click() },
   { g: 'Actions', t: 'Write to Paul', s: 'paulfleury.com/contact', ic: 'ext', run: () => open('https://paulfleury.com/contact', '_blank', 'noopener') },
   { g: 'Actions', t: 'Play Tetris', s: 'tetris.rocks', ic: 'play', run: () => open('https://tetris.rocks', '_blank', 'noopener') },
@@ -381,7 +400,7 @@ const ITEMS = [
 let ksel = 0, kres = [];
 const kRender = () => {
   const q = kq.value.trim().toLowerCase();
-  kres = ITEMS.filter(x => !q || (x.t + ' ' + (x.s || '') + ' ' + x.g).toLowerCase().includes(q));
+  kres = ITEMS.filter(x => !q || (x.t + ' ' + (x.s || '') + ' ' + x.g + ' ' + T(x.t) + ' ' + T(x.s || '') + ' ' + T(x.g)).toLowerCase().includes(q));
   ksel = Math.min(ksel, Math.max(0, kres.length - 1));
   let g = '', h = '';
   kres.forEach((x, i) => {
@@ -414,11 +433,11 @@ if (!/Mac|iPhone|iPad/.test(navigator.platform)) $$('.k-open .kbd').forEach(k =>
 const osd = $('#osdlg'), osf = $('#osframe');
 let osReturn = null;
 function openOS() {
-  if (typeof osd.showModal !== 'function') { location.href = '/os/'; return; }
+  if (typeof osd.showModal !== 'function') { location.href = U('os'); return; }
   osReturn = document.activeElement;
   if (kd.open) kd.close();
   osd.classList.remove('ready');
-  osf.src = '/os/';
+  osf.src = U('os');
   osf.onload = () => { osd.classList.add('ready'); try { osf.contentWindow.focus(); } catch (e) {} };
   document.documentElement.classList.add('os-open');
   osd.showModal();

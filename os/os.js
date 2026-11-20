@@ -3,6 +3,8 @@
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const LOG = window.TPHM_LOG || [];
+const BASE = document.documentElement.dataset.base || '';
+const T = window.T || (x => x);
 const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion');
 const narrow = () => innerWidth <= 760;
 const money = n => 'US$' + Math.round(n).toLocaleString('en-US');
@@ -181,7 +183,7 @@ const exitOS = () => { if (song) song.pause(); window.parent.postMessage({ tphm:
 if (EMBED) {
   document.documentElement.classList.add('embed');
   $('#exitOS').hidden = false; $('#exitOS').addEventListener('click', exitOS);
-  document.addEventListener('click', e => { const a = e.target.closest('a[href="/"]'); if (a) { e.preventDefault(); exitOS(); } }, true);
+  document.addEventListener('click', e => { const a = e.target.closest('a[data-home]'); if (a) { e.preventDefault(); exitOS(); } }, true);
 }
 
 /* ---------- Menus ---------- */
@@ -226,7 +228,7 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
       <button class="pathb" data-open="builders"><b>Run my own</b><span>Six lessons and a checklist</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 2.75k</b><span>US$ to build all twelve</span></div><div><b>0</b><span>upvotes bought</span></div></div>
-    <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="/">Read it as a page</a>.</p>
+    <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="${BASE}/" data-home>Read it as a page</a>.</p>
   </div><div class="wel-r"><img src="/assets/kitty/fin.webp" alt="The Marathon kitty holding a sign: 11 + 1 shipped" width="1100" height="614"></div></div>`;
 } });
 
@@ -289,7 +291,7 @@ function productApp(key) {
 
 const NOTES = [
   ['love', 'A love letter, with a few corrections', 'On Product Hunt since the early days', `<p class="lead">I've been on Product Hunt since its early days.</p><p>Back then I was in a relationship with the first French journalist to interview Ryan Hoover, so I like to think I heard about it at the kitchen table before most of France did. I've browsed it, hunted on it and recommended it for a decade. This Marathon was my way of giving something back: eleven useful, free tools in a row, plus one for fun.</p><h3>The rules I set for myself</h3><p>No launch squad. No upvote ask. No paid engagement. Just one product a day, a clear page, a real maker comment and an invitation to send feedback.</p>`],
-  ['editors', 'The editors didn\u2019t pick it up', 'Being live and being seen are different', `<p class="lead">On Product Hunt, being live and being seen are two different things.</p><p>Every launch gets a page, but <a href="https://help.producthunt.com/en/articles/17734306-1-how-product-hunt-works" target="_blank" rel="noopener">the team hand-picks which ones appear on the homepage</a>, and <a href="https://help.producthunt.com/en/articles/17734646-8-launch-faq-and-myths" target="_blank" rel="noopener">featuring is an editorial decision that meeting the guidelines doesn't guarantee</a>. Launches that aren't featured sit behind a "See all of today's products" link that most visitors never click.</p><p>As far as I could see, the Marathon never made it onto the editors' radar as a story. Eleven consecutive free, MIT-licensed launches from one maker read as eleven separate small products, each judged on its own day. I don't think anyone acted in bad faith. But it shows what the curation model rewards: one big, polished, funded launch beats a steady run of honest small ones.</p><p class="aside">Product Hunt's <a href="https://help.producthunt.com/en/articles/17734341-2-what-kind-of-products-get-featured" target="_blank" rel="noopener">featuring guidelines</a> look for originality, a clear edge, plain language and a product that works. Upvotes alone don't decide it.</p>`],
+  ['editors', 'The editors featured Mang, not the Marathon', 'Being live and being seen are different', `<p class="lead">On Product Hunt, being live and being seen are two different things.</p><p>Every launch gets a page, but <a href="https://help.producthunt.com/en/articles/17734306-1-how-product-hunt-works" target="_blank" rel="noopener">the team hand-picks which ones appear on the homepage</a>, and <a href="https://help.producthunt.com/en/articles/17734646-8-launch-faq-and-myths" target="_blank" rel="noopener">featuring is an editorial decision that meeting the guidelines doesn't guarantee</a>. Launches that aren't featured sit behind a "See all of today's products" link that most visitors never click.</p><p>The editors did pick up Mang, the terminal assistant from day three, and featured it. That was a real moment. But the Marathon as a whole never became the story: eleven consecutive free, MIT-licensed launches from one maker read as eleven separate small products, each judged on its own day, and others, Megamesh for one, may well have deserved attention too. I don't think anyone acted in bad faith. But it shows what the curation model rewards: one big, polished, funded launch beats a steady run of honest small ones.</p><p class="aside">Product Hunt's <a href="https://help.producthunt.com/en/articles/17734341-2-what-kind-of-products-get-featured" target="_blank" rel="noopener">featuring guidelines</a> look for originality, a clear edge, plain language and a product that works. Upvotes alone don't decide it.</p>`],
   ['market', 'The upvote black market is real', 'My inbox filled with offers to sell me votes', `<p class="lead">From the first launch day, my inbox filled with offers to sell me upvotes.</p><p>Packages of "supporters", guaranteed top-five placements, launch-day "communities" that vote on command. I didn't keep count, but there were a lot of them, on Product Hunt, LinkedIn, X and email.</p><p>Product Hunt is clear that this is against the rules. Its own guide says <a href="https://help.producthunt.com/en/articles/17734384-5-how-to-promote-your-launch-and-what-to-avoid" target="_blank" rel="noopener">never pay for upvotes or comments</a>, and that bought engagement can get a launch removed and an account banned. It also weights votes by account history, so <a href="https://help.producthunt.com/en/articles/17734646-8-launch-faq-and-myths" target="_blank" rel="noopener">votes from brand-new or low-quality accounts earn far fewer points</a>. Good. But a market only exists when buyers exist, and the volume of offers tells you that many makers are paying.</p><p><button class="btn btn-ln" data-open="mail">Open the inbox</button></p>`],
   ['sad', 'What saddens me', 'When votes become a currency', `<p class="lead">Too often, the leaderboard rewards whoever can manufacture momentum.</p><p>A commercial launch with a paid push, a "community" of vote-swappers, or a pump-and-dump product that collects a badge and disappears within a year. Meanwhile, free tools with their code on GitHub, the kind you can still run in ten years, get a fraction of the attention.</p><p>That's not a complaint about the people who work there. It's a design problem: when attention is ranked by votes, votes become a currency, and currencies get counterfeited. I'd love to see a lane for open-source launches, or credit for makers who ship consistently and honestly.</p><div class="quote-card">“Open-source, free work deserves at least the attention we give to commercial launches with a paid push behind them.”<small>Paul Fleury · Field notes</small></div>`],
   ['again', 'Would I do it again?', 'Yes. The point was never the leaderboard', `<p class="lead">Yes. The point was never the leaderboard.</p><p>Twelve tools now exist that didn't a month ago, and every one of them is free.</p><p>The full numbers (visits, stars, feedback and what the paid boosts on X and LinkedIn actually delivered) are in the Full Report, published on Tuesday 24 November on <a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://x.com/paulfxyz" target="_blank" rel="noopener">X</a>.</p>`]
@@ -434,14 +436,15 @@ def('about', { title: 'About TPHM OS', w: 560, h: 620, build(b) {
     <p>Dedicated to Aaron Swartz, Jonathan James, Bassel Khartabil and Barnaby Jack, for documentation, shared ownership, maintenance and responsible testing. They inspired this work; they never endorsed it.</p>
     <p class="small">The DJ kitty on the desktop plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris encore is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
     <div class="links"><a href="https://ph.paulfleury.com/" target="_blank" rel="noopener">Day-by-day page</a><a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener">Product Hunt</a><a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/paulfxyz" target="_blank" rel="noopener">X</a><a href="https://github.com/paulfxyz" target="_blank" rel="noopener">GitHub</a><a href="https://paulfleury.com" target="_blank" rel="noopener">paulfleury.com</a><a href="${CONTACT}" target="_blank" rel="noopener">Contact</a><a href="https://megastack.sh" target="_blank" rel="noopener">Security friends: megastack.sh</a></div>
-    <p><a class="btn btn-ln" href="/">Read it as a page instead</a></p></div>`;
+    <p><a class="btn btn-ln" href="${BASE}/" data-home>Read it as a page instead</a></p></div>`;
 } });
 
 /* Terminal */
 def('terminal', { title: 'paul@tphm: ~', w: 720, h: 460, cls: 'dark-win', build(b) {
-  b.innerHTML = `<div class="tm"><div class="o"></div><div class="tm-in"><span class="p">paul@tphm ~ %</span><input aria-label="Terminal command" autocomplete="off" spellcheck="false"></div></div>`;
+  b.innerHTML = `<div class="tm"><div class="o notranslate"></div><div class="tm-in"><span class="p">paul@tphm ~ %</span><input aria-label="Terminal command" autocomplete="off" spellcheck="false"></div></div>`;
   const out = $('.o', b), inp = $('input', b), tm = $('.tm', b); const hist = []; let hi = 0;
-  const say = h => { out.insertAdjacentHTML('beforeend', h + '\n'); tm.scrollTop = tm.scrollHeight; };
+  const tl = h => h.replace(/(^|>)([^<]+)(?=<|$)/g, (m, a, t) => a + t.split('\n').map(l => l.replace(/\S(?:.*\S)?/, x => T(x))).join('\n'));
+  const say = h => { out.insertAdjacentHTML('beforeend', tl(h) + '\n'); tm.scrollTop = tm.scrollHeight; };
   const find = q => LOG.find(p => p.key === q || p.name.toLowerCase() === q || p.key.startsWith(q));
   const CMDS = {
     help: () => say(`<span class="y">Commands</span>\n  <span class="a">ls</span>             list the twelve apps\n  <span class="a">open</span> &lt;name&gt;    open an app (try: open mars)\n  <span class="a">neofetch</span>       system info\n  <span class="a">budget</span>         what it took, tool by tool\n  <span class="a">whoami</span>         who built this\n  <span class="a">cat</span> cho.md     what is a CHO\n  <span class="a">hire</span> · <span class="a">invest</span> · <span class="a">notes</span> · <span class="a">inbox</span> · <span class="a">saas</span>\n  <span class="a">sudo upvote</span>    try it\n  <span class="a">clear</span>          clear the screen`),
@@ -489,12 +492,12 @@ const SI = [
   ...NOTES.map((n, i) => ({ g: 'Field notes', t: n[1], s: 'Note', id: 'notes', note: i })),
   { g: 'Actions', t: 'Write to Paul', s: 'paulfleury.com/contact', fn: () => open(CONTACT, '_blank', 'noopener'), id: 'hire' },
   { g: 'Actions', t: 'Light or dark windows', fn: () => act('theme'), id: 'about' },
-  { g: 'Actions', t: 'Read it as a page', fn: () => { EMBED ? exitOS() : (location.href = '/'); }, id: 'welcome' }
+  { g: 'Actions', t: 'Read it as a page', fn: () => { EMBED ? exitOS() : (location.href = BASE + '/'); }, id: 'welcome' }
 ];
 let ss = 0, sr = [];
 const spRender = () => {
   const q = sq.value.trim().toLowerCase();
-  sr = q ? SI.filter(x => (x.t + ' ' + (x.s || '')).toLowerCase().includes(q)) : SI.filter(x => x.g !== 'Field notes').slice(0, 10);
+  sr = q ? SI.filter(x => (x.t + ' ' + (x.s || '') + ' ' + T(x.t) + ' ' + T(x.s || '')).toLowerCase().includes(q)) : SI.filter(x => x.g !== 'Field notes').slice(0, 10);
   ss = Math.min(ss, Math.max(0, sr.length - 1)); let g = '', h = '';
   sr.forEach((x, i) => { if (x.g !== g) { g = x.g; h += `<li class="sp-g" role="presentation">${g}</li>`; } h += `<li class="sp-i" role="option" id="sp${i}" data-i="${i}" aria-selected="${i === ss}">${glyph(x.id)}<span>${x.t}</span>${x.s ? `<small>${x.s}</small>` : ''}</li>`; });
   sl.innerHTML = h; sq.setAttribute('aria-activedescendant', sr.length ? 'sp' + ss : '');

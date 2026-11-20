@@ -12,7 +12,7 @@ window.TPHM_LOG = [
     site: 'https://ase.so', gh: 'ase', ph: 'ase-2' },
   { n: 3,  day: 'Thu 12 Nov', name: 'Mang', key: 'mang', kind: 'Terminal assistant',
     line: 'Describe what you need. Mang proposes the command. You confirm before anything runs.',
-    note: 'Human in the loop by design: AI translates, you decide.',
+    note: 'Human in the loop by design: AI translates, you decide. Featured by the Product Hunt editors.',
     stack: 'Rust · CLI · OpenRouter or Ollama · MIT', budget: 400,
     site: 'https://mang.sh', gh: 'mang', ph: 'mang-sh' },
   { n: 4,  day: 'Fri 13 Nov', name: 'Hollr', key: 'hollr', kind: 'Encrypted inbox link',

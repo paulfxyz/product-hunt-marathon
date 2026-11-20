@@ -371,7 +371,8 @@ h2[tabindex="-1"]:focus{outline:none}
 .band .crumb .crumb-os{background:var(--band-ink);color:var(--band);border-color:var(--band-ink)}
 .crumb-os .ico{font-size:16px}
 .pg b .ico{vertical-align:-3px}
-.foot-links a .ico{vertical-align:-2px}
+.foot-links a{display:inline-flex;align-items:center;gap:8px}
+.foot-links a .ico{width:1.05em;height:1.05em}
 
 /* OS launchers: always light text on dark pill */
 .top-nav a.nav-os,a.nav-os,a.os-m,.tool.os-m{background:#1C1512;color:#FFF8F0}
