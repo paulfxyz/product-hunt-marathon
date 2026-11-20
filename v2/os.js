@@ -128,7 +128,29 @@ document.addEventListener('click', e => {
   const o = e.target.closest('[data-open]'); if (o) { e.preventDefault(); closeMenus(); openApp(o.dataset.open); }
   const a = e.target.closest('[data-act]'); if (a) { closeMenus(); act(a.dataset.act); }
 });
-$('#pet').addEventListener('click', () => { const lines = ['Meow. Twelve tools, zero upvotes bought.', 'Try the encore: Tetris, in the dock.', 'Psst. Press ⌘K.', 'Feedback over votes. Always.']; toast(lines[Math.floor(Math.random() * lines.length)]); });
+/* DJ kitty: the music button */
+const pet = $('#pet'), np = $('#np');
+let song;
+const setPlaying = on => {
+  document.documentElement.classList.toggle('playing', on);
+  pet.setAttribute('aria-pressed', on); pet.setAttribute('aria-label', on ? 'DJ kitty: pause the Free Software Song' : 'DJ kitty: play the Free Software Song');
+  np.hidden = !on;
+};
+const toggleSong = () => {
+  if (!song) { song = new Audio('/assets/a11y/free-software-song.mp3'); song.preload = 'auto'; song.addEventListener('ended', () => setPlaying(false)); song.addEventListener('pause', () => setPlaying(false)); song.addEventListener('play', () => setPlaying(true)); }
+  if (song.paused) { song.play().then(() => toast('Now playing: the Free Software Song, recorded by Julian Coccia')).catch(() => toast('Tap the kitty again to play')); }
+  else song.pause();
+};
+pet.addEventListener('click', toggleSong);
+np.addEventListener('click', toggleSong);
+/* Embedded in the logbook: exit goes back to the page */
+const EMBED = window.top !== window;
+const exitOS = () => { if (song) song.pause(); window.parent.postMessage({ tphm: 'exit-os' }, location.origin); };
+if (EMBED) {
+  document.documentElement.classList.add('embed');
+  $('#exitOS').hidden = false; $('#exitOS').addEventListener('click', exitOS);
+  document.addEventListener('click', e => { const a = e.target.closest('a[href="/v1/"]'); if (a) { e.preventDefault(); exitOS(); } }, true);
+}
 
 /* ---------- Menus ---------- */
 $('#mbApps').innerHTML = LOG.map(p => `<button role="menuitem" data-open="p:${p.key}"><img src="/assets/icons/${p.key}.webp" alt="">${p.name}<kbd>${p.encore ? '+1' : p.n}</kbd></button>`).join('');
@@ -378,7 +400,7 @@ def('about', { title: 'About TPHM OS', w: 560, h: 620, build(b) {
   b.innerHTML = `<div class="ab"><img src="/assets/brand/pfph-head-v1.webp" alt="" width="272" height="201"><h2 class="big">TPHM OS 12.0</h2><p class="small" style="font-family:var(--mono)">The Product Hunt Marathon · 10–21 Nov 2026 · Lisbon</p>
     <p>The permanent logbook of twelve free, open-source launches by Paul Fleury. Think. Build. Ship. Repeat.</p>
     <p>Dedicated to Aaron Swartz, Jonathan James, Bassel Khartabil and Barnaby Jack, for documentation, shared ownership, maintenance and responsible testing. They inspired this work; they never endorsed it.</p>
-    <p class="small">The music button plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris encore is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
+    <p class="small">The DJ kitty on the desktop plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris encore is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
     <div class="links"><a href="https://ph.paulfleury.com/" target="_blank" rel="noopener">Day-by-day page</a><a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener">Product Hunt</a><a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/paulfxyz" target="_blank" rel="noopener">X</a><a href="https://github.com/paulfxyz" target="_blank" rel="noopener">GitHub</a><a href="https://paulfleury.com" target="_blank" rel="noopener">paulfleury.com</a><a href="${CONTACT}" target="_blank" rel="noopener">Contact</a><a href="https://megastack.sh" target="_blank" rel="noopener">Security friends: megastack.sh</a></div>
     <p><a class="btn btn-ln" href="/v1/">Read it as a page instead</a></p></div>`;
 } });
@@ -435,7 +457,7 @@ const SI = [
   ...NOTES.map((n, i) => ({ g: 'Field notes', t: n[1], s: 'Note', id: 'notes', note: i })),
   { g: 'Actions', t: 'Write to Paul', s: 'paulfleury.com/contact', fn: () => open(CONTACT, '_blank', 'noopener'), id: 'hire' },
   { g: 'Actions', t: 'Light or dark windows', fn: () => act('theme'), id: 'about' },
-  { g: 'Actions', t: 'Read it as a page', fn: () => { location.href = '/v1/'; }, id: 'welcome' }
+  { g: 'Actions', t: 'Read it as a page', fn: () => { EMBED ? exitOS() : (location.href = '/v1/'); }, id: 'welcome' }
 ];
 let ss = 0, sr = [];
 const spRender = () => {

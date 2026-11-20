@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Geist+Mono:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap">
 <script>(function(){var t;try{t=localStorage.getItem('tphmos-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 <link rel="stylesheet" href="os.css">
-<link rel="stylesheet" href="/assets/a11y/a11y-v2.css">
 </head>
 <body>
 <a class="skip" href="/v1/">Skip the desktop and read it as a page</a>
@@ -69,9 +68,11 @@
     </div>
   </div>
   <div class="mb-r">
+    <button class="mb-np" id="np" type="button" hidden aria-label="Pause the Free Software Song"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="mb-hide-s">Free Software Song</span></button>
     <span class="mb-pill mb-hide-s" title="All twelve shipped">11 + 1 shipped</span>
     <button class="mb-btn mb-spot" data-act="spot" aria-label="Search (Command K)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
     <time class="mb-clock" id="clock">Lisbon</time>
+    <button class="mb-exit" id="exitOS" type="button" hidden aria-label="Exit TPHM OS and go back to the logbook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Exit</span></button>
   </div>
 </header>
 
@@ -82,7 +83,7 @@
     <p class="wall-line">Twelve tools. Twelve days. <em>Built, not rented.</em></p>
   </div>
   <nav class="icons" id="icons" aria-label="Desktop icons"></nav>
-  <img class="pet" id="pet" src="/assets/kitty/kitty-laptop.webp" alt="" width="343" height="378">
+  <button class="pet" id="pet" type="button" aria-pressed="false" aria-label="DJ kitty: play the Free Software Song"><span class="pet-hint">Tap me</span><img src="/assets/kitty/kitty-dj.webp" alt="" width="413" height="520"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
   <div class="wins" id="wins"></div>
 </main>
 
@@ -99,7 +100,5 @@
 
 <script src="/assets/data.js"></script>
 <script src="os.js" defer></script>
-<script type="module" src="/assets/a11y/a11y-v3.js"></script>
-<script type="module" src="/assets/a11y/song.js"></script>
 </body>
 </html>

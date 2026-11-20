@@ -30,10 +30,6 @@ const onScroll = () => {
 };
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const navLinks = $$('[data-nav]');
-const io = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.nav === e.target.id)); });
-}, { rootMargin: '-45% 0px -50% 0px' });
-['log', 'hunt', 'saas', 'cho', 'invest', 'builders'].forEach(id => { const el = document.getElementById(id); el && io.observe(el); });
 
 /* Toast */
 let tt;
@@ -196,10 +192,51 @@ pd.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
   if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
 });
-pd.addEventListener('close', () => { pv.pause(); if (location.hash.startsWith('#/')) history.replaceState(null, '', location.pathname + location.search); });
+pd.addEventListener('close', () => { pv.pause(); if (LOG.some(p => location.hash === '#/' + p.key)) history.replaceState(null, '', page === 'home' ? location.pathname + location.search : '#/' + page); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) { e.preventDefault(); openProduct(b.dataset.open); } });
-const fromHash = () => { const m = location.hash.match(/^#\/([\w-]+)/); if (m) openProduct(m[1], false); };
-addEventListener('hashchange', fromHash); fromHash();
+/* Pages: a short landing plus one page per chapter */
+const PAGES = ['hunt', 'saas', 'cho', 'invest', 'builders'];
+const PAGE_T = { hunt: 'The hunt', saas: 'SaaS is dead', cho: 'Hire a CHO', invest: 'Invest', builders: 'Run your own' };
+const PAGE_OF = { top: 'home', main: 'home', log: 'home', chapters: 'home', follow: 'home', hunt: 'hunt', inbox: 'hunt', saas: 'saas', calc: 'saas', took: 'saas', cho: 'cho', invest: 'invest', builders: 'builders' };
+const BASE_T = document.title;
+let page = 'home';
+PAGES.forEach((p, i) => {
+  const s = document.getElementById(p), w = $('.wrap', s);
+  const pv = PAGES[i - 1], nx = PAGES[i + 1];
+  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/">${ico('back')} The logbook</a><span>Chapter ${i + 1} of ${PAGES.length}</span></nav>`);
+  w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<button class="pg pg-n" type="button" data-os><small>Bonus ' + ico('go') + '</small><b>Boot TPHM OS</b></button>'}</nav>`);
+});
+const showPage = (pg, target) => {
+  const changed = pg !== page; page = pg;
+  $$('section[data-page]').forEach(s => { s.hidden = s.dataset.page !== pg; });
+  document.body.dataset.page = pg;
+  navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.nav === pg ? 'page' : 'false'));
+  document.title = pg === 'home' ? BASE_T : `${PAGE_T[pg]} · TPHM`;
+  const el = target && target !== 'top' && document.getElementById(target);
+  if (el && target !== pg) requestAnimationFrame(() => el.scrollIntoView({ behavior: changed || reduce ? 'auto' : 'smooth', block: 'start' }));
+  else if (changed || target === pg || target === 'top') scrollTo({ top: 0, behavior: 'auto' });
+  if (changed) { const h = pg === 'home' ? null : $('h2', document.getElementById(pg)); h && (h.tabIndex = -1, h.focus({ preventScroll: true })); }
+  onScroll();
+};
+const route = () => {
+  const hs = location.hash;
+  const m = hs.match(/^#\/([\w-]*)/);
+  if (m) {
+    if (PAGES.includes(m[1])) return showPage(m[1], m[1]);
+    if (m[1] && LOG.some(p => p.key === m[1])) { if (page !== 'home' && !pd.open) showPage('home'); return openProduct(m[1], false); }
+    return showPage('home', m[1] ? null : 'top');
+  }
+  const id = hs.slice(1);
+  if (id && PAGE_OF[id]) return showPage(PAGE_OF[id], id);
+  showPage('home');
+};
+const go = href => { if (pd.open) pd.close(); if (location.hash !== href) history.pushState(null, '', href); route(); };
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a || a.classList.contains('skip')) return;
+  const href = a.getAttribute('href');
+  if (href === '#/' || /^#\/(hunt|saas|cho|invest|builders)$/.test(href) || PAGE_OF[href.slice(1)]) { e.preventDefault(); go(href === '#/' ? location.pathname + location.search : href); if (href === '#/') { showPage('home', 'top'); } }
+}, true);
+addEventListener('popstate', route); addEventListener('hashchange', route); route();
 
 /* Text dialogs */
 const td = $('#tdlg'), tpl = $('#tpl-dlg').content;
@@ -321,7 +358,8 @@ const kd = $('#kdlg'), kq = $('#kq'), kl = $('#klist');
 const ITEMS = [
   ...LOG.map(p => ({ g: 'The 12', t: p.name, s: p.kind, img: `/assets/icons/${p.key}.webp`, run: () => openProduct(p.key) })),
   ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Invest in Openline', 'invest'], ['Run your own marathon', 'builders'], ['Follow along', 'follow']]
-    .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => (document.getElementById(id) || $('.' + id)).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }) })),
+    .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? '#/' + id : '#' + id) })),
+  { g: 'Sections', t: 'Boot TPHM OS', s: 'The Marathon as a desktop', ic: 'play', run: () => openOS() },
   { g: 'Read', t: 'What is a CHO?', ic: 'info', run: () => openText('cho') },
   { g: 'Read', t: 'The upvote black market', ic: 'info', run: () => openText('market') },
   { g: 'Read', t: 'The editors didn\u2019t pick it up', ic: 'info', run: () => openText('editors') },
@@ -361,4 +399,27 @@ document.addEventListener('keydown', e => {
   else if (e.key === '/' && !e.target.closest('input,textarea,[contenteditable]') && !document.querySelector('dialog[open]')) { e.preventDefault(); kOpen(); }
 });
 if (!/Mac|iPhone|iPad/.test(navigator.platform)) $$('.k-open .kbd').forEach(k => { k.textContent = 'Ctrl K'; });
+
+/* TPHM OS in a full-screen dialog */
+const osd = $('#osdlg'), osf = $('#osframe');
+let osReturn = null;
+function openOS() {
+  osReturn = document.activeElement;
+  if (kd.open) kd.close();
+  osd.classList.remove('ready');
+  osf.src = '/v2/' + (location.search || '');
+  osf.onload = () => { osd.classList.add('ready'); try { osf.contentWindow.focus(); } catch (e) {} };
+  document.documentElement.classList.add('os-open');
+  osd.showModal();
+}
+const closeOS = () => { if (osd.open) osd.close(); };
+osd.addEventListener('close', () => { osf.src = 'about:blank'; document.documentElement.classList.remove('os-open'); osReturn && osReturn.focus && osReturn.focus({ preventScroll: true }); });
+addEventListener('message', e => { if (e.origin === location.origin && e.data && e.data.tphm === 'exit-os') closeOS(); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-os]'); if (b) { e.preventDefault(); openOS(); } });
+
+/* Chapter card: checklist progress */
+const chDots = $('#chDots');
+const paintDots = () => { let d = []; try { d = JSON.parse(localStorage.getItem('tphm-lessons') || '[]'); } catch (e) {} $$('i', chDots).forEach((x, k) => x.classList.toggle('on', k < d.length)); $('em', chDots).textContent = `${d.length} of 6 ticked`; };
+paintDots(); addEventListener('storage', paintDots); document.addEventListener('change', paintDots); document.addEventListener('click', () => setTimeout(paintDots, 0));
+
 })();
