@@ -166,7 +166,7 @@ const fill = i => {
   $('#p-line').textContent = p.line;
   $('#p-note').textContent = p.note;
   $('#p-stack').textContent = p.stack;
-  $('#p-budget').textContent = p.budget ? '≈ ' + money(p.budget) : 'A bonus round, not counted in the eleven';
+  $('#p-budget').textContent = p.budget ? '≈ ' + money(p.budget) : 'Not tracked';
   $('#p-links').innerHTML = (p.site ? `<a class="btn btn-primary" href="${p.site}" target="_blank" rel="noopener">${p.encore ? 'Play' : 'Try'} ${host(p.site)} ${ico('ext')}</a>` : '') +
     (p.ph ? `<a class="btn ${p.site ? 'btn-ghost' : 'btn-primary'}" href="${ph(p)}" target="_blank" rel="noopener">${ico('ph')} Product Hunt</a>` : '') +
     `<a class="btn btn-ghost" href="${gh(p)}" target="_blank" rel="noopener">${ico('gh')} GitHub</a>`;
@@ -296,7 +296,7 @@ ids.forEach(k => document.getElementById(k).addEventListener('input', calc)); ca
 /* What it took */
 const B = LOG.filter(p => p.budget).sort((a, b) => b.budget - a.budget), MX = B[0].budget, TOT = B.reduce((s, p) => s + p.budget, 0);
 $('#took').innerHTML = B.map(p => `<li><img src="/assets/icons/${p.key}.webp" alt="" width="28" height="28" loading="lazy"><button type="button" data-open="${p.key}">${p.name}</button><span class="tb"><i style="--v:${p.budget / MX * 100}"></i></span><span>${p.budget}</span></li>`).join('') +
-  `<li class="took-total"><span></span><span>The eleven, in total</span><span></span><span>≈ ${TOT.toLocaleString('en-US')}</span></li>`;
+  `<li class="took-total"><span></span><span>All twelve, in total</span><span></span><span>≈ ${TOT.toLocaleString('en-US')}</span></li>`;
 new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); } }), { threshold: .3 }).observe($('.took'));
 const sig = $('.sig'); new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { sig.classList.add('in'); o.disconnect(); } }), { threshold: .3 }).observe(sig);
 
