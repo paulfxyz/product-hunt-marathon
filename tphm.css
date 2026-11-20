@@ -384,10 +384,12 @@ h2[tabindex="-1"]:focus{outline:none}
 .p-media video{height:100%}
 
 /* Chapter stepper in the breadcrumb */
-.crumb-step{display:inline-flex;align-items:center;gap:6px}
-.crumb .cs-btn{display:inline-grid;place-items:center;width:36px;height:36px;min-height:36px;padding:0;border-radius:50%;border:1.5px solid var(--line-2);color:var(--ink)}
-.crumb .cs-btn .ico{font-size:16px}
-.crumb span.cs-btn{opacity:.35}
+.crumb-step{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.crumb .cs-btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px 0 10px;border-radius:var(--r-full);border:1.5px solid var(--line-2);color:var(--ink);font-weight:700;white-space:nowrap}
+.crumb .cs-btn:last-child{padding:0 10px 0 14px}
+.crumb .cs-btn .ico{font-size:16px;flex:none}
+.cs-n{white-space:nowrap}
 .band .crumb .cs-btn{border-color:var(--band-line);color:var(--band-ink)}
 .crumb a.cs-btn:hover{border-color:var(--ink);transform:translateY(-1px)}
 .band .crumb a.cs-btn:hover{border-color:var(--band-ink)}
+@media (max-width:860px){.crumb .cs-btn,.crumb .cs-btn:last-child{width:36px;padding:0;justify-content:center}.crumb .cs-btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
