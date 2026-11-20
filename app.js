@@ -206,11 +206,18 @@ PAGES.forEach((p, i) => {
   w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/">${ico('back')} The logbook</a><span class="crumb-r"><span>Chapter ${i + 1} of ${PAGES.length}</span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
   w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<a class="pg pg-n" href="/os/" data-os><small>Bonus ' + ico('go') + '</small><b>' + ico('os') + ' Boot TPHM OS</b></a>'}</nav>`);
 });
+/* "The 12" lights up only while the product grid is on screen */
+let logSeen = false;
+new IntersectionObserver(es => es.forEach(e => {
+  logSeen = e.isIntersecting;
+  const h = navLinks.find(a => a.dataset.nav === 'home');
+  h && h.setAttribute('aria-current', logSeen && page === 'home' ? 'page' : 'false');
+}), { rootMargin: '-35% 0px -45% 0px' }).observe(document.getElementById('log'));
 const showPage = (pg, target) => {
   const changed = pg !== page; page = pg;
   $$('section[data-page]').forEach(s => { s.hidden = s.dataset.page !== pg; });
   document.body.dataset.page = pg;
-  navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.nav === pg ? 'page' : 'false'));
+  navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.nav === pg && (pg !== 'home' || logSeen) ? 'page' : 'false'));
   document.title = pg === 'home' ? BASE_T : `${PAGE_T[pg]} · TPHM`;
   const el = target && target !== 'top' && document.getElementById(target);
   if (el && target !== pg) requestAnimationFrame(() => el.scrollIntoView({ behavior: changed || reduce ? 'auto' : 'smooth', block: 'start' }));
