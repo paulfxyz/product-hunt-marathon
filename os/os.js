@@ -64,12 +64,12 @@ function openApp(id, opts = {}) {
   w.className = 'win' + (A.cls ? ' ' + A.cls : '');
   w.dataset.id = id; w.setAttribute('role', 'dialog'); w.setAttribute('aria-label', A.title);
   w.innerHTML = `<div class="wt"><div class="wt-dots"><button class="c" aria-label="Close ${A.title}"><i></i></button><button class="m" aria-label="Minimise"><i></i></button><button class="x" aria-label="Zoom"><i></i></button></div><div class="wt-t">${A.icon !== false ? glyph(id).replace('class="doc"', 'class="doc" style="transform:scale(.4);margin:-16px -12px"').replace('class="folder"', 'class="folder" style="transform:scale(.36);margin:-14px -18px"').replace(/class="appglyph ([^"]+)"/, 'class="appglyph $1" style="width:18px;height:18px;border-radius:5px;font-size:9px"') : ''}<span>${A.title}</span></div><div></div></div><div class="wb${A.pad ? ' pad' : ''}"></div>`;
-  const W = Math.min(A.w || 720, innerWidth - 24), H = Math.min(A.h || 520, innerHeight - 30 - 100);
-  const dw = innerWidth, dh = innerHeight - 30 - 80;
-  const off = (cascade++ % 6) * 28;
+  const dw = innerWidth, dh = innerHeight - 30 - 84;
+  const W = Math.round(Math.min(A.w || 720, dw * .86, dw - 32)), H = Math.round(Math.min(A.h || 520, dh * .92, dh - 16));
+  const off = (open.size ? (cascade++ % 4) : (cascade = 0)) * 26;
   w.style.width = W + 'px'; w.style.height = H + 'px';
-  w.style.left = Math.max(8, Math.round((dw - W) / 2 - 90 + off)) + 'px';
-  w.style.top = Math.max(8, Math.round((dh - H) / 2 - 20 + off)) + 'px';
+  w.style.left = Math.max(8, Math.min(dw - W - 8, Math.round((dw - W) / 2 + off))) + 'px';
+  w.style.top = Math.max(8, Math.min(dh - H, Math.round((dh - H) / 2 + off))) + 'px';
   wins.append(w); open.set(id, w);
   A.build($('.wb', w), w, opts);
   wireWin(w, id);
@@ -261,7 +261,7 @@ def('finder', { title: 'The Marathon', w: 860, h: 540, build(b) {
 function productApp(key) {
   const i = LOG.findIndex(p => p.key === key), p = LOG[i];
   const live = { tetris: 'https://tetris.rocks', timescreen: 'https://time.paulfleury.com' }[key];
-  const A = { id: 'p:' + key, title: p.name, w: 900, h: 540, build(b) {
+  const A = { id: 'p:' + key, title: p.name, w: 1000, h: 600, build(b) {
     const prev = LOG[(i - 1 + LOG.length) % LOG.length], next = LOG[(i + 1) % LOG.length];
     b.innerHTML = `<div class="pa"><div class="pa-media"><video muted loop playsinline autoplay poster="/assets/covers/${key}.webp" src="/assets/loops/${key}.mp4" aria-label="${p.name} animated cover"></video>${live ? '<span class="live-tag">Cover</span>' : ''}</div>
       <div class="pa-body">

@@ -377,3 +377,8 @@ h2[tabindex="-1"]:focus{outline:none}
 .top-nav a.nav-os,a.nav-os,a.os-m,.tool.os-m{background:#1C1512;color:#FFF8F0}
 .top-nav a.nav-os:hover,a.nav-os:hover{background:#2A201B;color:#fff}
 :root[data-theme=dark] a.nav-os,:root[data-theme=dark] a.os-m{background:#FFF8F0;color:#1C1512}
+
+/* Dialogs hug their content instead of stretching to the viewport */
+.dlg{height:fit-content}
+.p-media{aspect-ratio:1}
+.p-media video{height:100%}
