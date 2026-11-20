@@ -43,7 +43,7 @@
 .now-art .pill-done{color:var(--ok)}
 .now-art .pill-encore{background:var(--ink);color:var(--bg)}
 .slide .now-actions .btn{min-height:46px}
-.now-next{cursor:var(--cur-hand);width:100%;text-align:start}
+.now-next{cursor:pointer;width:100%;text-align:start}
 
 /* Ledger */
 .ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:44px 0 0;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
@@ -66,7 +66,7 @@
 @media (min-width:960px){.sec-head > .log-tools{grid-column:1/-1}}
 
 /* Rows (extend ph launch list) */
-.row{cursor:var(--cur-hand)}
+.row{cursor:pointer}
 .row.is-hidden,.tile.is-hidden{display:none}
 .row-budget{font-size:14px;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
 .row-budget.na{color:var(--ink-3);font-weight:600}
@@ -241,7 +241,7 @@ html:has(dialog.kdlg[open]){overflow:hidden}
 .k-field input{flex:1;min-width:0;height:58px;border:0;background:none;font:600 17px var(--font-body);color:var(--ink);outline:0}
 .k-list{max-height:min(56vh,440px);overflow:auto;padding:8px}
 .k-group{padding:10px 10px 4px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
-.k-item{display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 10px;border-radius:var(--r-sm);cursor:var(--cur-hand);font-weight:600}
+.k-item{display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 10px;border-radius:var(--r-sm);cursor:pointer;font-weight:600}
 .k-item img{width:30px;height:30px;border-radius:8px}
 .k-item .k-ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--bg-2);color:var(--ink-2)}
 .k-item small{margin-inline-start:auto;color:var(--ink-3);font-size:13px;font-weight:600;white-space:nowrap}
@@ -393,9 +393,3 @@ h2[tabindex="-1"]:focus{outline:none}
 .crumb a.cs-btn:hover{border-color:var(--ink);transform:translateY(-1px)}
 .band .crumb a.cs-btn:hover{border-color:var(--band-ink)}
 @media (max-width:860px){.crumb .cs-btn,.crumb .cs-btn:last-child{width:36px;padding:0;justify-content:center}.crumb .cs-btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
-
-/* Classic pixel cursors */
-:root{--cur-arrow:url(/assets/cursor/arrow.png) 1 1,default;--cur-hand:url(/assets/cursor/hand.png) 11 1,pointer}
-html,body{cursor:var(--cur-arrow)}
-a[href],button:not(:disabled),[role=button],[role=menuitem],[role=tab],label,summary,select,input[type=range],input[type=checkbox],input[type=radio],[data-open],[data-os],[data-tip]{cursor:var(--cur-hand)}
-input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
