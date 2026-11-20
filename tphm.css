@@ -356,3 +356,19 @@ h2[tabindex="-1"]:focus{outline:none}
 @media (min-width:960px){.os-m{display:none}}
 .top-nav a,.nav-os{white-space:nowrap}
 @media (min-width:960px) and (max-width:1199px){.top-nav a{padding:10px 9px;font-size:14px}.top-cta{display:none!important}.k-open .kbd{display:none!important}}
+/* OS launchers v2 */
+.nav-os .ico,.os-m .ico{font-size:16px}
+.nav-os .os-dot,.os-m .os-dot{width:7px;height:7px}
+.os-launch{border:0;background:var(--ink);color:var(--bg);box-shadow:var(--shadow)}
+.os-launch:hover{background:var(--ink);transform:translateY(-2px)}
+.os-launch span span{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.os-launch > .ico{color:var(--bg)}
+.os-launch-ic{display:grid;place-items:center;padding:0;color:#fff}
+.os-launch-ic .ico{font-size:22px}
+.ch-n .ico{vertical-align:-2px}
+.crumb-r{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap}
+.crumb .crumb-os{background:var(--ink);color:var(--bg);border-color:var(--ink);padding:0 14px}
+.band .crumb .crumb-os{background:var(--band-ink);color:var(--band);border-color:var(--band-ink)}
+.crumb-os .ico{font-size:16px}
+.pg b .ico{vertical-align:-3px}
+.foot-links a .ico{vertical-align:-2px}

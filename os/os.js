@@ -149,7 +149,7 @@ const exitOS = () => { if (song) song.pause(); window.parent.postMessage({ tphm:
 if (EMBED) {
   document.documentElement.classList.add('embed');
   $('#exitOS').hidden = false; $('#exitOS').addEventListener('click', exitOS);
-  document.addEventListener('click', e => { const a = e.target.closest('a[href="/v1/"]'); if (a) { e.preventDefault(); exitOS(); } }, true);
+  document.addEventListener('click', e => { const a = e.target.closest('a[href="/"]'); if (a) { e.preventDefault(); exitOS(); } }, true);
 }
 
 /* ---------- Menus ---------- */
@@ -194,7 +194,7 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
       <button class="pathb" data-open="builders"><b>Run my own</b><span>Six lessons and a checklist</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 4.1k</b><span>US$ to build the eleven</span></div><div><b>0</b><span>upvotes bought</span></div></div>
-    <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="/v1/">Read it as a page</a>.</p>
+    <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="/">Read it as a page</a>.</p>
   </div><div class="wel-r"><img src="/assets/kitty/fin.webp" alt="The Marathon kitty holding a sign: 11 + 1 shipped" width="1100" height="614"></div></div>`;
 } });
 
@@ -402,7 +402,7 @@ def('about', { title: 'About TPHM OS', w: 560, h: 620, build(b) {
     <p>Dedicated to Aaron Swartz, Jonathan James, Bassel Khartabil and Barnaby Jack, for documentation, shared ownership, maintenance and responsible testing. They inspired this work; they never endorsed it.</p>
     <p class="small">The DJ kitty on the desktop plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris encore is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
     <div class="links"><a href="https://ph.paulfleury.com/" target="_blank" rel="noopener">Day-by-day page</a><a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener">Product Hunt</a><a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/paulfxyz" target="_blank" rel="noopener">X</a><a href="https://github.com/paulfxyz" target="_blank" rel="noopener">GitHub</a><a href="https://paulfleury.com" target="_blank" rel="noopener">paulfleury.com</a><a href="${CONTACT}" target="_blank" rel="noopener">Contact</a><a href="https://megastack.sh" target="_blank" rel="noopener">Security friends: megastack.sh</a></div>
-    <p><a class="btn btn-ln" href="/v1/">Read it as a page instead</a></p></div>`;
+    <p><a class="btn btn-ln" href="/">Read it as a page instead</a></p></div>`;
 } });
 
 /* Terminal */
@@ -457,7 +457,7 @@ const SI = [
   ...NOTES.map((n, i) => ({ g: 'Field notes', t: n[1], s: 'Note', id: 'notes', note: i })),
   { g: 'Actions', t: 'Write to Paul', s: 'paulfleury.com/contact', fn: () => open(CONTACT, '_blank', 'noopener'), id: 'hire' },
   { g: 'Actions', t: 'Light or dark windows', fn: () => act('theme'), id: 'about' },
-  { g: 'Actions', t: 'Read it as a page', fn: () => { EMBED ? exitOS() : (location.href = '/v1/'); }, id: 'welcome' }
+  { g: 'Actions', t: 'Read it as a page', fn: () => { EMBED ? exitOS() : (location.href = '/'); }, id: 'welcome' }
 ];
 let ss = 0, sr = [];
 const spRender = () => {

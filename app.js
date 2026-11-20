@@ -203,8 +203,8 @@ let page = 'home';
 PAGES.forEach((p, i) => {
   const s = document.getElementById(p), w = $('.wrap', s);
   const pv = PAGES[i - 1], nx = PAGES[i + 1];
-  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/">${ico('back')} The logbook</a><span>Chapter ${i + 1} of ${PAGES.length}</span></nav>`);
-  w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<button class="pg pg-n" type="button" data-os><small>Bonus ' + ico('go') + '</small><b>Boot TPHM OS</b></button>'}</nav>`);
+  w.insertAdjacentHTML('afterbegin', `<nav class="crumb" aria-label="Breadcrumb"><a href="#/">${ico('back')} The logbook</a><span class="crumb-r"><span>Chapter ${i + 1} of ${PAGES.length}</span><a class="crumb-os" href="/os/" data-os>${ico('os')} Open the OS</a></span></nav>`);
+  w.insertAdjacentHTML('beforeend', `<nav class="pager" aria-label="Chapters">${pv ? `<a class="pg" href="#/${pv}"><small>${ico('back')} Previous</small><b>${PAGE_T[pv]}</b></a>` : '<a class="pg" href="#log"><small>' + ico('back') + ' Back to</small><b>The twelve</b></a>'}${nx ? `<a class="pg pg-n" href="#/${nx}"><small>Next ${ico('go')}</small><b>${PAGE_T[nx]}</b></a>` : '<a class="pg pg-n" href="/os/" data-os><small>Bonus ' + ico('go') + '</small><b>' + ico('os') + ' Boot TPHM OS</b></a>'}</nav>`);
 });
 const showPage = (pg, target) => {
   const changed = pg !== page; page = pg;
@@ -404,10 +404,11 @@ if (!/Mac|iPhone|iPad/.test(navigator.platform)) $$('.k-open .kbd').forEach(k =>
 const osd = $('#osdlg'), osf = $('#osframe');
 let osReturn = null;
 function openOS() {
+  if (typeof osd.showModal !== 'function') { location.href = '/os/'; return; }
   osReturn = document.activeElement;
   if (kd.open) kd.close();
   osd.classList.remove('ready');
-  osf.src = '/v2/' + (location.search || '');
+  osf.src = '/os/';
   osf.onload = () => { osd.classList.add('ready'); try { osf.contentWindow.focus(); } catch (e) {} };
   document.documentElement.classList.add('os-open');
   osd.showModal();
