@@ -372,3 +372,8 @@ h2[tabindex="-1"]:focus{outline:none}
 .crumb-os .ico{font-size:16px}
 .pg b .ico{vertical-align:-3px}
 .foot-links a .ico{vertical-align:-2px}
+
+/* OS launchers: always light text on dark pill */
+.top-nav a.nav-os,a.nav-os,a.os-m,.tool.os-m{background:#1C1512;color:#FFF8F0}
+.top-nav a.nav-os:hover,a.nav-os:hover{background:#2A201B;color:#fff}
+:root[data-theme=dark] a.nav-os,:root[data-theme=dark] a.os-m{background:#FFF8F0;color:#1C1512}

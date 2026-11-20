@@ -128,6 +128,36 @@ document.addEventListener('click', e => {
   const o = e.target.closest('[data-open]'); if (o) { e.preventDefault(); closeMenus(); openApp(o.dataset.open); }
   const a = e.target.closest('[data-act]'); if (a) { closeMenus(); act(a.dataset.act); }
 });
+/* ---------- Phone: iOS home screen ---------- */
+const IOS_TOOLS = [['saas', 'SaaS is dead'], ['calc', 'Rent or build'], ['cho', 'CHO'], ['hire', 'Hire me'], ['pitch', 'Openline'], ['builders', 'Run yours'], ['about', 'About']];
+const IOS_DOCK = [['finder', 'Marathon'], ['mail', 'Inbox'], ['notes', 'Notes'], ['terminal', 'Terminal']];
+const ic = (id, l, badge) => `<button class="ia" data-open="${id}"><span class="ia-ic">${id === 'about' ? '<span class="appglyph g-about">i</span>' : glyph(id)}${badge ? `<em class="badge ios-badge">${badge}</em>` : ''}</span><span class="ia-l">${l}</span></button>`;
+$('#ios').innerHTML = `<div class="ios-pages" id="iosPages">
+  <section class="ios-page" aria-label="Page 1">
+    <div class="ios-wg">
+      <button class="wg wg-hero" data-open="welcome"><small>The Marathon</small><b>11 + 1</b><span>tools shipped, 10–21 Nov</span><em>Built, not rented.</em></button>
+      <button class="wg wg-dj" id="wgDj" type="button" aria-label="DJ kitty: play the Free Software Song"><img src="/assets/kitty/kitty-dj.webp" alt="" width="413" height="520"><span class="wg-tx"><small>DJ kitty</small><b>Free Software Song</b><span class="wg-st" id="wgSt">Tap to play</span></span><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+    </div>
+    <div class="ios-grid">${IOS_TOOLS.map(([id, l]) => ic(id, l)).join('')}</div>
+  </section>
+  <section class="ios-page" aria-label="Page 2: the twelve">
+    <p class="ios-h">The twelve</p>
+    <div class="ios-grid">${LOG.map(p => ic('p:' + p.key, p.name)).join('')}</div>
+  </section>
+</div>
+<div class="ios-dots" aria-hidden="true"><i class="on"></i><i></i></div>
+<button class="ios-search" type="button" data-act="spot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Search</button>
+<nav class="ios-dock" aria-label="Dock">${IOS_DOCK.map(([id, l]) => ic(id, l, id === 'mail' ? 5 : 0)).join('')}</nav>`;
+const iosPages = $('#iosPages');
+iosPages.addEventListener('scroll', () => { const i = Math.round(iosPages.scrollLeft / iosPages.clientWidth); $$('.ios-dots i').forEach((d, j) => d.classList.toggle('on', i === j)); }, { passive: true });
+const setIOS = () => document.documentElement.classList.toggle('ios', narrow());
+setIOS(); addEventListener('resize', setIOS);
+const appState = () => document.documentElement.classList.toggle('app-open', [...open.values()].some(w => !w.classList.contains('min')));
+new MutationObserver(appState).observe($('#wins'), { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+$('#iosHome').addEventListener('click', () => [...open.values()].forEach(closeWin));
+const sbt = () => { try { $('#sbTime').textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' }).format(new Date()); } catch (e) {} };
+sbt(); setInterval(sbt, 20000);
+
 /* DJ kitty: the music button */
 const pet = $('#pet'), np = $('#np');
 let song;
@@ -135,6 +165,7 @@ const setPlaying = on => {
   document.documentElement.classList.toggle('playing', on);
   pet.setAttribute('aria-pressed', on); pet.setAttribute('aria-label', on ? 'DJ kitty: pause the Free Software Song' : 'DJ kitty: play the Free Software Song');
   np.hidden = !on;
+  const wd = $('#wgDj'); if (wd) { wd.setAttribute('aria-label', on ? 'DJ kitty: pause the Free Software Song' : 'DJ kitty: play the Free Software Song'); $('#wgSt').textContent = on ? 'Now playing · tap to pause' : 'Tap to play'; }
 };
 const toggleSong = () => {
   if (!song) { song = new Audio('/assets/a11y/free-software-song.mp3'); song.preload = 'auto'; song.addEventListener('ended', () => setPlaying(false)); song.addEventListener('pause', () => setPlaying(false)); song.addEventListener('play', () => setPlaying(true)); }
@@ -142,6 +173,7 @@ const toggleSong = () => {
   else song.pause();
 };
 pet.addEventListener('click', toggleSong);
+$('#wgDj').addEventListener('click', toggleSong);
 np.addEventListener('click', toggleSong);
 /* Embedded in the logbook: exit goes back to the page */
 const EMBED = window.top !== window;
@@ -494,7 +526,7 @@ const start = () => {
   boot.classList.add('done'); try { sessionStorage.setItem('tphmos-booted', '1'); } catch (e) {}
   const m = location.hash.match(/^#\/([\w-]+)/);
   if (m) { const k = m[1]; LOG.some(p => p.key === k) ? openApp('p:' + k) : APPS[k] ? openApp(k) : openApp('welcome'); }
-  else openApp('welcome');
+  else if (!narrow()) openApp('welcome');
   if (!narrow()) setTimeout(() => notify({ g: 'mail', title: 'Launch agency · Product Hunt DM', text: '"Hi! We can get you top 5 today. 300+ real upvotes, from $..."', actions: [['Decline', () => { declined.add(0); mailBadge(); toast('Declined. Zero votes bought.'); const mw = open.get('mail'); mw && $('.wb', mw)._draw && $('.wb', mw)._draw(); }], ['Open Inbox', () => openApp('mail')]] }), 6000);
 };
 if (booted || reduce()) { boot.style.display = 'none'; start(); }
