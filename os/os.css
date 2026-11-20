@@ -21,7 +21,7 @@
 html,body{height:100%}
 body{margin:0;background:var(--desk);color:var(--ink);font:15px/1.5 var(--font);-webkit-font-smoothing:antialiased;overflow:hidden;user-select:none}
 img{display:block;max-width:100%;height:auto}
-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:var(--cur-hand)}
 a{color:inherit}
 h1,h2,h3,p,ul,ol{margin:0;padding:0}
 ul,ol{list-style:none}
@@ -74,7 +74,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
 .wall-big{position:absolute;left:4vw;bottom:clamp(90px,14vh,150px);font:800 clamp(120px,24vw,360px)/.8 var(--font);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(255,236,220,.22)}
 .wall-line{position:absolute;left:calc(4vw + 6px);bottom:clamp(70px,10vh,110px);font:700 clamp(18px,2vw,28px)/1.15 var(--serif);letter-spacing:-.02em;color:rgba(255,236,220,.75)}
 .wall-line em{color:var(--or-2)}
-.pet{position:absolute;right:clamp(130px,12vw,180px);bottom:86px;width:124px;padding:0;border:0;background:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5));pointer-events:auto;cursor:pointer;transition:transform .3s;transform-origin:50% 100%}
+.pet{position:absolute;right:clamp(130px,12vw,180px);bottom:86px;width:124px;padding:0;border:0;background:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5));pointer-events:auto;cursor:var(--cur-hand);transition:transform .3s;transform-origin:50% 100%}
 .pet img{width:100%}
 .pet:hover{transform:translateY(-4px) rotate(-3deg)}
 .pet:focus-visible{outline:2px solid var(--or);outline-offset:6px;border-radius:12px}
@@ -151,8 +151,8 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
 .win:not(.focus) .wt-dots i{background:var(--win-3)!important}
 @keyframes winin{from{opacity:0;transform:scale(.6) translateY(40px)}}
 @keyframes winout{to{opacity:0;transform:scale(.85)}}
-.wt{flex:none;height:40px;display:grid;grid-template-columns:72px minmax(0,1fr) 72px;align-items:center;padding:0 12px;background:var(--win-2);border-bottom:1px solid var(--line);cursor:grab;user-select:none;touch-action:none}
-.wt:active{cursor:grabbing}
+.wt{flex:none;height:40px;display:grid;grid-template-columns:72px minmax(0,1fr) 72px;align-items:center;padding:0 12px;background:var(--win-2);border-bottom:1px solid var(--line);cursor:var(--cur-arrow);user-select:none;touch-action:none}
+.wt:active{cursor:var(--cur-arrow)}
 .wt-dots{display:flex;gap:8px}
 .wt-dots button{width:13px;height:13px;border-radius:50%;position:relative}
 .wt-dots button::after{content:"";position:absolute;inset:-6px}
@@ -229,7 +229,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
 .fd-list table{width:100%;border-collapse:collapse;font-size:13.5px}
 .fd-list th{position:sticky;top:0;background:var(--win);text-align:start;font-size:11.5px;font-weight:650;color:var(--ink-3);padding:8px 12px;border-bottom:1px solid var(--line)}
 .fd-list td{padding:7px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-.fd-list tr{cursor:default}
+.fd-list tr{cursor:var(--cur-arrow)}
 .fd-list tbody tr:hover{background:var(--win-2)}
 .fd-list tbody tr:focus-visible{background:var(--sel);outline:0}
 .fd-list td:first-child{display:flex;align-items:center;gap:9px;font-weight:650}
@@ -427,7 +427,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
 .spot-l{max-height:min(52vh,420px);overflow:auto;padding:6px;border-top:1px solid var(--line)}
 .spot-l:empty{display:none}
 .sp-g{padding:8px 12px 4px;font-size:11px;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
-.sp-i{display:flex;align-items:center;gap:12px;min-height:44px;padding:5px 12px;border-radius:9px;cursor:default;font-size:14.5px;font-weight:550}
+.sp-i{display:flex;align-items:center;gap:12px;min-height:44px;padding:5px 12px;border-radius:9px;cursor:var(--cur-arrow);font-size:14.5px;font-weight:550}
 .sp-i img,.sp-i .appglyph{width:28px;height:28px;border-radius:7px;font-size:12px;flex:none}
 .sp-i .appglyph svg{width:15px;height:15px}
 .sp-i small{margin-inline-start:auto;color:var(--ink-3);font-size:12.5px}
@@ -460,7 +460,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
   .dk{width:54px;height:54px}
   .win,.win.max{left:0!important;top:0!important;width:100vw!important;height:calc(100% - 0px)!important;max-width:none;max-height:none;border-radius:0;resize:none;animation:sheet .32s cubic-bezier(.2,.8,.2,1) both}
   .wins{z-index:550}
-  .wt{grid-template-columns:72px minmax(0,1fr) 72px;cursor:default;height:46px}
+  .wt{grid-template-columns:72px minmax(0,1fr) 72px;cursor:var(--cur-arrow);height:46px}
   .wt-dots .m,.wt-dots .x{display:none}
   .wt-dots .c{width:auto;height:auto;border-radius:8px;padding:6px 10px;background:var(--win-3);font-size:13px;font-weight:650}
   .wt-dots .c i{display:none}
@@ -564,7 +564,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .ios .win.closing{animation:iosclose .22s ease-in both}
 @keyframes iosopen{from{transform:scale(.55);opacity:0;border-radius:44px}}
 @keyframes iosclose{to{transform:scale(.6);opacity:0;border-radius:44px}}
-.ios .wt{height:46px;grid-template-columns:88px minmax(0,1fr) 88px;padding:0 10px;cursor:default;background:var(--win-2)}
+.ios .wt{height:46px;grid-template-columns:88px minmax(0,1fr) 88px;padding:0 10px;cursor:var(--cur-arrow);background:var(--win-2)}
 .ios .wt-t{font-size:16px;font-weight:650;color:var(--ink)}
 .ios .wt-t>*:not(span){display:none}
 .ios .wt-dots .m,.ios .wt-dots .x{display:none}
@@ -581,3 +581,9 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 /* Wide display type: no italics, accent by colour */
 .big em,.lead em,.wall-line em,.nt-main h2 em,.quote-card em,.pa-line em{font-style:normal}
 .big em:not([style]){color:var(--or)}
+
+/* Classic pixel cursors */
+:root{--cur-arrow:url(/assets/cursor/arrow.png) 1 1,default;--cur-hand:url(/assets/cursor/hand.png) 11 1,pointer}
+html,body{cursor:var(--cur-arrow)}
+a[href],button:not(:disabled),[role=button],[role=menuitem],[role=tab],label,summary,select,input[type=range],input[type=checkbox],input[type=radio],[data-open],[data-os],[data-tip]{cursor:var(--cur-hand)}
+input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
