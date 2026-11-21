@@ -587,3 +587,12 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 html,body{cursor:var(--cur-arrow)}
 a[href],button:not(:disabled),[role=button],[role=menuitem],[role=tab],label,summary,select,input[type=range],input[type=checkbox],input[type=radio],[data-open],[data-os],[data-tip]{cursor:var(--cur-hand)}
 input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
+/* Dock: even rhythm, one tile shape for every app (v1800) */
+.dock{gap:8px;padding:8px 10px;align-items:flex-end}
+.dk{width:48px;height:48px;border-radius:23%}
+.dk:has(.folder){background:linear-gradient(#FFE1C2,#FFC48A);box-shadow:inset 0 0 0 .5px rgba(0,0,0,.08)}
+.dk:has(.doc){background:linear-gradient(#FFFDF9,#EFE5D9);box-shadow:inset 0 0 0 .5px rgba(0,0,0,.08)}
+.dk .folder{transform:scale(.62)}
+.dk .doc{transform:scale(.62)}
+.dk .g-trash{width:100%;border-radius:23%}
+.dk-sep{margin:6px 3px}
