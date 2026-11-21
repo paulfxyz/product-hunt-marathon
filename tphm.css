@@ -408,3 +408,13 @@ h2[tabindex="-1"]:focus{outline:none}
 @media (max-width:959px){.top-nav{margin-inline:auto 0}.top-nav .nav-os{display:none}.top-tools{margin-inline-start:0}}
 @media (max-width:520px){.nav-btn span{display:none}.nav-btn{width:44px;padding:0;justify-content:center}.top-nav{position:static}.nav-menu{position:fixed;top:66px;inset-inline:12px;min-width:0}}
 @media (max-width:400px){.top-tools .k-open{display:none}}
+/* nav next to logo (v1500) */
+.top-nav{margin-inline:14px auto}
+.top-tools{margin-inline-start:auto}
+.top-nav .nav-os{display:inline-flex}
+.top-tools .os-m{display:none!important}
+.top-nav .nav-menu a{display:flex;align-items:center;gap:12px}
+.top-nav .nav-menu a .ico{width:18px;height:18px;flex:none;color:var(--accent,#C8462A);opacity:.9}
+@media (max-width:959px){.top-nav{margin-inline:10px auto}.top-nav .nav-os{display:inline-flex}}
+@media (max-width:520px){.top-nav{margin-inline:6px auto;gap:6px}}
+@media (max-width:420px){.brand span{display:none}.top-nav{margin-inline:4px auto}}
