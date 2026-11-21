@@ -59,5 +59,5 @@ window.TPHM_LOG = [
     line: 'Drop. Line. Repeat. A free Tetris in pure HTML and JS: offline, four themes, PGP-signed scores.',
     note: 'A surprise bonus round to end on fun, released during GTA VI week. Vice is the default theme. A fan project.',
     stack: 'HTML · JS · PWA · zero dependencies · MIT', budget: 50,
-    site: 'https://tetris.rocks', gh: 'tetris', ph: '' }
+    site: 'https://tetris.rocks', gh: 'tetris', ph: 'tetris-rocks' }
 ];
