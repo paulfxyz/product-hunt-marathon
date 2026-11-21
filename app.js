@@ -35,6 +35,16 @@ const onScroll = () => {
 };
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const navLinks = $$('[data-nav]');
+/* Navigation dropdown */
+const navBtn = $('.nav-btn'), navMenu = $('#navMenu');
+if (navBtn && navMenu) {
+  const setNav = on => { navMenu.hidden = !on; navBtn.setAttribute('aria-expanded', on); top.classList.toggle('nav-open', on); };
+  navBtn.addEventListener('click', e => { e.stopPropagation(); setNav(navMenu.hidden); if (!navMenu.hidden) (navMenu.querySelector('[aria-current]') || navMenu.querySelector('a')).focus({ preventScroll: true }); });
+  navMenu.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
+  document.addEventListener('click', e => { if (!navMenu.hidden && !e.target.closest('.top-nav')) setNav(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !navMenu.hidden) { setNav(false); navBtn.focus(); } });
+  navMenu.addEventListener('keydown', e => { if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return; e.preventDefault(); const a = [...navMenu.querySelectorAll('a')], i = a.indexOf(document.activeElement); a[(i + (e.key === 'ArrowDown' ? 1 : a.length - 1)) % a.length].focus(); });
+}
 
 /* Toast */
 let tt;
