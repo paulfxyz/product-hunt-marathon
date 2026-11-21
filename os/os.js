@@ -243,7 +243,7 @@ def('finder', { title: 'The Marathon', w: 860, h: 540, build(b) {
     <button aria-pressed="false" data-f="ai"><i style="--c:#A855F7"></i>AI-powered</button>
   </aside><div class="fd-main">
     <div class="fd-bar"><b id="fdT">All twelve</b><div class="seg" role="group" aria-label="View"><button aria-pressed="true" data-v="grid">Icons</button><button aria-pressed="false" data-v="list">List</button></div></div>
-    <div class="fd-grid">${LOG.map(p => `<button class="fi" data-open="p:${p.key}" data-tags="${TAGS[p.key]}"><img src="/assets/icons/${p.key}.webp" alt=""><b>${p.name}</b><span>${p.encore ? 'Encore' : 'Day ' + p.n} · ${p.day.slice(4)}</span></button>`).join('')}</div>
+    <div class="fd-grid">${LOG.map(p => `<button class="fi" data-open="p:${p.key}" data-tags="${TAGS[p.key]}"><img src="/assets/icons/${p.key}.webp" alt=""><b>${p.name}</b><span>${p.encore ? 'Bonus' : 'Day ' + p.n} · ${p.day.slice(4)}</span></button>`).join('')}</div>
     <div class="fd-list" hidden><table><thead><tr><th>Name</th><th>Kind</th><th>Shipped</th><th class="num">What it took</th></tr></thead><tbody>${LOG.map(p => `<tr tabindex="0" data-open="p:${p.key}" data-tags="${TAGS[p.key]}"><td><img src="/assets/icons/${p.key}.webp" alt="">${p.name}</td><td>${p.kind}</td><td>${p.day}</td><td class="num">${p.budget ? '≈ ' + money(p.budget) : 'bonus'}</td></tr>`).join('')}</tbody></table></div>
     <div class="fd-status"><span id="fdN">12 items</span><span>All MIT · free for good · ≈ ${money(TOTAL)} for all twelve</span></div>
   </div></div>`;
@@ -434,7 +434,7 @@ def('about', { title: 'About TPHM OS', w: 560, h: 620, build(b) {
   b.innerHTML = `<div class="ab"><img src="/assets/brand/pfph-head-v1.webp" alt="" width="272" height="201"><h2 class="big">TPHM OS 12.0</h2><p class="small" style="font-family:var(--mono)">The Product Hunt Marathon · 10–21 Nov 2026 · Lisbon</p>
     <p>The permanent logbook of twelve free, open-source launches by Paul Fleury. Think. Build. Ship. Repeat.</p>
     <p>Dedicated to Aaron Swartz, Jonathan James, Bassel Khartabil and Barnaby Jack, for documentation, shared ownership, maintenance and responsible testing. They inspired this work; they never endorsed it.</p>
-    <p class="small">The DJ kitty on the desktop plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris encore is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
+    <p class="small">The DJ kitty on the desktop plays the Free Software Song, recorded by Julian Coccia (GFDL 1.3+). Tetris is a trademark of The Tetris Company; Grand Theft Auto and GTA VI are trademarks of Take-Two Interactive and Rockstar Games. The Tetris bonus is a fan project, not affiliated with any of them, and comes down on request, no questions asked.</p>
     <div class="links"><a href="https://www.producthunt.com/@paulfxyz" target="_blank" rel="noopener">Product Hunt</a><a href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/paulfxyz" target="_blank" rel="noopener">X</a><a href="https://github.com/paulfxyz" target="_blank" rel="noopener">GitHub</a><a href="https://paulfleury.com" target="_blank" rel="noopener">paulfleury.com</a><a href="${CONTACT}" target="_blank" rel="noopener">Contact</a><a href="https://megastack.sh" target="_blank" rel="noopener">Security friends: megastack.sh</a></div>
     <p><a class="btn btn-ln" href="${BASE}/" data-home>Read it as a page instead</a></p></div>`;
 } });
@@ -469,7 +469,7 @@ def('terminal', { title: 'paul@tphm: ~', w: 720, h: 460, cls: 'dark-win', build(
     if (cmd === 'cat') { if (/cho/.test(arg)) { say('Opening CHO.md…'); openApp('cho'); } else say(`cat: ${arg}: try cho.md`); return; }
     if (cmd === 'sudo' && /upvote|vote/.test(arg)) { say('<span class="a">Permission denied:</span> upvotes are not for sale on this machine.'); return; }
     if (cmd === 'sudo') { say('Nice try.'); return; }
-    if (cmd === 'tetris') { say('Launching the encore…'); openApp('p:tetris'); return; }
+    if (cmd === 'tetris') { say('Launching the bonus…'); openApp('p:tetris'); return; }
     if (cmd === 'rm' && /saas/.test(arg)) { say('Already in the Trash.'); return; }
     const p = find(cmd); if (p && !CMDS[cmd]) { say(`Launching ${p.name}…`); openApp('p:' + p.key); return; }
     (CMDS[cmd] || (() => say(`zsh: command not found: ${cmd.replace(/</g, '&lt;')}. Type <span class="a">help</span>.`)))();

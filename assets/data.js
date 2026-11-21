@@ -1,4 +1,4 @@
-// Logbook entries: the eleven Marathon launches plus the Tetris encore.
+// Logbook entries: the eleven Marathon launches plus the Tetris bonus.
 window.TPHM_LOG = [
   { n: 1,  day: 'Tue 10 Nov', name: 'Junk', key: 'junk', kind: 'macOS scratchpad',
     line: 'Summon it, type, dismiss it. A floating scratchpad that keeps your text on your machine.',
@@ -55,7 +55,7 @@ window.TPHM_LOG = [
     note: 'The finale of the eleven: two local engines, no cloud upload.',
     stack: 'macOS 13+ · SwiftUI · ClamAV · MIT', budget: 50,
     site: '', gh: 'mars', ph: 'mars-2031' },
-  { n: 12, day: 'Sat 21 Nov', name: 'Tetris', key: 'tetris', kind: 'Encore \u00b7 12 of 11', encore: true,
+  { n: 12, day: 'Sat 21 Nov', name: 'Tetris', key: 'tetris', kind: 'Bonus \u00b7 12 of 11', encore: true,
     line: 'Drop. Line. Repeat. A free Tetris in pure HTML and JS: offline, four themes, PGP-signed scores.',
     note: 'A surprise bonus round to end on fun, released during GTA VI week. Vice is the default theme. A fan project.',
     stack: 'HTML · JS · PWA · zero dependencies · MIT', budget: 50,

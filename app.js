@@ -38,12 +38,16 @@ const navLinks = $$('[data-nav]');
 /* Navigation dropdown */
 const navBtn = $('.nav-btn'), navMenu = $('#navMenu');
 if (navBtn && navMenu) {
-  const setNav = on => { navMenu.hidden = !on; navBtn.setAttribute('aria-expanded', on); top.classList.toggle('nav-open', on); };
+  const mob = matchMedia('(max-width: 959px)'); let navProxy = false;
+  const setNav = on => { if (on) top.style.setProperty('--hh', Math.round(top.getBoundingClientRect().bottom) + 'px'); navMenu.hidden = !on; navBtn.setAttribute('aria-expanded', on); top.classList.toggle('nav-open', on); document.documentElement.classList.toggle('nav-lock', on && mob.matches); };
+  mob.addEventListener('change', () => { if (!navMenu.hidden) setNav(false); });
+  navMenu.addEventListener('click', e => { const b = e.target.closest('[data-proxy]'); if (!b) return; const t = $(b.dataset.proxy); if (!b.hasAttribute('data-keep')) setNav(false); if (t) { navProxy = true; t.click(); navProxy = false; } });
+  const nl = $('.nm-lang'), lb = $('.lang-b'); if (nl && lb) nl.textContent = (lb.getAttribute('aria-label') || '').split(': ').pop() || nl.textContent;
   navBtn.addEventListener('click', e => { e.stopPropagation(); setNav(navMenu.hidden); if (!navMenu.hidden) (navMenu.querySelector('[aria-current]') || navMenu.querySelector('a')).focus({ preventScroll: true }); });
   navMenu.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
-  document.addEventListener('click', e => { if (!navMenu.hidden && !e.target.closest('.top-nav')) setNav(false); });
+  document.addEventListener('click', e => { if (!navProxy && !navMenu.hidden && !e.target.closest('.top-nav')) setNav(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !navMenu.hidden) { setNav(false); navBtn.focus(); } });
-  navMenu.addEventListener('keydown', e => { if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return; e.preventDefault(); const a = [...navMenu.querySelectorAll('a')], i = a.indexOf(document.activeElement); a[(i + (e.key === 'ArrowDown' ? 1 : a.length - 1)) % a.length].focus(); });
+  navMenu.addEventListener('keydown', e => { if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return; e.preventDefault(); const a = [...navMenu.querySelectorAll('a,button')].filter(x => x.offsetParent), i = a.indexOf(document.activeElement); a[(i + (e.key === 'ArrowDown' ? 1 : a.length - 1)) % a.length].focus(); });
 }
 
 /* Toast */
@@ -72,7 +76,7 @@ let cur = LOG.length - 1;
 course.innerHTML = LOG.map((p, i) => `<li class="${p.encore ? 'is-encore' : 'is-done'}"><a href="${U(p.key)}" data-i="${i}" aria-label="${T('Day')} ${p.n}: ${p.name}">${p.encore ? ico('star') : p.n}</a></li>`).join('');
 track.innerHTML = LOG.map((p, i) => `
   <article class="slide" aria-roledescription="slide" aria-label="${p.n} of 12" ${i === cur ? '' : 'inert'}>
-    <div class="now-art"><img src="/assets/kitty/p/${p.key}.webp" alt="The Marathon kitty for ${p.name}" width="900" height="502" ${i < 9 ? 'loading="lazy"' : ''}><span class="pill ${p.encore ? 'pill-encore' : 'pill-done'}">${p.encore ? ico('star') + ' Encore' : ico('check') + ' Shipped'}</span></div>
+    <div class="now-art"><img src="/assets/kitty/p/${p.key}.webp" alt="The Marathon kitty for ${p.name}" width="900" height="502" ${i < 9 ? 'loading="lazy"' : ''}><span class="pill ${p.encore ? 'pill-encore' : 'pill-done'}">${p.encore ? ico('star') + ' Bonus' : ico('check') + ' Shipped'}</span></div>
     <div class="now-body">
       <div class="now-head"><img class="app" src="/assets/icons/${p.key}.webp" alt="" width="52" height="52"><div><p class="now-day">${p.encore ? 'Bonus, 12 of 11' : 'Day ' + p.n + ' of 11'} · ${p.day}</p><p class="now-name">${p.name}</p></div></div>
       <p class="now-line">${p.line}</p>
@@ -101,7 +105,7 @@ setSlide(cur);
 
 /* Hero paths */
 const PATHS = {
-  try: { t: '<b>Start with the wall.</b> Twelve free tools, each one a click away. Hover a tile to see it move, open it for the story and the links.', a: [['See all twelve', '#log', 'wall'], ['Play the encore', 'https://tetris.rocks']] },
+  try: { t: '<b>Start with the wall.</b> Twelve free tools, each one a click away. Hover a tile to see it move, open it for the story and the links.', a: [['See all twelve', '#log', 'wall'], ['Play the bonus', 'https://tetris.rocks']] },
   hire: { t: '<b>Up to 30 hours a week, open now.</b> I find your recurring bottlenecks, then build tools your team owns, with code in your repositories.', a: [['What a CHO does', '#cho'], ['Write to me', 'https://paulfleury.com/contact']] },
   invest: { t: '<b>Openline is my main venture.</b> Over one million eSIMs activated through B2B partners, now going direct to travellers. I\u2019m raising from angels and VCs.', a: [['See the ventures', '#invest'], ['Talk to Paul', 'https://paulfleury.com/contact']] },
   learn: { t: '<b>Six lessons and a launch checklist.</b> Plus an honest account of what Product Hunt rewards, and the upvote market I said no to.', a: [['Builder lessons', '#builders'], ['Field notes', '#hunt']] }
