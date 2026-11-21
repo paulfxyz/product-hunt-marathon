@@ -108,7 +108,7 @@ const PATHS = {
   try: { t: '<b>Start with the wall.</b> Twelve free tools, each one a click away. Hover a tile to see it move, open it for the story and the links.', a: [['See all twelve', '#log', 'wall'], ['Play the bonus', 'https://tetris.rocks']] },
   hire: { t: '<b>Up to 30 hours a week, open now.</b> I find your recurring bottlenecks, then build tools your team owns, with code in your repositories.', a: [['What a CHO does', '#cho'], ['Write to me', 'https://paulfleury.com/contact']] },
   invest: { t: '<b>Openline is my main venture.</b> Over one million eSIMs activated through B2B partners, now going direct to travellers. I\u2019m raising from angels and VCs.', a: [['See the ventures', '#invest'], ['Talk to Paul', 'https://paulfleury.com/contact']] },
-  learn: { t: '<b>Six lessons and a launch checklist.</b> Plus an honest account of what Product Hunt rewards, and the upvote market I said no to.', a: [['Builder lessons', '#builders'], ['Field notes', '#hunt']] }
+  learn: { t: '<b>Six lessons and a launch checklist.</b> Plus an honest account of what Product Hunt rewards, why ranking there now takes a marketing budget, and the upvote market I said no to.', a: [['Builder lessons', '#builders'], ['Field notes', '#hunt']] }
 };
 const pathCard = $('#pathCard');
 $$('.path').forEach(b => b.addEventListener('click', () => {
@@ -365,7 +365,7 @@ const LESSONS = [
   ['Build what you need yourself', 'Every tool here started as a small annoyance in my own week. You\u2019ll write better copy, find better bugs and keep maintaining it after launch day.'],
   ['Lock one kit, then repeat it', 'Day one set the template: icon, six gallery slides, separate X and LinkedIn copy, a calendar reminder. Check each new kit against the live product. Batches drift.'],
   ['Be honest about the build', 'Say what AI did, what it cost and what the limits are. "A personal VPN, not an anonymity service" earns more trust than a bigger claim.'],
-  ['Ask for feedback, never votes', 'It\u2019s the rule, and it\u2019s better for you. Feedback improves the product. Votes fade by Friday.'],
+  ['Ask for feedback, never votes', 'It\u2019s the rule, and it\u2019s better for you. Feedback improves the product. Votes fade by Friday. To rank on PH, you\u2019d also need a budget for reach.'],
   ['Publish by hand, keep receipts', 'I posted every thread myself and logged each link in a small campaign manager. When dates moved, and they did, everything stayed in sync.'],
   ['Make it accessible, in every language', 'Reading aids, reduced motion, readable contrast and a simple page with narration, in every language you publish. It costs little with AI and it widens who can use your work.']
 ];

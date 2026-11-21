@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611211800'
+VER = '202611211930'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = ['en', 'fr', 'cmn', 'he']
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL'}
@@ -35,7 +35,7 @@ META = {
              'Twelve free, open-source tools in twelve days, from Junk to Tetris. The permanent logbook of The Product Hunt Marathon by Paul Fleury: what was built, what it cost, what Product Hunt taught me, and why companies should build what they rent.',
              'TPHM · The Product Hunt Marathon logbook', 'Twelve free, open-source tools in twelve days. Built, not rented.'),
     'hunt': ('The hunt: field notes from Product Hunt · TPHM',
-             'No launch squad, no upvote ask. An honest account of the Marathon on Product Hunt: why the editors featured Mang but not the Marathon, and the upvote market I said no to.',
+             'No launch squad, no upvote ask. An honest account of the Marathon on Product Hunt: why a launch without a marketing budget stalls near 4 points, the Mang feature, the upvote market I said no to, and a case for open source.',
              'The hunt: field notes from Product Hunt', 'No squad. No upvote ask. Just feedback.'),
     'saas': ('SaaS is dead: build what you rent · TPHM',
              'Rent by default? Not anymore. A calculator to see when building beats renting, and what twelve tools in twelve days actually took.',
