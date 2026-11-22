@@ -1,3 +1,19 @@
+/*
+ * tphm.io logbook behaviour. Plain JavaScript, no framework, no build step.
+ *
+ * The HTML in src/index.html is complete on its own: every page and dialog is
+ * already in the document, and tools/build.py writes one static file per URL.
+ * This script only adds behaviour on top (progressive enhancement):
+ *   - theme switching, the sticky header and the navigation menu
+ *   - the "course" carousel and the twelve-tool log, rendered from assets/data.js
+ *   - dialogs for each tool and each field note, linked to the URL hash
+ *   - chapters as pages (history.pushState) so /hunt and /saas feel instant
+ *   - the upvote inbox, the build-vs-rent calculator, the builders checklist
+ *     (saved in localStorage) and the command palette (Ctrl/Cmd+K)
+ *   - TPHM OS opened full screen in an iframe dialog
+ * Strings rendered here are English; assets/i18n/i18n.js translates them as
+ * they appear, so new UI text must also be added to the dictionaries.
+ */
 (() => {
 'use strict';
 const $ = (s, r = document) => r.querySelector(s);

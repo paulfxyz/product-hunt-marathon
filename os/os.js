@@ -1,3 +1,20 @@
+/*
+ * TPHM OS: a tiny fake operating system that presents the twelve tools.
+ * Plain JavaScript. Desktop on large screens, an iOS-like home screen on phones.
+ *
+ * Structure, top to bottom:
+ *   Glyphs          app icons drawn as inline SVG (no image requests)
+ *   Window manager  open/close/focus/drag/minimise, one window per app
+ *   Desktop + dock  icons, the dock and the phone home screen
+ *   Menus, clock    the menu bar
+ *   Apps            each app is a function that returns its window content:
+ *                   the twelve tools, Finder, Notes (the Product Hunt field
+ *                   notes, kept in sync with the logbook dialogs), Terminal,
+ *                   Trash, the upvote Inbox, the SaaS slides and the
+ *                   build-vs-rent calculator
+ *   Spotlight, keyboard shortcuts and the boot sequence
+ * The OS also runs inside the logbook (an iframe); "exit" then returns there.
+ */
 (() => {
 'use strict';
 const $ = (s, r = document) => r.querySelector(s);

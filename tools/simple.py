@@ -3,11 +3,16 @@
 import html, json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
+# The page is a single JSON file (title, lead, sections with heading/text/link),
+# so the copy can be edited, reviewed and narrated without touching HTML.
 d = json.loads((ROOT / 'src/simple.json').read_text())
+# Reuse build.py's cache-busting version so CSS/JS/audio URLs change together.
 VER = re.search(r"^VER = '(\d+)'", (ROOT / 'tools/build.py').read_text(), re.M).group(1)
 e = lambda s: html.escape(s, quote=True)
+# Borrow the SVG icon sprite from the main template, so icons stay identical.
 syms = re.search(r'<svg[^>]*style="position:absolute"[^>]*>.*?</svg>', (ROOT / 'src/index.html').read_text(), re.S)
 syms = syms.group(0) if syms else ''
+# One icon per section, keyed by the page each section links to.
 ICON = {'/#log': 'i-grid', '/hunt': 'i-target', '/saas': 'i-cloudx', '/cho': 'i-case', '/invest': 'i-trend', '/builders': 'i-tool', '/os': 'i-os'}
 cards = '\n'.join(f'''    <section class="s-card">
       <span class="s-ico" aria-hidden="true"><svg class="ico"><use href="#{'i-ph' if i == 0 else ICON[s['href']]}"/></svg></span>
@@ -15,9 +20,13 @@ cards = '\n'.join(f'''    <section class="s-card">
       <p>{e(s['text'])}</p>
       <a class="s-more" href="{s['href']}">{e(s['link'])} <svg class="ico"><use href="#i-go"/></svg></a>
     </section>''' for i, s in enumerate(d['sections']))
+# Structured data, including the narration as an AudioObject.
 ld = {"@context": "https://schema.org", "@type": "WebPage", "name": d['title'], "description": d['metaDescription'], "url": "https://tphm.io/simple", "inLanguage": "en-GB",
       "isPartOf": {"@type": "WebSite", "name": "TPHM · The Product Hunt Marathon", "url": "https://tphm.io/"}, "author": {"@type": "Person", "name": "Paul Fleury", "url": "https://paulfleury.com/"},
       "audio": {"@type": "AudioObject", "contentUrl": "https://tphm.io/simple/voice-en.mp3", "encodingFormat": "audio/mpeg"}}
+# The whole page as one template. Doubled braces {{ }} are literal braces in an f-string.
+# Plain-language rules: short sentences, one idea per card, a player that
+# works without JS errors breaking the text, and reading aids loaded at the end.
 page = f'''<!DOCTYPE html>
 <html lang="en-GB" dir="ltr" data-lang="en">
 <head>
