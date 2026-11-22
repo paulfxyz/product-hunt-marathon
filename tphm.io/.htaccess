@@ -1,0 +1,22 @@
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|css|json)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(webp|jpg|png|mp4|mp3|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+DirectorySlash Off
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Old trailing-slash links go to the clean URL
+  RewriteCond %{THE_REQUEST} \s/+(.+?)/(\?\S*)?\s
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ /%1 [R=301,L]
+  # Clean URLs: /hunt and /fr/chasse serve their folder's index.html
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
+</IfModule>

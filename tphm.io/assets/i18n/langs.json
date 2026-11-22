@@ -1,0 +1,250 @@
+[
+{
+"c": "en",
+"l": "en",
+"d": "ltr",
+"f": "🇬🇧",
+"n": "English",
+"e": "English"
+},
+{
+"c": "cmn",
+"l": "zh-Hans",
+"d": "ltr",
+"f": "🇨🇳",
+"n": "普通话",
+"e": "Mandarin Chinese"
+},
+{
+"c": "hi",
+"l": "hi",
+"d": "ltr",
+"f": "🇮🇳",
+"n": "हिन्दी",
+"e": "Hindi"
+},
+{
+"c": "es",
+"l": "es",
+"d": "ltr",
+"f": "🇪🇸",
+"n": "Español",
+"e": "Spanish"
+},
+{
+"c": "ar",
+"l": "ar",
+"d": "rtl",
+"f": "🇸🇦",
+"n": "العربية الفصحى",
+"e": "Modern Standard Arabic"
+},
+{
+"c": "fr",
+"l": "fr",
+"d": "ltr",
+"f": "🇫🇷",
+"n": "Français",
+"e": "French"
+},
+{
+"c": "bn",
+"l": "bn",
+"d": "ltr",
+"f": "🇧🇩",
+"n": "বাংলা",
+"e": "Bengali"
+},
+{
+"c": "pt",
+"l": "pt-PT",
+"d": "ltr",
+"f": "🇵🇹",
+"n": "Português",
+"e": "Portuguese"
+},
+{
+"c": "ru",
+"l": "ru",
+"d": "ltr",
+"f": "🇷🇺",
+"n": "Русский",
+"e": "Russian"
+},
+{
+"c": "id",
+"l": "id",
+"d": "ltr",
+"f": "🇮🇩",
+"n": "Bahasa Indonesia",
+"e": "Indonesian"
+},
+{
+"c": "ur",
+"l": "ur",
+"d": "rtl",
+"f": "🇵🇰",
+"n": "اردو",
+"e": "Urdu"
+},
+{
+"c": "de",
+"l": "de",
+"d": "ltr",
+"f": "🇩🇪",
+"n": "Deutsch",
+"e": "German"
+},
+{
+"c": "ja",
+"l": "ja",
+"d": "ltr",
+"f": "🇯🇵",
+"n": "日本語",
+"e": "Japanese"
+},
+{
+"c": "pcm",
+"l": "pcm",
+"d": "ltr",
+"f": "🇳🇬",
+"n": "Naijá",
+"e": "Nigerian Pidgin"
+},
+{
+"c": "arz",
+"l": "arz",
+"d": "rtl",
+"f": "🇪🇬",
+"n": "العربية المصرية",
+"e": "Egyptian Arabic"
+},
+{
+"c": "mr",
+"l": "mr",
+"d": "ltr",
+"f": "🇮🇳",
+"n": "मराठी",
+"e": "Marathi"
+},
+{
+"c": "vi",
+"l": "vi",
+"d": "ltr",
+"f": "🇻🇳",
+"n": "Tiếng Việt",
+"e": "Vietnamese"
+},
+{
+"c": "te",
+"l": "te",
+"d": "ltr",
+"f": "🇮🇳",
+"n": "తెలుగు",
+"e": "Telugu"
+},
+{
+"c": "ha",
+"l": "ha",
+"d": "ltr",
+"f": "🇳🇬",
+"n": "Hausa",
+"e": "Hausa"
+},
+{
+"c": "tr",
+"l": "tr",
+"d": "ltr",
+"f": "🇹🇷",
+"n": "Türkçe",
+"e": "Turkish"
+},
+{
+"c": "pnb",
+"l": "pnb",
+"d": "rtl",
+"f": "🇵🇰",
+"n": "پنجابی",
+"e": "Western Punjabi"
+},
+{
+"c": "sw",
+"l": "sw",
+"d": "ltr",
+"f": "🇹🇿",
+"n": "Kiswahili",
+"e": "Swahili"
+},
+{
+"c": "tl",
+"l": "tl",
+"d": "ltr",
+"f": "🇵🇭",
+"n": "Tagalog",
+"e": "Tagalog"
+},
+{
+"c": "ta",
+"l": "ta",
+"d": "ltr",
+"f": "🇮🇳",
+"n": "தமிழ்",
+"e": "Tamil"
+},
+{
+"c": "yue",
+"l": "yue-Hant",
+"d": "ltr",
+"f": "🇭🇰",
+"n": "粵語",
+"e": "Cantonese"
+},
+{
+"c": "wuu",
+"l": "wuu-Hans",
+"d": "ltr",
+"f": "🇨🇳",
+"n": "吴语",
+"e": "Wu Chinese"
+},
+{
+"c": "fa",
+"l": "fa",
+"d": "rtl",
+"f": "🇮🇷",
+"n": "فارسی",
+"e": "Persian"
+},
+{
+"c": "ko",
+"l": "ko",
+"d": "ltr",
+"f": "🇰🇷",
+"n": "한국어",
+"e": "Korean"
+},
+{
+"c": "it",
+"l": "it",
+"d": "ltr",
+"f": "🇮🇹",
+"n": "Italiano",
+"e": "Italian"
+},
+{
+"c": "jv",
+"l": "jv",
+"d": "ltr",
+"f": "🇮🇩",
+"n": "Basa Jawa",
+"e": "Javanese"
+},
+{
+"c": "he",
+"l": "he",
+"d": "rtl",
+"f": "🇮🇱",
+"n": "עברית",
+"e": "Hebrew"
+}
+]

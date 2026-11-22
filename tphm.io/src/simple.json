@@ -1,0 +1,56 @@
+{
+ "title": "The Product Hunt Marathon, in simple words",
+ "tag": "Plain language · 3 minutes",
+ "lead": "I built and shipped twelve free tools in twelve days. This page explains it all in plain words, and you can read it or listen to it.",
+ "metaDescription": "The Product Hunt Marathon in plain words: twelve free, open-source tools built with AI and shipped from 10 to 21 November 2026, with a spoken version.",
+ "sections": [
+  {
+   "heading": "What the Marathon was",
+   "text": "The Product Hunt Marathon ran from 10 to 21 November 2026. I shipped eleven tools in eleven days, then one bonus: Tetris. All twelve are free to use and open source under the MIT licence, and I built them with AI. Building all twelve cost about 2,750 US dollars in AI, hours and hosting, and I did not buy or ask for a single upvote.",
+   "link": "Read the log",
+   "href": "/#log"
+  },
+  {
+   "heading": "The twelve tools",
+   "text": "The tools are small and practical. Junk is a floating scratchpad for your Mac. Mang suggests terminal commands and waits for you to confirm. Megamesh sets up your own private VPN, Mars scans a Mac for malware, and Timescreen turns a spare screen into a clock. Tetris is the bonus, a fan project made for fun. Each tool has its own page with the story behind it.",
+   "link": "Open the twelve entries",
+   "href": "/#log"
+  },
+  {
+   "heading": "What Product Hunt taught me",
+   "text": "I launched with no launch squad and no request for upvotes, and I declined every offer to sell me votes. Being live and being seen are two different things: in my experience, a product stays at about 4 points unless it has a big budget for ads or an editor features it. The editors featured Mang, but I wish open-source work could be seen without any budget. The full report, with visits, stars and feedback, comes out on Tuesday 24 November.",
+   "link": "Read the field notes",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS is dead",
+   "text": "SaaS means software you rent with a subscription. My bet is that more companies will build and own the tools they now rent. It is a prediction, not a proof. Rebuilding software does not rebuild data, compliance or trust, and every tool needs an owner. A calculator lets you compare renting and building for yourself.",
+   "link": "Run the numbers",
+   "href": "/saas"
+  },
+  {
+   "heading": "Hire a Chief Hacking Officer",
+   "text": "CHO stands for Chief Hacking Officer. It is a playful title for serious consulting: I find the work your team repeats, then use AI to build simple tools your team can own and maintain. Think of life hacks: hacking here means finding a smarter route through a problem, not just cybersecurity. I have up to 30 hours a week open now.",
+   "link": "See how I'd work with you",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, the main bet",
+   "text": "Openline is my main venture and startup. It sells travel eSIMs, which give your phone mobile data abroad without a plastic SIM card. Over one million have been activated through business partners. Iris and Digital Spot are spin-offs of tools built for Openline. I'm raising from angels and venture funds, and the Marathon was my side project.",
+   "link": "See the ventures",
+   "href": "/invest"
+  },
+  {
+   "heading": "Run your own marathon",
+   "text": "If you want to run your own little marathon, start here. I share six lessons from my run and a launch-day checklist for builders. You can tick items off as you go, and copy the list into your notes, your repo or your project tracker.",
+   "link": "Start the checklist",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS is the playful version of this site. It turns the whole Marathon into a small computer desktop you can play with, with apps, an inbox, a terminal and a DJ kitty. If you prefer to play, you can boot it up.",
+   "link": "Boot TPHM OS",
+   "href": "/os"
+  }
+ ]
+}
