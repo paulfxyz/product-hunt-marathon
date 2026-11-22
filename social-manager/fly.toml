@@ -1,0 +1,39 @@
+# Candidate name: availability must be confirmed before app creation.
+app = "ph-social-manager"
+primary_region = "cdg"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3100"
+  STORAGE_MODE = "fly"
+  DB_PATH = "/data/data.db"
+  # Canonical custom domain (Fly cert for social.paulfleury.com); fly.dev stays accepted for login and API, and page loads redirect to the canonical host.
+  APP_URL = "https://social.paulfleury.com"
+  APP_ALT_ORIGINS = "https://ph-social-manager.fly.dev"
+  CANONICAL_REDIRECT = "1"
+
+[mounts]
+  source = "ph_social_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 3100
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    grace_period = "15s"
+    interval = "30s"
+    method = "GET"
+    path = "/api/health"
+    timeout = "5s"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "512mb"
