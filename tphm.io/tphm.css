@@ -1,3 +1,10 @@
+/*
+ * tphm.css: tphm.io additions on top of ph.css, the design system inherited from
+ * ph.paulfleury.com. Colours, type and spacing come from CSS custom properties
+ * defined in ph.css (light and dark themes), so this file should use var(--...)
+ * rather than raw colours. Wide, readable fonts only; no condensed typefaces.
+ * Sections are marked with comments; responsive rules sit next to what they adjust.
+ */
 /* TPHM v1: additions on top of the ph.paulfleury.com design system */
 .kbd{display:inline-grid;place-items:center;height:22px;padding:0 6px;border-radius:6px;border:1px solid var(--line-2);font:700 11.5px/1 var(--font-body);color:var(--ink-3);background:var(--bg)}
 .tool .kbd{display:none}

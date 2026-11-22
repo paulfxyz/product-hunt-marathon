@@ -11,6 +11,13 @@ Dictionaries: assets/i18n/<code>.json (English key -> translation).
 import html, json, re, shutil, sys
 from pathlib import Path
 
+# ---------------------------------------------------------------------------
+# Configuration
+# ROOT is the repo folder; SITE is the public origin used for canonical URLs.
+# VER is a timestamp appended as ?v=VER to every CSS/JS URL. Bump it on every
+# release so browsers and the CDN fetch fresh files instead of cached ones.
+# LANGS lists every language the selector knows; READY are the ones we build.
+# ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
 VER = '202611211930'
@@ -26,10 +33,15 @@ SLUGS = {
     'he': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
 }
 CHAPTERS = ['hunt', 'saas', 'cho', 'invest', 'builders']
+# The twelve tools come from assets/data.js (window.TPHM_LOG), the same file the
+# browser uses, so names and one-liners never drift between HTML and JS.
+# We read it with a regex rather than a JS engine to keep the build dependency-free.
 LOG = re.findall(r"name: '([^']+)', key: '([^']+)', kind: '([^']+)',\s*line: '((?:[^'\\]|\\.)*)'", (ROOT / 'assets/data.js').read_text())
 _u = lambda x: re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m.group(1), 16)), x).replace("\\'", "'")
 LOG = [(n, k, _u(kind), _u(line)) for n, k, kind, line in LOG]
 
+# Per-page SEO strings: (title, description, og:title, og:description).
+# These are English; tr() looks each one up in the language dictionary.
 META = {
     'home': ('TPHM · The Product Hunt Marathon logbook · Paul Fleury',
              'Twelve free, open-source tools in twelve days, from Junk to Tetris. The permanent logbook of The Product Hunt Marathon by Paul Fleury: what was built, what it cost, what Product Hunt taught me, and why companies should build what they rent.',
@@ -56,6 +68,7 @@ META = {
 PRODUCT_SUFFIX = 'Free and open source, from The Product Hunt Marathon logbook.'
 
 
+# Everything above that needs translating, so tools/harvest.py can add it to keys.json.
 def meta_strings():
     out = []
     for t in META.values(): out += list(t)
@@ -64,12 +77,16 @@ def meta_strings():
     return out
 
 
+# A dictionary maps an English string to its translation (assets/i18n/<code>.json).
 def load_dict(code):
     if code == 'en': return {}
     p = ROOT / f'assets/i18n/{code}.json'
     return json.loads(p.read_text()) if p.exists() else {}
 
 
+# Translation lookup. Numbers are replaced with {0}, {1}... before the lookup so
+# one dictionary entry covers "12 tools" and "11 tools"; the real numbers are put
+# back afterwards. Missing entries fall back to English rather than breaking.
 NUM = re.compile(r'\d+(?:[.,]\d+)*')
 def tr(D, s):
     if not D: return s
@@ -80,6 +97,8 @@ def tr(D, s):
     return re.sub(r'\{(\d+)\}', lambda m: nums[int(m.group(1))] if int(m.group(1)) < len(nums) else m.group(0), v)
 
 
+# URL helpers. English lives at the root (/hunt); other languages get a prefix and
+# a localised slug where one exists (/fr/chasse).
 def base(code): return '' if code == 'en' else '/' + code
 def url(code, key):
     b = base(code)
@@ -88,6 +107,7 @@ def url(code, key):
     return SITE + b + '/' + slug
 
 
+# Every page we generate: the home, the five chapters, one page per tool and the OS.
 def pages():
     yield 'home', None
     for c in CHAPTERS: yield c, c
@@ -95,6 +115,10 @@ def pages():
     yield 'os', 'os'
 
 
+# The <head> for one page in one language: title, description, canonical URL,
+# hreflang alternates (so search engines pair the languages), Open Graph and
+# Twitter cards (link previews), and JSON-LD structured data. Pages stay noindex
+# until indexing is explicitly approved.
 def head_block(code, kind, key, D):
     L = next(x for x in LANGS if x['c'] == code)
     if kind == 'product':
@@ -138,17 +162,23 @@ def head_block(code, kind, key, D):
 <link rel="stylesheet" href="/assets/i18n/i18n.css?v={VER}">'''
 
 
+# Remove the template's placeholder head tags before inserting the real ones.
 def strip_head(s):
     s = re.sub(r'<title>.*?</title>\n', '', s, flags=re.S)
     s = re.sub(r'<meta (name="(description|robots)"|property="og:[^"]+")[^>]*>\n', '', s)
     return s
 
 
+# The i18n runtime: language list, the language's dictionary (if not English),
+# then i18n.js, which translates the DOM and anything the app renders later.
 def scripts(code):
     d = '' if code == 'en' else f'<script src="/assets/i18n/{code}.js?v={VER}"></script>\n'
     return f'<script src="/assets/i18n/langs.js?v={VER}"></script>\n{d}<script src="/assets/i18n/i18n.js?v={VER}"></script>\n'
 
 
+# Render one page: take the template, set lang/dir (Hebrew is right-to-left),
+# inject the head, stamp the cache-busting version, localise internal links and
+# show the right section, so each URL works as plain static HTML without JS.
 def render(code, kind, key):
     D = load_dict(code)
     L = next(x for x in LANGS if x['c'] == code)
@@ -178,12 +208,16 @@ def render(code, kind, key):
     return s
 
 
+# Where a page is written: /index.html, /hunt/index.html, /fr/chasse/index.html...
+# .htaccess (and tools/serve.py locally) serve these folders as clean URLs.
 def out_path(code, kind, key):
     d = ROOT / (base(code).lstrip('/') or '.')
     if key: d = d / (SLUGS[code].get(key, key))
     return d / 'index.html'
 
 
+# Generated JS: the language list and slug map for the selector, plus one
+# dictionary file per language, loaded only by pages in that language.
 def write_langs_js():
     langs = [dict(x, on=int(x['c'] in READY)) for x in LANGS]
     js = '/* generated by tools/build.py */\nwindow.TPHM_LANGS=' + json.dumps(langs, ensure_ascii=False, separators=(',', ':')) + ';\nwindow.TPHM_SLUGMAP=' + json.dumps(SLUGS, separators=(',', ':')) + ';\n'
@@ -195,6 +229,7 @@ def write_langs_js():
         (ROOT / f'assets/i18n/{c}.js').write_text('/* generated by tools/build.py */\nwindow.TPHM_DICT=' + json.dumps(D, ensure_ascii=False, separators=(',', ':')) + ';\n')
 
 
+# Build every page in every ready language, then the sitemap with hreflang links.
 def build(langs=READY):
     write_langs_js()
     written = []
