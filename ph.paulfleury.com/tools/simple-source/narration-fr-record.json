@@ -1,0 +1,10 @@
+{
+  "lang": "fr",
+  "sample": false,
+  "model": "google/gemini-3.8-flash-tts",
+  "voice": "Achird",
+  "sourceCharacters": 1443,
+  "duration": 82.08,
+  "bytes": 657068,
+  "generationId": "gen-tts-1793572328-d4vCQ3Nx2AbAntxmxY7m"
+}

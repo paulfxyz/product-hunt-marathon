@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-language="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Marathon, in simple words</title>
+<meta name="description" content="A short, calm summary of Paul Fleury's Product Hunt Marathon: eleven free, open-source launches in eleven days, with audio in your language.">
+<link rel="canonical" href="https://ph.paulfleury.com/simple/">
+<meta property="og:title" content="The Marathon, in simple words">
+<meta property="og:url" content="https://ph.paulfleury.com/simple/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Product Hunt Marathon · Paul Fleury">
+<meta property="og:description" content="A short, calm summary of Paul Fleury's Product Hunt Marathon: eleven free, open-source launches in eleven days, with audio in your language.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ph.paulfleury.com/assets/og/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Product Hunt Marathon by Paul Fleury: eleven free, open-source launches in eleven days, 10–20 November 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@paulfxyz">
+<meta name="twitter:creator" content="@paulfxyz">
+<meta name="twitter:title" content="The Marathon, in simple words">
+<meta name="twitter:description" content="A short, calm summary of Paul Fleury's Product Hunt Marathon: eleven free, open-source launches in eleven days, with audio in your language.">
+<meta name="twitter:image" content="https://ph.paulfleury.com/assets/og/og-en.jpg">
+<meta name="twitter:image:alt" content="The Product Hunt Marathon by Paul Fleury: eleven free, open-source launches in eleven days, 10–20 November 2026">
+<link href="/assets/brand/pfph-v1.ico" rel="icon" sizes="any">
+<link href="/assets/brand/pfph-v1-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/assets/brand/pfph-v1-180.png" rel="apple-touch-icon">
+<script>try{let m=localStorage.getItem('ph-theme');document.documentElement.dataset.theme=['light','dark'].includes(m)?m:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='light'}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+Hebrew:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<link rel="stylesheet" href="/simple/simple.css?v=e5fbcd9f2a68">
+<link rel="stylesheet" href="/assets/a11y/a11y-v2.css?v=e5fbcd9f2a68">
+<script src="/simple/simple-s7.js" type="module"></script>
+<script src="/assets/a11y/a11y-v3.js?v=e5fbcd9f2a68" type="module"></script>
+<script src="/assets/a11y/song.js?v=e5fbcd9f2a68" type="module"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-t="skip">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="/" aria-label="ph.paulfleury.com"><img src="/assets/brand/pfph-v1-32.png" alt="" width="28" height="28"><span>PF <b aria-hidden="true">&#10084;</b> PH</span></a>
+  <div class="tools">
+    <div class="dd">
+      <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <span class="dd-text">English</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul id="lang-list" class="dd-list" role="listbox" hidden></ul>
+    </div>
+    <button type="button" class="icon-btn theme" aria-label="Dark mode">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main">
+  <p class="tag" data-t="tag">Plain language</p>
+  <h1 data-t="title">The Marathon, in simple words</h1>
+  <p class="lead" data-t="lead"></p>
+  <div class="player">
+    <button type="button" class="play" aria-pressed="false">
+      <svg class="play-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="pause-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      <span class="player-text" data-t="listen">Listen to this page</span>
+    </button>
+    <div class="progress" aria-hidden="true"><i></i></div>
+    <span class="time" aria-hidden="true"></span>
+    <p class="err" role="status" hidden data-t="audioError"></p>
+  </div>
+  <div class="cards"></div>
+  <p class="cta">
+    <a class="btn" href="/" data-t="fullLink">See the full website</a>
+    <a class="btn ghost" href="/#pipeline" data-t="calendarLink">Add the dates to your calendar</a>
+  </p>
+</main>
+<footer><p data-t="footer">Paul Fleury · The Product Hunt Marathon · Lisbon</p></footer>
+<audio preload="metadata"></audio>
+</body>
+</html>

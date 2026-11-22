@@ -1,0 +1,37 @@
+{
+ "metaTitle": "El Weekathon, en palabras simples",
+ "metaDescription": "Un resumen breve y tranquilo del Weekathon de Paul Fleury: siete lanzamientos gratuitos y de código abierto en siete días, con audio en tu idioma.",
+ "skip": "Saltar al contenido",
+ "tag": "Lenguaje sencillo · 1 minuto",
+ "title": "El Weekathon, en palabras simples",
+ "lead": "Soy Paul Fleury y vivo en Lisboa, Portugal. Del 9 al 15 de noviembre de 2026, lanzaré un proyecto nuevo cada día en Product Hunt, un sitio web donde la gente descubre productos nuevos.",
+ "listen": "Escuchar esta página",
+ "pause": "Pausar",
+ "language": "Idioma",
+ "audioError": "No se pudo reproducir el audio. Aún puedes leer la página.",
+ "fullLink": "Ver el sitio web completo",
+ "calendarLink": "Añadir las fechas a tu calendario",
+ "footer": "Paul Fleury · Weekathon · Lisboa",
+ "sections": [
+  {
+   "heading": "Siete días, siete productos",
+   "text": "Cada mañana sale a la luz un nuevo producto. Los siete son gratuitos y de código abierto: cualquiera puede usarlos, leer su código y mejorarlos. Los creé con la ayuda de la inteligencia artificial."
+  },
+  {
+   "heading": "Por qué esta semana",
+   "text": "Es la semana de Web Summit, una gran conferencia de tecnología en Lisboa. Dedico el Weekathon a Web Summit y a todas las personas a las que les gusta crear cosas. Sin equipo de lanzamiento ni campañas para conseguir votos. Solo herramientas útiles, compartidas abiertamente."
+  },
+  {
+   "heading": "Tu opinión cuenta",
+   "text": "Después de cada lanzamiento, leo los reportes de errores y las ideas. Primero resuelvo lo más importante y luego sigo mejorando los proyectos en público."
+  },
+  {
+   "heading": "Lo que viene después",
+   "text": "Después del Weekathon, cuatro extras gratuitos más: el 16, 17, 18 y 22 de noviembre. El 24 de noviembre, una propuesta seria: Enki, un proyecto sin fines de lucro para una inteligencia artificial de la que la gente pueda ser dueña. El 1 de diciembre, mi startup principal, Openline. Más adelante, el 15 de diciembre, un proyecto comercial paralelo: Cup of News, una aplicación de noticias."
+  },
+  {
+   "heading": "Conoce a Paul",
+   "text": "Estaré en Web Summit en Lisboa del 9 al 12 de noviembre. Pasa a saludar o envíame un mensaje por X o LinkedIn."
+  }
+ ]
+}
