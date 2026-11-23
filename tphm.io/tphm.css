@@ -439,3 +439,24 @@ h2[tabindex="-1"]:focus{outline:none}
 }
 .nm-tools .ico.sun{display:none}
 [data-theme=dark] .nm-tools .ico.moon{display:none}[data-theme=dark] .nm-tools .ico.sun{display:block}
+
+/* Builders: field guide and toolkit (added Nov 2026) */
+.guide-head{margin-top:48px;margin-bottom:16px;max-width:62ch}
+.guide-head .kicker{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-ink)}
+.guide-head h3{font-family:var(--font-display);font-weight:800;font-size:clamp(1.4rem,3.6vw,1.75rem);letter-spacing:-.025em;line-height:1.12;margin-top:6px;text-wrap:balance}
+.guide-head .muted{color:var(--ink-2);margin-top:6px}
+.guides,.kit{display:grid;gap:12px}
+.guide{padding:20px 22px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line)}
+.guide-n{font-family:var(--font-display);font-weight:800;font-size:.95rem;color:var(--accent-ink)}
+.guide h4{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1.2;margin:2px 0 10px}
+.guide ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.guide li{position:relative;padding-inline-start:18px;color:var(--ink-2);font-size:15.5px;line-height:1.45;text-wrap:pretty}
+.guide li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.kit-card{display:grid;gap:8px;align-content:start;padding:20px 22px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.kit-card:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
+.kit-card b{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.02rem;color:var(--accent-ink)}
+.kit-card span{color:var(--ink-2);font-size:15.5px;line-height:1.45;text-wrap:pretty}
+.kit-card code{display:block;margin-top:4px;padding:10px 12px;border-radius:var(--r-sm);background:var(--band);color:var(--band-ink);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.45;white-space:normal;overflow-wrap:anywhere;direction:ltr;text-align:left}
+.kit-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+@media (min-width:640px){.guides,.kit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:960px){.guides{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.kit{gap:16px}}

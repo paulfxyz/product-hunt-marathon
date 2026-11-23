@@ -20,7 +20,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611211930'
+VER = '202611231945'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = ['en', 'fr', 'cmn', 'he']
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL'}
@@ -46,21 +46,21 @@ META = {
     'home': ('TPHM · The Product Hunt Marathon logbook · Paul Fleury',
              'Twelve free, open-source tools in twelve days, from Junk to Tetris. The permanent logbook of The Product Hunt Marathon by Paul Fleury: what was built, what it cost, what Product Hunt taught me, and why companies should build what they rent.',
              'TPHM · The Product Hunt Marathon logbook', 'Twelve free, open-source tools in twelve days. Built, not rented.'),
-    'hunt': ('The hunt: field notes from Product Hunt · TPHM',
+    'hunt': ('Product Hunt: field notes from the Marathon · TPHM',
              'No launch squad, no upvote ask. An honest account of the Marathon on Product Hunt: why a launch without a marketing budget stalls near 4 points, the Mang feature, the upvote market I said no to, and a case for open source.',
-             'The hunt: field notes from Product Hunt', 'No squad. No upvote ask. Just feedback.'),
+             'Product Hunt: field notes from the Marathon', 'No squad. No upvote ask. Just feedback.'),
     'saas': ('SaaS is dead: build what you rent · TPHM',
              'Rent by default? Not anymore. A calculator to see when building beats renting, and what twelve tools in twelve days actually took.',
              'SaaS is dead: build what you rent', 'Rent by default? Not anymore.'),
     'cho': ('Hire a Chief Hacking Officer · TPHM',
             'A playful title, serious consulting. Up to 30 hours a week, open now: I find your recurring bottlenecks, then build simple tools your team owns.',
             'Hire a Chief Hacking Officer', 'A playful title, serious consulting.'),
-    'invest': ('Invest in Openline · TPHM',
+    'invest': ('Investors & Philanthropists: Openline and more · TPHM',
                'The Marathon was the side project. Openline is the main bet: travel eSIMs, proven in B2B with over one million activated. Raising from angels and VCs.',
-               'Invest in Openline', 'The Marathon was the side project. Here is the main bet.'),
+               'For investors and philanthropists', 'The Marathon was the side project. Here is the main bet.'),
     'builders': ('Run your own little marathon · TPHM',
-                 'Six lessons and a launch-day checklist for builders and consultants planning a run of public launches.',
-                 'Run your own little marathon', 'Six lessons and a launch-day checklist.'),
+                 'Six lessons, a launch-day checklist, a step-by-step field guide and four free Python scripts for builders planning a run of public launches.',
+                 'Run your own little marathon', 'Six lessons, a field guide and a free toolkit.'),
     'os': ('TPHM OS · The Product Hunt Marathon · Paul Fleury',
            'Twelve free, open-source tools in twelve days, installed on a tiny operating system. Open the apps, read the field notes, decline the upvote sellers, and see why companies should build what they rent.',
            'TPHM OS · The Product Hunt Marathon', 'Twelve tools. Twelve days. Built, not rented.'),

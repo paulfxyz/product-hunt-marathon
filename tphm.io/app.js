@@ -123,8 +123,8 @@ setSlide(cur);
 const PATHS = {
   try: { t: '<b>Start with the wall.</b> Twelve free tools, each one a click away. Hover a tile to see it move, open it for the story and the links.', a: [['See all twelve', '#log', 'wall'], ['Play the bonus', 'https://tetris.rocks']] },
   hire: { t: '<b>Up to 30 hours a week, open now.</b> I find your recurring bottlenecks, then build tools your team owns, with code in your repositories.', a: [['What a CHO does', '#cho'], ['Write to me', 'https://paulfleury.com/contact']] },
-  invest: { t: '<b>Openline is my main venture.</b> Over one million eSIMs activated through B2B partners, now going direct to travellers. I\u2019m raising from angels and VCs.', a: [['See the ventures', '#invest'], ['Talk to Paul', 'https://paulfleury.com/contact']] },
-  learn: { t: '<b>Six lessons and a launch checklist.</b> Plus an honest account of what Product Hunt rewards, why ranking there now takes a marketing budget, and the upvote market I said no to.', a: [['Builder lessons', '#builders'], ['Field notes', '#hunt']] }
+  invest: { t: '<b>Openline is my main venture.</b> Over one million eSIMs activated through B2B partners, now going direct to travellers. I\u2019m raising from angels and VCs, and Enki is looking for a philanthropist.', a: [['See the ventures', '#invest'], ['Talk to Paul', 'https://paulfleury.com/contact']] },
+  learn: { t: '<b>Six lessons, a field guide and a toolkit.</b> Plus an honest account of what Product Hunt rewards, why ranking there now takes a marketing budget, and the upvote market I said no to.', a: [['Builder lessons', '#builders'], ['Field notes', '#hunt']] }
 };
 const pathCard = $('#pathCard');
 $$('.path').forEach(b => b.addEventListener('click', () => {
@@ -232,7 +232,7 @@ pd.addEventListener('close', () => { pv.pause(); if (LOG.some(p => location.path
 document.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) { e.preventDefault(); openProduct(b.dataset.open); } });
 /* Pages: a short landing plus one page per chapter */
 const PAGES = ['hunt', 'saas', 'cho', 'invest', 'builders'];
-const PAGE_T = { hunt: 'The hunt', saas: 'SaaS is dead', cho: 'Hire a CHO', invest: 'Invest', builders: 'Run your own' };
+const PAGE_T = { hunt: 'Product Hunt', saas: 'SaaS is dead', cho: 'Hire a CHO', invest: 'Investors & Philanthropists', builders: 'Run your own' };
 const PAGE_OF = { top: 'home', main: 'home', log: 'home', chapters: 'home', follow: 'home', hunt: 'hunt', inbox: 'hunt', saas: 'saas', calc: 'saas', took: 'saas', cho: 'cho', invest: 'invest', builders: 'builders' };
 const BASE_T = document.title;
 let page = 'home';
@@ -416,7 +416,7 @@ $('#copyKit').addEventListener('click', async () => {
 const kd = $('#kdlg'), kq = $('#kq'), kl = $('#klist');
 const ITEMS = [
   ...LOG.map(p => ({ g: 'The 12', t: p.name, s: p.kind, img: `/assets/icons/${p.key}.webp`, run: () => openProduct(p.key) })),
-  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Invest in Openline', 'invest'], ['Run your own marathon', 'builders'], ['Follow along', 'follow']]
+  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Investors & Philanthropists', 'invest'], ['Run your own marathon', 'builders'], ['Follow along', 'follow']]
     .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? U(id) : U(PAGE_OF[id] === 'home' ? '' : PAGE_OF[id]) + '#' + id) })),
   { g: 'Sections', t: 'Boot TPHM OS', s: 'The Marathon as a desktop', ic: 'play', run: () => openOS() },
   { g: 'Read', t: 'What is a CHO?', ic: 'info', run: () => openText('cho') },
