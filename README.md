@@ -169,7 +169,7 @@ Three folders, each a different part of the campaign, plus a [builders' kit](bui
 <td width="33%" valign="top">
 <a href="tphm.io/README.md"><img src="docs/images/tphm-os.jpg" width="100%" alt="TPHM OS, the Marathon as a retro desktop"></a><br>
 <strong><a href="tphm.io/README.md">tphm.io/</a></strong><br>
-The permanent logbook, with its full git history. Static HTML, CSS and vanilla JavaScript, with no framework and no bundler. It holds the twelve entries, the chapters (Product Hunt, SaaS is dead, Chief Hacking Officer, investors and philanthropists, builders, a plain-words page with narration) and TPHM OS, a fullscreen retro desktop you can play with.
+The permanent logbook, with its full git history. Static HTML, CSS and vanilla JavaScript, with no framework and no bundler. It holds the twelve entries, the chapters (Product Hunt, SaaS is dead, Chief Hacking Officer, investors, builders, a plain-words page with narration) and TPHM OS, a fullscreen retro desktop you can play with.
 </td>
 <td width="33%" valign="top">
 <a href="ph.paulfleury.com/README.md"><img src="docs/images/ph-archive.jpg" width="100%" alt="The archived Product Hunt Marathon launch hub"></a><br>
