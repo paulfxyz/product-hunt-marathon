@@ -241,8 +241,8 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
     <div class="paths">
       <button class="pathb" data-open="finder"><b>Try the tools</b><span>Twelve free apps, one click each</span></button>
       <button class="pathb" data-open="hire"><b>Hire a CHO</b><span>Up to 30 hours a week, open now</span></button>
-      <button class="pathb" data-open="pitch"><b>Invest</b><span>Openline, my main venture</span></button>
-      <button class="pathb" data-open="builders"><b>Run my own</b><span>Six lessons and a checklist</span></button>
+      <button class="pathb" data-open="pitch"><b>Invest or give</b><span>Openline, my main venture</span></button>
+      <button class="pathb" data-open="builders"><b>Run my own</b><span>Lessons, a field guide and a toolkit</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 2.75k</b><span>US$ to build all twelve</span></div><div><b>0</b><span>upvotes bought</span></div></div>
     <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="${BASE}/" data-home>Read it as a page</a>.</p>
@@ -437,7 +437,8 @@ def('builders', { title: 'Run your own.md', w: 720, h: 620, build(b) {
   let done = []; try { done = JSON.parse(localStorage.getItem('tphm-lessons') || '[]'); } catch (e) {}
   b.innerHTML = `<article class="dc prose"><p class="eyb">For builders and consultants</p><h2 class="big">Run your own <em>little marathon.</em></h2><p>What I'd tell anyone planning a run of public launches. Tick them off as you go.</p>
     <div class="check">${LESSONS.map(([t, d], i) => `<button aria-pressed="${done.includes(i)}" data-l="${i}"><b>${t}</b><span>${d}</span></button>`).join('')}</div>
-    <p class="row-btns" style="margin-top:18px"><button class="btn btn-or" id="cpk">Copy the launch-day checklist</button><a class="btn btn-ln" href="https://github.com/paulfxyz" target="_blank" rel="noopener">All the code on GitHub ${EXT}</a></p></article>`;
+    <h3 style="margin-top:22px">The scripts behind the routine</h3><p>Four small Python files, MIT licensed and free to fork. They prepare, size and log. Pressing Post stays your job.</p><ul><li><b>crosspost.py</b>: one post, sized for X, LinkedIn, Bluesky and Mastodon, plus a log of every published link.</li><li><b>shots.py</b>: screenshots in light and dark mode, plus scrolling GIFs and MP4s.</li><li><b>card.py</b>: share cards and Product Hunt gallery slides.</li><li><b>launch_calendar.py</b>: one calendar file for your whole run.</li></ul>
+    <p class="row-btns" style="margin-top:18px"><button class="btn btn-or" id="cpk">Copy the launch-day checklist</button><a class="btn btn-ln" href="https://github.com/paulfxyz/product-hunt-marathon/tree/main/builders-kit" target="_blank" rel="noopener">Get the kit on GitHub ${EXT}</a></p></article>`;
   $$('.check button', b).forEach(x => x.addEventListener('click', () => { x.setAttribute('aria-pressed', x.getAttribute('aria-pressed') !== 'true'); done = $$('.check [aria-pressed=true]', b).map(y => +y.dataset.l); try { localStorage.setItem('tphm-lessons', JSON.stringify(done)); } catch (e) {} if (done.length === 6) toast('All six. You\u2019re ready for your own marathon.'); }));
   $('#cpk', b).addEventListener('click', async () => { try { await navigator.clipboard.writeText(KIT); toast('Checklist copied. Go ship something.'); } catch (e) { toast('Copy failed on this browser.'); } });
 } });
