@@ -20,7 +20,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611231945'
+VER = '202611232030'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = ['en', 'fr', 'cmn', 'he']
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL'}
@@ -55,9 +55,9 @@ META = {
     'cho': ('Hire a Chief Hacking Officer · TPHM',
             'A playful title, serious consulting. Up to 30 hours a week, open now: I find your recurring bottlenecks, then build simple tools your team owns.',
             'Hire a Chief Hacking Officer', 'A playful title, serious consulting.'),
-    'invest': ('Investors & Philanthropists: Openline and more · TPHM',
+    'invest': ('Investors: Openline and more · TPHM',
                'The Marathon was the side project. Openline is the main bet: travel eSIMs, proven in B2B with over one million activated. Raising from angels and VCs.',
-               'For investors and philanthropists', 'The Marathon was the side project. Here is the main bet.'),
+               'For investors', 'The Marathon was the side project. Here is the main bet.'),
     'builders': ('Run your own little marathon · TPHM',
                  'Six lessons, a launch-day checklist, a step-by-step field guide and four free Python scripts for builders planning a run of public launches.',
                  'Run your own little marathon', 'Six lessons, a field guide and a free toolkit.'),

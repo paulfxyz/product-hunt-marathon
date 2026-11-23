@@ -241,7 +241,7 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
     <div class="paths">
       <button class="pathb" data-open="finder"><b>Try the tools</b><span>Twelve free apps, one click each</span></button>
       <button class="pathb" data-open="hire"><b>Hire a CHO</b><span>Up to 30 hours a week, open now</span></button>
-      <button class="pathb" data-open="pitch"><b>Invest or give</b><span>Openline, my main venture</span></button>
+      <button class="pathb" data-open="pitch"><b>Invest</b><span>Openline, my main venture</span></button>
       <button class="pathb" data-open="builders"><b>Run my own</b><span>Lessons, a field guide and a toolkit</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 2.75k</b><span>US$ to build all twelve</span></div><div><b>0</b><span>upvotes bought</span></div></div>
