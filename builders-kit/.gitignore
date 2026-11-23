@@ -1,0 +1,6 @@
+out/
+shots/
+receipts.csv
+*.ics
+*.png
+!docs/*.png

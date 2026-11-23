@@ -28,7 +28,7 @@ The code, logbook and campaign tooling behind a run of twelve free, open-source 
 
 <br>
 
-[Logbook](https://tphm.io) · [The hunt](https://tphm.io/hunt) · [Builders](https://tphm.io/builders) · [In simple words](https://tphm.io/simple) · [TPHM OS](https://tphm.io/os) · [Product Hunt](https://www.producthunt.com/@paulfxyz) · [Launch playbook](docs/LAUNCH-PLAYBOOK.md)
+[Logbook](https://tphm.io) · [Product Hunt chapter](https://tphm.io/hunt) · [Builders](https://tphm.io/builders) · [In simple words](https://tphm.io/simple) · [TPHM OS](https://tphm.io/os) · [Product Hunt](https://www.producthunt.com/@paulfxyz) · [Launch playbook](docs/LAUNCH-PLAYBOOK.md) · [Builders' kit](builders-kit/README.md)
 
 </div>
 
@@ -162,14 +162,14 @@ Tetris has no page in the logbook because it is the bonus. Two tools, AI Credit 
 
 ## What's in this repo
 
-Three folders, each a different part of the campaign. Each has its own README with the detail.
+Three folders, each a different part of the campaign, plus a [builders' kit](builders-kit/README.md) of scripts you can reuse. Each has its own README with the detail.
 
 <table>
 <tr>
 <td width="33%" valign="top">
 <a href="tphm.io/README.md"><img src="docs/images/tphm-os.jpg" width="100%" alt="TPHM OS, the Marathon as a retro desktop"></a><br>
 <strong><a href="tphm.io/README.md">tphm.io/</a></strong><br>
-The permanent logbook, with its full git history. Static HTML, CSS and vanilla JavaScript, with no framework and no bundler. It holds the twelve entries, the chapters (the hunt, SaaS is dead, Chief Hacking Officer, invest, builders, a plain-words page with narration) and TPHM OS, a fullscreen retro desktop you can play with.
+The permanent logbook, with its full git history. Static HTML, CSS and vanilla JavaScript, with no framework and no bundler. It holds the twelve entries, the chapters (Product Hunt, SaaS is dead, Chief Hacking Officer, investors and philanthropists, builders, a plain-words page with narration) and TPHM OS, a fullscreen retro desktop you can play with.
 </td>
 <td width="33%" valign="top">
 <a href="ph.paulfleury.com/README.md"><img src="docs/images/ph-archive.jpg" width="100%" alt="The archived Product Hunt Marathon launch hub"></a><br>
@@ -198,6 +198,8 @@ product-hunt-marathon/
 │   ├── PRODUCT-HUNT-FIELD-NOTES.md
 │   ├── BUILDING-WITH-AI.md
 │   └── images/                 screenshots and the logo
+├── builders-kit/               crosspost, shots, card, launch_calendar
+│                               (Python, reusable for your own launches)
 ├── tphm.io/                    the logbook
 │   ├── src/                    index.html, os.html, simple.json
 │   ├── tools/                  build, harvest, translate, simple,
@@ -287,6 +289,7 @@ These are the short versions. The [launch playbook](docs/LAUNCH-PLAYBOOK.md) has
 - [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md): the six lessons in full, plus the launch-day kit.
 - [docs/PRODUCT-HUNT-FIELD-NOTES.md](docs/PRODUCT-HUNT-FIELD-NOTES.md): my account as a long-time Product Hunt member. These are my own observations and not Product Hunt's documented policy.
 - [docs/BUILDING-WITH-AI.md](docs/BUILDING-WITH-AI.md): how AI was used, what it cost and where the limits were.
+- [builders-kit/](builders-kit/README.md): four Python scripts to write each post once, size it for X, LinkedIn, Bluesky and Mastodon, keep receipts, take screenshots and GIFs, make cards and build a launch calendar.
 - [CONTRIBUTING.md](CONTRIBUTING.md): how to report a problem or propose a change.
 
 ## Contributing

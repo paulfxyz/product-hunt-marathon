@@ -1,8 +1,8 @@
 # Product Hunt Field Notes
 
-These are Paul Fleury's field notes from the hunt chapter of the Marathon logbook, kept as a document you can read in the repository. The live version is at [tphm.io/hunt](https://tphm.io/hunt).
+These are Paul Fleury's field notes from the Product Hunt chapter of the Marathon logbook, kept as a document you can read in the repository. The live version is at [tphm.io/hunt](https://tphm.io/hunt).
 
-![The hunt chapter on tphm.io](images/tphm-hunt.jpg)
+![The Product Hunt chapter on tphm.io](images/tphm-hunt.jpg)
 
 A note on what this is. Everything here is one maker's experience over twelve launches between 10 and 21 November 2026. Where the notes describe how Product Hunt behaves, that is Paul's own observation as a long-time member, not Product Hunt's documented policy. Where the notes describe Product Hunt's rules, they link to Product Hunt's own help pages.
 
