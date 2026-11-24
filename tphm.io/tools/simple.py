@@ -49,7 +49,7 @@ for code, P, HL, OGL, SRC, ALT in LANGS:
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>{e(d['title'])} · TPHM</title>
     <meta name="description" content="{e(d['metaDescription'])}">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="{U}">
 <link rel="alternate" hreflang="en-GB" href="https://tphm.io/simple">
 <link rel="alternate" hreflang="fr-FR" href="https://tphm.io/fr/simple">

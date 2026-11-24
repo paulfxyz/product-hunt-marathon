@@ -119,8 +119,12 @@ def pages():
 
 # The <head> for one page in one language: title, description, canonical URL,
 # hreflang alternates (so search engines pair the languages), Open Graph and
-# Twitter cards (link previews), and JSON-LD structured data. Pages stay noindex
-# until indexing is explicitly approved.
+# Twitter cards (link previews), and JSON-LD structured data. Pages are indexable
+# (approved by Paul on 24 November 2026).
+PERSON = {"@type": "Person", "name": "Paul Fleury", "url": "https://paulfleury.com/", "jobTitle": "Founder, CEO, Chief Hacking Officer",
+          "sameAs": ["https://github.com/paulfxyz", "https://x.com/paulfxyz", "https://www.producthunt.com/@paulfxyz", "https://www.linkedin.com/in/paulfxyz"]}
+
+
 def head_block(code, kind, key, D):
     L = next(x for x in LANGS if x['c'] == code)
     if kind == 'product':
@@ -139,10 +143,17 @@ def head_block(code, kind, key, D):
     font = f'\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={FONTS[code]}&display=swap">' if code in FONTS else ''
     ld = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": canon, "inLanguage": L['l'],
           "isPartOf": {"@type": "WebSite", "name": "TPHM · The Product Hunt Marathon", "url": SITE + '/'},
-          "author": {"@type": "Person", "name": "Paul Fleury", "url": "https://paulfleury.com/"}, "image": img}
+          "author": PERSON, "image": img}
+    if kind == 'home':
+        ld = [ld, {"@context": "https://schema.org", "@type": "WebSite", "name": "TPHM · The Product Hunt Marathon", "alternateName": "TPHM",
+                   "url": SITE + '/', "inLanguage": [x['l'] for x in LANGS if x['c'] in READY], "publisher": PERSON}]
+    elif kind == 'product':
+        ld = [ld, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": n, "description": tr(D, line),
+                   "applicationCategory": "DeveloperApplication", "isAccessibleForFree": True, "license": "https://opensource.org/licenses/MIT",
+                   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": PERSON, "url": canon, "image": img}]
     return f'''<title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<meta name="robots" content="noindex">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="{canon}">
 {alts}
 <meta property="og:type" content="website">
@@ -246,8 +257,11 @@ def build(langs=READY):
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
     for kind, key in pages():
         for c in READY:
-            sm += f'<url><loc>{url(c, key)}</loc><lastmod>2026-11-20</lastmod>' + ''.join(
+            sm += f'<url><loc>{url(c, key)}</loc><lastmod>2026-11-24</lastmod>' + ''.join(
                 f'<xhtml:link rel="alternate" hreflang="{next(x["l"] for x in LANGS if x["c"] == a)}" href="{url(a, key)}"/>' for a in READY) + '</url>\n'
+    for a, b in (('https://tphm.io/simple', 'https://tphm.io/fr/simple'),):
+        for loc in (a, b):
+            sm += f'<url><loc>{loc}</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="en" href="{a}"/><xhtml:link rel="alternate" hreflang="fr" href="{b}"/></url>\n'
     (ROOT / 'sitemap.xml').write_text(sm + '</urlset>\n')
     return written
 
