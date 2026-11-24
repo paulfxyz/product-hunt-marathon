@@ -7,7 +7,7 @@ This document describes how The Product Hunt Marathon was built with AI: who dec
 - AI was the pair-programmer and the editor. Paul Fleury directed the work, reviewed it and took responsibility for it.
 - Perplexity Computer orchestrated the work. Copy and translations were routed through OpenRouter, with one model to write and a different model to review.
 - Every database write had a backup, a dry run and a revision check. Production restarts needed explicit approval.
-- Costs are given as honest estimates. The whole Marathon cost about US$2,750 across all twelve tools.
+- Costs are given as honest estimates. The whole Marathon cost about US$2,204 across all twelve tools.
 - Accessibility was built in, in every language.
 
 ## 1. Direction and responsibility stay with a person
@@ -53,8 +53,8 @@ If you copy this approach:
 
 The numbers on the site are deliberately framed as estimates.
 
-- Building all twelve tools cost about US$2,750. That figure covers AI tokens, hours, other compute, marketing and hosting across all twelve. It is an estimate, not a price.
-- Each prototype took roughly US$50 to US$400 of AI and time.
+- Building all twelve tools cost about US$2,204. That figure covers AI tokens, hours, other compute, marketing and hosting across all twelve. It is an estimate, not a price.
+- Each prototype took roughly US$20 to US$320 of AI and time.
 - Most of the tools run for a few dollars a month, or free on your own machine.
 - Budgets on the site are approximate totals across every iteration, not product prices or invoices.
 - The consulting offer describes the same shape: a prototype in the low hundreds of dollars of AI, then hosting measured in dollars a month, with full lifetime costs estimated upfront.

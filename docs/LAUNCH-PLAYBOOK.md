@@ -66,7 +66,7 @@ The social manager in this repository follows the same idea. It has a weekly cal
 **How to do it.**
 
 - Write a real maker comment, not a slogan. Cover what AI did, what it cost and where the limits are.
-- Give a cost as an estimate and say that it is one. The Marathon's figure of about US$2,750 across all twelve tools covers AI tokens, hours, other compute, marketing and hosting, and the site calls it an estimate, not a price.
+- Give a cost as an estimate and say that it is one. The Marathon's figure of about US$2,204 across all twelve tools covers AI tokens, hours, other compute, marketing and hosting, and the site calls it an estimate, not a price.
 - State what the tool does not do on the page itself, in plain language.
 - If you used AI for the build, say how you stayed in charge. In this project, Paul directed and reviewed, every database write had a backup, a dry run and a revision check, and production restarts needed explicit approval.
 

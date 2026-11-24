@@ -13,7 +13,7 @@ The code, logbook and campaign tooling behind a run of twelve free, open-source 
 <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT_(code)-DA552F?style=for-the-badge" alt="Licence: MIT (code)"></a>
 <img src="https://img.shields.io/badge/languages-4-1D1814?style=for-the-badge" alt="4 languages">
 <img src="https://img.shields.io/badge/upvotes_bought-0-DA552F?style=for-the-badge" alt="Upvotes bought: 0">
-<img src="https://img.shields.io/badge/budget-about_US%242%2C750-1D1814?style=for-the-badge" alt="Budget: about US$2,750">
+<img src="https://img.shields.io/badge/budget-about_US%242%2C204-1D1814?style=for-the-badge" alt="Budget: about US$2,204">
 <img src="https://img.shields.io/badge/built_with-AI-DA552F?style=for-the-badge" alt="Built with AI">
 <a href="https://www.producthunt.com/@paulfxyz"><img src="https://img.shields.io/badge/Product_Hunt-launched_by_hand-1D1814?style=for-the-badge&logo=producthunt&logoColor=white" alt="Product Hunt"></a>
 <img src="https://img.shields.io/github/last-commit/paulfxyz/product-hunt-marathon?style=for-the-badge&color=1D1814" alt="Last commit">
@@ -65,7 +65,7 @@ This monorepo holds what was left behind once the run was over: the permanent lo
 | **11 + 1** | launches: eleven tools, plus the Tetris bonus |
 | **12 days** | 10 to 21 November 2026 |
 | **0** | upvotes bought or asked |
-| **about US$2,750** | AI tokens, hours, other compute, marketing and hosting across all twelve. An estimate, not a price |
+| **about US$2,204** | AI tokens, hours, other compute, marketing and hosting across all twelve. An estimate, not a price |
 | **4 languages** | the logbook is built as 72 static pages in English, French, Mandarin and Hebrew |
 | **3 folders** | the logbook, the first launch hub, and the social manager |
 
