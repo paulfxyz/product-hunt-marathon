@@ -69,7 +69,7 @@ This monorepo holds what was left behind once the run was over: the permanent lo
 | **4 languages** | the logbook is built as 72 static pages in English, French, Mandarin and Hebrew |
 | **3 folders** | the logbook, the first launch hub, and the social manager |
 
-The budget figure is a rough total across every iteration. It is not what any single tool costs to run, and most of them run for a few dollars a month or free on your own machine. The full numbers (visits, stars, feedback and what the paid boosts on X and LinkedIn delivered) are in the Full Report, published on Tuesday 24 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
+The budget figure is a rough total across every iteration. It is not what any single tool costs to run, and most of them run for a few dollars a month or free on your own machine. The real numbers (Product Hunt points for every launch, stars and what Paul learned) are in the Full Report, published on Thursday 26 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
 
 ## The twelve tools
 

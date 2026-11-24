@@ -123,7 +123,7 @@ The point was never the leaderboard. Twelve tools now exist that did not a month
 
 ### The Full Report
 
-The full numbers, covering visits, stars, feedback and what the paid boosts on X and LinkedIn actually delivered, are in the Full Report. It is published on Tuesday 24 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
+The real numbers, covering the Product Hunt points for every launch, stars and what Paul learned, are in the Full Report. It is published on Thursday 26 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
 
 ---
 
@@ -149,7 +149,7 @@ This section is a set of suggestions that follow from the notes above. It is not
 
 **Keep your own record.** Log every post you publish, with its real link, in one place. The [Launch Playbook](LAUNCH-PLAYBOOK.md) describes how.
 
-**Publish the honest numbers afterwards.** Paul's Full Report is meant to include what worked, including the paid boosts on X and LinkedIn and what they actually delivered. Other open-source makers will get more from your real figures than from a highlight reel.
+**Publish the honest numbers afterwards.** Paul's Full Report shares the real points for every launch, the stalled ones included. Other open-source makers will get more from your real figures than from a highlight reel.
 
 ---
 
