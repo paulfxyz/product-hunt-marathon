@@ -33,3 +33,5 @@
   .s-track{flex:1 1 auto}
   .s-back span{display:none}.s-back{width:44px;padding:0;justify-content:center}
 }
+.s-lang{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:var(--r-full);border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;font-size:15px}
+.s-lang:hover{border-color:var(--ink-2)}

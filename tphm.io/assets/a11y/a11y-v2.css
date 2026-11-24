@@ -84,12 +84,12 @@ html.a11y-cursor a,html.a11y-cursor button,html.a11y-cursor a *,html.a11y-cursor
 @media(prefers-reduced-motion:reduce){.song-bars i{animation:none;transform:scaleY(.7)}.song-fab{transition:none}}
 html.a11y-motion .song-bars i{animation:none;transform:scaleY(.7)}
 html.a11y-contrast .song-fab{background:#ffe84a;color:#000}
-/* ph.paulfleury.com: high-contrast fixes for this page */
+/* tphm.io: high-contrast fixes for this page */
 html.a11y-contrast .grain,html.a11y-contrast .confetti-wrap{display:none!important}
 html.a11y-contrast body :where(a,li,input,textarea,.kicker,.legend-chip,.day-badge,.pl-chip):not(.a11y-modal *):not(.a11y-fab):not(.song-fab){background-color:#000!important;background-image:none!important}
 html.a11y-contrast body button.song-fab.song-fab.song-fab{background:#ffe84a!important;color:#000!important;box-shadow:0 0 0 4px #000,0 0 0 6px #fff!important}
 html.a11y-contrast body .a11y-fab{box-shadow:0 0 0 4px #000,0 0 0 6px #fff}
-/* ph.paulfleury.com: both corner buttons use the main CTA orange */
+/* tphm.io: both corner buttons use the main CTA orange */
 .a11y-fab,.song-fab{background:#C2410C;color:#fff}
 [data-theme=dark] .a11y-fab,[data-theme=dark] .song-fab{background:#d9562b;color:#fff}
 .a11y-fab:hover,.song-fab:hover{background:#9A3412}

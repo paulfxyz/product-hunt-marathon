@@ -8,7 +8,8 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 I18N = ROOT / 'assets/i18n'
-L = ['fr', 'cmn', 'he']
+import os
+L = os.environ.get('TPHM_LANGS', 'fr,cmn,he').split(',')
 NAMES = {'fr': 'French (France)', 'cmn': 'Simplified Chinese (Mandarin, mainland usage)', 'he': 'Modern Hebrew (Israel)'}
 K = json.loads((I18N / 'keys.json').read_text())
 D = {l: (json.loads((I18N / f'{l}.json').read_text()) if (I18N / f'{l}.json').exists() else {}) for l in L}

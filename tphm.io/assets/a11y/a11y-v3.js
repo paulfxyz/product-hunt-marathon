@@ -1,10 +1,10 @@
-// Accessibility menu for tphm.io (from ph.paulfleury.com), adapted from paulfleury.com/linkedin. No network calls; settings stay in localStorage.
+// Accessibility menu for tphm.io, adapted from paulfleury.com/linkedin. No network calls; settings stay in localStorage.
 import { A11Y_STRINGS } from './a11y-strings.js';
 const KEY = 'pf-a11y-v1';
 const DEFAULTS = { size: 0, font: false, space: false, contrast: false, links: false, motion: false, cursor: false, guide: false };
 const root = document.documentElement;
 const lang = (root.lang || 'en').toLowerCase();
-// ph.paulfleury.com switches language in place (window 'ph-languagechange'); 'zh' maps to 'cmn'.
+// tphm.io switches language in place (window 'ph-languagechange'); 'zh' maps to 'cmn'.
 const pick = () => { const l = root.dataset.language || (root.lang || 'en').toLowerCase().split('-')[0]; const c = l === 'zh' ? 'cmn' : l; return A11Y_STRINGS[c] ? c : 'en'; };
 let code = pick();
 let t = A11Y_STRINGS[code];
@@ -47,7 +47,7 @@ function build() {
   const dlg = document.createElement('dialog');
   dlg.className = 'a11y-modal'; dlg.setAttribute('aria-labelledby', 'a11y-title'); dlg.dir = root.dir || 'ltr'; dlg.lang = root.lang || 'en';
   const opts = [['font', t.font, I.font], ['space', t.spacing, I.space], ['contrast', t.contrast, I.contrast], ['links', t.links, I.links], ['motion', t.motion, I.motion], ['cursor', t.cursor, I.cursor], ['guide', t.guide, I.guide]];
-  const simpleHref = 'https://ph.paulfleury.com/simple/';
+  const simpleHref = (root.lang || 'en').toLowerCase().startsWith('fr') ? '/fr/simple/' : '/simple/';
   const rows = opts.map(([k, label, icon]) => `<li><button type="button" role="switch" class="a11y-row" data-key="${k}" aria-checked="false"><span class="a11y-ico">${icon}</span><span class="a11y-label"></span><span class="a11y-switch">${I.check}</span></button></li>`).join('');
   dlg.innerHTML = `<div class="a11y-box">
     <div class="a11y-top"><span class="a11y-badge">${I.person}</span><h2 id="a11y-title"></h2><button type="button" class="a11y-x" data-close>${I.close}</button></div>
