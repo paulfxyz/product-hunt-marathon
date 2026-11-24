@@ -53,15 +53,22 @@ But the Marathon as a whole never became the story. Eleven consecutive free, MIT
 
 Paul does not think anyone acted in bad faith. What it shows is what the curation model rewards: one big, polished, funded launch beats a steady run of honest small ones.
 
+### Which products get picked (an impression)
+
+Paul has noticed another pattern, and it is only his impression. Editorial picks sometimes seem to favour products that AI could now reproduce easily and that could just as well be open source, but that ship as shareware, freeware or under a paid licence. Purely open-source work, with the code public and free to fork, rarely seems to get the same attention.
+
 ### The roughly 4-point cap (an observation, not policy)
 
 Here is what Paul has observed as a long-time member, and not Product Hunt's documented policy:
 
 - In practice, a product seems to be capped at about 4 upvote points unless it brings a large volume of votes.
 - The exceptions he saw were a product that gets featured editorially, or one that runs an ad campaign on Product Hunt.
-- That campaign costs about US$55 CPM, which is expensive for an indie maker.
 
 Treat that as a single maker's reading of the pattern. If you are planning around it, check the current situation yourself.
+
+### The ad unit
+
+As far as Paul could tell, Product Hunt's advertising rests on a single person, Cory, who is genuinely nice and helpful. But there is little targeting, and no detailed campaign management through an API or MCP, the kind of control you would expect from an ad platform today. The quote was a standard, fixed rate of about US$55 CPM, which feels steep for an indie maker.
 
 ### What the guidelines say
 
