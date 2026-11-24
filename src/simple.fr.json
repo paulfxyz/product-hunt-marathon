@@ -1,0 +1,71 @@
+{
+ "title": "Le Product Hunt Marathon, en mots simples",
+ "tag": "Langage clair · 3 minutes",
+ "lead": "J’ai conçu et lancé douze outils gratuits en douze jours. Cette page explique tout avec des mots simples, et vous pouvez la lire ou l’écouter.",
+ "metaDescription": "Le Product Hunt Marathon en mots simples : douze outils gratuits et open source créés avec l’IA et lancés du 10 au 21 novembre 2026, avec une version audio.",
+ "sections": [
+  {
+   "heading": "Ce qu’était le Marathon",
+   "text": "Le Product Hunt Marathon s’est déroulé du 10 au 21 novembre 2026. J’ai lancé onze outils en onze jours, puis un bonus : Tetris. Les douze sont gratuits et open source sous licence MIT, et je les ai conçus avec l’IA. Tout créer a coûté environ 2 200 dollars américains en IA, en temps de travail et en hébergement, et je n’ai ni acheté ni demandé le moindre vote.",
+   "link": "Lire le journal",
+   "href": "/fr/#log"
+  },
+  {
+   "heading": "Les douze outils",
+   "text": "Ces outils sont légers et pratiques. Junk est un bloc-notes flottant pour votre Mac. Mang suggère des commandes de terminal et attend votre confirmation. Megamesh configure votre propre VPN privé, Mars analyse votre Mac contre les logiciels malveillants, et Timescreen transforme un écran d’appoint en horloge. Tetris est le bonus, un projet d’amateur fait pour le plaisir. Chaque outil a sa propre page avec son histoire.",
+   "link": "Ouvrir les douze fiches",
+   "href": "/fr/#log"
+  },
+  {
+   "heading": "Ce que Product Hunt m’a appris",
+   "text": "Je me suis lancé sans équipe de soutien et sans solliciter de votes, et j’ai décliné toutes les propositions d’achat de votes. Être en ligne et être vu sont deux choses différentes : d’après mon expérience, un produit reste autour de 4 points, sauf s’il dispose d’un gros budget publicitaire ou s’il est mis en avant par l’équipe éditoriale. L’équipe a mis en avant Mang, mais j’aimerais que le travail open source puisse émerger sans le moindre budget. Le compte rendu complet, avec les scores de chaque lancement et mes enseignements, sortira le jeudi 26 novembre.",
+   "link": "Lire les notes de terrain",
+   "href": "/fr/chasse"
+  },
+  {
+   "heading": "Le SaaS est mort",
+   "text": "Le SaaS désigne les logiciels que l’on loue par abonnement. Mon pari est que de plus en plus d’entreprises vont concevoir et posséder les outils qu’elles louent aujourd’hui. C’est une intuition, pas une certitude. Recoder un logiciel ne recrée pas les données, la conformité ou la confiance, et chaque outil a besoin d’un responsable. Un simulateur vous permet de comparer par vous-même location et développement sur mesure.",
+   "link": "Faire le calcul",
+   "href": "/fr/saas"
+  },
+  {
+   "heading": "Recrutez un Chief Hacking Officer",
+   "text": "CHO signifie Chief Hacking Officer. C’est un titre ludique pour une mission de conseil très sérieuse : j’identifie les tâches répétitives de votre équipe, puis j’utilise l’IA pour concevoir des outils simples qu’elle peut s’approprier et maintenir. Pensez aux astuces du quotidien : ici, le « hacking » consiste à trouver un moyen plus ingénieux de résoudre un problème, sans se limiter à la cybersécurité. J’ai actuellement jusqu’à 30 heures par semaine de disponibles.",
+   "link": "Voir comment je travaillerais avec vous",
+   "href": "/fr/cho"
+  },
+  {
+   "heading": "Openline, le pari principal",
+   "text": "Openline est mon entreprise principale et ma startup. Elle vend des eSIM de voyage, qui permettent à votre téléphone d’avoir des données mobiles à l’étranger sans carte SIM physique. Plus d’un million ont déjà été activées via nos partenaires commerciaux. Iris et Digital Spot sont des spin-offs, nés d’outils conçus pour Openline. Je lève des fonds auprès de business angels et de fonds de capital-risque, et le Marathon était mon projet parallèle.",
+   "link": "Voir les projets",
+   "href": "/fr/investir"
+  },
+  {
+   "heading": "Lancez votre propre marathon",
+   "text": "Si vous voulez vous lancer dans votre propre petit marathon, commencez ici. J’y partage six leçons tirées de mon parcours ainsi qu’une checklist de lancement pour les créateurs. Vous pouvez cocher les étapes au fur et à mesure et copier la liste dans vos notes, votre dépôt ou votre outil de gestion de projet.",
+   "link": "Commencer la checklist",
+   "href": "/fr/batisseurs"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS est la version ludique de ce site. Il transforme tout le Marathon en un petit bureau virtuel avec lequel vous pouvez vous amuser, avec des applications, une boîte de réception, un terminal et un chaton DJ. Si vous préférez jouer, vous pouvez le lancer.",
+   "link": "Lancer TPHM OS",
+   "href": "/fr/os"
+  }
+ ],
+ "ui": {
+  "skip": "Aller au contenu",
+  "brandLabel": "TPHM, le journal de bord",
+  "back": "Le journal de bord",
+  "theme": "Basculer entre mode clair et sombre",
+  "listen": "Écouter cette page",
+  "pause": "Pause",
+  "resume": "Reprendre",
+  "error": "Impossible de lire l’audio. Vous pouvez tout de même lire la page.",
+  "min": "3 min",
+  "full": "Consulter le journal de bord complet",
+  "contact": "Me contacter",
+  "note": "© 2026 Paul Fleury. Les douze outils sont gratuits et sous licence MIT. Narration générée par une voix IA.",
+  "motto": "Réfléchir. Construire. Livrer. Recommencer."
+ }
+}

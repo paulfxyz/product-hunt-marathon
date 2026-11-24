@@ -20,7 +20,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611241800'
+VER = '202611242230'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = ['en', 'fr', 'cmn', 'he']
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL'}
@@ -32,6 +32,8 @@ SLUGS = {
     'cmn': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
     'he': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
 }
+# Languages with their own /simple page (tools/simple.py); others link to English.
+SIMPLE_LANGS = ['en', 'fr']
 CHAPTERS = ['hunt', 'saas', 'cho', 'invest', 'builders']
 # The twelve tools come from assets/data.js (window.TPHM_LOG), the same file the
 # browser uses, so names and one-liners never drift between HTML and JS.
@@ -199,6 +201,7 @@ def render(code, kind, key):
         k = p.strip('/')
         if k in CHAPTERS: return f'href="{b}/{SLUGS[code][k]}"'
         if k == 'os': return f'href="{b}/os"'
+        if k == 'simple' and code in SIMPLE_LANGS: return f'href="{b}/simple"'
         return m.group(0)
     s = re.sub(r'href="(/(?:[a-z-]+/?)?)"', link, s)
     if kind not in ('home', 'product', 'os'):
