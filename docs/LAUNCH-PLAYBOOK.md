@@ -179,7 +179,7 @@ The run is over when the log closes. The tools are not. The final line of the Bu
 4. **Keep the code public, MIT, with tests and a README.** Anyone who finds the repository later should be able to run it and see what it does.
 5. **Keep the receipts.** The log of links is now your record of what was published and when.
 6. **Keep the permanent record.** The logbook at [tphm.io](https://tphm.io) was built to stay up after the run, with a page per tool and the story, stack and budget for each.
-7. **Write the report.** The Full Report covers the Product Hunt points for every launch, stars and what Paul learned. It is published on Thursday 26 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz). Count the results honestly, including the ones that disappoint you. Note that the paid boosts there were on X and LinkedIn, separate from the rule of no paid engagement on Product Hunt.
+7. **Write the report.** The Full Report covers the Product Hunt points for every launch, stars and what Paul learned. It is published on Saturday 28 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz). Count the results honestly, including the ones that disappoint you. Note that the paid boosts there were on X and LinkedIn, separate from the rule of no paid engagement on Product Hunt.
 8. **Keep maintaining what you can.** This is where lesson one pays off, because you built something you use.
 
 ---

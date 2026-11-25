@@ -113,7 +113,7 @@ The site text does not give a ranked verdict on where AI shone or failed, so thi
 - Recreating software is not the same as rebuilding proprietary data, infrastructure, compliance or customer trust. That is a statement of belief and caution, not a benchmark.
 - Predictable steps are better handled by ordinary code, with AI used where it earns its place and humans approving what matters.
 
-If you want a fuller assessment, the Full Report (Thursday 26 November 2026, on LinkedIn and X) is where the results are published.
+If you want a fuller assessment, the Full Report (Saturday 28 November 2026, on LinkedIn and X) is where the results are published.
 
 ## 7. A practical checklist
 

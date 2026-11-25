@@ -123,7 +123,7 @@ The point was never the leaderboard. Twelve tools now exist that did not a month
 
 ### The Full Report
 
-The real numbers, covering the Product Hunt points for every launch, stars and what Paul learned, are in the Full Report. It is published on Thursday 26 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
+The real numbers, covering the Product Hunt points for every launch, stars and what Paul learned, are in the Full Report. It is published on Saturday 28 November 2026 on [LinkedIn](https://www.linkedin.com/in/paulfxyz/) and [X](https://x.com/paulfxyz).
 
 ---
 
