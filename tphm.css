@@ -22,6 +22,7 @@
 .tip::after{content:"";position:absolute;inset:-11px}
 .tip:hover,.tip:focus-visible{color:var(--accent-ink)}
 .tip .ico{font-size:15px}
+dialog .tipbox{margin:0}
 .tipbox{position:fixed;z-index:200;max-width:280px;padding:10px 13px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:14px;line-height:1.4;font-weight:500;box-shadow:var(--shadow);pointer-events:none;animation:tipin .16s var(--ease)}
 @keyframes tipin{from{opacity:0;transform:translateY(4px)}}
 
