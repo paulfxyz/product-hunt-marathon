@@ -71,9 +71,10 @@ let tt;
 const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2200); };
 
 /* Tooltips */
-const tipbox = $('#tipbox');
+const tipbox = $('#tipbox'); let tipAt = 0;
 const showTip = el => {
-  tipbox.textContent = el.dataset.tip; tipbox.hidden = false;
+  const host = el.closest('dialog[open]') || document.body; if (tipbox.parentNode !== host) host.appendChild(tipbox);
+  tipbox.textContent = el.dataset.tip; if (tipbox.hidden || tipbox.dataset.for !== el.dataset.tip) tipAt = Date.now(); tipbox.dataset.for = el.dataset.tip; tipbox.hidden = false;
   const r = el.getBoundingClientRect(), w = tipbox.offsetWidth, h = tipbox.offsetHeight;
   let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
   let y = r.top - h - 10; if (y < 8) y = r.bottom + 10;
@@ -81,9 +82,10 @@ const showTip = el => {
 };
 const hideTip = () => { tipbox.hidden = true; };
 document.addEventListener('mouseover', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(t); });
-document.addEventListener('mouseout', e => { if (e.target.closest('[data-tip]')) hideTip(); });
+let touchAt = 0; document.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') touchAt = Date.now(); }, true);
+document.addEventListener('mouseout', e => { if (e.target.closest('[data-tip]') && Date.now() - touchAt > 1000) hideTip(); });
 document.addEventListener('focusin', e => { const t = e.target.closest('[data-tip]'); t ? showTip(t) : hideTip(); });
-document.addEventListener('click', e => { const t = e.target.closest('.tip'); if (t) { e.stopPropagation(); e.preventDefault(); tipbox.hidden ? showTip(t) : hideTip(); } else hideTip(); }, true);
+document.addEventListener('click', e => { const t = e.target.closest('.tip'); if (t) { e.stopPropagation(); e.preventDefault(); (tipbox.hidden || tipbox.dataset.for !== t.dataset.tip || Date.now() - tipAt < 600) ? showTip(t) : hideTip(); } else hideTip(); }, true);
 addEventListener('scroll', hideTip, { passive: true });
 
 /* Course + now carousel */
