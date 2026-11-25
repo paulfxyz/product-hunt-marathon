@@ -31,7 +31,7 @@ dlg.innerHTML = `<div class="ldlg-in">
   <ul class="ldlg-list notranslate">${LANGS.map(L => {
     const inner = `<span class="lf" aria-hidden="true">${L.f}</span><span class="ln" lang="${L.l}" dir="${L.d}">${L.n}</span><span class="le">${T(L.e)}</span>`;
     return `<li data-s="${(L.n + ' ' + L.e + ' ' + T(L.e) + ' ' + L.c).toLowerCase()}">${L.on
-      ? `<a href="${L.c === 'en' ? '/' : '/' + L.c}" data-lang="${L.c}" hreflang="${L.l}"${L.c === CUR ? ' aria-current="true"' : ''}>${inner}${L.c === CUR ? `<span class="ls ls-on">${T('Current')}</span>` : ''}</a>`
+      ? `<a href="${L.c === 'en' ? '/' : '/' + L.c}" data-lang="${L.c}" hreflang="${L.l}"${L.c === CUR ? ' aria-current="true"' : ''}>${inner}${L.c === CUR ? '<span class="lck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' : ''}</a>`
       : `<span class="l-off" aria-disabled="true">${inner}<span class="ls">${T('Coming soon')}</span></span>`}</li>`;
   }).join('')}</ul>
   <p class="ldlg-none" hidden>${T('No languages found')}</p>
