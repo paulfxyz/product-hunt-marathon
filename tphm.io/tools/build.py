@@ -20,18 +20,25 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611242230'
+VER = '202611250100'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
-READY = ['en', 'fr', 'cmn', 'he']
-OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL'}
-FONTS = {'cmn': 'Noto+Sans+SC:wght@400;500;700;800', 'he': 'Noto+Sans+Hebrew:wght@400;500;700;800'}
+READY = [x['c'] for x in LANGS]
+OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL', 'hi': 'hi_IN', 'es': 'es_ES', 'ar': 'ar_AR',
+             'bn': 'bn_IN', 'pt': 'pt_PT', 'ru': 'ru_RU', 'id': 'id_ID', 'ur': 'ur_PK', 'de': 'de_DE', 'ja': 'ja_JP',
+             'pcm': 'en_NG', 'arz': 'ar_EG', 'mr': 'mr_IN', 'vi': 'vi_VN', 'te': 'te_IN', 'ha': 'ha_NG', 'tr': 'tr_TR',
+             'pnb': 'pa_PK', 'sw': 'sw_KE', 'tl': 'tl_PH', 'ta': 'ta_IN', 'yue': 'zh_HK', 'wuu': 'zh_CN', 'fa': 'fa_IR',
+             'ko': 'ko_KR', 'it': 'it_IT', 'jv': 'jv_ID'}
+_W = ':wght@400;500;700;800'
+FONTS = {'cmn': 'Noto+Sans+SC' + _W, 'wuu': 'Noto+Sans+SC' + _W, 'yue': 'Noto+Sans+TC' + _W, 'ja': 'Noto+Sans+JP' + _W,
+         'ko': 'Noto+Sans+KR' + _W, 'he': 'Noto+Sans+Hebrew' + _W, 'hi': 'Noto+Sans+Devanagari' + _W,
+         'mr': 'Noto+Sans+Devanagari' + _W, 'bn': 'Noto+Sans+Bengali' + _W, 'ta': 'Noto+Sans+Tamil' + _W,
+         'te': 'Noto+Sans+Telugu' + _W, 'ar': 'Noto+Sans+Arabic' + _W, 'arz': 'Noto+Sans+Arabic' + _W,
+         'fa': 'Noto+Sans+Arabic' + _W, 'ur': 'Noto+Nastaliq+Urdu:wght@400;700', 'pnb': 'Noto+Nastaliq+Urdu:wght@400;700'}
 # Localised chapter slugs. Products and the OS keep their names in every language.
-SLUGS = {
-    'en': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
-    'fr': {'hunt': 'chasse', 'saas': 'saas', 'cho': 'cho', 'invest': 'investir', 'builders': 'batisseurs'},
-    'cmn': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
-    'he': {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'},
-}
+# French has its own slugs; every other language keeps the English ones.
+_EN = {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builders': 'builders'}
+SLUGS = {c: dict(_EN) for c in READY}
+SLUGS['fr'] = {'hunt': 'chasse', 'saas': 'saas', 'cho': 'cho', 'invest': 'investir', 'builders': 'batisseurs'}
 # Languages with their own /simple page (tools/simple.py); others link to English.
 SIMPLE_LANGS = ['en', 'fr']
 CHAPTERS = ['hunt', 'saas', 'cho', 'invest', 'builders']

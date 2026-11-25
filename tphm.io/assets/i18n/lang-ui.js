@@ -26,7 +26,7 @@ const dlg = document.createElement('dialog');
 dlg.className = 'ldlg'; dlg.id = 'ldlg'; dlg.setAttribute('aria-labelledby', 'l-title');
 dlg.innerHTML = `<div class="ldlg-in">
   <div class="ldlg-top"><h2 id="l-title">${T('Choose your language')}</h2><button class="ldlg-x" type="button" aria-label="${T('Close')}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button></div>
-  <p class="ldlg-p">${T('Four languages are ready. More are on the way.')}</p>
+  <p class="ldlg-p">${T('Every language below is ready to read.')}</p>
   <label class="ldlg-q"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input type="search" placeholder="${T('Search languages')}" aria-label="${T('Search languages')}" autocomplete="off" spellcheck="false" dir="auto"></label>
   <ul class="ldlg-list notranslate">${LANGS.map(L => {
     const inner = `<span class="lf" aria-hidden="true">${L.f}</span><span class="ln" lang="${L.l}" dir="${L.d}">${L.n}</span><span class="le">${T(L.e)}</span>`;
