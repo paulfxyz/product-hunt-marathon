@@ -3,32 +3,42 @@
 .lang-f{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;color:inherit;font:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;cursor:pointer}
 .lang-f:hover{color:var(--accent-ink);text-decoration-color:currentColor}
 .lang-f .ico{width:1em;height:1em}
-.ldlg{padding:0;border:0;background:transparent;width:min(560px,100% - 24px);max-width:none;max-height:min(720px,100dvh - 48px);margin:auto;color:var(--ink)}
+.ldlg{padding:0;border:0;background:transparent;width:min(760px,100% - 24px);max-width:none;max-height:min(760px,100dvh - 48px);margin:auto;color:var(--ink)}
 .ldlg::backdrop{background:rgba(18,12,8,.55);backdrop-filter:blur(4px)}
-.ldlg-in{display:flex;flex-direction:column;max-height:min(720px,100dvh - 48px);background:var(--surface,#fff);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);padding:22px 22px 12px}
+.ldlg-in{display:flex;flex-direction:column;max-height:min(760px,100dvh - 48px);background:var(--surface,#fff);border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);padding:24px 24px 14px}
 .ldlg-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .ldlg-top h2{margin:0;font-size:1.6rem;line-height:1.1;letter-spacing:-.02em}
 .ldlg-x{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer;flex:none}
+.ldlg-x:hover{border-color:var(--accent,#DA552F)}
 .ldlg-x .ico{width:18px;height:18px}
-.ldlg-p{margin:8px 0 14px;color:var(--ink-2);font-size:15px}
-.ldlg-q{display:flex;align-items:center;gap:10px;height:46px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.ldlg-p{margin:8px 0 16px;color:var(--ink-2);font-size:15px}
+.ldlg-q{display:flex;align-items:center;gap:10px;height:48px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
 .ldlg-q .ico{width:18px;height:18px;color:var(--ink-3);flex:none}
 .ldlg-q input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:inherit;font:inherit;font-size:16px}
-.ldlg-q:focus-within{border-color:var(--accent)}
-.ldlg-list{list-style:none;margin:12px -8px 0;padding:0 8px 8px;overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.ldlg-q:focus-within{border-color:var(--accent,#DA552F);box-shadow:0 0 0 3px var(--accent-soft,rgba(218,85,47,.15))}
+/* Language tiles: quiet by default, the selected one is a solid filled tile with a check */
+.ldlg{--lsel-bg:var(--accent-ink,#B33A17);--lsel-fg:#fff}
+:root[data-theme=dark] .ldlg{--lsel-bg:var(--accent,#FF6F43);--lsel-fg:#15110E}
+.ldlg-list{list-style:none;margin:14px -6px 0;padding:2px 6px 8px;overflow:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .ldlg-list li[hidden]{display:none}
-.ldlg-list a,.ldlg-list .l-off{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center;padding:9px 10px;border-radius:12px;color:inherit;text-decoration:none;min-height:52px}
-.ldlg-list a{background:var(--accent-soft,rgba(218,85,47,.1))}
-.ldlg-list a:hover,.ldlg-list a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.ldlg-list a[aria-current]{outline:2px solid var(--accent);outline-offset:-2px}
-.ldlg-list .l-off{opacity:.55}
-.lf{grid-row:1/3;font-size:20px;line-height:1}
-.ln{font-weight:700;font-size:15px;line-height:1.2}
-.le{grid-column:2;font-size:12.5px;color:var(--ink-3);line-height:1.2}
+.ldlg-list a,.ldlg-list .l-off{position:relative;display:grid;grid-template-columns:36px minmax(0,1fr) auto;grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:transparent;color:inherit;text-decoration:none;min-height:60px;transition:background-color .15s,border-color .15s,transform .15s}
+.ldlg-list a:hover{border-color:var(--accent,#DA552F);background:var(--accent-soft,rgba(218,85,47,.1))}
+.ldlg-list a:focus-visible{outline:2px solid var(--accent,#DA552F);outline-offset:2px}
+.ldlg-list a:active{transform:scale(.98)}
+.ldlg-list a[aria-current]{background:var(--lsel-bg);border-color:var(--lsel-bg);color:var(--lsel-fg);box-shadow:0 10px 24px -14px var(--lsel-bg)}
+.ldlg-list a[aria-current] .le{color:inherit;opacity:.82}
+.ldlg-list a[aria-current] .lf{background:rgba(255,255,255,.22)}
+.ldlg-list .l-off{opacity:.5}
+.lf{grid-row:1/3;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--bg-2,var(--bg));font-size:19px;line-height:1}
+.ln{direction:inherit;unicode-bidi:isolate;grid-column:2;font-weight:700;font-size:15px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.le{grid-column:2;font-size:12.5px;color:var(--ink-3);line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lck{grid-column:3;grid-row:1/3;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--lsel-fg);color:var(--lsel-bg)}
+.lck svg{width:14px;height:14px}
 .ls{grid-column:2;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
-.ls-on{color:var(--accent-ink,var(--accent))}
 .ldlg-none{text-align:center;color:var(--ink-3);padding:20px 0}
-@media (max-width:520px){.ldlg-list{grid-template-columns:1fr}.ldlg-in{padding:18px 16px 10px}}
+@media (max-width:700px){.ldlg-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.ldlg-list{grid-template-columns:1fr}.ldlg-in{padding:18px 16px 10px}}
+@media (prefers-reduced-motion:reduce){.ldlg-list a{transition:none}.ldlg-list a:active{transform:none}}
 
 /* Scripts other than Latin: tighter tracking looks wrong, and the brand fonts lack the glyphs */
 html[lang="zh-Hans"]{--font-display:"Bricolage Grotesque","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--font-body:"Figtree","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--font:"Geist","Noto Sans SC","PingFang SC",sans-serif;--serif:"Bricolage Grotesque","Noto Sans SC","PingFang SC",sans-serif}
