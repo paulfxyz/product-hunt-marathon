@@ -228,7 +228,7 @@ function act(a) {
 }
 
 /* ---------- Clock ---------- */
-const clk = () => { try { $('#clock').textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Lisbon', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date()).replace(',', '') + ' · Lisbon'; } catch (e) {} };
+const clk = () => { try { $('#clock').textContent = new Intl.DateTimeFormat([(document.documentElement.lang || 'en').replace(/^en$/, 'en-GB'), 'en-GB'], { hourCycle: 'h23', timeZone: 'Europe/Lisbon', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date()).replace(',', '') + ' · Lisbon'; } catch (e) {} };
 clk(); setInterval(clk, 20000);
 
 /* ======================= APPS ======================= */

@@ -1,0 +1,4 @@
+CTX = ("Website: tphm.io, 'The Product Hunt Marathon' (TPHM) logbook by Paul Fleury, a French founder in Lisbon. He shipped twelve free, MIT-licensed tools on Product Hunt in twelve days (10-21 Nov 2026): eleven plus a Tetris encore. "
+"Chapters: 'The hunt' (what Product Hunt rewards, the upvote black market he refused), 'SaaS is dead' (rent or build software with AI), 'Hire a CHO' (Chief Hacking Officer consulting), 'Invest' (Openline), 'Builders' / 'Run your own' (lessons and a checklist). There is also 'TPHM OS', a playful retro desktop version of the site with windows, a terminal, notes, an inbox and a trash. "
+"Venture hierarchy, keep it exact: Openline (eSIMs, B2B then direct to travellers) is his main venture and startup; Iris and Digital Spot are spin-offs of tools built for Openline; Enki.ngo is a thought experiment; Cup of News is a Sunday afternoon hobby turning soon into an app. "
+"Tone: first person, warm, plain, honest, a bit playful, never salesy. ")
