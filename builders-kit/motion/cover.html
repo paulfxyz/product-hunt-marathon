@@ -34,25 +34,27 @@ body{font-family:Figtree,sans-serif;color:var(--ink);position:relative}
 #out .url{font-family:'Bricolage Grotesque';font-weight:800;color:var(--acc);letter-spacing:-.02em}
 img{display:block}
 #flash{inset:0;background:#fff;opacity:0}
-#band{left:0;right:0;top:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:.5em;background:#FFE135;color:#111;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+#band{left:0;right:0;top:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--rg);background:#FFE135;color:#111;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;box-shadow:0 4px 0 rgba(0,0,0,.25)}
 #band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--hz);background:repeating-linear-gradient(-45deg,#111 0 14px,#FFE135 14px 28px)}
 #band .gb{display:inline-block;background:#E0201B;color:#fff;border-radius:.22em;padding:.02em .28em .06em;box-shadow:0 .08em 0 #7a0d0a;will-change:transform}
 #band .k{color:#E0201B}
 #band .ar{display:inline-block;color:#E0201B}
 #shine{position:absolute;top:0;bottom:0;width:22%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);pointer-events:none;z-index:0}
-#band>span:not(#shine){position:relative;z-index:1}
+#band>div{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:.4em}
+#band .r2{font-size:var(--f2);gap:.55em}
+#band .ch{background:#111;color:#FFE135;border-radius:999px;padding:.12em .7em .16em;letter-spacing:.01em}
 </style></head><body>
 <div id="grain" class="abs"></div>
 <div id="dark" class="abs"></div>
 <div id="orng" class="abs" style="inset:0;background:#DA552F;opacity:0"></div>
-<div id="stage" class="abs" style="inset:0"></div>
+<div id="wrap" class="abs" style="inset:0"><div id="stage" class="abs" style="inset:0"></div></div>
 <div id="flash" class="abs"></div>
-<div id="band" class="abs"><span id="shine"></span><span class="ar" id="arL">&#9654;&#9654;</span><span>COMMENT</span><span class="gb" id="gbW">&ldquo;GOPABLO&rdquo;</span><span>TO GET <span class="k">$50K</span> AI TOOLS</span><span class="ar" id="arR">&#9664;&#9664;</span></div>
+<div id="band" class="abs"><span id="shine"></span><div class="r1"><span>COMMENT</span><span class="gb" id="gbW">&ldquo;GOPABLO&rdquo;</span><span>TO GET <span class="k">$50K</span> WORTH OF AI TOOLS</span></div><div class="r2"><span class="ar" id="arL">&#9654;&#9654;</span><span class="ch">10+ PYTHON TOOLS</span><span class="ch">100+ PROMPTS</span><span class="ch">1,000+ INVESTORS</span><span class="ar" id="arR">&#9664;&#9664;</span></div></div>
 <script>
 const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
-const BH=X?104:124;{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?54:37)+'px';b.style.gap=X?'.5em':'.35em';b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('stage');const sc=(H-BH)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
+const BH=X?176:196;{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?50:33)+'px';b.style.setProperty('--f2',(X?34:28)+'px');b.style.setProperty('--rg',(X?12:14)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const sc=(H-BH)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
 const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
@@ -67,7 +69,7 @@ const A=[['12 free tools.',''],['≈ US$2,200.',''],['147 points.','']];
 const hA=el(`<div class="abs disp hl" style="left:${M}px;top:${X?150:190}px;font-size:${X?118:112}px"></div>`);
 const wordsA=[];A.forEach((l,i)=>{const line=document.createElement('div');line.style.whiteSpace='nowrap';
  (l[0]+(l[1]?' '+l[1]:'')).split(' ').forEach((w,j)=>{const s=document.createElement('span');s.className='w'+(i===2?' acc':'');s.textContent=w;line.appendChild(s);line.appendChild(document.createTextNode(' '));wordsA.push([s,i])});hA.appendChild(line)});
-const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?900:900}px;line-height:1.3">What Product Hunt won't tell you.<br>How I kept the AI bill tiny.<br><span style="color:var(--acc)">Comment GOPABLO: get $50K of AI tools.</span></div>`);
+const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?900:900}px;line-height:1.3">What Product Hunt won't tell you.<br>How I kept the AI bill tiny.<br><span style="color:var(--acc)">Comment GOPABLO: $50K worth of AI tools.</span></div>`);
 const kS=el(`<img src="kitty-shock.png" class="abs" style="width:${X?330:360}px;right:${X?90:70}px;top:${X?300:860}px">`);
 // ---------- scene B: chart
 const cl=X?M:M, cr=X?W-M:W-M, cb=X?H-130:H-250, ch=X?480:760;
@@ -118,18 +120,18 @@ const TK=el(`<div id="TK" class="abs" style="left:${M}px;top:${X?92:140}px;width
 </div>`);
 const tkC=TKI.map(([a,b])=>{const d=document.createElement('div');d.style.cssText=`background:#fff;border:1.5px solid var(--line);border-radius:${U*.7}px;padding:${X?'16px 22px':'16px 24px'};${X?'':'display:flex;align-items:baseline;justify-content:space-between;gap:16px'};box-shadow:0 2px 0 rgba(31,26,23,.06)`;d.innerHTML=`<div style="font-family:'JetBrains Mono';font-weight:700;font-size:${X?27:30}px;color:var(--ink)">${a}</div><div style="font-weight:700;font-size:${X?23:24}px;color:var(--ink2);margin-top:${X?4:0}px">${b}</div>`;document.getElementById('tkG').appendChild(d);return d});
 // ---------- scene GP: GOPABLO kit
-const GPI=[['Cut your inference bill','Tons of prompts, Python tools and workflows'],['Zero-token checks','Route, dedup, budget and lint with code'],['Works everywhere','Claude · Perplexity · OpenAI and more'],['1,000+ investors','A datalist, ready to use'],['Ad-team contacts','Meta · Google · Apple · ByteDance · more']];
+const GPI=[['$50K worth of AI tools','Everything I use to cut the inference bill, free'],['10+ Python tools','Route, dedup, budget and lint with zero tokens'],['100+ prompts','Claude · Perplexity · OpenAI and more'],['1,000+ investors','A datalist, ready to use'],['Ad-team contacts','Meta · Google · Apple · ByteDance · more']];
 const GPe=el(`<div id="GP" class="abs" style="left:${M}px;top:${X?60:80}px;width:${W-2*M}px;color:#FFF7ED">
- <div class="mono" style="font-size:${U*1.05}px;color:#FFE3D3">Free · $50K of AI tools · One-to-one</div>
+ <div class="mono" style="font-size:${U*1.05}px;color:#FFE3D3">Free · $50K worth of AI tools · One-to-one</div>
  <div class="disp" style="font-size:${X?150:132}px;margin-top:${X?18:30}px;line-height:.95">Reply <span id="gpW" style="display:inline-block;background:#FFF7ED;color:#DA552F;border-radius:${U*.6}px;padding:0 .14em">GOPABLO</span></div>
- <div style="font-size:${X?34:38}px;font-weight:700;margin-top:${X?20:30}px;line-height:1.3;color:#FFE3D3">Comment, reply or repost. $50K of AI tools, free. I DM everyone back.</div>
+ <div style="font-size:${X?34:38}px;font-weight:700;margin-top:${X?20:30}px;line-height:1.3;color:#FFE3D3">Comment, reply or repost. I DM everyone back, free.</div>
  <div id="gpG" style="margin-top:${X?30:50}px;display:grid;grid-template-columns:${X?'1fr 1fr':'1fr'};gap:${X?16:22}px"></div>
 </div>`);
 const gpC=GPI.map(([a,b],i)=>{const d=document.createElement('div');d.style.cssText=`background:#FFF7ED;color:var(--ink);border-radius:${U*.7}px;padding:${X?'18px 24px':'28px 30px'};box-shadow:0 3px 0 rgba(31,26,23,.18);${X&&i===0?'grid-column:1 / span 2':''}`;d.innerHTML=`<div class="disp" style="font-size:${X?38:48}px;letter-spacing:-.02em">${a}</div><div style="font-size:${X?23:28}px;font-weight:700;color:var(--ink2);margin-top:6px">${b}</div>`;document.getElementById('gpG').appendChild(d);return d});
 // ---------- scene D: outro
 const out=el(`<div id="out" class="abs" style="left:${M}px;top:${X?120:170}px;width:${W-2*M}px">
  <div class="disp" style="font-size:${X?104:108}px">The full report<span class="acc">.</span></div>
- <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">The free kit, the AI bill, every Product Hunt point. <span style="color:var(--acc)">Comment GOPABLO for $50K of AI tools.</span></div>
+ <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">The free kit, the AI bill, every Product Hunt point. <span style="color:var(--acc)">Comment GOPABLO: 10+ Python tools, 100+ prompts, 1,000+ investors.</span></div>
  <div style="margin-top:${X?38:44}px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><span class="pill" style="font-size:${X?32:34}px;padding:.42em .9em">Saturday 28 November</span></div>
  <div class="url" style="font-size:${X?64:72}px;margin-top:${X?34:40}px">tphm.io</div>
 </div>`);
