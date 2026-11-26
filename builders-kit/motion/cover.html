@@ -61,7 +61,7 @@ img{display:block}
 const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
-const BH=X?200:222;{for(const id of ['tag','tag2']){const g=document.getElementById(id);g.style.fontSize=(X?34:32)+'px';g.style.setProperty('--tl',(X?26:26)+'px');g.style.setProperty('--tb',(X?14:16)+'px');}}{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const FT=X?70:72;const sc=(H-BH-FT)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
+const BH=X?200:222;{for(const id of ['tag','tag2']){const g=document.getElementById(id);g.style.fontSize=(X?44:42)+'px';g.style.setProperty('--tl',(X?26:26)+'px');g.style.setProperty('--tb',(X?16:20)+'px');}}{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const FT=X?90:96;const sc=(H-BH-FT)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
 const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
@@ -81,12 +81,12 @@ const kS=el(`<img src="kitty-shock.png" class="abs" style="width:${X?330:360}px;
 // ---------- scene B: chart
 const cl=X?M:M, cr=X?W-M:W-M, cb=X?H-130:H-250, ch=X?480:760;
 const ctit=el(`<div id="ctit" style="left:${M}px;top:${X?100:130}px;font-size:${X?54:60}px;max-width:${X?900:950}px">Points per launch,<br><span class="acc">organic only.</span></div>`);
-const total=el(`<div id="total" style="right:${M}px;top:${X?90:130}px"><div class="n" style="font-size:${X?120:130}px">0</div><div class="l" style="font-size:${X?26:30}px">points in total</div></div>`);
+const total=el(`<div id="total" style="right:${M}px;top:${X?90:130}px"><div class="n" style="font-size:${X?120:130}px">0</div><div class="l" style="font-size:${X?30:34}px">points in total</div></div>`);
 const n=P.length, slot=(cr-cl)/n, bw=slot*(X?.56:.62);
 const bars=P.map((p,i)=>{const x=cl+slot*i+(slot-bw)/2;const isM=p[0]==='mang';
  const b=el(`<div class="bar${isM?' m':''}" style="left:${x}px;width:${bw}px;height:0;bottom:${H-cb}px"></div>`);
  const ic=el(`<img class="ico" src="${p[0]}.webp" style="left:${x+(bw-Math.min(bw,X?62:64))/2}px;top:${cb+14}px;width:${Math.min(bw,X?62:64)}px">`);
- const nm=el(`<div class="nm" style="left:${cl+slot*i}px;width:${slot}px;top:${cb+(X?80:88)}px;font-size:${X?17:13.5}px">${p[1]}</div>`);
+ const nm=el(`<div class="nm" style="left:${cl+slot*i}px;width:${slot}px;top:${cb+(X?80:88)}px;font-size:${X?19:15}px">${p[1]}</div>`);
  const v=el(`<div class="val" style="left:${cl+slot*i-10}px;width:${slot+20}px;font-size:${X?40:42}px">0</div>`);
  return {p,b,ic,nm,v,x}});
 const sc=v=>v/78*ch;
@@ -94,7 +94,7 @@ const ceil=el(`<div id="ceil" style="left:${cl-10}px;width:${cr-cl+20}px;top:${c
 const ceilt=el(`<div id="ceilt" style="left:${X?cl+slot*3.1:cl+slot*3.2}px;top:${cb-sc(4)-(X?150:210)}px;font-size:${X?30:32}px;line-height:1.15">The 4-point ceiling<br><span style="font-weight:600;color:var(--ink2);font-size:.8em">without a feature or ads</span></div>`);
 const arrow=el(`<svg class="abs" style="left:${X?cl+slot*3.6:cl+slot*3.8}px;top:${cb-sc(4)-(X?70:118)}px" width="60" height="66" viewBox="0 0 60 66"><path d="M10 4 C 14 30, 26 46, 44 58" fill="none" stroke="#DA552F" stroke-width="4" stroke-linecap="round"/><path d="M30 58 L46 60 L42 44" fill="none" stroke="#DA552F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
 const mi=2, mx=bars[mi].x;
-const stamp=el(`<div id="stamp" style="font-size:${X?20:21}px;left:${mx+bw+18}px;top:${cb-sc(77)+(X?10:20)}px">Featured by<br>the PH editors<br><span style="font-size:1.6em;font-family:'Bricolage Grotesque';font-weight:800;letter-spacing:-.02em">#33</span> of the day</div>`);
+const stamp=el(`<div id="stamp" style="font-size:${X?22:24}px;left:${mx+bw+18}px;top:${cb-sc(77)+(X?10:20)}px">Featured by<br>the PH editors<br><span style="font-size:1.6em;font-family:'Bricolage Grotesque';font-weight:800;letter-spacing:-.02em">#33</span> of the day</div>`);
 // ---------- scene C: dark
 const C1=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?96:100}px;max-width:${W-2*M}px"><span class="w">7 of 11</span> <span class="w">tools</span> <span class="w">stalled</span> <span class="w">at</span> <span class="w" style="color:var(--banda)">3 to 5</span> <span class="w" style="color:var(--banda)">points.</span></div>`);
 const C2=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?100:104}px;max-width:${W-2*M}px">Open source<br>shouldn't need<br><span class="mk">an ad budget.</span></div>`);
@@ -113,7 +113,7 @@ const K=el(`<div id="K" class="abs" style="left:${M}px;top:${X?100:150}px;width:
  <div class="mono" style="color:var(--acci);font-size:${U*1.05}px"><b style="display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--acc);margin-right:.55em"></b>How 12 tools cost ≈ US$2,200</div>
  <div class="disp" style="font-size:${X?84:90}px;margin-top:${X?22:34}px;max-width:${X?1200:940}px;line-height:1.0">Never make the AI <span class="acc">relearn the project.</span></div>
  <div id="kL" style="margin-top:${X?40:60}px;display:grid;gap:${X?16:22}px"></div>
- <div id="kC" class="mono" style="margin-top:${X?34:56}px;font-size:${X?19:20}px;color:var(--ink3)">Free kit on GitHub · builders-kit/second-brain</div>
+ <div id="kC" class="mono" style="margin-top:${X?34:56}px;font-size:${X?24:26}px;color:var(--ink3)">Free kit on GitHub · builders-kit/second-brain</div>
 </div>`);
 const KG=el(`<div class="abs" style="right:${X?70:M}px;top:${X?625:960}px;font-family:Bricolage Grotesque;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:${X?250:270}px;color:transparent;-webkit-text-stroke:4px #DA552F;text-align:right;white-space:nowrap">$2,200</div>`);
 const kItems=[['01','A second brain it reads first'],['02','The cheapest model that can do it'],['03','Checks with zero tokens']].map(([n,t])=>{const d=document.createElement('div');d.style.cssText=`display:flex;align-items:baseline;gap:.6em;font-size:${X?38:42}px;font-weight:800;line-height:1.15`;d.innerHTML=`<span class="disp acc" style="font-size:.8em;display:inline-block;min-width:1.5em">${n}</span><span>${t}</span>`;document.getElementById('kL').appendChild(d);return d});
@@ -125,7 +125,7 @@ const TK=el(`<div id="TK" class="abs" style="left:${M}px;top:${X?92:140}px;width
  <div id="tkG" style="margin-top:${X?40:56}px;display:grid;grid-template-columns:${X?'1fr 1fr':'1fr'};gap:${X?16:16}px ${X?20:16}px"></div>
  <div id="tkU" class="url" style="font-family:'Bricolage Grotesque';font-weight:800;color:var(--acc);letter-spacing:-.02em;font-size:${X?34:34}px;margin-top:${X?34:48}px">github.com/paulfxyz/product-hunt-marathon</div>
 </div>`);
-const tkC=TKI.map(([a,b])=>{const d=document.createElement('div');d.style.cssText=`background:#fff;border:1.5px solid var(--line);border-radius:${U*.7}px;padding:${X?'16px 22px':'16px 24px'};${X?'':'display:flex;align-items:baseline;justify-content:space-between;gap:16px'};box-shadow:0 2px 0 rgba(31,26,23,.06)`;d.innerHTML=`<div style="font-family:'JetBrains Mono';font-weight:700;font-size:${X?27:30}px;color:var(--ink)">${a}</div><div style="font-weight:700;font-size:${X?23:24}px;color:var(--ink2);margin-top:${X?4:0}px">${b}</div>`;document.getElementById('tkG').appendChild(d);return d});
+const tkC=TKI.map(([a,b])=>{const d=document.createElement('div');d.style.cssText=`background:#fff;border:1.5px solid var(--line);border-radius:${U*.7}px;padding:${X?'16px 22px':'16px 24px'};${X?'':'display:flex;align-items:baseline;justify-content:space-between;gap:16px'};box-shadow:0 2px 0 rgba(31,26,23,.06)`;d.innerHTML=`<div style="font-family:'JetBrains Mono';font-weight:700;font-size:${X?27:30}px;color:var(--ink)">${a}</div><div style="font-weight:700;font-size:${X?26:27}px;color:var(--ink2);margin-top:${X?4:0}px">${b}</div>`;document.getElementById('tkG').appendChild(d);return d});
 // ---------- scene GP: GOPABLO kit
 const GPI=[['$50K worth of AI tools','Everything I use to cut the inference bill, free'],['10+ Python tools','Route, dedup, budget and lint with zero tokens'],['100+ prompts','Claude · Perplexity · OpenAI and more'],['1,000+ investors','A datalist, ready to use'],['Ad-team contacts','Meta · Google · Apple · ByteDance · more']];
 const GPe=el(`<div id="GP" class="abs" style="left:${M}px;top:${X?60:80}px;width:${W-2*M}px;color:#FFF7ED">
@@ -134,7 +134,7 @@ const GPe=el(`<div id="GP" class="abs" style="left:${M}px;top:${X?60:80}px;width
  <div style="font-size:${X?34:38}px;font-weight:700;margin-top:${X?20:30}px;line-height:1.3;color:#FFE3D3">Comment, reply or repost. I DM everyone back, free.</div>
  <div id="gpG" style="margin-top:${X?30:50}px;display:grid;grid-template-columns:${X?'1fr 1fr':'1fr'};gap:${X?16:22}px"></div>
 </div>`);
-const gpC=GPI.map(([a,b],i)=>{const d=document.createElement('div');d.style.cssText=`background:#FFF7ED;color:var(--ink);border-radius:${U*.7}px;padding:${X?'18px 24px':'28px 30px'};box-shadow:0 3px 0 rgba(31,26,23,.18);${X&&i===0?'grid-column:1 / span 2':''}`;d.innerHTML=`<div class="disp" style="font-size:${X?38:48}px;letter-spacing:-.02em">${a}</div><div style="font-size:${X?23:28}px;font-weight:700;color:var(--ink2);margin-top:6px">${b}</div>`;document.getElementById('gpG').appendChild(d);return d});
+const gpC=GPI.map(([a,b],i)=>{const d=document.createElement('div');d.style.cssText=`background:#FFF7ED;color:var(--ink);border-radius:${U*.7}px;padding:${X?'18px 24px':'28px 30px'};box-shadow:0 3px 0 rgba(31,26,23,.18);${X&&i===0?'grid-column:1 / span 2':''}`;d.innerHTML=`<div class="disp" style="font-size:${X?38:48}px;letter-spacing:-.02em">${a}</div><div style="font-size:${X?26:30}px;font-weight:700;color:var(--ink2);margin-top:6px">${b}</div>`;document.getElementById('gpG').appendChild(d);return d});
 // ---------- scene D: outro
 const out=el(`<div id="out" class="abs" style="left:${M}px;top:${X?120:170}px;width:${W-2*M}px">
  <div class="disp" style="font-size:${X?104:108}px">The full report<span class="acc">.</span></div>
@@ -146,12 +146,12 @@ const kM=el(`<img src="kitty-mega.png" class="abs" style="width:${X?420:470}px;r
 const rowY=X?H-110:H-150, isz=X?54:58, gap=X?14:12;
 const all=P.map(p=>p[0]);
 const row=all.map((k,i)=>el(`<img class="ico" src="${k}.webp" style="width:${isz}px;left:${M+i*(isz+gap)}px;top:${rowY}px">`));
-const free=el(`<div class="abs mono" style="left:${M}px;top:${rowY-(X?44:46)}px;font-size:${X?17:18}px;color:var(--ink3)">12 tools · free · MIT</div>`);
+const free=el(`<div class="abs mono" style="left:${M}px;top:${rowY-(X?44:46)}px;font-size:${X?22:24}px;color:var(--ink3)">12 tools · free · MIT</div>`);
 const fl=document.getElementById('flash'),dk=document.getElementById('dark');
 const set=(e,o,tx=0,ty=0,s=1,r=0)=>{e.style.opacity=o;e.style.transform=`translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`};
 // ---------- timeline
 const T={a0:0,k0:3.4,t0:7.4,b0:11.4,mang:14.9,c0:17.6,c2:19.6,e0:21.8,g0:25.9,d0:31.2,end:34.9};
-const HOLD=2.0, HS=['k0','t0','b0','c0','c2','e0','g0','d0'].map(k=>T[k]-.4);
+const HOLD=2.5, HS=['k0','t0','b0','c0','c2','e0','g0','d0'].map(k=>T[k]-.4);
 const MAP=t=>{let off=0;for(const h of HS){if(t<h+off)break;if(t<h+off+HOLD)return h;off+=HOLD;}return t-off;};
 window.DUR=T.end+HOLD*HS.length;
 window.render=function(t){
