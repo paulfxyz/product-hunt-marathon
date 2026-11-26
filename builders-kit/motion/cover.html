@@ -144,7 +144,7 @@ const fl=document.getElementById('flash'),dk=document.getElementById('dark');
 const set=(e,o,tx=0,ty=0,s=1,r=0)=>{e.style.opacity=o;e.style.transform=`translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`};
 // ---------- timeline
 const T={a0:0,k0:3.4,t0:7.4,b0:11.4,mang:14.9,c0:17.6,c2:19.6,e0:21.8,g0:25.9,d0:31.2,end:34.9};
-const HOLD=1.5, HS=['k0','t0','b0','c0','c2','e0','g0','d0'].map(k=>T[k]-.4);
+const HOLD=2.0, HS=['k0','t0','b0','c0','c2','e0','g0','d0'].map(k=>T[k]-.4);
 const MAP=t=>{let off=0;for(const h of HS){if(t<h+off)break;if(t<h+off+HOLD)return h;off+=HOLD;}return t-off;};
 window.DUR=T.end+HOLD*HS.length;
 window.render=function(t){
