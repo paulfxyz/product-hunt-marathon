@@ -582,8 +582,8 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .big em,.lead em,.wall-line em,.nt-main h2 em,.quote-card em,.pa-line em{font-style:normal}
 .big em:not([style]){color:var(--or)}
 
-/* Classic pixel cursors */
-:root{--cur-arrow:url(/assets/cursor/arrow.png) 1 1,default;--cur-hand:url(/assets/cursor/hand.png) 11 1,pointer}
+/* Kitty cursors */
+:root{--cur-arrow:url(/assets/cursor/kitty-arrow.png) 2 2,default;--cur-hand:url(/assets/cursor/kitty-paw.png) 14 2,pointer}
 html,body{cursor:var(--cur-arrow)}
 a[href],button:not(:disabled),[role=button],[role=menuitem],[role=tab],label,summary,select,input[type=range],input[type=checkbox],input[type=radio],[data-open],[data-os],[data-tip]{cursor:var(--cur-hand)}
 input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
