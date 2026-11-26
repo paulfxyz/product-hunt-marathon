@@ -58,7 +58,7 @@ const A=[['12 free tools.',''],['≈ US$2,200.',''],['147 points.','']];
 const hA=el(`<div class="abs disp hl" style="left:${M}px;top:${X?150:190}px;font-size:${X?118:112}px"></div>`);
 const wordsA=[];A.forEach((l,i)=>{const line=document.createElement('div');line.style.whiteSpace='nowrap';
  (l[0]+(l[1]?' '+l[1]:'')).split(' ').forEach((w,j)=>{const s=document.createElement('span');s.className='w'+(i===2?' acc':'');s.textContent=w;line.appendChild(s);line.appendChild(document.createTextNode(' '));wordsA.push([s,i])});hA.appendChild(line)});
-const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?900:900}px;line-height:1.3">What Product Hunt won't tell you.<br>How I kept the AI bill tiny.<br><span style="color:var(--acc)">Reply GOPOLO</span> for a free builders' pack.</div>`);
+const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?900:900}px;line-height:1.3">What Product Hunt won't tell you.<br>How I kept the AI bill tiny.<br><span style="color:var(--acc)">Reply GOPABLO</span> for my inference-cost kit.</div>`);
 const kS=el(`<img src="kitty-shock.png" class="abs" style="width:${X?330:360}px;right:${X?90:70}px;top:${X?300:860}px">`);
 // ---------- scene B: chart
 const cl=X?M:M, cr=X?W-M:W-M, cb=X?H-130:H-250, ch=X?480:760;
@@ -108,19 +108,19 @@ const TK=el(`<div id="TK" class="abs" style="left:${M}px;top:${X?92:140}px;width
  <div id="tkU" class="url" style="font-family:'Bricolage Grotesque';font-weight:800;color:var(--acc);letter-spacing:-.02em;font-size:${X?34:34}px;margin-top:${X?34:48}px">github.com/paulfxyz/product-hunt-marathon</div>
 </div>`);
 const tkC=TKI.map(([a,b])=>{const d=document.createElement('div');d.style.cssText=`background:#fff;border:1.5px solid var(--line);border-radius:${U*.7}px;padding:${X?'16px 22px':'16px 24px'};${X?'':'display:flex;align-items:baseline;justify-content:space-between;gap:16px'};box-shadow:0 2px 0 rgba(31,26,23,.06)`;d.innerHTML=`<div style="font-family:'JetBrains Mono';font-weight:700;font-size:${X?27:30}px;color:var(--ink)">${a}</div><div style="font-weight:700;font-size:${X?23:24}px;color:var(--ink2);margin-top:${X?4:0}px">${b}</div>`;document.getElementById('tkG').appendChild(d);return d});
-// ---------- scene GP: GOPOLO pack
-const GPI=[['Ad-team contacts','Meta · Google · Apple · ByteDance · Product Hunt · Reddit · LinkedIn'],['1,000+ investors','A datalist, ready to use'],['Inference-cost setup','Claude · Perplexity · OpenAI and more'],['MD prompts','Files you can drop into any AI tool'],['More open-source tools','Plus freebies and perks']];
+// ---------- scene GP: GOPABLO kit
+const GPI=[['Cut your inference bill','Tons of prompts, Python tools and workflows'],['Zero-token checks','Route, dedup, budget and lint with code'],['Works everywhere','Claude · Perplexity · OpenAI and more'],['1,000+ investors','A datalist, ready to use'],['Ad-team contacts','Meta · Google · Apple · ByteDance · more']];
 const GPe=el(`<div id="GP" class="abs" style="left:${M}px;top:${X?60:80}px;width:${W-2*M}px;color:#FFF7ED">
- <div class="mono" style="font-size:${U*1.05}px;color:#FFE3D3">Free builders' pack · one-to-one</div>
- <div class="disp" style="font-size:${X?150:150}px;margin-top:${X?18:30}px;line-height:.95">Reply <span id="gpW" style="display:inline-block;background:#FFF7ED;color:#DA552F;border-radius:${U*.6}px;padding:0 .14em">GOPOLO</span></div>
- <div style="font-size:${X?34:38}px;font-weight:700;margin-top:${X?20:30}px;line-height:1.3;color:#FFE3D3">Any comment works. I DM everyone back, personally.</div>
+ <div class="mono" style="font-size:${U*1.05}px;color:#FFE3D3">Free, one-to-one · Let's build some hype</div>
+ <div class="disp" style="font-size:${X?150:132}px;margin-top:${X?18:30}px;line-height:.95">Reply <span id="gpW" style="display:inline-block;background:#FFF7ED;color:#DA552F;border-radius:${U*.6}px;padding:0 .14em">GOPABLO</span></div>
+ <div style="font-size:${X?34:38}px;font-weight:700;margin-top:${X?20:30}px;line-height:1.3;color:#FFE3D3">Reply, comment or repost. I DM everyone back.</div>
  <div id="gpG" style="margin-top:${X?30:50}px;display:grid;grid-template-columns:${X?'1fr 1fr':'1fr'};gap:${X?16:22}px"></div>
 </div>`);
 const gpC=GPI.map(([a,b],i)=>{const d=document.createElement('div');d.style.cssText=`background:#FFF7ED;color:var(--ink);border-radius:${U*.7}px;padding:${X?'18px 24px':'28px 30px'};box-shadow:0 3px 0 rgba(31,26,23,.18);${X&&i===0?'grid-column:1 / span 2':''}`;d.innerHTML=`<div class="disp" style="font-size:${X?38:48}px;letter-spacing:-.02em">${a}</div><div style="font-size:${X?23:28}px;font-weight:700;color:var(--ink2);margin-top:6px">${b}</div>`;document.getElementById('gpG').appendChild(d);return d});
 // ---------- scene D: outro
 const out=el(`<div id="out" class="abs" style="left:${M}px;top:${X?120:170}px;width:${W-2*M}px">
  <div class="disp" style="font-size:${X?104:108}px">The full report<span class="acc">.</span></div>
- <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">The free kit, the AI bill, every Product Hunt point. <span style="color:var(--acc)">And the GOPOLO pack.</span></div>
+ <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">The free kit, the AI bill, every Product Hunt point. <span style="color:var(--acc)">And the GOPABLO kit.</span></div>
  <div style="margin-top:${X?38:44}px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><span class="pill" style="font-size:${X?32:34}px;padding:.42em .9em">Saturday 28 November</span></div>
  <div class="url" style="font-size:${X?64:72}px;margin-top:${X?34:40}px">tphm.io</div>
 </div>`);
