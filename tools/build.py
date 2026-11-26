@@ -20,7 +20,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611262330'
+VER = '202611270000'
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = [x['c'] for x in LANGS]
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL', 'hi': 'hi_IN', 'es': 'es_ES', 'ar': 'ar_AR',

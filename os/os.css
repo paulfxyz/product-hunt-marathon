@@ -345,7 +345,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
 .cl-bars .b i{background:var(--or)}
 
 /* Terminal */
-.tm{background:#0E0B0A;color:#E7E0D9;font:13.5px/1.6 var(--mono);padding:14px 16px;height:100%;overflow:auto;cursor:text}
+.tm{background:#0E0B0A;color:#E7E0D9;font:13.5px/1.6 var(--mono);padding:14px 16px;height:100%;overflow:auto;cursor:var(--cur-arrow)}
 .tm .o{white-space:pre-wrap;word-break:break-word}
 .tm .p{color:var(--mint)}
 .tm .a{color:var(--or-2)}
@@ -583,10 +583,10 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .big em:not([style]){color:var(--or)}
 
 /* Kitty cursors */
-:root{--cur-arrow:url(/assets/cursor/kitty-arrow.png) 2 2,default;--cur-hand:url(/assets/cursor/kitty-paw.png) 14 2,pointer}
+:root{--cur-arrow:url(/assets/cursor/kitty-paw.png) 8 6,default;--cur-hand:url(/assets/cursor/kitty-paw-hover.png) 8 6,pointer}
 html,body{cursor:var(--cur-arrow)}
 a[href],button:not(:disabled),[role=button],[role=menuitem],[role=tab],label,summary,select,input[type=range],input[type=checkbox],input[type=radio],[data-open],[data-os],[data-tip]{cursor:var(--cur-hand)}
-input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
+input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:var(--cur-arrow)}
 /* Dock: even rhythm, one tile shape for every app (v1800) */
 .dock{gap:8px;padding:8px 10px;align-items:flex-end}
 .dk{width:48px;height:48px;border-radius:23%}
