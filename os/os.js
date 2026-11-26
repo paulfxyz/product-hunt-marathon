@@ -244,7 +244,7 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
       <button class="pathb" data-open="hire"><b>Hire a CHO</b><span>Up to 30 hours a week, open now</span></button>
       <button class="pathb" data-open="pitch"><b>Invest</b><span>Openline, my main venture</span></button>
       <button class="pathb" data-open="builders"><b>Run my own</b><span>Lessons, a field guide and a toolkit</span></button>
-      <button class="pathb" data-open="gopablo"><b translate="no">GOPABLO</b><span>Free kit to cut your AI bill, by DM</span></button>
+      <button class="pathb" data-open="gopablo"><b translate="no">GOPABLO</b><span>$50K worth of AI tools, by DM</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 2.2k</b><span>US$ to build all twelve</span></div><div><b>0</b><span>upvotes bought</span></div></div>
     <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="${BASE}/" data-home>Read it as a page</a>.</p>
@@ -460,11 +460,11 @@ def('builders', { title: 'Run your own.md', w: 720, h: 620, build(b) {
 
 def('gopablo', { title: 'GOPABLO.app', w: 760, h: 660, build(b) {
   const URL_ = 'https://tphm.io/builders/';
-  b.innerHTML = `<article class="dc prose gpw"><p class="eyb">Free, one-to-one</p><h2 class="big">Say <em translate="no">GOPABLO.</em> I'll send you the rest.</h2>
+  b.innerHTML = `<article class="dc prose gpw"><p class="eyb">Free · $50K worth of AI tools · One-to-one</p><h2 class="big">Say <em translate="no">GOPABLO.</em> I'll send you the rest.</h2>
     <p>Reply <b translate="no">GOPABLO</b> to my posts on X or LinkedIn, share TPHM and mention me, or just send me a message. Any comment works. I read every one, and I message everyone back, personally.</p>
-    <ul><li><b>A kit to cut your AI bill.</b> Tons of prompts, ready-made rules files, small Python tools that count, route and cache with zero tokens, and the workflows I use with Claude, Perplexity, OpenAI and the rest.</li><li><b>More open-source tools.</b> The scripts I didn't have time to tidy for GitHub yet.</li><li><b>A datalist of 1,000+ investors.</b> Sorted, with what each one backs.</li><li><b>Ad-team contacts.</b> Business contacts at Meta, Google, Apple, ByteDance, Product Hunt, Reddit and LinkedIn, for launches you plan to back with ads.</li><li><b>A real conversation.</b> What the Marathon taught me, and what I'd do in your place.</li></ul>
+    <ul><li><b>$50K worth of AI tools.</b> Free, sent to you personally.</li><li><b>A kit to cut your AI bill.</b> 100+ prompts, ready-made rules files, 10+ Python tools that count, route and cache with zero tokens, and the workflows I use with Claude, Perplexity, OpenAI and the rest.</li><li><b>More open-source tools.</b> The scripts I didn't have time to tidy for GitHub yet.</li><li><b>A datalist of 1,000+ investors.</b> Sorted, with what each one backs.</li><li><b>Ad-team contacts.</b> Business contacts at Meta, Google, Apple, ByteDance, Product Hunt, Reddit and LinkedIn, for launches you plan to back with ads.</li><li><b>A real conversation.</b> What the Marathon taught me, and what I'd do in your place.</li></ul>
     <h3 style="margin-top:20px">Share it and mention me</h3>
-    <p class="gp-post" id="gpPostOS"><b translate="no">GOPABLO</b> <b translate="no">@paulfxyz</b>: 12 free, open-source tools in 12 days, about US$2,200 of AI and 147 Product Hunt points. The free kit to cut your AI bill, and the honest Product Hunt story:</p>
+    <p class="gp-post" id="gpPostOS"><b translate="no">GOPABLO</b> <b translate="no">@paulfxyz</b>: 12 free, open-source tools in 12 days, about US$2,200 of AI and 147 Product Hunt points. The free kit: $50K worth of AI tools, 10+ Python tools, 100+ prompts, and the honest Product Hunt story:</p>
     <p class="row-btns"><button class="btn btn-or" data-sh="x">Post on X</button><button class="btn btn-ln" data-sh="li">Share on LinkedIn</button><button class="btn btn-ln" data-sh="bsky">Bluesky</button><button class="btn btn-ln" data-sh="threads">Threads</button><button class="btn btn-ln" data-sh="wa">WhatsApp</button><button class="btn btn-ln" data-sh="mail">Email</button><button class="btn btn-ln" data-sh="text">Copy the post</button><button class="btn btn-ln" data-sh="link">Copy the link</button>${navigator.share ? '<button class="btn btn-ln" data-sh="native">More options</button>' : ''}</p>
     <h3 style="margin-top:20px">Or message me directly</h3>
     <p class="row-btns"><a class="btn btn-ln" href="https://x.com/paulfxyz" target="_blank" rel="noopener">@paulfxyz on X ${EXT}</a><a class="btn btn-ln" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">Paul Fleury on LinkedIn ${EXT}</a><a class="btn btn-ln" href="${CONTACT}" target="_blank" rel="noopener">Contact form ${EXT}</a></p></article>`;
@@ -593,7 +593,7 @@ const start = () => {
   const m = location.hash.match(/^#\/([\w-]+)/);
   if (m) { const k = m[1]; LOG.some(p => p.key === k) ? openApp('p:' + k) : APPS[k] ? openApp(k) : openApp('welcome'); }
   else if (!narrow()) openApp('welcome');
-  if (!narrow()) setTimeout(() => notify({ g: 'gopablo', title: 'GOPABLO', text: 'Reply GOPABLO to my posts, or share TPHM and mention me. I\u2019ll DM you my free kit to cut your AI bill.', actions: [['Open', () => openApp('gopablo')], ['Later', () => {}]], ttl: 12000 }), 16000);
+  if (!narrow()) setTimeout(() => notify({ g: 'gopablo', title: 'GOPABLO', text: 'Reply GOPABLO to my posts, or share TPHM and mention me. I\u2019ll DM you $50K worth of AI tools, 10+ Python tools and 100+ prompts.', actions: [['Open', () => openApp('gopablo')], ['Later', () => {}]], ttl: 12000 }), 16000);
   if (!narrow()) setTimeout(() => notify({ g: 'mail', title: 'Launch agency · Product Hunt DM', text: '"Hi! We can get you top 5 today. 300+ real upvotes, from $..."', actions: [['Decline', () => { declined.add(0); mailBadge(); toast('Declined. Zero votes bought.'); const mw = open.get('mail'); mw && $('.wb', mw)._draw && $('.wb', mw)._draw(); }], ['Open Inbox', () => openApp('mail')]] }), 6000);
 };
 if (booted || reduce()) { boot.style.display = 'none'; start(); }

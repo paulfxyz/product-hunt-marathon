@@ -1064,5 +1064,17 @@
 "Run your own <t0>little marathon.</t0>",
 "Say <t0>GOPABLO.</t0> I'll send you the rest.",
 "The builders' kit",
-"Twelve tools for about US${0}. The biggest saving wasn't a cheaper model. It was never making the AI relearn the project."
+"Twelve tools for about US${0}. The biggest saving wasn't a cheaper model. It was never making the AI relearn the project.",
+"${0}K worth of AI tools.",
+"<t0/><t1>Say GOPABLO, get ${0}K worth of AI tools</t1>",
+"<t0>${0}K worth of AI tools.</t0> Free, sent to you personally.",
+"<t0><t1>Try the tools</t1><t2>Twelve free apps, one click each</t2></t0> <t3><t4>Hire a CHO</t4><t5>Up to {0} hours a week, open now</t5></t3> <t6><t7>Invest</t7><t8>Openline, my main venture</t8></t6> <t9><t10>Run my own</t10><t11>Lessons, a field guide and a toolkit</t11></t9> <t12><t13>GOPABLO</t13><t14>${1}K worth of AI tools, by DM</t14></t12>",
+"<t0>A kit to cut your AI bill.</t0> {0}+ prompts, ready-made rules files, {1}+ Python tools that count, route and cache with zero tokens, and the workflows I use with Claude, Perplexity, OpenAI and the rest.",
+"<t0>GOPABLO</t0> <t1>@paulfxyz</t1>: {0} free, open-source tools in {1} days, about US${2} of AI and {3} Product Hunt points. The free kit: ${4}K worth of AI tools, {5}+ Python tools, {6}+ prompts, and the honest Product Hunt story:",
+"<t0>GOPABLO</t0><t1><t2>Say GOPABLO, get ${0}K worth of AI tools.</t2> Plus {1}+ Python tools, {2}+ prompts and {3}+ investors, sent to you by DM.</t1><t3/>",
+"<t0>Say GOPABLO, get ${0}K worth of AI tools.</t0> Plus {1}+ Python tools, {2}+ prompts and {3}+ investors, sent to you by DM.",
+"Free · ${0}K worth of AI tools · One-to-one",
+"Plus {0}+ Python tools, {1}+ prompts and {2}+ investors, sent to you by DM.",
+"Reply GOPABLO to my posts, or share TPHM and mention me. I’ll DM you ${0}K worth of AI tools, {1}+ Python tools and {2}+ prompts.",
+"Say GOPABLO, get ${0}K worth of AI tools."
 ]
