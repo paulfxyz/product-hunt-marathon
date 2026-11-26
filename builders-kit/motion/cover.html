@@ -54,7 +54,7 @@ img{display:block}
 const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
-const BH=X?176:196;{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?50:33)+'px';b.style.setProperty('--f2',(X?34:28)+'px');b.style.setProperty('--rg',(X?12:14)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const sc=(H-BH)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
+const BH=X?200:222;{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const sc=(H-BH)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
 const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
@@ -144,12 +144,15 @@ const fl=document.getElementById('flash'),dk=document.getElementById('dark');
 const set=(e,o,tx=0,ty=0,s=1,r=0)=>{e.style.opacity=o;e.style.transform=`translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`};
 // ---------- timeline
 const T={a0:0,k0:3.4,t0:7.4,b0:11.4,mang:14.9,c0:17.6,c2:19.6,e0:21.8,g0:25.9,d0:31.2,end:34.9};
-window.DUR=T.end;
+const HOLD=1.5, HS=['k0','t0','b0','c0','c2','e0','g0','d0'].map(k=>T[k]-.4);
+const MAP=t=>{let off=0;for(const h of HS){if(t<h+off)break;if(t<h+off+HOLD)return h;off+=HOLD;}return t-off;};
+window.DUR=T.end+HOLD*HS.length;
 window.render=function(t){
  { const p=1+.07*Math.pow(Math.abs(Math.sin(t*Math.PI*1.6)),2); document.getElementById('gbW').style.transform=`scale(${p}) rotate(${Math.sin(t*Math.PI*3.2)*1.5}deg)`;
    const bl=(Math.floor(t*3.2)%2)?1:.25; document.getElementById('arL').style.opacity=bl; document.getElementById('arR').style.opacity=bl;
    const c=(t%2.4)/2.4; const sh=document.getElementById('shine'); sh.style.left=(-25+c*150)+'%';
    document.getElementById('band').style.background=(Math.floor(t*1.25)%2)?'#FFE135':'#FFD000'; }
+ t=MAP(t);
  // A
  const aOut=eio((t-(T.k0-.35))/.35);
  set(kick,(t<T.k0-.2)||(t>=T.b0-.1&&t<T.c0-.2)||t>=T.d0?1:0);
