@@ -43,18 +43,25 @@ img{display:block}
 #band>div{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:.4em}
 #band .r2{font-size:var(--f2);gap:.55em}
 #band .ch{background:#111;color:#FFE135;border-radius:999px;padding:.12em .7em .16em;letter-spacing:.01em}
+#tag,#tag2{bottom:var(--tb);z-index:60;display:flex;align-items:center;gap:.38em;background:#111;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.015em;border-radius:999px;padding:.16em .62em .16em .16em;box-shadow:0 .12em 0 rgba(0,0,0,.28),0 0 0 .06em rgba(255,225,53,.9)}
+#tag{left:var(--tl)}#tag2{right:var(--tl)}
+#tag .ic,#tag2 .ic{width:1.32em;height:1.32em;border-radius:.36em;overflow:hidden;flex:none;display:flex;align-items:center;justify-content:center}
+#tag .ic img{width:100%;height:100%;object-fit:cover}
+#tag2 .pfi{background:#fff}#tag2 .pf{width:92%;height:92%;fill:#111}
+#tag .tx,#tag2 .tx{line-height:1;padding-bottom:.06em}
 </style></head><body>
 <div id="grain" class="abs"></div>
 <div id="dark" class="abs"></div>
 <div id="orng" class="abs" style="inset:0;background:#DA552F;opacity:0"></div>
 <div id="wrap" class="abs" style="inset:0"><div id="stage" class="abs" style="inset:0"></div></div>
 <div id="flash" class="abs"></div>
+<div id="tag" class="abs"><span class="ic"><img src="tphm-icon.png" alt=""></span><span class="tx">tphm.io</span></div><div id="tag2" class="abs"><span class="ic pfi"><svg class="pf" viewBox="0 0 32 32"><rect x="2" y="9" width="10" height="3"/><rect x="5.5" y="5.5" width="3" height="10"/><rect x="20" y="9" width="10" height="3"/><rect x="23.5" y="5.5" width="3" height="10"/><rect x="10" y="20.5" width="12" height="3"/></svg></span><span class="tx">paulfleury.com</span></div>
 <div id="band" class="abs"><span id="shine"></span><div class="r1"><span>COMMENT</span><span class="gb" id="gbW">&ldquo;GOPABLO&rdquo;</span><span>TO GET <span class="k">$50K</span> WORTH OF AI TOOLS</span></div><div class="r2"><span class="ar" id="arL">&#9654;&#9654;</span><span class="ch">10+ PYTHON TOOLS</span><span class="ch">100+ PROMPTS</span><span class="ch">1,000+ INVESTORS</span><span class="ar" id="arR">&#9664;&#9664;</span></div></div>
 <script>
 const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
-const BH=X?200:222;{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const sc=(H-BH)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
+const BH=X?200:222;{for(const id of ['tag','tag2']){const g=document.getElementById(id);g.style.fontSize=(X?34:32)+'px';g.style.setProperty('--tl',(X?26:26)+'px');g.style.setProperty('--tb',(X?14:16)+'px');}}{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const FT=X?70:72;const sc=(H-BH-FT)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
 const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
