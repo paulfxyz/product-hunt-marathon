@@ -61,6 +61,18 @@ The numbers on the site are deliberately framed as estimates.
 
 Two habits are worth copying. First, count the whole life of a tool (iteration, AI usage, maintenance, security, expertise), not just the prototype. Second, say plainly that the figure is approximate.
 
+### Keeping the AI bill small
+
+The biggest saving wasn't a cheaper model. It was never making the AI relearn the project.
+
+1. **A second brain.** Decisions, rules and context live in plain notes the AI reads first: a short "what's hot" note, then an index, then only the pages the task needs. Every session starts where the last one stopped. Don't load the notes for general questions that don't need them.
+2. **The cheapest model that can do the job.** A strong model writes, a fast one proofreads, reasoning effort stays low by default, and you escalate only when the task needs it.
+3. **Checks with no AI inside.** Scripts count characters, check links and markup, and run the tests. Milliseconds, zero tokens, and no model grading its own homework.
+4. **Only redo what changed.** Translate the missing strings, not the whole site. Process the files that changed, not the whole folder.
+5. **Back up, dry-run, then write.** A mistake you have to undo costs more than the tokens you saved.
+
+Brucky ([@danikkk_wqs](https://x.com/danikkk_wqs)) lays this approach out step by step in his [Second Brain guide for Claude](https://x.com/danikkk_wqs/status/2113001913662734619): a `raw/` folder, a `wiki/` the model maintains, a `CLAUDE.md` with the rules, and three operations (ingest, query, lint). Great material if you build with AI every day.
+
 ## 4. Safety rules
 
 Speed is the risk with AI-assisted work, so the rules slow down only the dangerous steps.

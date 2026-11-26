@@ -198,7 +198,7 @@ product-hunt-marathon/
 │   ├── PRODUCT-HUNT-FIELD-NOTES.md
 │   ├── BUILDING-WITH-AI.md
 │   └── images/                 screenshots and the logo
-├── builders-kit/               crosspost, shots, card, launch_calendar
+├── builders-kit/               crosspost, shots, card, launch_calendar, motion, translate
 │                               (Python, reusable for your own launches)
 ├── tphm.io/                    the logbook
 │   ├── src/                    index.html, os.html, simple.json
@@ -215,7 +215,7 @@ product-hunt-marathon/
 │   ├── simple/
 │   ├── tools/                  build, translate, SEO audit, OG scripts
 │   └── calendar.ics, calendar.php
-└── social-manager/             PH Social Manager (code only)
+└── social-manager/             PH Social Manager (full code + example campaign)
     ├── client/                 React, Vite, TypeScript
     ├── server/                 Express API, SQLite store
     └── shared/                 schema, rules, follow-ups, media
@@ -260,7 +260,7 @@ npm run check    # tsc
 npm test         # tsx --test
 ```
 
-The snapshot has no campaign data, no private assets and no deployment scripts, and only seven generic tests. The owner address in the code is a placeholder. Sign-in is owner-only with a one-time password setup, so read the [folder README](social-manager/README.md) before pointing it at anything real.
+The snapshot has no real campaign data, no private assets and no deployment scripts, and only seven generic tests. An example campaign in `examples/` lets you run it locally. The owner address in the code is a placeholder. Sign-in is owner-only with a one-time password setup, so read the [folder README](social-manager/README.md) before pointing it at anything real.
 
 ## How it was made
 
@@ -289,7 +289,7 @@ These are the short versions. The [launch playbook](docs/LAUNCH-PLAYBOOK.md) has
 - [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md): the six lessons in full, plus the launch-day kit.
 - [docs/PRODUCT-HUNT-FIELD-NOTES.md](docs/PRODUCT-HUNT-FIELD-NOTES.md): my account as a long-time Product Hunt member. These are my own observations and not Product Hunt's documented policy.
 - [docs/BUILDING-WITH-AI.md](docs/BUILDING-WITH-AI.md): how AI was used, what it cost and where the limits were.
-- [builders-kit/](builders-kit/README.md): four Python scripts to write each post once, size it for X, LinkedIn, Bluesky and Mastodon, keep receipts, take screenshots and GIFs, make cards and build a launch calendar.
+- [builders-kit/](builders-kit/README.md): scripts to write each post once, size it for X, LinkedIn, Bluesky and Mastodon, keep receipts, take screenshots and GIFs, make cards, build a launch calendar, render animated covers to MP4 and GIF, and translate a site into many languages with a writer and a proofreader model.
 - [CONTRIBUTING.md](CONTRIBUTING.md): how to report a problem or propose a change.
 
 ## Contributing

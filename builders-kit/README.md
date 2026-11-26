@@ -2,7 +2,7 @@
 
 # Builders' kit
 
-**Four small Python scripts for running your own launch marathon.**<br>
+**Small, readable tools for running your own launch marathon.**<br>
 Write each post once, publish it everywhere by hand, keep receipts, and keep your gallery images honest.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-1D1814?style=for-the-badge&logo=python&logoColor=white)](#install)
@@ -110,6 +110,35 @@ python3 launch_calendar.py launches.example.csv --out launches.ics --remind 15 -
 
 One `.ics` file for the whole run, which Apple Calendar, Google Calendar and Outlook all import, plus an "add to Google Calendar" link per launch for your posts. Write each time in the launch platform's own zone (Product Hunt days start at 00:01 Pacific) and let calendars convert it. Each event gets a stable ID, so if a date moves, re-importing the file moves the event instead of duplicating it.
 
+## motion/: animated covers
+
+The animated X and LinkedIn covers from the Marathon, as one HTML file. `cover.html` draws every frame from a single function, `render(t)`, so a scene is just a time window. `render.py` steps through it with Playwright and pipes the frames to ffmpeg.
+
+```sh
+cd motion
+python3 render.py x --still 4,16.5   # check the layout on two frames first
+python3 render.py x                  # 1600x900 -> out/x.mp4 and out/x.gif
+python3 render.py li                 # 1080x1350 for LinkedIn
+```
+
+Change the numbers in the `P` array, the copy in each scene and the timings in `T`. It needs ffmpeg on your PATH.
+
+## translate/: one site, many languages
+
+The pipeline that translated tphm.io into 31 languages. One model writes each translation, a second proofreads it, and anything that damages a markup token is rejected instead of shipped. It only fills missing strings, so your hand fixes survive the next run.
+
+```sh
+cd translate
+export OPENROUTER_API_KEY=...
+python3 translate.py strings.example.json fr,de,ja,pt --context "A personal site for a solo builder."
+```
+
+Writing `<t0>bold</t0>`, `<t1/>` and `{0}` instead of raw HTML and values is what keeps the markup intact across scripts and right-to-left languages. Machine translation still benefits from a native speaker's read before you call it done.
+
+## The social manager
+
+The campaign app I used to draft, review and log every post is in [`../social-manager`](../social-manager): the full client, server and shared code, plus an example campaign so you can run it locally in a few minutes. It plans and keeps receipts. It never posts for you.
+
 ## Guidelines that go with the code
 
 1. **Automate the preparation, not the posting.** The scripts prepare, size and log. You still read each post one last time and press Post yourself.
@@ -118,6 +147,7 @@ One `.ics` file for the whole run, which Apple Calendar, Google Calendar and Out
 4. **Ask for feedback, never votes.** It's the rule on Product Hunt, and feedback is what makes the next launch better.
 5. **Keep images true.** Rerun `shots.py` after each fix, before you share anything.
 6. **Keep receipts.** When a date moves, and it will, one file tells you what to update.
+7. **Keep the AI bill small.** Give the model a second brain of notes it reads first, use the cheapest model that can do the job, and let scripts do the checks. More in [Building with AI](../docs/BUILDING-WITH-AI.md#keeping-the-ai-bill-small), after Brucky's [Second Brain guide for Claude](https://x.com/danikkk_wqs/status/2113001913662734619).
 
 ## Licence
 

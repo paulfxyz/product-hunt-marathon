@@ -29,7 +29,7 @@ It cannot publish or schedule anything. That was a choice: I posted by hand, and
 
 ## What was removed
 
-This snapshot contains no campaign data, no private assets, no internal notes and no deployment scripts. Only seven generic tests remain. You will need to bring your own campaign content. The shape it must take is described in the data model below.
+This snapshot contains no real campaign data, no private assets, no internal notes and no deployment scripts. A small example campaign is included so you can run it. Only seven generic tests remain. You will need to bring your own campaign content. The shape it must take is described in the data model below.
 
 ## Stack
 
@@ -120,7 +120,34 @@ The scripts:
 | `npm run check` | Type-checks with `tsc` |
 | `npm test` | Runs the seven generic tests with `tsx --test` |
 
-I have not documented environment variables or a seed file here. Read `server/dev.ts`, `server/app.ts` and `server/fly-store.ts` for what they expect, and shape your own data to the schema above.
+### Try it with the example campaign
+
+`examples/campaign.example.json` is a small, made-up campaign (a Product Hunt launch, an X thread, a LinkedIn post and a results post) in the exact shape the app expects. It's seeded into SQLite on first start.
+
+```sh
+mkdir -p data && cp examples/campaign.example.json data/campaign.json
+APP_URL=http://localhost:3100 STORAGE_MODE=fly DB_PATH=./local/data.db \
+  BOOTSTRAP_TOKEN=pick-a-long-random-string npm run dev
+```
+
+Then set the owner password once, and sign in at http://localhost:3100:
+
+```sh
+curl -X POST http://localhost:3100/api/bootstrap \
+  -H 'Origin: http://localhost:3100' -H 'Content-Type: application/json' \
+  -H 'x-bootstrap-token: pick-a-long-random-string' \
+  -d '{"email":"owner@example.com","password":"at-least-16-characters"}'
+```
+
+| Variable | What it does |
+| --- | --- |
+| `STORAGE_MODE=fly` | Uses the SQLite store in `server/fly-store.ts` (the mode I ran in production) |
+| `DB_PATH` | Where the SQLite file lives. Defaults to `/data/data.db`, a Fly.io volume |
+| `APP_URL` | The origin allowed to send writes. `APP_ALT_ORIGINS` adds more, comma-separated |
+| `BOOTSTRAP_TOKEN` | One-time secret for setting the owner password. Remove it afterwards |
+| `BOOTSTRAP_EXPIRES` | Optional epoch milliseconds after which the setup link stops working |
+
+Artwork goes in `private-assets/` and is listed in the campaign's `assets` array. To start your own campaign, replace `data/campaign.json` before the first run, or delete the SQLite file to reseed. Every save bumps `revision`, and a save against a stale revision is refused.
 
 ## Owner email placeholder locations
 

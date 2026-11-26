@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": "my-tool-producthunt",
+      "project": "My Tool",
+      "projectSlug": "my-tool",
+      "platform": "producthunt",
+      "title": "Launch day · My Tool",
+      "date": "2026-01-12",
+      "time": "17:00",
+      "scheduledAt": "2026-01-12T17:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "content": [
+        "My Tool: one-line tagline under 60 characters",
+        "Description: what it does, who it's for, and that it's free and open source.",
+        "First comment: why I built it, what's next, and one honest limitation."
+      ],
+      "source": "examples/my-tool-producthunt.md",
+      "sourceMarkdown": "# Example | producthunt | Launch day · My Tool\n\n### Post 1\n\nMy Tool: one-line tagline under 60 characters\n\n### Post 2\n\nDescription: what it does, who it's for, and that it's free and open source.\n\n### Post 3\n\nFirst comment: why I built it, what's next, and one honest limitation.",
+      "notes": "Check the gallery order and the first comment before 08:01 PT.",
+      "status": "draft",
+      "optional": false,
+      "media": [],
+      "version": 1,
+      "updatedAt": "2026-01-01T09:00:00.000Z",
+      "history": []
+    },
+    {
+      "id": "my-tool-twitter",
+      "project": "My Tool",
+      "projectSlug": "my-tool",
+      "platform": "twitter",
+      "title": "Launch thread · My Tool",
+      "date": "2026-01-12",
+      "time": "17:00",
+      "scheduledAt": "2026-01-12T17:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "content": [
+        "Today I'm launching My Tool on Product Hunt: a free, open-source way to do one thing well. (1/3)",
+        "How it works, in one sentence, plus a GIF. (2/3)",
+        "Try it, break it, tell me what's missing: https://example.com (3/3)"
+      ],
+      "source": "examples/my-tool-twitter.md",
+      "sourceMarkdown": "# Example | twitter | Launch thread · My Tool\n\n### Post 1\n\nToday I'm launching My Tool on Product Hunt: a free, open-source way to do one thing well. (1/3)\n\n### Post 2\n\nHow it works, in one sentence, plus a GIF. (2/3)\n\n### Post 3\n\nTry it, break it, tell me what's missing: https://example.com (3/3)",
+      "notes": "",
+      "status": "draft",
+      "optional": false,
+      "media": [],
+      "version": 1,
+      "updatedAt": "2026-01-01T09:00:00.000Z",
+      "history": []
+    },
+    {
+      "id": "my-tool-linkedin",
+      "project": "My Tool",
+      "projectSlug": "my-tool",
+      "platform": "linkedin",
+      "title": "Launch post · My Tool",
+      "date": "2026-01-12",
+      "time": "17:00",
+      "scheduledAt": "2026-01-12T17:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "content": [
+        "I'm launching My Tool today.\n\nWhat it is, why it exists and what I learned building it.\n\nAll links are in the first comment."
+      ],
+      "source": "examples/my-tool-linkedin.md",
+      "sourceMarkdown": "# Example | linkedin | Launch post · My Tool\n\n### Post 1\n\nI'm launching My Tool today.\n\nWhat it is, why it exists and what I learned building it.\n\nAll links are in the first comment.",
+      "notes": "",
+      "status": "revision",
+      "optional": false,
+      "media": [],
+      "version": 1,
+      "updatedAt": "2026-01-01T09:00:00.000Z",
+      "history": []
+    },
+    {
+      "id": "my-tool-report-twitter",
+      "project": "My Tool",
+      "projectSlug": "my-tool",
+      "platform": "twitter",
+      "title": "Results · one week later",
+      "date": "2026-01-19",
+      "time": "17:00",
+      "scheduledAt": "2026-01-19T17:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "content": [
+        "One week after the launch: the real numbers, and what I'd change."
+      ],
+      "source": "examples/my-tool-report-twitter.md",
+      "sourceMarkdown": "# Example | twitter | Results · one week later\n\n### Post 1\n\nOne week after the launch: the real numbers, and what I'd change.",
+      "notes": "Paste the real points from your Product Hunt profile before marking Ready.",
+      "status": "draft",
+      "optional": false,
+      "media": [],
+      "version": 1,
+      "updatedAt": "2026-01-01T09:00:00.000Z",
+      "history": []
+    }
+  ],
+  "assets": [],
+  "revision": 1,
+  "updatedAt": "2026-01-01T09:00:00.000Z"
+}
