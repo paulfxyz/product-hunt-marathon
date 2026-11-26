@@ -46,6 +46,7 @@ const glyph = id => {
     case 'notes': return '<span class="doc" style="--c:#D97706"><b>TXT</b></span>';
     case 'cho': return '<span class="doc" style="--c:#1C1512"><b>MD</b></span>';
     case 'builders': return '<span class="doc" style="--c:#15803D"><b>MD</b></span>';
+    case 'gopablo': return '<span class="appglyph g-gp" translate="no">GO</span>';
     case 'mail': return `<span class="appglyph g-mail">${SVG.mail}</span>`;
     case 'saas': return `<span class="appglyph g-key">${SVG.slides}</span>`;
     case 'calc': return '<span class="appglyph g-calc">$</span>';
@@ -131,7 +132,7 @@ function wireWin(w, id) {
 }
 
 /* ---------- Desktop icons + dock ---------- */
-const DESK = [['finder', 'The Marathon'], ['notes', 'Field notes.txt'], ['mail', 'Inbox'], ['saas', 'SaaS is dead.key'], ['calc', 'Rent or build'], ['cho', 'CHO.md'], ['hire', 'Hire me.app'], ['pitch', 'Openline.pitch'], ['builders', 'Run your own.md'], ['terminal', 'Terminal'], ['trash', 'Trash']];
+const DESK = [['finder', 'The Marathon'], ['notes', 'Field notes.txt'], ['mail', 'Inbox'], ['saas', 'SaaS is dead.key'], ['calc', 'Rent or build'], ['cho', 'CHO.md'], ['hire', 'Hire me.app'], ['pitch', 'Openline.pitch'], ['builders', 'Run your own.md'], ['gopablo', 'GOPABLO.app'], ['terminal', 'Terminal'], ['trash', 'Trash']];
 $('#icons').innerHTML = DESK.map(([id, l]) => `<button class="dicon" data-open="${id}"><span class="gl">${glyph(id)}${id === 'mail' ? '<em class="badge" id="mailBadge">5</em>' : ''}</span><span>${l}</span></button>`).join('') + '<p class="ic-h">The twelve</p>' + LOG.map(p => `<button class="dicon dicon-p" data-open="p:${p.key}"><span class="gl">${glyph('p:' + p.key)}</span><span>${p.name}</span></button>`).join('');
 const DOCK = [...LOG.map(p => 'p:' + p.key), '|', 'finder', 'mail', 'notes', 'terminal', 'trash'];
 $('#dock').innerHTML = DOCK.map(id => id === '|' ? '<span class="dk-sep" aria-hidden="true"></span>' : `<button class="dk${id.startsWith('p:') ? ' dk-prod' : ''}" data-open="${id}" data-id="${id}" aria-label="${id.startsWith('p:') ? LOG.find(p => 'p:' + p.key === id).name : APPS_TITLE(id)}">${glyph(id)}<span class="dk-tip">${id.startsWith('p:') ? LOG.find(p => 'p:' + p.key === id).name : APPS_TITLE(id)}</span></button>`).join('');
@@ -148,7 +149,7 @@ document.addEventListener('click', e => {
   const a = e.target.closest('[data-act]'); if (a) { closeMenus(); act(a.dataset.act); }
 });
 /* ---------- Phone: iOS home screen ---------- */
-const IOS_TOOLS = [['saas', 'SaaS is dead'], ['calc', 'Rent or build'], ['cho', 'CHO'], ['hire', 'Hire me'], ['pitch', 'Openline'], ['builders', 'Run yours'], ['about', 'About']];
+const IOS_TOOLS = [['saas', 'SaaS is dead'], ['calc', 'Rent or build'], ['cho', 'CHO'], ['hire', 'Hire me'], ['pitch', 'Openline'], ['builders', 'Run yours'], ['gopablo', 'GOPABLO'], ['about', 'About']];
 const IOS_DOCK = [['finder', 'Marathon'], ['mail', 'Inbox'], ['notes', 'Notes'], ['terminal', 'Terminal']];
 const ic = (id, l, badge) => `<button class="ia" data-open="${id}"><span class="ia-ic">${id === 'about' ? '<span class="appglyph g-about">i</span>' : glyph(id)}${badge ? `<em class="badge ios-badge">${badge}</em>` : ''}</span><span class="ia-l">${l}</span></button>`;
 $('#ios').innerHTML = `<div class="ios-pages" id="iosPages">
@@ -243,6 +244,7 @@ def('welcome', { title: 'Welcome to TPHM OS', w: 960, h: 660, build(b) {
       <button class="pathb" data-open="hire"><b>Hire a CHO</b><span>Up to 30 hours a week, open now</span></button>
       <button class="pathb" data-open="pitch"><b>Invest</b><span>Openline, my main venture</span></button>
       <button class="pathb" data-open="builders"><b>Run my own</b><span>Lessons, a field guide and a toolkit</span></button>
+      <button class="pathb" data-open="gopablo"><b translate="no">GOPABLO</b><span>Free kit to cut your AI bill, by DM</span></button>
     </div>
     <div class="stats"><div><b>11 + 1</b><span>launches</span></div><div><b>US$0</b><span>to use any of them</span></div><div><b>≈ 2.2k</b><span>US$ to build all twelve</span></div><div><b>0</b><span>upvotes bought</span></div></div>
     <p class="small">Tip: press <kbd style="margin:0">⌘K</kbd> to search anything. Prefer scrolling? <a href="${BASE}/" data-home>Read it as a page</a>.</p>
@@ -433,14 +435,57 @@ const LESSONS = [
   ['Make it accessible, in every language', 'Reading aids, reduced motion, readable contrast and a simple page with narration, in every language you publish. It costs little with AI and it widens who can use your work.']
 ];
 const KIT = `# My launch-day kit (adapted from The Product Hunt Marathon, tphm.io)\n\n- [ ] One icon, six gallery slides, checked against the live product\n- [ ] A clear page in plain language: what it does, what it doesn't\n- [ ] A real maker comment: what AI did, what it cost, the limits\n- [ ] Separate copy for X and LinkedIn, posted by hand\n- [ ] A calendar reminder for followers\n- [ ] Ask for feedback, never votes. Decline every upvote offer\n- [ ] Log each published link in one place (receipts)\n- [ ] Reading aids, reduced motion, readable contrast, a simple page\n- [ ] Code public, MIT, with tests and a README\n- [ ] Bugs first, then the smallest useful change\n`;
+const GH = 'https://github.com/paulfxyz/product-hunt-marathon/';
+const BKIT = [
+  ['social-manager/', 'tree/main/social-manager', 'The campaign app I used to draft, review and log every post: a weekly calendar, version history, readiness checks and receipts. It never posts for you.'],
+  ['crosspost.py', 'blob/main/builders-kit/crosspost.py', 'Write each post once. Get X, LinkedIn, Bluesky and Mastodon versions, each within its limit, plus a log of every published link.'],
+  ['shots.py', 'blob/main/builders-kit/shots.py', 'Desktop and phone screenshots in light and dark mode, plus scrolling GIFs and MP4s of your live product.'],
+  ['card.py', 'blob/main/builders-kit/card.py', 'Share cards and Product Hunt gallery slides, so a series looks like a series.'],
+  ['launch_calendar.py', 'blob/main/builders-kit/launch_calendar.py', 'One calendar file for your whole run, with reminders, that followers import in one click.'],
+  ['motion/', 'tree/main/builders-kit/motion', 'The animated covers: one HTML file draws every frame, a script renders MP4 and GIF.'],
+  ['translate/', 'tree/main/builders-kit/translate', 'The pipeline behind 31 languages. One model translates, a second proofreads, broken markup is rejected.'],
+  ['second-brain/', 'tree/main/builders-kit/second-brain', 'Plain notes your AI reads first, a rules file for any AI tool, and a zero-token script that lists what changed.']
+];
 def('builders', { title: 'Run your own.md', w: 720, h: 620, build(b) {
   let done = []; try { done = JSON.parse(localStorage.getItem('tphm-lessons') || '[]'); } catch (e) {}
   b.innerHTML = `<article class="dc prose"><p class="eyb">For builders and consultants</p><h2 class="big">Run your own <em>little marathon.</em></h2><p>What I'd tell anyone planning a run of public launches. Tick them off as you go.</p>
     <div class="check">${LESSONS.map(([t, d], i) => `<button aria-pressed="${done.includes(i)}" data-l="${i}"><b>${t}</b><span>${d}</span></button>`).join('')}</div>
-    <h3 style="margin-top:22px">The scripts behind the routine</h3><p>Four small Python files, MIT licensed and free to fork. They prepare, size and log. Pressing Post stays your job.</p><ul><li><b>crosspost.py</b>: one post, sized for X, LinkedIn, Bluesky and Mastodon, plus a log of every published link.</li><li><b>shots.py</b>: screenshots in light and dark mode, plus scrolling GIFs and MP4s.</li><li><b>card.py</b>: share cards and Product Hunt gallery slides.</li><li><b>launch_calendar.py</b>: one calendar file for your whole run.</li></ul>
-    <p class="row-btns" style="margin-top:18px"><button class="btn btn-or" id="cpk">Copy the launch-day checklist</button><a class="btn btn-ln" href="https://github.com/paulfxyz/product-hunt-marathon/tree/main/builders-kit" target="_blank" rel="noopener">Get the kit on GitHub ${EXT}</a></p></article>`;
+    <h3 style="margin-top:22px">The builders' kit</h3><p>Small, readable tools, MIT licensed and free to fork. They plan, prepare, size, render, translate and log. Pressing Post stays your job.</p>
+    <div class="kitl">${BKIT.map(([n, u, d]) => `<a href="${GH}${u}" target="_blank" rel="noopener"><b>${n}</b><span>${d}</span></a>`).join('')}</div>
+    <h3 style="margin-top:22px">Keep the AI bill small</h3><p>Twelve tools for about US$2,200. The biggest saving wasn't a cheaper model. It was never making the AI relearn the project.</p><ul><li><b>Give it a second brain</b>: decisions, rules and context in plain notes the AI reads first.</li><li><b>Route by task</b>: a small model for small jobs, the big one only when it earns it.</li><li><b>Let scripts do the checking</b>: diffs, link checks and dedup cost zero tokens.</li><li><b>Process only what changed</b>: never re-read a whole project to edit one page.</li></ul>
+    <p class="row-btns" style="margin-top:18px"><button class="btn btn-or" id="cpk">Copy the launch-day checklist</button><a class="btn btn-ln" href="${GH}tree/main/builders-kit" target="_blank" rel="noopener">Get the kit on GitHub ${EXT}</a><a class="btn btn-ln" href="https://tphm.io/builders/" target="_blank" rel="noopener">Field guide ${EXT}</a><button class="btn btn-ln" data-open="gopablo">Say GOPABLO</button></p></article>`;
   $$('.check button', b).forEach(x => x.addEventListener('click', () => { x.setAttribute('aria-pressed', x.getAttribute('aria-pressed') !== 'true'); done = $$('.check [aria-pressed=true]', b).map(y => +y.dataset.l); try { localStorage.setItem('tphm-lessons', JSON.stringify(done)); } catch (e) {} if (done.length === 6) toast('All six. You\u2019re ready for your own marathon.'); }));
   $('#cpk', b).addEventListener('click', async () => { try { await navigator.clipboard.writeText(KIT); toast('Checklist copied. Go ship something.'); } catch (e) { toast('Copy failed on this browser.'); } });
+} });
+
+def('gopablo', { title: 'GOPABLO.app', w: 760, h: 660, build(b) {
+  const URL_ = 'https://tphm.io/builders/';
+  b.innerHTML = `<article class="dc prose gpw"><p class="eyb">Free, one-to-one</p><h2 class="big">Say <em translate="no">GOPABLO.</em> I'll send you the rest.</h2>
+    <p>Reply <b translate="no">GOPABLO</b> to my posts on X or LinkedIn, share TPHM and mention me, or just send me a message. Any comment works. I read every one, and I message everyone back, personally.</p>
+    <ul><li><b>A kit to cut your AI bill.</b> Tons of prompts, ready-made rules files, small Python tools that count, route and cache with zero tokens, and the workflows I use with Claude, Perplexity, OpenAI and the rest.</li><li><b>More open-source tools.</b> The scripts I didn't have time to tidy for GitHub yet.</li><li><b>A datalist of 1,000+ investors.</b> Sorted, with what each one backs.</li><li><b>Ad-team contacts.</b> Business contacts at Meta, Google, Apple, ByteDance, Product Hunt, Reddit and LinkedIn, for launches you plan to back with ads.</li><li><b>A real conversation.</b> What the Marathon taught me, and what I'd do in your place.</li></ul>
+    <h3 style="margin-top:20px">Share it and mention me</h3>
+    <p class="gp-post" id="gpPostOS"><b translate="no">GOPABLO</b> <b translate="no">@paulfxyz</b>: 12 free, open-source tools in 12 days, about US$2,200 of AI and 147 Product Hunt points. The free kit to cut your AI bill, and the honest Product Hunt story:</p>
+    <p class="row-btns"><button class="btn btn-or" data-sh="x">Post on X</button><button class="btn btn-ln" data-sh="li">Share on LinkedIn</button><button class="btn btn-ln" data-sh="bsky">Bluesky</button><button class="btn btn-ln" data-sh="threads">Threads</button><button class="btn btn-ln" data-sh="wa">WhatsApp</button><button class="btn btn-ln" data-sh="mail">Email</button><button class="btn btn-ln" data-sh="text">Copy the post</button><button class="btn btn-ln" data-sh="link">Copy the link</button>${navigator.share ? '<button class="btn btn-ln" data-sh="native">More options</button>' : ''}</p>
+    <h3 style="margin-top:20px">Or message me directly</h3>
+    <p class="row-btns"><a class="btn btn-ln" href="https://x.com/paulfxyz" target="_blank" rel="noopener">@paulfxyz on X ${EXT}</a><a class="btn btn-ln" href="https://www.linkedin.com/in/paulfxyz/" target="_blank" rel="noopener">Paul Fleury on LinkedIn ${EXT}</a><a class="btn btn-ln" href="${CONTACT}" target="_blank" rel="noopener">Contact form ${EXT}</a></p></article>`;
+  const txt = () => $('#gpPostOS', b).textContent.replace(/\s+/g, ' ').trim();
+  const pop = u => window.open(u, '_blank', 'noopener,width=640,height=640');
+  const cp = async (t, ok) => { try { await navigator.clipboard.writeText(t); toast(ok); } catch (e) { toast('Copy failed on this browser.'); } };
+  b.addEventListener('click', async e => {
+    const x = e.target.closest('[data-sh]'); if (!x) return;
+    const t = txt(), q = encodeURIComponent, full = t + ' ' + URL_, li = t.replace('@paulfxyz', 'Paul Fleury');
+    switch (x.dataset.sh) {
+      case 'x': pop('https://x.com/intent/post?text=' + q(t) + '&url=' + q(URL_)); break;
+      case 'li': await cp(li + ' ' + URL_, 'Post copied. Paste it on LinkedIn and type @Paul Fleury to mention me.'); pop('https://www.linkedin.com/sharing/share-offsite/?url=' + q(URL_)); break;
+      case 'bsky': pop('https://bsky.app/intent/compose?text=' + q(full)); break;
+      case 'threads': pop('https://www.threads.net/intent/post?text=' + q(full)); break;
+      case 'wa': pop('https://wa.me/?text=' + q(full)); break;
+      case 'mail': location.href = 'mailto:?subject=' + q('GOPABLO · The Product Hunt Marathon') + '&body=' + q(li + '\n\n' + URL_); break;
+      case 'text': cp(full, 'Post copied. Paste it anywhere and mention me.'); break;
+      case 'link': cp(URL_, 'Link copied.'); break;
+      case 'native': try { await navigator.share({ title: 'The Product Hunt Marathon', text: t, url: URL_ }); } catch (e) {} break;
+    }
+  });
 } });
 
 def('trash', { title: 'Trash', w: 520, h: 380, build(b) {
@@ -506,7 +551,7 @@ def('terminal', { title: 'paul@tphm: ~', w: 720, h: 460, cls: 'dark-win', build(
 const sp = $('#spot'), sq = $('#spotQ'), sl = $('#spotL');
 const SI = [
   ...LOG.map(p => ({ g: 'Apps', t: p.name, s: p.kind, id: 'p:' + p.key })),
-  ...[['finder', 'The Marathon', 'All twelve apps'], ['notes', 'Field notes', 'Product Hunt, honestly'], ['mail', 'Inbox', 'Upvote sellers'], ['saas', 'SaaS is dead', 'Slides'], ['calc', 'Rent or build', 'Calculator'], ['cho', 'What is a CHO?', 'CHO.md'], ['hire', 'Hire me', 'Up to 30 h a week'], ['pitch', 'Openline, for investors', 'Main venture'], ['builders', 'Run your own marathon', 'Lessons and checklist'], ['terminal', 'Terminal', 'Type help'], ['welcome', 'Welcome', 'Start here'], ['about', 'About TPHM OS', 'Credits and links']].map(([id, t, s]) => ({ g: 'Documents and tools', t, s, id })),
+  ...[['finder', 'The Marathon', 'All twelve apps'], ['notes', 'Field notes', 'Product Hunt, honestly'], ['mail', 'Inbox', 'Upvote sellers'], ['saas', 'SaaS is dead', 'Slides'], ['calc', 'Rent or build', 'Calculator'], ['cho', 'What is a CHO?', 'CHO.md'], ['hire', 'Hire me', 'Up to 30 h a week'], ['pitch', 'Openline, for investors', 'Main venture'], ['builders', 'Run your own marathon', 'Lessons, kit and tools'], ['gopablo', 'GOPABLO', 'Free kit to cut your AI bill'], ['terminal', 'Terminal', 'Type help'], ['welcome', 'Welcome', 'Start here'], ['about', 'About TPHM OS', 'Credits and links']].map(([id, t, s]) => ({ g: 'Documents and tools', t, s, id })),
   ...NOTES.map((n, i) => ({ g: 'Field notes', t: n[1], s: 'Note', id: 'notes', note: i })),
   { g: 'Actions', t: 'Write to Paul', s: 'paulfleury.com/contact', fn: () => open(CONTACT, '_blank', 'noopener'), id: 'hire' },
   { g: 'Actions', t: 'Light or dark windows', fn: () => act('theme'), id: 'about' },
@@ -548,6 +593,7 @@ const start = () => {
   const m = location.hash.match(/^#\/([\w-]+)/);
   if (m) { const k = m[1]; LOG.some(p => p.key === k) ? openApp('p:' + k) : APPS[k] ? openApp(k) : openApp('welcome'); }
   else if (!narrow()) openApp('welcome');
+  if (!narrow()) setTimeout(() => notify({ g: 'gopablo', title: 'GOPABLO', text: 'Reply GOPABLO to my posts, or share TPHM and mention me. I\u2019ll DM you my free kit to cut your AI bill.', actions: [['Open', () => openApp('gopablo')], ['Later', () => {}]], ttl: 12000 }), 16000);
   if (!narrow()) setTimeout(() => notify({ g: 'mail', title: 'Launch agency · Product Hunt DM', text: '"Hi! We can get you top 5 today. 300+ real upvotes, from $..."', actions: [['Decline', () => { declined.add(0); mailBadge(); toast('Declined. Zero votes bought.'); const mw = open.get('mail'); mw && $('.wb', mw)._draw && $('.wb', mw)._draw(); }], ['Open Inbox', () => openApp('mail')]] }), 6000);
 };
 if (booted || reduce()) { boot.style.display = 'none'; start(); }

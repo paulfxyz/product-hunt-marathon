@@ -465,3 +465,23 @@ h2[tabindex="-1"]:focus{outline:none}
 .hunt-pod b{color:var(--band-accent)}
 @media (min-width:640px){.kit-wide{grid-column:1/-1}}
 @media (min-width:960px){.guides.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* GOPABLO */
+.gp{display:grid;gap:24px;margin-top:48px;padding:24px;border-radius:var(--r-lg);background:var(--band);color:var(--band-ink);scroll-margin-top:90px;border:2px solid var(--band-accent)}
+.gp .kicker{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--band-accent)}
+.gp h3{font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.025em;line-height:1.1;margin:6px 0 10px;text-wrap:balance}
+.gp h3 b,.gp-post b:first-child{color:var(--band-accent)}
+.gp-main>p{color:var(--band-ink-2);max-width:60ch;text-wrap:pretty}
+.gp-list{display:grid;gap:10px;margin-top:16px;padding:0;list-style:none}
+.gp-list li{position:relative;padding-left:22px;color:var(--band-ink-2);line-height:1.45;text-wrap:pretty}
+.gp-list li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--band-accent)}
+.gp-list b{color:var(--band-ink)}
+.gp-lab{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--band-ink-2);margin:4px 0 10px}
+.gp-post{padding:14px 16px;border-radius:var(--r-md);border:1.5px dashed var(--band-line);font-size:15.5px;line-height:1.5;margin-bottom:12px;text-wrap:pretty}
+.gp-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.gp-btns .btn{min-height:44px;padding:0 16px;font-size:15px}
+@media (min-width:960px){.gp{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;padding:32px 36px}}
+.gp-teaser{display:flex;align-items:center;gap:14px;margin-top:14px;padding:16px 20px;border-radius:var(--r-md);background:var(--band);color:var(--band-ink);border:2px solid var(--band-accent);line-height:1.4}
+.gp-teaser>span:nth-child(2){flex:1;color:var(--band-ink-2)}
+.gp-teaser b{color:var(--band-ink)}
+.gp-tag{flex:none;padding:6px 10px;border-radius:8px;background:var(--band-accent);color:var(--band);font-family:var(--font-display);font-weight:800;letter-spacing:.02em}
+.gp-teaser .ico{flex:none;color:var(--band-accent)}

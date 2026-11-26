@@ -596,3 +596,15 @@ input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,[content
 .dk .doc{transform:scale(.62)}
 .dk .g-trash{width:100%;border-radius:23%}
 .dk-sep{margin:6px 3px}
+/* GOPABLO */
+.g-gp{background:linear-gradient(#FF7A45,#DA552F);font-family:var(--display,inherit);font-weight:800;letter-spacing:-.02em}
+.kitl{display:grid;gap:8px;margin:10px 0 4px}
+.kitl a{display:grid;gap:2px;padding:10px 12px;border-radius:10px;border:1px solid var(--line,rgba(0,0,0,.12));color:inherit;text-decoration:none}
+.kitl a:hover{border-color:#DA552F}
+.kitl b{font-family:var(--mono);color:#C2410C}
+.kitl span{font-size:14px;opacity:.85;line-height:1.4}
+.gpw .gp-post{padding:12px 14px;border-radius:10px;border:1.5px dashed #DA552F;line-height:1.5}
+.gpw .gp-post b:first-child{color:#DA552F}
+@media (min-width:700px){.kitl{grid-template-columns:1fr 1fr}}
+.gpw ul,.dc .kitl+h3+p+ul{margin:12px 0;padding-left:20px;list-style:disc;display:grid;gap:8px}
+.gpw ul li::marker,.dc .kitl+h3+p+ul li::marker{color:#DA552F}
