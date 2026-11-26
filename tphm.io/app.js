@@ -235,7 +235,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-open
 /* Pages: a short landing plus one page per chapter */
 const PAGES = ['hunt', 'saas', 'cho', 'invest', 'builders'];
 const PAGE_T = { hunt: 'Product Hunt', saas: 'SaaS is dead', cho: 'Hire a CHO', invest: 'Investors', builders: 'Run your own' };
-const PAGE_OF = { top: 'home', main: 'home', log: 'home', chapters: 'home', follow: 'home', hunt: 'hunt', inbox: 'hunt', saas: 'saas', calc: 'saas', took: 'saas', cho: 'cho', invest: 'invest', builders: 'builders' };
+const PAGE_OF = { top: 'home', main: 'home', log: 'home', chapters: 'home', follow: 'home', hunt: 'hunt', inbox: 'hunt', saas: 'saas', calc: 'saas', took: 'saas', cho: 'cho', invest: 'invest', builders: 'builders', gopablo: 'builders' };
 const BASE_T = document.title;
 let page = 'home';
 PAGES.forEach((p, i) => {
@@ -414,11 +414,36 @@ $('#copyKit').addEventListener('click', async () => {
   catch (e) { toast('Copy failed. Select the lessons instead.'); }
 });
 
+
+/* GOPABLO: share the Builders page, mentioning Paul */
+const GP_URL = 'https://tphm.io/builders/';
+const gpText = () => ($('#gpPost') ? $('#gpPost').textContent.replace(/\s+/g, ' ').trim() : 'GOPABLO @paulfxyz');
+const gpLi = () => gpText().replace('@paulfxyz', 'Paul Fleury');
+const gpOpen = u => window.open(u, '_blank', 'noopener,width=640,height=640');
+const gpCopy = async (t, ok) => { try { await navigator.clipboard.writeText(t); toast(ok); return true; } catch (e) { toast('Copy failed on this browser.'); return false; } };
+const gpNative = $('[data-share=native]');
+if (gpNative && navigator.share) gpNative.hidden = false;
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-share]'); if (!b) return;
+  const t = gpText(), q = encodeURIComponent, full = t + ' ' + GP_URL;
+  switch (b.dataset.share) {
+    case 'x': gpOpen('https://x.com/intent/post?text=' + q(t) + '&url=' + q(GP_URL)); break;
+    case 'li': await gpCopy(gpLi() + ' ' + GP_URL, 'Post copied. Paste it on LinkedIn and type @Paul Fleury to mention me.'); gpOpen('https://www.linkedin.com/sharing/share-offsite/?url=' + q(GP_URL)); break;
+    case 'bsky': gpOpen('https://bsky.app/intent/compose?text=' + q(full)); break;
+    case 'threads': gpOpen('https://www.threads.net/intent/post?text=' + q(full)); break;
+    case 'wa': gpOpen('https://wa.me/?text=' + q(full)); break;
+    case 'mail': location.href = 'mailto:?subject=' + q('GOPABLO · The Product Hunt Marathon') + '&body=' + q(gpLi() + '\n\n' + GP_URL); break;
+    case 'text': gpCopy(full, 'Post copied. Paste it anywhere and mention me.'); break;
+    case 'link': gpCopy(GP_URL, 'Link copied.'); break;
+    case 'native': try { await navigator.share({ title: 'The Product Hunt Marathon', text: t, url: GP_URL }); } catch (e) {} break;
+  }
+});
+
 /* Command palette */
 const kd = $('#kdlg'), kq = $('#kq'), kl = $('#klist');
 const ITEMS = [
   ...LOG.map(p => ({ g: 'The 12', t: p.name, s: p.kind, img: `/assets/icons/${p.key}.webp`, run: () => openProduct(p.key) })),
-  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Investors', 'invest'], ['Run your own marathon', 'builders'], ['Follow along', 'follow']]
+  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Investors', 'invest'], ['Run your own marathon', 'builders'], ['Say GOPABLO, get the free kit', 'gopablo'], ['Follow along', 'follow']]
     .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? U(id) : U(PAGE_OF[id] === 'home' ? '' : PAGE_OF[id]) + '#' + id) })),
   { g: 'Sections', t: 'Boot TPHM OS', s: 'The Marathon as a desktop', ic: 'play', run: () => openOS() },
   { g: 'Read', t: 'What is a CHO?', ic: 'info', run: () => openText('cho') },
