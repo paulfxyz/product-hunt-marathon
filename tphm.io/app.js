@@ -443,7 +443,7 @@ document.addEventListener('click', async e => {
 const kd = $('#kdlg'), kq = $('#kq'), kl = $('#klist');
 const ITEMS = [
   ...LOG.map(p => ({ g: 'The 12', t: p.name, s: p.kind, img: `/assets/icons/${p.key}.webp`, run: () => openProduct(p.key) })),
-  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Investors', 'invest'], ['Run your own marathon', 'builders'], ['Say GOPABLO, get the free kit', 'gopablo'], ['Follow along', 'follow']]
+  ...[['The log', 'log'], ['Field notes from Product Hunt', 'hunt'], ['SaaS is dead', 'saas'], ['Rent or build calculator', 'calc'], ['What it took', 'took'], ['Hire a CHO', 'cho'], ['Investors', 'invest'], ['Run your own marathon', 'builders'], ['Say GOPABLO, get $50K worth of AI tools', 'gopablo'], ['Follow along', 'follow']]
     .map(([t, id]) => ({ g: 'Sections', t, ic: 'go', run: () => go(PAGES.includes(id) ? U(id) : U(PAGE_OF[id] === 'home' ? '' : PAGE_OF[id]) + '#' + id) })),
   { g: 'Sections', t: 'Boot TPHM OS', s: 'The Marathon as a desktop', ic: 'play', run: () => openOS() },
   { g: 'Read', t: 'What is a CHO?', ic: 'info', run: () => openText('cho') },
