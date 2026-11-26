@@ -43,7 +43,7 @@ img{display:block}
 const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
-const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11]];
+const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
@@ -53,11 +53,11 @@ const el2=t=>{t=clamp(t);if(t===0||t===1)return t;return Math.pow(2,-10*t)*Math.
 const M=X?72:64;
 // ---------- scene A: hook
 const kick=el(`<div id="kick" class="abs mono" style="left:${M}px;top:${X?58:64}px"><b></b>The Product Hunt Marathon · Full report</div>`);
-const A=X?[['11 launches.',''],['131 points.',''],['77 came from','one.']]:[['11 launches.',''],['131 points.',''],['77 came','from one.']];
+const A=[['12 free tools.',''],['≈ US$2,200.',''],['147 points.','']];
 const hA=el(`<div class="abs disp hl" style="left:${M}px;top:${X?150:190}px;font-size:${X?118:112}px"></div>`);
 const wordsA=[];A.forEach((l,i)=>{const line=document.createElement('div');line.style.whiteSpace='nowrap';
  (l[0]+(l[1]?' '+l[1]:'')).split(' ').forEach((w,j)=>{const s=document.createElement('span');s.className='w'+(i===2?' acc':'');s.textContent=w;line.appendChild(s);line.appendChild(document.createTextNode(' '));wordsA.push([s,i])});hA.appendChild(line)});
-const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?820:900}px;line-height:1.3">11 free, open-source tools in 11 days.<br>No launch squad. No upvote ask. No ads.</div>`);
+const subA=el(`<div class="abs" style="left:${M}px;top:${X?560:640}px;font-size:${X?34:36}px;font-weight:700;color:var(--ink2);max-width:${X?900:900}px;line-height:1.3">Everything I built them with is open source too.<br>The kit, the costs, and what Product Hunt taught me.</div>`);
 const kS=el(`<img src="kitty-shock.png" class="abs" style="width:${X?330:360}px;right:${X?90:70}px;top:${X?300:860}px">`);
 // ---------- scene B: chart
 const cl=X?M:M, cr=X?W-M:W-M, cb=X?H-130:H-250, ch=X?480:760;
@@ -67,7 +67,7 @@ const n=P.length, slot=(cr-cl)/n, bw=slot*(X?.56:.62);
 const bars=P.map((p,i)=>{const x=cl+slot*i+(slot-bw)/2;const isM=p[0]==='mang';
  const b=el(`<div class="bar${isM?' m':''}" style="left:${x}px;width:${bw}px;height:0;bottom:${H-cb}px"></div>`);
  const ic=el(`<img class="ico" src="${p[0]}.webp" style="left:${x+(bw-Math.min(bw,X?62:64))/2}px;top:${cb+14}px;width:${Math.min(bw,X?62:64)}px">`);
- const nm=el(`<div class="nm" style="left:${cl+slot*i}px;width:${slot}px;top:${cb+(X?80:88)}px;font-size:${X?17:17}px">${X?p[1]:p[1].replace('Timescreen','Time&shy;screen')}</div>`);
+ const nm=el(`<div class="nm" style="left:${cl+slot*i}px;width:${slot}px;top:${cb+(X?80:88)}px;font-size:${X?17:13.5}px">${p[1]}</div>`);
  const v=el(`<div class="val" style="left:${cl+slot*i-10}px;width:${slot+20}px;font-size:${X?40:42}px">0</div>`);
  return {p,b,ic,nm,v,x}});
 const sc=v=>v/78*ch;
@@ -77,7 +77,7 @@ const arrow=el(`<svg class="abs" style="left:${X?cl+slot*3.6:cl+slot*3.8}px;top:
 const mi=2, mx=bars[mi].x;
 const stamp=el(`<div id="stamp" style="font-size:${X?20:21}px;left:${mx+bw+18}px;top:${cb-sc(77)+(X?10:20)}px">Featured by<br>the PH editors<br><span style="font-size:1.6em;font-family:'Bricolage Grotesque';font-weight:800;letter-spacing:-.02em">#33</span> of the day</div>`);
 // ---------- scene C: dark
-const C1=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?96:100}px;max-width:${W-2*M}px"><span class="w">7 of 11</span> <span class="w">launches</span> <span class="w">stalled</span> <span class="w">at</span> <span class="w" style="color:var(--banda)">3 to 5</span> <span class="w" style="color:var(--banda)">points.</span></div>`);
+const C1=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?96:100}px;max-width:${W-2*M}px"><span class="w">7 of 11</span> <span class="w">tools</span> <span class="w">stalled</span> <span class="w">at</span> <span class="w" style="color:var(--banda)">3 to 5</span> <span class="w" style="color:var(--banda)">points.</span></div>`);
 const C2=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?100:104}px;max-width:${W-2*M}px">Open source<br>shouldn't need<br><span class="mk">an ad budget.</span></div>`);
 const G=el(`<div class="abs" style="right:${X?60:M}px;${X?'top:330px':'top:880px'};font-family:Bricolage Grotesque;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:${X?420:400}px;color:transparent;-webkit-text-stroke:4px #FF7F57;text-align:right">4<span style="font-size:.3em;letter-spacing:0;-webkit-text-stroke:2.5px #FF7F57">pts</span></div>`);
 const Ck=el(`<div class="abs mono" style="left:${M}px;top:${X?58:64}px;color:var(--banda);font-size:${U*1.05}px">What I learned</div>`);
@@ -98,27 +98,36 @@ const K=el(`<div id="K" class="abs" style="left:${M}px;top:${X?100:150}px;width:
 </div>`);
 const KG=el(`<div class="abs" style="right:${X?70:M}px;top:${X?625:960}px;font-family:Bricolage Grotesque;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:${X?250:270}px;color:transparent;-webkit-text-stroke:4px #DA552F;text-align:right;white-space:nowrap">$2,200</div>`);
 const kItems=[['01','A second brain it reads first'],['02','The cheapest model that can do it'],['03','Checks with zero tokens']].map(([n,t])=>{const d=document.createElement('div');d.style.cssText=`display:flex;align-items:baseline;gap:.6em;font-size:${X?38:42}px;font-weight:800;line-height:1.15`;d.innerHTML=`<span class="disp acc" style="font-size:.8em;display:inline-block;min-width:1.5em">${n}</span><span>${t}</span>`;document.getElementById('kL').appendChild(d);return d});
+// ---------- scene TK: toolkit
+const TKI=[['social-manager/','The campaign app'],['second-brain/','Notes your AI reads first'],['translate/','31 languages, proofread'],['motion/','These animated covers'],['crosspost.py','One post, four networks'],['shots.py','Screenshots and GIFs'],['card.py','Share cards and slides'],['launch_calendar.py','One calendar, one click']];
+const TK=el(`<div id="TK" class="abs" style="left:${M}px;top:${X?92:140}px;width:${W-2*M}px">
+ <div class="mono" style="color:var(--acci);font-size:${U*1.05}px"><b style="display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--acc);margin-right:.55em"></b>The builders' kit · MIT</div>
+ <div class="disp" style="font-size:${X?80:86}px;margin-top:${X?20:30}px;line-height:1.0">Fork everything <span class="acc">I shipped with.</span></div>
+ <div id="tkG" style="margin-top:${X?40:56}px;display:grid;grid-template-columns:${X?'1fr 1fr':'1fr'};gap:${X?16:16}px ${X?20:16}px"></div>
+ <div id="tkU" class="url" style="font-family:'Bricolage Grotesque';font-weight:800;color:var(--acc);letter-spacing:-.02em;font-size:${X?34:34}px;margin-top:${X?34:48}px">github.com/paulfxyz/product-hunt-marathon</div>
+</div>`);
+const tkC=TKI.map(([a,b])=>{const d=document.createElement('div');d.style.cssText=`background:#fff;border:1.5px solid var(--line);border-radius:${U*.7}px;padding:${X?'16px 22px':'16px 24px'};${X?'':'display:flex;align-items:baseline;justify-content:space-between;gap:16px'};box-shadow:0 2px 0 rgba(31,26,23,.06)`;d.innerHTML=`<div style="font-family:'JetBrains Mono';font-weight:700;font-size:${X?27:30}px;color:var(--ink)">${a}</div><div style="font-weight:700;font-size:${X?23:24}px;color:var(--ink2);margin-top:${X?4:0}px">${b}</div>`;document.getElementById('tkG').appendChild(d);return d});
 // ---------- scene D: outro
 const out=el(`<div id="out" class="abs" style="left:${M}px;top:${X?120:170}px;width:${W-2*M}px">
  <div class="disp" style="font-size:${X?104:108}px">The full report<span class="acc">.</span></div>
- <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">Every launch, every point, and what Product Hunt taught me.</div>
+ <div style="font-size:${X?36:38}px;font-weight:700;color:var(--ink2);margin-top:${X?22:28}px;line-height:1.3;max-width:${X?820:920}px">The free kit, how to keep the AI bill small, and every Product Hunt point.</div>
  <div style="margin-top:${X?38:44}px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><span class="pill" style="font-size:${X?32:34}px;padding:.42em .9em">Saturday 28 November</span></div>
  <div class="url" style="font-size:${X?64:72}px;margin-top:${X?34:40}px">tphm.io</div>
 </div>`);
 const kM=el(`<img src="kitty-mega.png" class="abs" style="width:${X?420:470}px;right:${X?70:50}px;top:${X?250:640}px">`);
 const rowY=X?H-110:H-150, isz=X?54:58, gap=X?14:12;
-const all=[...P.map(p=>p[0]),'tetris'];
+const all=P.map(p=>p[0]);
 const row=all.map((k,i)=>el(`<img class="ico" src="${k}.webp" style="width:${isz}px;left:${M+i*(isz+gap)}px;top:${rowY}px">`));
 const free=el(`<div class="abs mono" style="left:${M}px;top:${rowY-(X?44:46)}px;font-size:${X?17:18}px;color:var(--ink3)">12 tools · free · MIT</div>`);
 const fl=document.getElementById('flash'),dk=document.getElementById('dark');
 const set=(e,o,tx=0,ty=0,s=1,r=0)=>{e.style.opacity=o;e.style.transform=`translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`};
 // ---------- timeline
-const T={a0:0,b0:3.4,mang:6.9,c0:9.6,c2:11.6,e0:13.8,k0:17.9,d0:21.9,end:25.6};
+const T={a0:0,k0:3.4,t0:7.4,b0:11.4,mang:14.9,c0:17.6,c2:19.6,e0:21.8,d0:25.9,end:29.6};
 window.DUR=T.end;
 window.render=function(t){
  // A
- const aOut=eio((t-(T.b0-.35))/.35);
- set(kick,t<T.c0-.2||t>=T.d0?1:0);
+ const aOut=eio((t-(T.k0-.35))/.35);
+ set(kick,(t<T.k0-.2)||(t>=T.b0-.1&&t<T.c0-.2)||t>=T.d0?1:0);
  kick.style.color=''; 
  wordsA.forEach(([s,i],j)=>{const st=.15+j*.14+(i===2?.25:0);const k=back((t-st)/.42);s.style.opacity=clamp((t-st)/.12)*(1-aOut);s.style.transform=`translateY(${(1-k)*60}px) scale(${.85+.15*k})`});
  set(subA,clamp((t-1.5)/.3)*(1-aOut),0,(1-eo((t-1.5)/.4))*18);
@@ -157,17 +166,22 @@ window.render=function(t){
  const c2k=eo((t-T.c2)/.45);set(C2,clamp((t-T.c2)/.2)*(1-cOut),0,(1-c2k)*40);
  C2.querySelector('.mk').style.setProperty('--mk',(eio((t-(T.c2+.7))/.6)*100)+'%');
  // E
- { const eIn=t>=T.e0-.05, k=eo((t-T.e0)/.45), eo2=1-eio((t-(T.k0-.3))/.3);
+ { const eIn=t>=T.e0-.05, k=eo((t-T.e0)/.45), eo2=1-eio((t-(T.d0-.3))/.3);
    set(E,eIn?k*eo2:0,0,(1-k)*30);
    const q=eo((t-(T.e0+.3))/1.1); document.getElementById('eN').textContent=Math.round(147*q);
    const p=document.getElementById('eP'); const kp=eo((t-(T.e0+1.6))/.45); p.style.opacity=kp; p.style.transform=`translateY(${(1-kp)*20}px)`;
    const ks=back((t-(T.e0+2.4))/.45); set(eS,eIn?clamp((t-(T.e0+2.4))/.1)*eo2:0,0,0,1.7-.7*ks,-14+6*ks); }
  // K
- { const kIn=t>=T.k0-.05, k=eo((t-T.k0)/.45), ko=1-eio((t-(T.d0-.3))/.3);
+ { const kIn=t>=T.k0-.05, k=eo((t-T.k0)/.45), ko=1-eio((t-(T.t0-.3))/.3);
    set(K,kIn?k*ko:0,0,(1-k)*30);
    { const g=back((t-T.k0-.5)/.6); set(KG,kIn?clamp((t-T.k0-.5)/.2)*ko:0,0,0,.7+.3*g,(1-g)*-8) }
    kItems.forEach((d,i)=>{const st=T.k0+.9+i*.45;const q=back((t-st)/.4);d.style.opacity=clamp((t-st)/.12);d.style.transform=`translateX(${(1-q)*-40}px)`});
    const c=document.getElementById('kC'); c.style.opacity=clamp((t-(T.k0+2.5))/.3); }
+ // TK
+ { const tIn=t>=T.t0-.05, k=eo((t-T.t0)/.45), to=1-eio((t-(T.b0-.3))/.3);
+   set(TK,tIn?k*to:0,0,(1-k)*30);
+   tkC.forEach((d,i)=>{const st=T.t0+.6+i*.2;const q=back((t-st)/.4);d.style.opacity=clamp((t-st)/.12);d.style.transform=`translateY(${(1-q)*26}px)`});
+   const u=document.getElementById('tkU'); u.style.opacity=clamp((t-(T.t0+2.4))/.3); }
  // D
  const dIn=t>=T.d0-.05;
  const dk2=eo((t-T.d0)/.5);
