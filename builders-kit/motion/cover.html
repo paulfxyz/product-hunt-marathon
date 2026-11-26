@@ -88,13 +88,13 @@ const E=el(`<div id="E" class="abs" style="left:${M}px;top:${X?110:150}px;width:
  <div style="font-size:${X?34:38}px;font-weight:700;color:var(--ink2);margin-top:${X?20:30}px;max-width:${X?780:900}px;line-height:1.3">A Product of the Day often lands around 150.</div>
  <div class="disp" id="eP" style="font-size:${X?66:76}px;margin-top:${X?26:40}px;max-width:${X?900:940}px;line-height:1.02">So one guy with free, open&#8209;source tools is <span class="acc">basically a Product&nbsp;of&nbsp;the&nbsp;Day.</span></div>
 </div>`);
-const eS=el(`<div id="stamp" style="font-size:${X?40:46}px;${X?'right:96px;top:300px':'left:'+(M+20)+'px;top:1010px'}">Product<br>of the Day<span style="color:var(--acc)">*</span><br><span style="font-size:.62em;letter-spacing:.04em">*give or take<br>3 points</span></div>`);
+const eS=el(`<div id="stamp" style="font-size:${X?40:46}px;${X?'right:96px;top:300px':'left:'+(M+20)+'px;top:1010px'}">Product<br>of the Day<span style="color:var(--acc)">*</span><br><span style="font-size:.62em;letter-spacing:.04em">*give or take<br>a few points</span></div>`);
 // ---------- scene K: the AI bill
 const K=el(`<div id="K" class="abs" style="left:${M}px;top:${X?100:150}px;width:${W-2*M}px">
  <div class="mono" style="color:var(--acci);font-size:${U*1.05}px"><b style="display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--acc);margin-right:.55em"></b>How 12 tools cost ≈ US$2,200</div>
  <div class="disp" style="font-size:${X?84:90}px;margin-top:${X?22:34}px;max-width:${X?1200:940}px;line-height:1.0">Never make the AI <span class="acc">relearn the project.</span></div>
  <div id="kL" style="margin-top:${X?40:60}px;display:grid;gap:${X?16:22}px"></div>
- <div id="kC" class="mono" style="margin-top:${X?34:56}px;font-size:${X?19:20}px;color:var(--ink3)">After Brucky's Second Brain guide for Claude · @danikkk_wqs</div>
+ <div id="kC" class="mono" style="margin-top:${X?34:56}px;font-size:${X?19:20}px;color:var(--ink3)">Free kit on GitHub · builders-kit/second-brain</div>
 </div>`);
 const KG=el(`<div class="abs" style="right:${X?70:M}px;top:${X?625:960}px;font-family:Bricolage Grotesque;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:${X?250:270}px;color:transparent;-webkit-text-stroke:4px #DA552F;text-align:right;white-space:nowrap">$2,200</div>`);
 const kItems=[['01','A second brain it reads first'],['02','The cheapest model that can do it'],['03','Checks with zero tokens']].map(([n,t])=>{const d=document.createElement('div');d.style.cssText=`display:flex;align-items:baseline;gap:.6em;font-size:${X?38:42}px;font-weight:800;line-height:1.15`;d.innerHTML=`<span class="disp acc" style="font-size:.8em;display:inline-block;min-width:1.5em">${n}</span><span>${t}</span>`;document.getElementById('kL').appendChild(d);return d});

@@ -198,7 +198,7 @@ product-hunt-marathon/
 │   ├── PRODUCT-HUNT-FIELD-NOTES.md
 │   ├── BUILDING-WITH-AI.md
 │   └── images/                 screenshots and the logo
-├── builders-kit/               crosspost, shots, card, launch_calendar, motion, translate
+├── builders-kit/               crosspost, shots, card, launch_calendar, motion, translate, second-brain
 │                               (Python, reusable for your own launches)
 ├── tphm.io/                    the logbook
 │   ├── src/                    index.html, os.html, simple.json
@@ -289,7 +289,7 @@ These are the short versions. The [launch playbook](docs/LAUNCH-PLAYBOOK.md) has
 - [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md): the six lessons in full, plus the launch-day kit.
 - [docs/PRODUCT-HUNT-FIELD-NOTES.md](docs/PRODUCT-HUNT-FIELD-NOTES.md): my account as a long-time Product Hunt member. These are my own observations and not Product Hunt's documented policy.
 - [docs/BUILDING-WITH-AI.md](docs/BUILDING-WITH-AI.md): how AI was used, what it cost and where the limits were.
-- [builders-kit/](builders-kit/README.md): scripts to write each post once, size it for X, LinkedIn, Bluesky and Mastodon, keep receipts, take screenshots and GIFs, make cards, build a launch calendar, render animated covers to MP4 and GIF, and translate a site into many languages with a writer and a proofreader model.
+- [builders-kit/](builders-kit/README.md): scripts to write each post once, size it for X, LinkedIn, Bluesky and Mastodon, keep receipts, take screenshots and GIFs, make cards, build a launch calendar, render animated covers to MP4 and GIF, translate a site into many languages with a writer and a proofreader model, and keep the AI bill small with a second brain your AI reads first.
 - [CONTRIBUTING.md](CONTRIBUTING.md): how to report a problem or propose a change.
 
 ## Contributing

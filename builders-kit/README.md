@@ -135,6 +135,17 @@ python3 translate.py strings.example.json fr,de,ja,pt --context "A personal site
 
 Writing `<t0>bold</t0>`, `<t1/>` and `{0}` instead of raw HTML and values is what keeps the markup intact across scripts and right-to-left languages. Machine translation still benefits from a native speaker's read before you call it done.
 
+## second-brain/: keep the AI bill small
+
+A layout of plain Markdown notes your AI reads first, a [rules file](second-brain/RULES.md) for any AI tool, and `brain_kit.py`: it lists what's new since the last ingest, builds a context within a token budget, and lints links, the index and quotes against sources with zero tokens.
+
+```bash
+python3 second-brain/brain_kit.py init my-project
+cd my-project && python3 ../second-brain/brain_kit.py changed
+```
+
+More in [second-brain/README.md](second-brain/README.md).
+
 ## The social manager
 
 The campaign app I used to draft, review and log every post is in [`../social-manager`](../social-manager): the full client, server and shared code, plus an example campaign so you can run it locally in a few minutes. It plans and keeps receipts. It never posts for you.
@@ -147,7 +158,7 @@ The campaign app I used to draft, review and log every post is in [`../social-ma
 4. **Ask for feedback, never votes.** It's the rule on Product Hunt, and feedback is what makes the next launch better.
 5. **Keep images true.** Rerun `shots.py` after each fix, before you share anything.
 6. **Keep receipts.** When a date moves, and it will, one file tells you what to update.
-7. **Keep the AI bill small.** Give the model a second brain of notes it reads first, use the cheapest model that can do the job, and let scripts do the checks. More in [Building with AI](../docs/BUILDING-WITH-AI.md#keeping-the-ai-bill-small), after Brucky's [Second Brain guide for Claude](https://x.com/danikkk_wqs/status/2113001913662734619).
+7. **Keep the AI bill small.** Give the model a second brain of notes it reads first, use the cheapest model that can do the job, and let scripts do the checks. The [second-brain kit](second-brain/README.md) packages all of it.
 
 ## Licence
 

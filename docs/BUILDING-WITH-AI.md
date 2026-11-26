@@ -71,7 +71,7 @@ The biggest saving wasn't a cheaper model. It was never making the AI relearn th
 4. **Only redo what changed.** Translate the missing strings, not the whole site. Process the files that changed, not the whole folder.
 5. **Back up, dry-run, then write.** A mistake you have to undo costs more than the tokens you saved.
 
-Brucky ([@danikkk_wqs](https://x.com/danikkk_wqs)) lays this approach out step by step in his [Second Brain guide for Claude](https://x.com/danikkk_wqs/status/2113001913662734619): a `raw/` folder, a `wiki/` the model maintains, a `CLAUDE.md` with the rules, and three operations (ingest, query, lint). Great material if you build with AI every day.
+All of this is packaged in the [second-brain kit](../builders-kit/second-brain/README.md): a Markdown layout, a [rules file](../builders-kit/second-brain/RULES.md) any AI tool can follow, and `brain_kit.py`, which lists what changed since the last ingest, picks the pages a question needs within a token budget, and checks links, the index and quotes against sources with zero tokens.
 
 ## 4. Safety rules
 
