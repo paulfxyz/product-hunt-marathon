@@ -1,8 +1,8 @@
 {
  "title": "Maraton Product Hunt, dengan kata-kata sederhana",
  "tag": "Bahasa sederhana · 3 menit",
- "lead": "Aku membuat dan merilis dua belas alat gratis dalam dua belas hari. Halaman ini menjelaskan semuanya dengan kata-kata sederhana.",
- "metaDescription": "Maraton Product Hunt dengan bahasa sederhana: dua belas alat gratis dan open source, dibuat dengan AI dan dirilis 10–21 November 2026.",
+ "lead": "Aku membuat dan merilis dua belas alat gratis dalam dua belas hari. Halaman ini menjelaskan semuanya dengan kata-kata sederhana, dan kamu bisa membacanya atau mendengarkannya.",
+ "metaDescription": "Maraton Product Hunt dengan bahasa sederhana: dua belas alat gratis dan open source, dibuat dengan AI dan dirilis 10–21 November 2026, dengan versi suara.",
  "sections": [
   {
    "heading": "Apa itu Maraton",
@@ -66,8 +66,6 @@
   "full": "Lihat buku log selengkapnya",
   "contact": "Hubungi aku",
   "motto": "Pikirkan. Bangun. Rilis. Ulangi.",
-  "note": "© 2026 Paul Fleury. Kedua belas alat gratis dan berlisensi MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Kedua belas alat gratis dan berlisensi MIT. Narasi dibuat dengan suara AI."
+ }
 }

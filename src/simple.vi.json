@@ -1,8 +1,8 @@
 {
  "title": "The Product Hunt Marathon, qua lời giản dị",
  "tag": "Ngôn ngữ giản dị · 3 phút",
- "lead": "Tôi đã tự tay làm và ra mắt mười hai công cụ miễn phí trong mười hai ngày. Trang này tóm tắt mọi thứ bằng lời lẽ giản dị để bạn đọc.",
- "metaDescription": "The Product Hunt Marathon bằng lời giản dị: mười hai công cụ miễn phí, mã nguồn mở làm bằng AI và ra mắt từ 10 đến 21/11/2026.",
+ "lead": "Tôi đã tự tay làm và ra mắt mười hai công cụ miễn phí trong mười hai ngày. Trang này tóm tắt mọi thứ bằng lời lẽ giản dị, bạn có thể đọc hoặc nghe đều được.",
+ "metaDescription": "The Product Hunt Marathon bằng lời giản dị: mười hai công cụ miễn phí, mã nguồn mở làm bằng AI và ra mắt từ 10 đến 21/11/2026, kèm bản đọc thành tiếng.",
  "sections": [
   {
    "heading": "Cuộc Marathon là gì",
@@ -66,8 +66,6 @@
   "full": "Xem toàn bộ nhật ký",
   "contact": "Liên hệ với tôi",
   "motto": "Nghĩ. Xây. Xuất xưởng. Lặp lại.",
-  "note": "© 2026 Paul Fleury. Toàn bộ mười hai công cụ đều miễn phí và cấp phép theo MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Toàn bộ mười hai công cụ đều miễn phí và cấp phép theo MIT. Phần thuyết minh được tạo bằng giọng nói AI."
+ }
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>Product Hunt 马拉松，用大白话讲 · TPHM</title>
-    <meta name="description" content="Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具。">
+    <meta name="description" content="Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具，还有语音版。">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://tphm.io/wuu/simple">
 <link rel="alternate" hreflang="en" href="https://tphm.io/simple">
@@ -45,24 +45,24 @@
     <meta property="og:locale" content="zh_CN">
     <meta property="og:url" content="https://tphm.io/wuu/simple">
     <meta property="og:title" content="Product Hunt 马拉松，用大白话讲">
-    <meta property="og:description" content="Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具。">
+    <meta property="og:description" content="Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具，还有语音版。">
     <meta property="og:image" content="https://tphm.io/assets/og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@paulfxyz">
     <meta name="twitter:image" content="https://tphm.io/assets/og.jpg">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Product Hunt 马拉松，用大白话讲", "description": "Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具。", "url": "https://tphm.io/wuu/simple", "inLanguage": "wuu-Hans", "isPartOf": {"@type": "WebSite", "name": "TPHM · The Product Hunt Marathon", "url": "https://tphm.io/"}, "author": {"@type": "Person", "name": "Paul Fleury", "url": "https://paulfleury.com/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Product Hunt 马拉松，用大白话讲", "description": "Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具，还有语音版。", "url": "https://tphm.io/wuu/simple", "inLanguage": "wuu-Hans", "isPartOf": {"@type": "WebSite", "name": "TPHM · The Product Hunt Marathon", "url": "https://tphm.io/"}, "author": {"@type": "Person", "name": "Paul Fleury", "url": "https://paulfleury.com/"}, "audio": {"@type": "AudioObject", "contentUrl": "https://tphm.io/simple/voice-wuu.mp3", "encodingFormat": "audio/mpeg"}}</script>
     <link rel="icon" href="/assets/img/pfph-v1-32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/assets/img/pfph-v1-180.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400..800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap">
     <script>(function(){var t;try{t=localStorage.getItem('tphm-theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;document.documentElement.classList.add('js')})()</script>
-    <link rel="stylesheet" href="/ph.css?v=202611270200">
-    <link rel="stylesheet" href="/tphm.css?v=202611270200">
-    <link rel="stylesheet" href="/simple/simple.css?v=202611270200">
-    <link rel="stylesheet" href="/assets/a11y/a11y-v2.css?v=202611270200">
+    <link rel="stylesheet" href="/ph.css?v=202611270300">
+    <link rel="stylesheet" href="/tphm.css?v=202611270300">
+    <link rel="stylesheet" href="/simple/simple.css?v=202611270300">
+    <link rel="stylesheet" href="/assets/a11y/a11y-v2.css?v=202611270300">
     </head>
     <body class="simple">
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -111,7 +111,13 @@
       <section class="s-hero">
         <p class="eyebrow">大白话 · 3分钟</p>
         <h1>Product Hunt 马拉松，用大白话讲</h1>
-        <p class="s-lead">阿拉用12日工夫造好、发布脱12个免费工具。这一页用大白话统统讲清爽，侬可以看。</p>
+        <p class="s-lead">阿拉用12日工夫造好、发布脱12个免费工具。这一页用大白话统统讲清爽，侬可以看，也可以听。</p>
+        <div class="s-player" role="group" aria-label="听这一页">
+          <button id="play" class="s-play" type="button" aria-pressed="false" data-src="/simple/voice-wuu.mp3?v=202611270300" data-l-listen="听这一页" data-l-pause="暂停" data-l-resume="继续"><svg class="ico i-p"><use href="#i-play"/></svg><svg class="ico i-s" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><span id="play-label">听这一页</span></button>
+          <div class="s-track" aria-hidden="true"><i id="play-bar"></i></div>
+          <span id="play-time" class="s-time">3分钟</span>
+        </div>
+        <p id="play-error" class="s-err" hidden>音频放勿出来。侬还是可以看这一页。</p>
       </section>
       <div class="s-cards">
         <section class="s-card">
@@ -168,11 +174,11 @@
     <footer class="foot">
       <div class="wrap foot-in">
         <p class="motto">想。造。发。再来。</p>
-        <p class="foot-note">© 2026 Paul Fleury。12个工具全部免费，按 MIT 许可证开源。</p>
+        <p class="foot-note">© 2026 Paul Fleury。12个工具全部免费，按 MIT 许可证开源。旁白是用 AI 声音生成个。</p>
       </div>
     </footer>
-    <script src="/simple/simple.js?v=202611270200" defer></script>
-    <script type="module" src="/assets/a11y/a11y-v3.js?v=202611270200"></script>
+    <script src="/simple/simple.js?v=202611270300" defer></script>
+    <script type="module" src="/assets/a11y/a11y-v3.js?v=202611270300"></script>
     </body>
     </html>
     

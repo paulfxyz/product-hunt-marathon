@@ -1,8 +1,8 @@
 {
  "title": "Product Hunt Maratonu, sade sözlerle",
  "tag": "Sade dil · 3 dakika",
- "lead": "On iki günde on iki ücretsiz araç üretip yayınladım. Bu sayfa her şeyi sade sözlerle anlatıyor.",
- "metaDescription": "Sade sözlerle Product Hunt Maratonu: 10-21 Kasım 2026 arasında yapay zekâyla üretilip yayınlanan on iki ücretsiz, açık kaynak araç.",
+ "lead": "On iki günde on iki ücretsiz araç üretip yayınladım. Bu sayfa her şeyi sade sözlerle anlatıyor; istersen okuyabilir, istersen dinleyebilirsin.",
+ "metaDescription": "Sade sözlerle Product Hunt Maratonu: 10-21 Kasım 2026 arasında yapay zekâyla üretilip yayınlanan on iki ücretsiz, açık kaynak araç, sesli anlatım eşliğinde.",
  "sections": [
   {
    "heading": "Maraton neydi?",
@@ -66,8 +66,6 @@
   "full": "Seyir defterinin tamamını gör",
   "contact": "Bana ulaş",
   "motto": "Düşün. Üret. Yayınla. Tekrarla.",
-  "note": "© 2026 Paul Fleury. On iki araç da ücretsiz ve MIT lisanslıdır."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. On iki araç da ücretsiz ve MIT lisanslıdır. Seslendirme yapay zekâ sesiyle oluşturuldu."
+ }
 }

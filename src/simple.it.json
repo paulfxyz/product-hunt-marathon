@@ -1,8 +1,8 @@
 {
  "title": "La Maratona di Product Hunt, in parole semplici",
  "tag": "Linguaggio semplice · 3 minuti",
- "lead": "Ho costruito e rilasciato dodici strumenti gratuiti in dodici giorni. Questa pagina spiega tutto in parole semplici.",
- "metaDescription": "La Maratona di Product Hunt in parole semplici: dodici strumenti gratuiti e open source, creati con l'AI e rilasciati dal 10 al 21 novembre 2026.",
+ "lead": "Ho costruito e rilasciato dodici strumenti gratuiti in dodici giorni. Questa pagina spiega tutto in parole semplici, e puoi leggerla o ascoltarla.",
+ "metaDescription": "La Maratona di Product Hunt in parole semplici: dodici strumenti gratuiti e open source, creati con l'AI e rilasciati dal 10 al 21 novembre 2026, con una versione parlata.",
  "sections": [
   {
    "heading": "Cos'è stata la Maratona",
@@ -66,8 +66,6 @@
   "full": "Vedi il diario di bordo completo",
   "contact": "Contattami",
   "motto": "Pensa. Costruisci. Rilascia. Ripeti.",
-  "note": "© 2026 Paul Fleury. Tutti e dodici gli strumenti sono gratuiti e con licenza MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Tutti e dodici gli strumenti sono gratuiti e con licenza MIT. Narrazione generata con una voce AI."
+ }
 }
