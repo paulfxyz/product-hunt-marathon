@@ -464,7 +464,7 @@ kbd{font:600 11px var(--mono);padding:2px 6px;border-radius:5px;border:1px solid
   .wt-dots .m,.wt-dots .x{display:none}
   .wt-dots .c{width:auto;height:auto;border-radius:8px;padding:6px 10px;background:var(--win-3);font-size:13px;font-weight:650}
   .wt-dots .c i{display:none}
-  .wt-dots .c::before{content:"Done"}
+  .wt-dots .c::before{content:var(--l-done,"Done")}
   @keyframes sheet{from{transform:translateY(100%)}}
   .wel,.pa,.ml,.nt,.kn,.fd{grid-template-columns:1fr}
   .wel-r{min-height:200px;order:-1}
@@ -503,7 +503,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .ios-page{flex:0 0 100%;scroll-snap-align:start;padding:8px 22px 0;overflow-y:auto}
 .ios-wg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
 .wg{position:relative;aspect-ratio:1;border-radius:22px;padding:14px;text-align:left;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
-.wg small{font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.wg small{font:600 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
 .wg-hero{background:linear-gradient(150deg,#FF8A5C,#C2410C 70%);color:#fff}
 .wg-hero b{font:800 40px/1 var(--font);letter-spacing:-.04em;margin-top:auto}
 .wg-hero span{font-size:12.5px;font-weight:600;opacity:.92;margin-top:4px}
@@ -513,7 +513,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .playing .wg-dj img{animation:bop .52s ease-in-out infinite alternate}
 .wg-tx{margin-top:auto;display:flex;flex-direction:column;gap:3px;position:relative}
 .wg-tx b{font-size:13.5px;line-height:1.15;padding-right:4px}
-.wg-st{font-size:11.5px;opacity:.8}
+.wg-st{font-size:12.5px;opacity:.85}
 .wg-dj .eq{position:absolute;left:14px;top:14px;color:var(--or-2);height:14px}
 .ios-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 8px}
 .ia{display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff;min-width:0}
@@ -528,7 +528,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .ia-ic .ios-badge{position:absolute;margin:0;top:-4px;right:-4px;z-index:2}
 .ia:has(.ios-badge) .ia-ic{overflow:visible}
 .ia:has(.ios-badge) .ia-ic>.appglyph{border-radius:15px!important}
-.ia-l{font-size:11.5px;font-weight:500;line-height:1.15;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.7);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ia-l{font-size:12.5px;font-weight:550;line-height:1.15;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.7);max-width:100%;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ios-h{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);margin:4px 2px 18px}
 .ios-dots{display:flex;justify-content:center;gap:8px;padding:10px 0 8px}
 .ios-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35)}
@@ -538,7 +538,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .ios-dock{margin:0 12px;padding:14px 16px;border-radius:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;background:rgba(255,245,236,.18);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);box-shadow:0 0 0 .5px rgba(255,255,255,.18)}
 .ios-dock .ia-l{display:none}
 .ios-home{position:fixed;left:50%;bottom:calc(6px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:700;width:134px;height:5px;border-radius:3px;background:rgba(255,255,255,.85);padding:0;border:0}
-.ios-home::before{content:"";position:absolute;inset:-14px -20px}
+.ios-home::before{content:"";position:absolute;inset:-18px -24px}
 
 .ios{--mb:44px}
 .ios .menubar{height:var(--mb);padding:0 20px 0 28px;background:transparent;border-bottom:0;backdrop-filter:none;-webkit-backdrop-filter:none;justify-content:space-between}
@@ -570,7 +570,7 @@ html.a11y-motion *,html.a11y-motion *::before{animation:none!important;transitio
 .ios .wt-dots .m,.ios .wt-dots .x{display:none}
 .ios .wt-dots .c{width:auto;height:auto;padding:6px 4px;border-radius:8px;background:none;color:var(--or-d);font-size:16px;font-weight:600;box-shadow:none}
 .ios .wt-dots .c i{display:none}
-.ios .wt-dots .c::before{content:"‹ Home";white-space:nowrap}
+.ios .wt-dots .c::before{content:"‹ " var(--l-home,"Home");white-space:nowrap}
 :root[data-theme=dark].ios .wt-dots .c{color:var(--or-2)}
 .ios .wb{padding-bottom:28px}
 .ios .toast{bottom:calc(40px + env(safe-area-inset-bottom))}

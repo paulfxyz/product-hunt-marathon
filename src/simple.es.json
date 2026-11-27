@@ -1,0 +1,73 @@
+{
+ "title": "El maratón de Product Hunt, en palabras sencillas",
+ "tag": "Lenguaje sencillo · 3 minutos",
+ "lead": "Creé y publiqué doce herramientas gratuitas en doce días. Esta página lo explica todo con palabras sencillas.",
+ "metaDescription": "El maratón de Product Hunt en palabras sencillas: doce herramientas gratuitas y de código abierto creadas con IA entre el 10 y el 21 de noviembre de 2026.",
+ "sections": [
+  {
+   "heading": "Qué fue el maratón",
+   "text": "El maratón de Product Hunt duró del 10 al 21 de noviembre de 2026. Publiqué once herramientas en once días y, después, un bonus: Tetris. Las doce son gratuitas y de código abierto con licencia MIT, y las creé con IA. Hacer las doce costó unos 2.200 dólares (US$) entre IA, horas y alojamiento, y no compré ni pedí ni un solo upvote.",
+   "link": "Lee el registro",
+   "href": "/#log"
+  },
+  {
+   "heading": "Las doce herramientas",
+   "text": "Las herramientas son pequeñas y prácticas. Junk es un bloc de notas flotante para tu Mac. Mang te sugiere comandos de terminal y espera a que los confirmes. Megamesh crea tu propia VPN privada, Mars busca malware en un Mac y Timescreen convierte una pantalla que no usas en un reloj. Tetris es el bonus, un proyecto de fan hecho por diversión. Cada herramienta tiene su propia página con la historia que hay detrás.",
+   "link": "Abre las doce fichas",
+   "href": "/#log"
+  },
+  {
+   "heading": "Lo que me enseñó Product Hunt",
+   "text": "Lancé sin un equipo de apoyo y sin pedir upvotes, y rechacé todas las ofertas de venderme votos. Estar publicado y que te vean son dos cosas distintas: según mi experiencia, un producto se queda en unos 4 puntos si no tiene un gran presupuesto para anuncios o si no lo destaca un editor. Los editores destacaron Mang, pero ojalá el trabajo de código abierto pudiera verse sin ningún presupuesto. El informe completo, con los puntos de cada lanzamiento y lo que aprendí, sale el sábado 28 de noviembre.",
+   "link": "Lee las notas de campo",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS is dead",
+   "text": "SaaS significa software que alquilas con una suscripción. Mi apuesta es que más empresas construirán y serán dueñas de las herramientas que ahora alquilan. Es una predicción, no una prueba. Volver a crear el software no recrea los datos, el cumplimiento normativo ni la confianza, y cada herramienta necesita un responsable. Una calculadora te permite comparar por ti mismo alquilar y construir.",
+   "link": "Haz los números",
+   "href": "/saas"
+  },
+  {
+   "heading": "Contrata a un Chief Hacking Officer",
+   "text": "CHO significa Chief Hacking Officer. Es un título divertido para una consultoría seria: busco el trabajo que tu equipo repite y uso IA para crear herramientas sencillas que tu equipo pueda poseer y mantener. Piensa en trucos de vida («life hacks»): aquí hackear significa encontrar un camino más inteligente para resolver un problema, no solo ciberseguridad. Ahora tengo libres hasta 30 horas a la semana.",
+   "link": "Mira cómo trabajaría contigo",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, la apuesta principal",
+   "text": "Openline es mi empresa y startup principal. Vende eSIM de viaje, que dan datos móviles a tu teléfono en el extranjero sin tarjeta SIM de plástico. Se han activado más de un millón a través de socios comerciales. Iris y Digital Spot son spin-offs de herramientas creadas para Openline. Estoy buscando financiación con inversores ángel y fondos de capital riesgo, y el maratón fue mi proyecto paralelo.",
+   "link": "Mira las empresas",
+   "href": "/invest"
+  },
+  {
+   "heading": "Haz tu propio maratón",
+   "text": "Si quieres hacer tu propio maratón, empieza aquí. Comparto seis lecciones de mi recorrido y una lista de comprobación para el día del lanzamiento, pensada para creadores. Puedes ir marcando las casillas y copiar la lista en tus notas, en tu repositorio o en tu gestor de proyectos.",
+   "link": "Empieza la lista",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS es la versión divertida de esta web. Convierte todo el maratón en un pequeño escritorio de ordenador con el que puedes interactuar: incluye aplicaciones, una bandeja de entrada, un terminal y un gatito DJ. Si prefieres jugar, puedes arrancarlo.",
+   "link": "Arrancar TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Saltar al contenido",
+  "brandLabel": "TPHM, el cuaderno de bitácora",
+  "back": "El cuaderno de bitácora",
+  "theme": "Cambiar entre claro y oscuro",
+  "listen": "Escuchar esta página",
+  "pause": "Pausa",
+  "resume": "Reanudar",
+  "error": "No se ha podido reproducir el audio. Aún puedes leer la página.",
+  "min": "3 min",
+  "full": "Ver el cuaderno de bitácora completo",
+  "contact": "Contacta conmigo",
+  "motto": "Piensa. Construye. Lanza. Repite.",
+  "note": "© 2026 Paul Fleury. Las doce herramientas son gratuitas y con licencia MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

@@ -1,0 +1,73 @@
+{
+ "title": "A Maratona do Product Hunt, em palavras simples",
+ "tag": "Linguagem simples · 3 minutos",
+ "lead": "Criei e lancei doze ferramentas gratuitas em doze dias. Esta página explica tudo em palavras simples.",
+ "metaDescription": "A Maratona do Product Hunt em palavras simples: doze ferramentas gratuitas e open source, feitas com IA e lançadas de 10 a 21 de novembro de 2026.",
+ "sections": [
+  {
+   "heading": "O que foi a Maratona",
+   "text": "A Maratona do Product Hunt decorreu de 10 a 21 de novembro de 2026. Lancei onze ferramentas em onze dias e, depois, um extra: o Tetris. As doze são gratuitas e open source, com licença MIT, e fi-las com IA. Fazer as doze custou cerca de 2200 dólares americanos em IA, horas e alojamento, e não comprei nem pedi um único upvote.",
+   "link": "Ler o diário",
+   "href": "/#log"
+  },
+  {
+   "heading": "As doze ferramentas",
+   "text": "As ferramentas são pequenas e práticas. O Junk é um bloco de notas flutuante para o teu Mac. O Mang sugere comandos de terminal e espera que tu confirmes. O Megamesh cria a tua própria VPN privada, o Mars procura malware num Mac e o Timescreen transforma um ecrã que não uses num relógio. O Tetris é o extra, um projeto de fã feito por diversão. Cada ferramenta tem a sua página, com a história por trás.",
+   "link": "Abrir as doze entradas",
+   "href": "/#log"
+  },
+  {
+   "heading": "O que o Product Hunt me ensinou",
+   "text": "Lancei sem equipa de apoio e sem pedir upvotes, e recusei todas as ofertas para me venderem votos. Estar no ar e ser visto são coisas diferentes: na minha experiência, um produto fica à volta de 4 pontos, a menos que tenha um grande orçamento para anúncios ou que um editor o destaque. Os editores destacaram o Mang, mas gostava que o trabalho open source pudesse ser visto sem orçamento nenhum. O relatório completo, com os pontos de cada lançamento e o que aprendi, sai no sábado, 28 de novembro.",
+   "link": "Ler as notas de campo",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS is dead",
+   "text": "SaaS é software que alugas com uma subscrição. A minha aposta é que mais empresas vão construir e ser donas das ferramentas que hoje alugam. É uma previsão, não uma prova. Reconstruir software não reconstrói dados, conformidade nem confiança, e cada ferramenta precisa de um responsável. Uma calculadora deixa-te comparar, por ti, alugar e construir.",
+   "link": "Fazer as contas",
+   "href": "/saas"
+  },
+  {
+   "heading": "Contrata um Chief Hacking Officer",
+   "text": "CHO quer dizer Chief Hacking Officer. É um título brincalhão para uma consultoria séria: encontro o trabalho que a tua equipa repete e uso IA para criar ferramentas simples que a tua equipa pode ter e manter. Pensa em truques de vida: aqui, hackear é encontrar um caminho mais inteligente para resolver um problema, não é só cibersegurança. Tenho agora até 30 horas por semana livres.",
+   "link": "Ver como trabalharia contigo",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, a aposta principal",
+   "text": "A Openline é o meu principal negócio e a minha startup. Vende eSIMs de viagem, que dão dados móveis ao teu telemóvel no estrangeiro sem cartão SIM de plástico. Mais de um milhão foram ativados através de parceiros empresariais. A Iris e a Digital Spot são spin-offs de ferramentas criadas para a Openline. Estou a angariar fundos junto de business angels e fundos de capital de risco, e a Maratona foi o meu projeto paralelo.",
+   "link": "Ver os projetos",
+   "href": "/invest"
+  },
+  {
+   "heading": "Faz a tua maratona",
+   "text": "Se queres fazer a tua própria maratona, começa aqui. Partilho seis lições da minha corrida e uma lista de verificação para o dia do lançamento, para builders. Podes ir assinalando os itens e copiar a lista para as tuas notas, o teu repositório ou a tua ferramenta de gestão de projetos.",
+   "link": "Começar a checklist",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "O TPHM OS é a versão divertida deste site. Transforma a Maratona toda num pequeno ambiente de trabalho de computador com que podes brincar, com aplicações, uma caixa de entrada, um terminal e um gatinho DJ. Se preferes brincar, podes arrancá-lo.",
+   "link": "Arrancar o TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Saltar para o conteúdo",
+  "brandLabel": "TPHM, o diário de bordo",
+  "back": "O diário de bordo",
+  "theme": "Alternar entre claro e escuro",
+  "listen": "Ouvir esta página",
+  "pause": "Pausa",
+  "resume": "Retomar",
+  "error": "Não foi possível reproduzir o áudio. Ainda podes ler a página.",
+  "min": "3 min",
+  "full": "Ver o diário de bordo completo",
+  "contact": "Contacta-me",
+  "motto": "Pensa. Constrói. Lança. Repete.",
+  "note": "© 2026 Paul Fleury. As doze ferramentas são gratuitas e com licença MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

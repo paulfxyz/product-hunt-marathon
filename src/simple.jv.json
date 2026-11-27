@@ -1,0 +1,73 @@
+{
+ "title": "Maraton Product Hunt, nganggo basa prasaja",
+ "tag": "Basa prasaja · 3 menit",
+ "lead": "Aku nggawe lan ngrilis rolas piranti gratis sajrone rolas dina. Kaca iki nerangake kabeh nganggo basa prasaja, lan kowe bisa maca.",
+ "metaDescription": "Maraton Product Hunt nganggo basa prasaja: rolas piranti gratis lan open source nganggo AI, dirilis 10-21 Nov 2026.",
+ "sections": [
+  {
+   "heading": "Maraton iku apa",
+   "text": "Maraton Product Hunt lumaku saka 10 nganti 21 Nov 2026. Aku ngrilis sewelas piranti sajrone sewelas dina, ditambah siji bonus: Tetris. Kabeh rolas piranti gratis dianggo lan mbukak (open source) kanthi lisensi MIT, lan digawe nganggo AI. Waragad nggawe rolas piranti iki kira-kira 2.200 US$ kanggo AI, jam kerja, lan hosting, lan aku babar blas ora tuku utawa njaluk upvote.",
+   "link": "Waca cathetan",
+   "href": "/#log"
+  },
+  {
+   "heading": "Rolas piranti iku",
+   "text": "Piranti-piranti iki cilik lan migunani. Junk iku cathetan cilik ngambang kanggo Mac-mu. Mang menehi saran printah terminal lan ngenteni konfirmasimu. Megamesh masang VPN pribadimu dhewe, Mars mindai Mac kanggo golek malware, lan Timescreen ngowahi layar nganggur dadi jam. Tetris iku bonus, proyek penggemar sing digawe kanggo seneng-seneng. Saben piranti duwe kaca dhewe jangkep karo critane.",
+   "link": "Bukak rolas entri",
+   "href": "/#log"
+  },
+  {
+   "heading": "Sing diajarake Product Hunt marang aku",
+   "text": "Aku ngrilis tanpa tim rilis lan tanpa njaluk upvote, lan aku nolak saben tawaran dodolan suara. Tayang langsung lan katon cetha iku rong prekara sing beda: miturut pengalamanku, produk mung manggon ing kira-kira 4 poin kajaba duwe anggaran pariwara gedhe utawa ditampilake editor. Editor milih mang, nanging karepku karya open source bisa katon tanpa ragad apa-apa. Laporan jangkep, ngemot poin saben rilis lan apa sing dakinaoni, metu dina Setu 28 Nov.",
+   "link": "Waca cathetan lapangan",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS wis mati",
+   "text": "SaaS tegese piranti lunak sing disewa nganggo langganan. Panemuku, luwih akeh perusahaan bakal nggawe lan nduweni piranti sing saiki disewa. Iki ramalan, dudu bukti. Nggawe maneh piranti lunak ora ateges nggawe maneh data, kepatuhan, utawa kapercayan, lan saben piranti butuh sing nduweni. Ana kalkulator kanggo mbandhingake dhewe luwih becik nyewa apa nggawe.",
+   "link": "Itung dhewe",
+   "href": "/saas"
+  },
+  {
+   "heading": "Rekrut Chief Hacking Officer",
+   "text": "CHO tegese Chief Hacking Officer. Iki jeneng kalungguhan sing santai nanging kanggo konsultasi serius: aku nggoleki gaweyan timmu sing bola-bali, banjur nggunakake AI kanggo nggawe piranti prasaja sing bisa diduweni lan dirumat timmu dhewe. Coba pikiren kaya life hack: hacking ing kene tegese golek dalan sing luwih pinter kanggo ngrampungake masalah, ora mung babagan cybersecurity. Saiki aku duwe wektu nganti 30 jam seminggu.",
+   "link": "Deleng caraku makarya bareng kowe",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, taruhan utamaku",
+   "text": "Openline iku usaha lan startup utamaku. Usaha iki dodolan travel eSIM, sing menehi paket data seluler kanggo telponmu ing luar negeri tanpa kertu SIM plastik. Luwih saka sayuta eSIM wis diaktifake lumantar mitra bisnis. Iris lan Digital Spot iku spin-off saka piranti sing digawe kanggo Openline. Aku lagi golek pendanaan saka angel investor lan dana ventura, dene Maraton iki mung proyek sampinganku.",
+   "link": "Deleng usaha-usaha kasebut",
+   "href": "/invest"
+  },
+  {
+   "heading": "Lakonana maratonmu dhewe",
+   "text": "Yen kowe kepengin nglakoni maraton cilikmu dhewe, wiwiti saka kene. Aku nuduhake enem piwulang saka lakuku lan dhaptar priksa dina rilis kanggo para builder. Kowe bisa nyentang saben babagan sajrone lumaku, lan nyalin dhaptar kasebut menyang cathetanmu, repo, utawa piranti panlusur proyekmu.",
+   "link": "Wiwiti dhaptar priksa",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS iku versi dolanan saka situs iki. Kabeh babagan Maraton diowahi dadi desktop komputer cilik sing bisa kokdolani, jangkep ana aplikasi, kothak layang mlebu, terminal, lan kucing DJ. Yen kowe luwih seneng njajal lan dolanan, mangga diuripake.",
+   "link": "Uripake TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Mlumpat menyang isi",
+  "brandLabel": "TPHM, buku cathetan",
+  "back": "Buku cathetan",
+  "theme": "Ganti padhang utawa peteng",
+  "listen": "Rungokna kaca iki",
+  "pause": "Mandheg sedhela",
+  "resume": "Banjurna",
+  "error": "Audione ora bisa disetel. Kowe isih bisa maca kacane.",
+  "min": "3 min",
+  "full": "Deleng buku cathetan jangkep",
+  "contact": "Hubungi aku",
+  "motto": "Mikir. Nggawe. Rilis. Baleni.",
+  "note": "© 2026 Paul Fleury. Kabeh rolas piranti gratis lan kanthi lisensi MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

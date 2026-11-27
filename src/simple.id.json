@@ -1,0 +1,73 @@
+{
+ "title": "Maraton Product Hunt, dengan kata-kata sederhana",
+ "tag": "Bahasa sederhana · 3 menit",
+ "lead": "Aku membuat dan merilis dua belas alat gratis dalam dua belas hari. Halaman ini menjelaskan semuanya dengan kata-kata sederhana.",
+ "metaDescription": "Maraton Product Hunt dengan bahasa sederhana: dua belas alat gratis dan open source, dibuat dengan AI dan dirilis 10–21 November 2026.",
+ "sections": [
+  {
+   "heading": "Apa itu Maraton",
+   "text": "Maraton Product Hunt berlangsung dari 10 sampai 21 November 2026. Aku merilis sebelas alat dalam sebelas hari, lalu satu bonus: Tetris. Kedua belasnya gratis digunakan dan open source dengan lisensi MIT, dan aku membuatnya dengan AI. Membuat semuanya menghabiskan sekitar 2.200 dolar AS untuk AI, jam kerja, dan hosting, dan aku tidak membeli atau meminta satu pun upvote.",
+   "link": "Baca log",
+   "href": "/#log"
+  },
+  {
+   "heading": "Dua belas alat",
+   "text": "Alat-alatnya kecil dan praktis. Junk adalah buku catatan melayang untuk Mac-mu. Mang menyarankan perintah terminal lalu menunggu konfirmasimu. Megamesh menyiapkan VPN pribadimu sendiri, Mars memindai Mac untuk mencari malware, dan Timescreen mengubah layar cadangan menjadi jam. Tetris adalah bonusnya, proyek penggemar yang dibuat untuk bersenang-senang. Setiap alat punya halaman tersendiri dengan kisah di baliknya.",
+   "link": "Buka kedua belas entri",
+   "href": "/#log"
+  },
+  {
+   "heading": "Yang diajarkan Product Hunt padaku",
+   "text": "Aku meluncurkan tanpa tim peluncuran dan tanpa meminta upvote, dan aku menolak setiap tawaran jual beli suara. Tayang dan terlihat itu dua hal yang berbeda: menurut pengalamanku, produk tertahan di sekitar 4 poin kecuali punya anggaran iklan besar atau ditampilkan oleh editor. Para editor menampilkan Mang, tapi aku berharap karya open source bisa terlihat tanpa anggaran sama sekali. Laporan lengkapnya, dengan poin setiap peluncuran dan apa yang kupelajari, terbit Sabtu 28 Nov.",
+   "link": "Baca Catatan Lapangan",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS sudah mati",
+   "text": "SaaS artinya perangkat lunak yang kamu sewa lewat langganan. Taruhanku, makin banyak perusahaan akan membangun dan memiliki alat yang sekarang mereka sewa. Ini prediksi, bukan bukti. Membangun ulang perangkat lunak tidak otomatis membangun ulang data, kepatuhan, atau kepercayaan, dan setiap alat butuh pemilik. Sebuah kalkulator membantumu membandingkan sewa dan bangun sendiri.",
+   "link": "Hitung angkanya",
+   "href": "/saas"
+  },
+  {
+   "heading": "Rekrut Chief Hacking Officer",
+   "text": "CHO singkatan dari Chief Hacking Officer. Ini sebutan main-main untuk konsultasi serius: aku memetakan pekerjaan berulang di timmu, lalu menggunakan AI untuk membangun alat sederhana yang bisa dimiliki dan dirawat timmu. Bayangkan life hack: di sini hacking berarti menemukan rute yang lebih cerdas untuk mengatasi masalah, bukan sekadar keamanan siber. Sekarang aku punya waktu luang hingga 30 jam seminggu.",
+   "link": "Lihat caraku bekerja denganmu",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, taruhan utama",
+   "text": "Openline adalah venture dan startup utamaku. Openline menjual eSIM perjalanan, yang memberi ponselmu data seluler di luar negeri tanpa kartu SIM plastik. Lebih dari satu juta sudah diaktifkan lewat mitra bisnis. Iris dan Digital Spot adalah spin-off dari alat yang dibangun untuk Openline. Aku sedang menggalang dana dari angel investor dan dana ventura, dan Maraton ini adalah proyek sampinganku.",
+   "link": "Lihat venture-nya",
+   "href": "/invest"
+  },
+  {
+   "heading": "Jalankan maratonmu sendiri",
+   "text": "Kalau kamu ingin menjalankan maraton kecilmu sendiri, mulailah dari sini. Aku membagikan enam pelajaran dari perjalananku dan daftar periksa hari peluncuran untuk para builder. Kamu bisa mencentang butirnya satu demi satu, lalu menyalin daftarnya ke catatanmu, repo-mu, atau pelacak proyekmu.",
+   "link": "Mulai daftar periksa",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS adalah versi main-main dari situs ini. Seluruh Maraton diubah menjadi desktop komputer kecil yang bisa kamu mainkan, lengkap dengan aplikasi, kotak masuk, terminal, dan kucing DJ. Kalau kamu lebih suka bermain-main, kamu bisa mem-boot-nya.",
+   "link": "Boot TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Langsung ke konten",
+  "brandLabel": "TPHM, buku log",
+  "back": "Buku log",
+  "theme": "Beralih antara terang dan gelap",
+  "listen": "Dengarkan halaman ini",
+  "pause": "Jeda",
+  "resume": "Lanjutkan",
+  "error": "Audio tidak dapat diputar. Kamu tetap bisa membaca halamannya.",
+  "min": "3 mnt",
+  "full": "Lihat buku log selengkapnya",
+  "contact": "Hubungi aku",
+  "motto": "Pikirkan. Bangun. Rilis. Ulangi.",
+  "note": "© 2026 Paul Fleury. Kedua belas alat gratis dan berlisensi MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

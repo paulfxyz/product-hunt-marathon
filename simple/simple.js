@@ -18,7 +18,7 @@ async function start() {
   audio.playbackRate = SPEED;
   try { await audio.play(); set(true); } catch { set(false); err.hidden = false; }
 }
-btn.addEventListener('click', () => { if (audio.paused) start(); else { audio.pause(); set(false); } });
+if (btn) btn.addEventListener('click', () => { if (audio.paused) start(); else { audio.pause(); set(false); } });
 $('.theme').addEventListener('click', () => {
   const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
   root.dataset.theme = t; try { localStorage.setItem('tphm-theme', t); } catch (e) {}

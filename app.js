@@ -510,3 +510,5 @@ const paintDots = () => { let d = []; try { d = JSON.parse(localStorage.getItem(
 paintDots(); addEventListener('storage', paintDots); document.addEventListener('change', paintDots); document.addEventListener('click', () => setTimeout(paintDots, 0));
 
 })();
+// Localise the few labels drawn by CSS (content:) through the i18n layer.
+(() => { const t = window.T || (s => s); document.documentElement.style.setProperty('--l-declined', JSON.stringify(t('Declined'))); })();

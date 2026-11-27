@@ -1,0 +1,73 @@
+{
+ "title": "Ang Product Hunt Marathon, sa simpleng salita",
+ "tag": "Simpleng wika · 3 minuto",
+ "lead": "Gumawa at nag-ship ako ng labindalawang libreng tool sa loob ng labindalawang araw. Ipinapaliwanag ng page na ito ang lahat sa simpleng salita, at puwede mo itong basahin.",
+ "metaDescription": "Ang Product Hunt Marathon sa simpleng salita: labindalawang libre at open-source na tool na binuo gamit ang AI at na-ship mula 10 hanggang 21 Nobyembre 2026.",
+ "sections": [
+  {
+   "heading": "Ano ang Marathon",
+   "text": "Ang Product Hunt Marathon ay tumakbo mula 10 hanggang 21 Nobyembre 2026. Nag-ship ako ng labing-isang tool sa loob ng labing-isang araw, tapos may isa pang bonus: ang Tetris. Lahat ng labindalawa ay libreng gamitin at open-source sa ilalim ng MIT license, at binuo ko ang mga ito gamit ang AI. Nagkakahalaga ng mga 2,200 US dollars sa AI, oras at hosting ang pagbuo sa lahat ng labindalawa, at hindi ako bumili o humingi ng kahit isang upvote.",
+   "link": "Basahin ang log",
+   "href": "/#log"
+  },
+  {
+   "heading": "Ang labindalawang tool",
+   "text": "Maliliit at praktikal ang mga tool. Ang Junk ay lumulutang na scratchpad para sa Mac mo. Ang Mang ay nagmumungkahi ng terminal commands at naghihintay na kumpirmahin mo. Ang Megamesh ay nagse-set up ng sarili mong pribadong VPN, ang Mars ay nag-i-scan ng Mac para sa malware, at ang Timescreen ay ginagawang orasan ang bakanteng screen. Ang Tetris ang bonus, isang fan project na ginawa para sa katuwaan. May sariling page ang bawat tool kasama ang kuwento sa likod nito.",
+   "link": "Buksan ang labindalawang entry",
+   "href": "/#log"
+  },
+  {
+   "heading": "Ang itinuro sa akin ng Product Hunt",
+   "text": "Nag-launch ako nang walang launch squad at hindi humingi ng mga upvote, at tinanggihan ko ang bawat alok na bentahan ako ng boto. Magkaiba ang pagiging live at ang makita ka: sa karanasan ko, nananatili ang isang product sa mga 4 na puntos maliban na lang kung malaki ang budget para sa ads o i-feature ito ng isang editor. Na-feature ng mga editor ang Mang, pero sana makita ang open-source na gawa nang walang anumang budget. Ilalabas ang buong ulat, kasama ang mga puntos sa bawat launch at ang mga natutunan ko, sa Sabado, 28 Nobyembre.",
+   "link": "Basahin ang field notes",
+   "href": "/hunt"
+  },
+  {
+   "heading": "Patay na ang SaaS",
+   "text": "Ang ibig sabihin ng SaaS ay software na inuupahan mo gamit ang subscription. Pusta ko, mas maraming kumpanya ang bubuo at magmamay-ari ng mga tool na inuupahan nila ngayon. Prediksyon ito, hindi patunay. Hindi nabubuo muli sa paggawa muli ng software ang data, compliance o tiwala, at kailangan ng may-ari ng bawat tool. Sa calculator, puwede mong ikumpara para sa sarili mo ang pag-upa at ang pagbuo.",
+   "link": "Tingnan ang mga numero",
+   "href": "/saas"
+  },
+  {
+   "heading": "Mag-hire ng Chief Hacking Officer",
+   "text": "Ang ibig sabihin ng CHO ay Chief Hacking Officer. Pabirong titulo ito para sa seryosong consulting: hinahanap ko ang gawaing inuulit-ulit ng team mo, tapos gumagamit ako ng AI para bumuo ng mga simpleng tool na puwedeng ariin at alagaan ng team mo. Isipin mo ang life hacks: ang ibig sabihin ng hacking dito ay paghahanap ng mas matalinong paraan sa problema, hindi lang cybersecurity. May bakante akong hanggang 30 oras kada linggo ngayon.",
+   "link": "Tingnan kung paano kita makakatrabaho",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, ang pangunahing pusta",
+   "text": "Ang Openline ang pangunahin kong venture at startup. Nagbebenta ito ng travel eSIMs, na nagbibigay sa telepono mo ng mobile data sa ibang bansa nang walang plastic SIM card. Mahigit isang milyon na ang na-activate sa pamamagitan ng business partners. Ang Iris at Digital Spot ay mga spin-off ng tools na binuo para sa Openline. Nangangalap ako mula sa angels at venture funds, at side project ko lang ang Marathon.",
+   "link": "Tingnan ang mga venture",
+   "href": "/invest"
+  },
+  {
+   "heading": "Patakbuhin ang sarili mong marathon",
+   "text": "Kung gusto mong magpatakbo ng sarili mong maliit na marathon, magsimula rito. Nagbabahagi ako ng anim na aral mula sa takbo ko at ng checklist sa araw ng launch para sa builders. Puwede mong i-tsek ang mga item habang sumusulong ka, at kopyahin ang listahan sa notes mo, repo mo o project tracker mo.",
+   "link": "Simulan ang checklist",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "Ang TPHM OS ang mapaglarong bersyon ng site na ito. Ginagawa nitong maliit na computer desktop ang buong Marathon na puwede mong paglaruan, may apps, inbox, terminal at DJ kitty. Kung mas gusto mong maglaro, puwede mo itong i-boot up.",
+   "link": "I-boot ang TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Lumaktaw sa nilalaman",
+  "brandLabel": "TPHM, ang logbook",
+  "back": "Ang logbook",
+  "theme": "Magpalit sa light at dark",
+  "listen": "Pakinggan ang page na ito",
+  "pause": "I-pause",
+  "resume": "Ituloy",
+  "error": "Hindi ma-play ang audio. Mababasa mo pa rin ang page.",
+  "min": "3 min",
+  "full": "Tingnan ang buong logbook",
+  "contact": "Kontakin ako",
+  "motto": "Mag-isip. Bumuo. I-ship. Ulitin.",
+  "note": "© 2026 Paul Fleury. Libre at MIT-licensed ang lahat ng labindalawang tool."
+ },
+ "noaudio": true,
+ "nometa": true
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Marathon na Product Hunt, a sauƙaƙan harshe",
+ "tag": "Sauƙaƙan harshe · minti 3",
+ "lead": "Na gina na kuma saki kayan aiki goma sha biyu kyauta cikin kwana goma sha biyu. Wannan shafi yana bayyana komai a sauƙaƙe, kuma za ka iya karanta shi.",
+ "metaDescription": "Marathon na Product Hunt a sauƙaƙan harshe: kayan aiki 12 kyauta, buɗaɗɗen tushe, an gina su da AI daga 10 zuwa 21 Nuwamba 2026.",
+ "sections": [
+  {
+   "heading": "Menene Marathon ɗin",
+   "text": "Marathon na Product Hunt ya gudana daga 10 zuwa 21 Nuwamba 2026. Na saki kayan aiki goma sha ɗaya cikin kwana goma sha ɗaya, sannan ƙari ɗaya: Tetris. Duka goma sha biyun kyauta ne a yi amfani da su kuma buɗaɗɗen tushe ne ƙarƙashin lasisin MIT, kuma na gina su da AI. Gina duka goma sha biyun ya ci kusan US$ 2,200 a AI, sa'o'i da ɗaukar nauyin yanar gizo, kuma ban sayi ko neman ko ƙuri'a ɗaya ta upvote ba.",
+   "link": "Karanta littafin tarihin aiki",
+   "href": "/#log"
+  },
+  {
+   "heading": "Kayan aiki goma sha biyun",
+   "text": "Kayan aikin ƙanana ne kuma masu amfani. Junk wani allon rubutu ne mai shawagi don Mac ɗinka. Mang yana ba da shawarar umarnin terminal sannan ya jira ka tabbatar. Megamesh yana kafa VPN ɗinka na sirri, Mars yana duba Mac don neman malware, Timescreen kuma yana mai da allo mara amfani ya zama agogo. Tetris shi ne ƙarin, aikin masoya da aka yi don nishaɗi. Kowane kayan aiki yana da shafinsa mai labarin da ke bayansa.",
+   "link": "Buɗe kayan aiki goma sha biyun",
+   "href": "/#log"
+  },
+  {
+   "heading": "Abin da Product Hunt ya koya mini",
+   "text": "Na ƙaddamar ba tare da ƙungiyar taimako ba kuma ba tare da neman upvote ba, na kuma ƙi duk wani tayi na sayar mini da ƙuri'u. Kasancewa a raye da kuma a gan ka abubuwa biyu ne daban: a gogewa ta, samfuri yana tsayawa a kusan maki 4 idan ba shi da babban kasafin talla ko kuma edita ya zaɓe shi. Editoci sun zaɓi Mang, amma ina fatan a iya ganin aikin buɗaɗɗen tushe ba tare da wani kasafin kuɗi ba. Cikakken rahoto, tare da maki na kowane ƙaddamarwa da abin da na koya, zai fito a ranar Asabar 28 Nuwamba.",
+   "link": "Karanta bayanan aiki",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS ya mutu",
+   "text": "SaaS na nufin manhajar da kake haya da biyan kuɗi akai-akai. Hasashena shi ne ƙarin kamfanoni za su gina kuma su mallaki kayan aikin da yanzu suke haya. Hasashe ne, ba hujja ba. Sake gina manhaja ba ya sake gina bayanai, bin dokoki ko amana, kuma kowane kayan aiki yana buƙatar mai shi. Wata na'urar lissafi tana ba ka damar kwatanta haya da ginawa da kanka.",
+   "link": "Yi lissafin",
+   "href": "/saas"
+  },
+  {
+   "heading": "Ɗauki hayar Chief Hacking Officer",
+   "text": "CHO na nufin Chief Hacking Officer. Suna ne na wasa don ba da shawara mai zurfi: nakan gano ayyukan da ƙungiyarka ke maimaitawa, sannan in yi amfani da AI in gina sauƙaƙan kayan aiki da ƙungiyarka za ta mallaka kuma ta kula da su. Ka yi tunanin dabarun rayuwa: hacking a nan na nufin neman hanya mafi wayo ta magance matsala, ba tsaron yanar gizo kawai ba. Ina da har zuwa sa'o'i 30 a mako a buɗe a yanzu.",
+   "link": "Duba yadda zan yi aiki tare da kai",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, babban jarin",
+   "text": "Openline shi ne babban kamfani na kuma startup ɗina. Yana sayar da eSIM na tafiye-tafiye, wanda ke ba wa wayarka data a ƙasashen waje ba tare da katin SIM na roba ba. An kunna sama da miliyan ɗaya ta hanyar abokan hulɗar kasuwanci. Iris da Digital Spot rassa ne na kayan aikin da aka gina don Openline. Ina tara kuɗi daga angels da venture funds, kuma Marathon ɗin aiki ne na gefe gare ni.",
+   "link": "Duba kamfanonin",
+   "href": "/invest"
+  },
+  {
+   "heading": "Gudanar da naka marathon ɗin",
+   "text": "Idan kana son gudanar da ɗan ƙaramin marathon naka, fara nan. Ina raba darussa shida daga gogewa ta da kuma jerin duba na ranar ƙaddamarwa ga masu gini. Za ka iya yi wa abubuwa alama yayin da kake ciki, sannan ka kwafi jerin zuwa rubuce-rubucenka, repo ɗinka ko tsarin bibiyar aikinka.",
+   "link": "Fara jerin duban",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS ita ce sigar wasa ta wannan shafi. Tana mai da dukan Marathon ɗin ya zama ƙaramin teburin kwamfuta da za ka iya wasa da shi, tare da manhajoji, akwatin saƙo, terminal da kyanwar DJ. Idan ka fi son yin wasa, za ka iya kunna ta.",
+   "link": "Kunna TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Tsallake zuwa abun ciki",
+  "brandLabel": "TPHM, littafin tarihin aiki",
+  "back": "Littafin tarihin aiki",
+  "theme": "Sauya tsakanin haske da duhu",
+  "listen": "Saurari wannan shafi",
+  "pause": "Dakata",
+  "resume": "Ci gaba",
+  "error": "Ba a iya kunna sautin ba. Za ka iya karanta shafin.",
+  "min": "minti 3",
+  "full": "Duba cikakken littafin tarihin aiki",
+  "contact": "Tuntuɓe ni",
+  "motto": "Yi tunani. Gina. Saki. Maimaita.",
+  "note": "© 2026 Paul Fleury. Duka kayan aiki goma sha biyun kyauta ne kuma suna ƙarƙashin lasisin MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

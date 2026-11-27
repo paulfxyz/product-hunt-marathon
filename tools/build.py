@@ -20,7 +20,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://tphm.io'
-VER = '202611270000'
+VER = "202611270200"
 LANGS = json.loads((ROOT / 'assets/i18n/langs.json').read_text())
 READY = [x['c'] for x in LANGS]
 OG_LOCALE = {'en': 'en_GB', 'fr': 'fr_FR', 'cmn': 'zh_CN', 'he': 'he_IL', 'hi': 'hi_IN', 'es': 'es_ES', 'ar': 'ar_AR',
@@ -40,7 +40,7 @@ _EN = {'hunt': 'hunt', 'saas': 'saas', 'cho': 'cho', 'invest': 'invest', 'builde
 SLUGS = {c: dict(_EN) for c in READY}
 SLUGS['fr'] = {'hunt': 'chasse', 'saas': 'saas', 'cho': 'cho', 'invest': 'investir', 'builders': 'batisseurs'}
 # Languages with their own /simple page (tools/simple.py); others link to English.
-SIMPLE_LANGS = ['en', 'fr']
+SIMPLE_LANGS = READY
 CHAPTERS = ['hunt', 'saas', 'cho', 'invest', 'builders']
 # The twelve tools come from assets/data.js (window.TPHM_LOG), the same file the
 # browser uses, so names and one-liners never drift between HTML and JS.
@@ -266,9 +266,10 @@ def build(langs=READY):
         for c in READY:
             sm += f'<url><loc>{url(c, key)}</loc><lastmod>2026-11-24</lastmod>' + ''.join(
                 f'<xhtml:link rel="alternate" hreflang="{next(x["l"] for x in LANGS if x["c"] == a)}" href="{url(a, key)}"/>' for a in READY) + '</url>\n'
-    for a, b in (('https://tphm.io/simple', 'https://tphm.io/fr/simple'),):
-        for loc in (a, b):
-            sm += f'<url><loc>{loc}</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="en" href="{a}"/><xhtml:link rel="alternate" hreflang="fr" href="{b}"/></url>\n'
+    su = lambda c: SITE + base(c) + '/simple'
+    for c in SIMPLE_LANGS:
+        sm += f'<url><loc>{su(c)}</loc><lastmod>2026-11-27</lastmod>' + ''.join(
+            f'<xhtml:link rel="alternate" hreflang="{next(x["l"] for x in LANGS if x["c"] == a)}" href="{su(a)}"/>' for a in SIMPLE_LANGS) + '</url>\n'
     (ROOT / 'sitemap.xml').write_text(sm + '</urlset>\n')
     return written
 
