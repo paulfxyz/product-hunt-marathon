@@ -1076,5 +1076,10 @@
 "Free · ${0}K worth of AI tools · One-to-one",
 "Plus {0}+ Python tools, {1}+ prompts and {2}+ investors, sent to you by DM.",
 "Reply GOPABLO to my posts, or share TPHM and mention me. I’ll DM you ${0}K worth of AI tools, {1}+ Python tools and {2}+ prompts.",
-"Say GOPABLO, get ${0}K worth of AI tools."
+"Say GOPABLO, get ${0}K worth of AI tools.",
+"<t0><t1/><t2>Free Software Song</t2></t0> <t3>{0} + {1} shipped</t3> <t4/> <t5>Fri {2} Nov {3}:{4} · Lisbon</t5> <t6/> <t7><t8/><t9>Exit</t9></t7>",
+"Declined",
+"Done",
+"Fri {0} Nov {1}:{2} · Lisbon",
+"Home"
 ]

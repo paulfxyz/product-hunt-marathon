@@ -21,7 +21,7 @@
 .s-ico .ico{width:20px;height:20px}
 .s-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(21px,2.6vw,25px);letter-spacing:-.01em;margin:6px 0 10px}
 .s-card p{font-size:17.5px;line-height:1.65;color:var(--ink-2);margin:0 0 14px;max-width:64ch}
-.s-more{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--accent-ink)}
+.s-more{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-block:-9px;font-weight:700;color:var(--accent-ink)}
 .s-more .ico{width:16px;height:16px;transition:transform .15s}
 .s-more:hover .ico{transform:translateX(3px)}
 .s-full{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
@@ -35,3 +35,14 @@
 }
 .s-lang{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:var(--r-full);border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;font-size:15px}
 .s-lang:hover{border-color:var(--ink-2)}
+/* language menu (31 languages) */
+.s-langs{position:relative}
+.s-langs summary{list-style:none;cursor:pointer;gap:6px}
+.s-langs summary::-webkit-details-marker{display:none}
+.s-langs summary::after{content:"";width:7px;height:7px;border-inline-end:2px solid currentColor;border-block-end:2px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-inline-start:4px}
+.s-langs[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.s-langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 8px);z-index:50;list-style:none;margin:0;padding:8px;width:min(300px,calc(100vw - 32px));max-height:min(60vh,440px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.s-langs a{display:flex;align-items:center;min-height:40px;padding:0 10px;border-radius:8px;color:var(--ink);font-size:15px;text-decoration:none}
+.s-langs a:hover{background:var(--line)}
+.s-langs a[aria-current]{font-weight:700;color:var(--accent-ink)}
+.s-langs summary{white-space:nowrap;max-width:44vw;overflow:hidden;text-overflow:ellipsis;display:inline-flex}

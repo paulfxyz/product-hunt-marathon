@@ -1,0 +1,73 @@
+{
+ "title": "Mbio za Marathoni za Product Hunt, kwa maneno rahisi",
+ "tag": "Lugha rahisi · dakika 3",
+ "lead": "Nilijenga na kuzindua zana kumi na mbili za bure ndani ya siku kumi na mbili. Ukurasa huu unaeleza yote kwa maneno rahisi.",
+ "metaDescription": "Mbio za Marathoni za Product Hunt kwa maneno rahisi: zana kumi na mbili za bure, chanzo huria, zilizojengwa kwa AI na kuzinduliwa 10 hadi 21 Novemba 2026.",
+ "sections": [
+  {
+   "heading": "Marathoni ilikuwa nini",
+   "text": "Mbio za Marathoni za Product Hunt zilifanyika kuanzia tarehe 10 hadi 21 Novemba 2026. Nilizindua zana kumi na moja ndani ya siku kumi na moja, kisha nyongeza moja: Tetris. Zote kumi na mbili ni za bure kutumia na ni chanzo huria chini ya leseni ya MIT, na nilizijenga kwa AI. Kuzijenga zote kumi na mbili kulinigharimu takriban US$ 2,200 kwa AI, saa za kazi na upangishaji seva, na sikununua wala kuomba upvote hata moja.",
+   "link": "Soma kumbukumbu",
+   "href": "/#log"
+  },
+  {
+   "heading": "Zana kumi na mbili",
+   "text": "Zana hizi ni ndogo na za vitendo. Junk ni kijidaftari kinachoelea kwa Mac yako. Mang hupendekeza amri za terminal na kusubiri uthibitisho wako. Megamesh huweka VPN yako binafsi, Mars hukagua Mac kutafuta programu hasidi, na Timescreen hugeuza skrini ya ziada kuwa saa. Tetris ni nyongeza ya shabiki iliyotengenezwa kwa kujifurahisha. Kila zana ina ukurasa wake wenye hadithi iliyo nyuma yake.",
+   "link": "Fungua zana zote kumi na mbili",
+   "href": "/#log"
+  },
+  {
+   "heading": "Product Hunt ilinifundisha nini",
+   "text": "Nilizindua bila kikosi cha kusaidia na bila kuomba upvote zozote, na nilikataa kila ofa ya kuniuzia kura. Kuwa hewani na kuonekana ni vitu viwili tofauti: kwa uzoefu wangu, bidhaa hubaki kwenye pointi 4 hivi isipokuwa ikiwa na bajeti kubwa ya matangazo au mhariri aichague. Wahariri walimchagua Mang, lakini natamani kazi za chanzo huria zingeonekana bila bajeti yoyote. Ripoti kamili, yenye pointi za kila uzinduzi na nilichojifunza, itatoka Jmamosi 28 Nov.",
+   "link": "Soma maelezo ya uwanjani",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS imekufa",
+   "text": "SaaS humaanisha programu unazokodi kwa usajili wa kila mwezi au mwaka. Dau langu ni kwamba makampuni mengi yatajenga na kumiliki zana wanazokodi sasa. Ni utabiri, si uthibitisho. Kujenga upya programu hakujengi upya data, kufuata sheria au uaminifu, na kila zana inahitaji mtu anayeisimamia. Kikokotoo kinakuwezesha kulinganisha gharama za kukodi na kujenga mwenyewe.",
+   "link": "Piga hesabu",
+   "href": "/saas"
+  },
+  {
+   "heading": "Ajiri Chief Hacking Officer",
+   "text": "CHO inasimama badala ya Chief Hacking Officer. Ni cheo cha mzaha kwa ushauri makini: ninatafuta kazi inayorudiwarudiwa na timu yako, kisha ninatumia AI kujenga zana rahisi ambazo timu yako inaweza kuzimiliki na kuzitunza. Fikiria maarifa ya 'life hacks': udukuzi hapa unamaanisha kutafuta njia nadhifu ya kutatua tatizo, si usalama wa mtandao pekee. Nina hadi saa 30 kwa wiki zilizowazi sasa.",
+   "link": "Ona jinsi ninavyoweza kufanya kazi nawe",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, dau langu kuu",
+   "text": "Openline ndiyo biashara yangu kuu na startup yangu. Inauza eSIM za kusafiri, ambazo huipa simu yako data ya mtandao nje ya nchi bila kutumia kadi halisi ya SIM. Zaidi ya milioni moja zimewashwa kupitia washirika wa kibiashara. Iris na Digital Spot zilitokana na zana zilizojengwa kwa ajili ya Openline. Ninachangisha mtaji kutoka kwa wawekezaji binafsi na mifuko ya mtaji, na Marathoni hii ilikuwa mradi wangu wa kando tu.",
+   "link": "Angalia miradi na biashara",
+   "href": "/invest"
+  },
+  {
+   "heading": "Kimbia marathoni yako mwenyewe",
+   "text": "Kama unataka kuendesha marathoni yako ndogo, anzia hapa. Ninashiriki mafunzo sita niliyoyapata na orodha ya mambo ya kufanya siku ya uzinduzi kwa wajenzi. Unaweza kuweka alama unavyoendelea, na kunakili orodha kwenye madokezo yako, repo yako au chombo chako cha kufuatilia miradi.",
+   "link": "Anza orodha ya mambo ya kufanya",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS ni toleo la kimchezo la tovuti hii. Linageuza Marathoni yote kuwa kompyuta ndogo ya mezani unayoweza kuitumia na kuichezea, ikiwa na programu, kikasha pokezi, terminal na paka DJ. Kama unapendelea kucheza nayo, unaweza kuiwasha.",
+   "link": "Washa TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Ruka hadi maudhui",
+  "brandLabel": "TPHM, kitabu cha kumbukumbu",
+  "back": "Kitabu cha kumbukumbu",
+  "theme": "Badilisha kati ya mwanga na giza",
+  "listen": "Sikiliza ukurasa huu",
+  "pause": "Sitisha",
+  "resume": "Endelea",
+  "error": "Sauti haikuweza kuchezwa. Bado unaweza kusoma ukurasa.",
+  "min": "dak 3",
+  "full": "Ona kitabu kamili cha kumbukumbu",
+  "contact": "Wasiliana nami",
+  "motto": "Fikiri. Jenga. Zindua. Rudia.",
+  "note": "© 2026 Paul Fleury. Zana zote kumi na mbili ni za bure na zimepewa leseni ya MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

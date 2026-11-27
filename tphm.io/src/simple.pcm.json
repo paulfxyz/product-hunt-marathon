@@ -1,0 +1,73 @@
+{
+ "title": "Di Product Hunt Marathon, for simple words",
+ "tag": "Simple language · 3 minutes",
+ "lead": "I build and ship twelve free tools inside twelve days. Dis page explain everything for simple words.",
+ "metaDescription": "Di Product Hunt Marathon for simple words: twelve free open-source tools wey I build with AI and ship from 10 to 21 November 2026.",
+ "sections": [
+  {
+   "heading": "Wetin di Marathon be",
+   "text": "Di Product Hunt Marathon run from 10 to 21 November 2026. I ship eleven tools inside eleven days, then add one bonus: Tetris. All di twelve dey free to use and dem dey open source under MIT licence, and na AI I take build dem. To build all di twelve cost about 2,200 US dollars for AI, hours and hosting, and I no buy or beg for even one upvote.",
+   "link": "Read di log",
+   "href": "/#log"
+  },
+  {
+   "heading": "Di twelve tools",
+   "text": "Di tools small and dem dey useful. Junk na floating scratchpad for your Mac. Mang dey suggest terminal commands and e dey wait make you confirm. Megamesh dey set up your own private VPN, Mars dey scan Mac for malware, and Timescreen dey turn spare screen to clock. Tetris na di bonus, fan project wey I make for fun. Every tool get im own page with di story behind am.",
+   "link": "Open di twelve entries",
+   "href": "/#log"
+  },
+  {
+   "heading": "Wetin Product Hunt teach me",
+   "text": "I launch without any launch squad and I no ask anybody for upvotes, and I refuse every offer to sell me votes. To dey live and to dey seen no be di same thing: from wetin I see, product go just dey stay for about 4 points unless e get big budget for ads or editor feature am. Di editors feature Mang, but I wish say people fit see open-source work without any budget. Di full report, with di points for every launch and wetin I learn, go come out on Saturday 28 November.",
+   "link": "Read di field notes",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS don die",
+   "text": "SaaS mean software wey you dey rent with subscription. My bet be say more companies go build and own di tools wey dem dey rent now. Na prediction, no be proof. To rebuild software no dey rebuild data, compliance or trust, and every tool need owner. Calculator dey wey go let you compare to rent and to build by yourself.",
+   "link": "Run di numbers",
+   "href": "/saas"
+  },
+  {
+   "heading": "Hire a Chief Hacking Officer",
+   "text": "CHO mean Chief Hacking Officer. Na playful title for serious consulting: I dey find di work wey your team dey repeat, then use AI build simple tools wey your team fit own and maintain. Think about life hacks: for here, hacking mean to find smarter way solve problem, no be just cybersecurity. I get up to 30 hours every week wey open now.",
+   "link": "See how I go work with you",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, di main bet",
+   "text": "Openline na my main venture and startup. E dey sell travel eSIMs, wey dey give your phone mobile data for abroad without plastic SIM card. Over one million don activate through business partners. Iris and Digital Spot na spin-offs of tools wey dem build for Openline. I dey raise money from angels and venture funds, and di Marathon na my side project.",
+   "link": "See di ventures",
+   "href": "/invest"
+  },
+  {
+   "heading": "Run your own marathon",
+   "text": "If you want run your own small marathon, start from here. I share six lessons from my run and one launch-day checklist for builders. You fit tick di items as you dey go, and copy di list put for your notes, your repo or your project tracker.",
+   "link": "Start di checklist",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS na di playful version of dis site. E turn di whole Marathon to small computer desktop wey you fit play with, with apps, inbox, terminal and DJ kitty. If you prefer to play, you fit boot am up.",
+   "link": "Boot TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Skip go content",
+  "brandLabel": "TPHM, di logbook",
+  "back": "Di logbook",
+  "theme": "Switch between light and dark",
+  "listen": "Listen to dis page",
+  "pause": "Pause",
+  "resume": "Resume",
+  "error": "Dem no fit play di audio. You fit still read di page.",
+  "min": "3 min",
+  "full": "See di full logbook",
+  "contact": "Contact me",
+  "motto": "Think. Build. Ship. Repeat.",
+  "note": "© 2026 Paul Fleury. All di twelve tools dey free and dem get MIT licence."
+ },
+ "noaudio": true,
+ "nometa": true
+}

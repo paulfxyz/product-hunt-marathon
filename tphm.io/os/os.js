@@ -607,3 +607,5 @@ else {
 addEventListener('hashchange', () => { const m = location.hash.match(/^#\/([\w-]+)/); if (!m) return; const k = m[1]; LOG.some(p => p.key === k) ? openApp('p:' + k, { silent: true }) : APPS[k] && openApp(k, { silent: true }); });
 mailBadge();
 })();
+// Localise the few labels drawn by CSS (content:) through the i18n layer.
+(() => { const t = window.T || (s => s), r = document.documentElement.style; r.setProperty('--l-done', JSON.stringify(t('Done'))); r.setProperty('--l-home', JSON.stringify(t('Home'))); })();

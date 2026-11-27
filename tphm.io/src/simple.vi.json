@@ -1,0 +1,73 @@
+{
+ "title": "The Product Hunt Marathon, qua lời giản dị",
+ "tag": "Ngôn ngữ giản dị · 3 phút",
+ "lead": "Tôi đã tự tay làm và ra mắt mười hai công cụ miễn phí trong mười hai ngày. Trang này tóm tắt mọi thứ bằng lời lẽ giản dị để bạn đọc.",
+ "metaDescription": "The Product Hunt Marathon bằng lời giản dị: mười hai công cụ miễn phí, mã nguồn mở làm bằng AI và ra mắt từ 10 đến 21/11/2026.",
+ "sections": [
+  {
+   "heading": "Cuộc Marathon là gì",
+   "text": "The Product Hunt Marathon diễn ra từ 10 đến 21 tháng 11 năm 2026. Tôi đã cho ra mắt mười một công cụ trong mười một ngày, cộng thêm một phần thưởng encore: Tetris. Cả mười hai công cụ đều miễn phí sử dụng và là mã nguồn mở theo giấy phép MIT, hoàn toàn được tạo nên nhờ AI. Toàn bộ quá trình tiêu tốn khoảng 2.200 US$ cho chi phí AI, thời gian và máy chủ; tôi không hề mua hay đi xin bất kỳ một upvote nào.",
+   "link": "Đọc nhật ký",
+   "href": "/#log"
+  },
+  {
+   "heading": "Mười hai công cụ",
+   "text": "Các công cụ này đều nhỏ gọn và hữu ích. Junk là một cuốn sổ nháp nổi trên máy Mac. Mang gợi ý các lệnh terminal và chờ bạn bấm xác nhận. Megamesh giúp bạn tự dựng VPN riêng, Mars quét mã độc trên máy Mac, còn Timescreen biến một màn hình phụ thành chiếc đồng hồ. Tetris là món quà phụ, một dự án nhỏ của người hâm mộ làm cho vui. Mỗi công cụ đều có trang riêng kể lại câu chuyện đằng sau.",
+   "link": "Mở danh sách mười hai mục",
+   "href": "/#log"
+  },
+  {
+   "heading": "Những gì Product Hunt dạy tôi",
+   "text": "Tôi ra mắt sản phẩm mà không có đội ngũ đẩy bài, không đi xin upvote và từ chối mọi lời gạ mua vote. Lên trang và được nhìn thấy là hai chuyện hoàn toàn khác nhau: theo trải nghiệm của tôi, sản phẩm sẽ kẹt ở mức khoảng 4 điểm trừ khi bạn chi đậm tiền chạy quảng cáo hoặc được biên tập viên chọn giới thiệu. Biên tập viên đã chọn giới thiệu Mang, nhưng tôi vẫn ước những dự án mã nguồn mở có cơ hội tiếp cận người xem mà không cần tiền bạc. Bản báo cáo chi tiết kèm số điểm của từng lần ra mắt và các bài học sẽ ra mắt vào Thứ Bảy, 28 tháng 11.",
+   "link": "Đọc ghi chép thực địa",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS đã thoái trào",
+   "text": "SaaS nghĩa là phần mềm bạn thuê dùng theo gói đăng ký. Tôi tin rằng ngày càng nhiều công ty sẽ tự xây dựng và làm chủ những công cụ mà hiện họ đang phải đi thuê. Đây là một phỏng đoán, không phải chân lý. Việc tự dựng lại phần mềm không thể tái tạo dữ liệu, tuân thủ pháp lý hay niềm tin, và công cụ nào cũng cần có người chịu trách nhiệm quản lý. Bảng tính sẽ giúp bạn tự làm phép so sánh giữa việc thuê ngoài và tự xây.",
+   "link": "Tính toán chi phí",
+   "href": "/saas"
+  },
+  {
+   "heading": "Thuê một Chief Hacking Officer",
+   "text": "CHO là viết tắt của Chief Hacking Officer. Đây là một chức danh hóm hỉnh cho dịch vụ tư vấn nghiêm túc: tôi tìm ra những tác vụ lặp đi lặp lại trong nhóm của bạn, rồi dùng AI tạo ra các công cụ tinh gọn mà chính đội ngũ của bạn có thể làm chủ và duy trì. Hãy nghĩ đến các mẹo vặt cuộc sống (life hack): 'hacking' ở đây là tìm ra hướng giải quyết vấn đề thông minh hơn, chứ không đơn thuần là an ninh mạng. Hiện tôi có thể dành tối đa 30 giờ mỗi tuần.",
+   "link": "Xem cách tôi hợp tác cùng bạn",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, ván cược chính",
+   "text": "Openline là dự án khởi nghiệp và công việc kinh doanh chính của tôi. Công ty cung cấp eSIM du lịch, mang dữ liệu di động quốc tế đến điện thoại của bạn mà không cần thẻ SIM nhựa. Hơn một triệu eSIM đã được kích hoạt thông qua các đối tác doanh nghiệp. Iris và Digital Spot là các sản phẩm phụ tách ra từ những công cụ xây dựng cho Openline. Tôi đang gọi vốn từ các nhà đầu tư thiên thần và quỹ mạo hiểm, còn cuộc Marathon chỉ là dự án phụ bên lề.",
+   "link": "Xem các dự án khởi nghiệp",
+   "href": "/invest"
+  },
+  {
+   "heading": "Tự mở cuộc marathon của riêng bạn",
+   "text": "Nếu bạn muốn tự thử sức với một chặng marathon nho nhỏ, hãy bắt đầu từ đây. Tôi chia sẻ sáu bài học rút ra từ hành trình của mình cùng danh sách kiểm tra cho ngày ra mắt dành riêng cho giới lập trình và phát triển. Bạn có thể đánh dấu từng mục khi thực hiện và sao chép danh sách vào ghi chú, kho mã nguồn (repo) hoặc phần mềm theo dõi tiến độ.",
+   "link": "Bắt đầu danh sách kiểm tra",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS là phiên bản mô phỏng giao diện tương tác thú vị của trang web này. Nó biến toàn bộ cuộc Marathon thành một màn hình máy tính cổ điển nhỏ gọn để bạn khám phá, có sẵn ứng dụng, hòm thư, terminal và một chú mèo DJ. Nếu thích trải nghiệm theo cách vui tươi này, bạn có thể khởi động ngay.",
+   "link": "Khởi động TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Chuyển thẳng đến nội dung",
+  "brandLabel": "TPHM, cuốn nhật ký",
+  "back": "Trang nhật ký",
+  "theme": "Chuyển đổi giao diện sáng/tối",
+  "listen": "Nghe nội dung trang này",
+  "pause": "Tạm dừng",
+  "resume": "Tiếp tục",
+  "error": "Không thể phát âm thanh. Bạn vẫn có thể tiếp tục đọc trang.",
+  "min": "3 phút",
+  "full": "Xem toàn bộ nhật ký",
+  "contact": "Liên hệ với tôi",
+  "motto": "Nghĩ. Xây. Xuất xưởng. Lặp lại.",
+  "note": "© 2026 Paul Fleury. Toàn bộ mười hai công cụ đều miễn phí và cấp phép theo MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

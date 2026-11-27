@@ -1,0 +1,73 @@
+{
+ "title": "La Maratona di Product Hunt, in parole semplici",
+ "tag": "Linguaggio semplice · 3 minuti",
+ "lead": "Ho costruito e rilasciato dodici strumenti gratuiti in dodici giorni. Questa pagina spiega tutto in parole semplici.",
+ "metaDescription": "La Maratona di Product Hunt in parole semplici: dodici strumenti gratuiti e open source, creati con l'AI e rilasciati dal 10 al 21 novembre 2026.",
+ "sections": [
+  {
+   "heading": "Cos'è stata la Maratona",
+   "text": "La Maratona di Product Hunt si è svolta dal 10 al 21 novembre 2026. Ho rilasciato undici strumenti in undici giorni, poi un extra: Tetris. Tutti e dodici sono gratuiti e open source con licenza MIT, e li ho costruiti con l'AI. Farli tutti e dodici è costato circa 2.200 dollari americani tra AI, ore di lavoro e hosting, e non ho comprato né chiesto nemmeno un upvote.",
+   "link": "Leggi il diario di bordo",
+   "href": "/#log"
+  },
+  {
+   "heading": "I dodici strumenti",
+   "text": "Gli strumenti sono piccoli e pratici. Junk è un blocco appunti fluttuante per Mac. Mang ti suggerisce i comandi del terminale e aspetta la tua conferma. Megamesh crea la tua VPN privata, Mars cerca malware su un Mac e Timescreen trasforma uno schermo che non usi in un orologio. Tetris è il bonus, un progetto da fan fatto per divertimento. Ogni strumento ha la sua pagina con la storia che c'è dietro.",
+   "link": "Apri le dodici schede",
+   "href": "/#log"
+  },
+  {
+   "heading": "Cosa mi ha insegnato Product Hunt",
+   "text": "Ho fatto il lancio senza un gruppo di supporto e senza chiedere upvote, e ho rifiutato ogni offerta di vendermi voti. Essere online ed essere visti sono due cose diverse: per mia esperienza, un prodotto resta intorno ai 4 punti a meno che non abbia un grosso budget per la pubblicità o che un editor lo metta in evidenza. Gli editor hanno messo in evidenza Mang, ma vorrei che i progetti open source potessero farsi notare senza alcun budget. Il rapporto completo, con i punti di ogni lancio e ciò che ho imparato, esce sabato 28 novembre.",
+   "link": "Leggi gli appunti dal campo",
+   "href": "/hunt"
+  },
+  {
+   "heading": "Il SaaS è morto",
+   "text": "SaaS vuol dire software che prendi a noleggio con un abbonamento. La mia scommessa è che sempre più aziende costruiranno e possederanno gli strumenti che oggi noleggiano. È una previsione, non una certezza. Ricostruire il software non ricostruisce i dati, la conformità o la fiducia, e ogni strumento ha bisogno di un responsabile. Un calcolatore ti permette di confrontare di persona noleggio e sviluppo.",
+   "link": "Fai i conti",
+   "href": "/saas"
+  },
+  {
+   "heading": "Assumi un Chief Hacking Officer",
+   "text": "CHO sta per Chief Hacking Officer. È un titolo scherzoso per una consulenza seria: individuo le attività ripetitive del tuo team e uso l'AI per costruire strumenti semplici che la tua squadra può possedere e gestire in autonomia. Pensa ai life hack: qui fare hacking significa trovare una scorciatoia più furba per risolvere un problema, non solo sicurezza informatica. Al momento ho fino a 30 ore a settimana disponibili.",
+   "link": "Scopri come lavorerei con te",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, la scommessa principale",
+   "text": "Openline è la mia attività principale e la mia startup. Vende eSIM per viaggiare, che danno al tuo telefono dati mobili all'estero senza una scheda SIM di plastica. Ne sono state attivate oltre un milione tramite partner commerciali. Iris e Digital Spot sono spin-off di strumenti sviluppati per Openline. Sto raccogliendo fondi da business angel e fondi di venture capital, e la Maratona è stata il mio progetto parallelo.",
+   "link": "Scopri le iniziative",
+   "href": "/invest"
+  },
+  {
+   "heading": "Lancia la tua maratona",
+   "text": "Se vuoi correre la tua piccola maratona, parti da qui. Condivido sei lezioni tratte dal mio percorso e una checklist per il giorno del lancio pensata per i builder. Puoi spuntare le voci man mano che procedi e copiare l'elenco nei tuoi appunti, nel tuo repository o nel tuo strumento di gestione progetti.",
+   "link": "Inizia la checklist",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS è la versione giocosa di questo sito. Trasforma l'intera Maratona in una piccola scrivania virtuale con cui interagire, completa di app, posta in arrivo, un terminale e un gattino DJ. Se preferisci esplorare giocando, puoi avviarlo subito.",
+   "link": "Avvia TPHM OS",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Vai al contenuto",
+  "brandLabel": "TPHM, il diario di bordo",
+  "back": "Il diario di bordo",
+  "theme": "Passa dal tema chiaro a quello scuro",
+  "listen": "Ascolta questa pagina",
+  "pause": "Pausa",
+  "resume": "Riprendi",
+  "error": "Impossibile riprodurre l'audio. Puoi comunque leggere la pagina.",
+  "min": "3 min",
+  "full": "Vedi il diario di bordo completo",
+  "contact": "Contattami",
+  "motto": "Pensa. Costruisci. Rilascia. Ripeti.",
+  "note": "© 2026 Paul Fleury. Tutti e dodici gli strumenti sono gratuiti e con licenza MIT."
+ },
+ "noaudio": true,
+ "nometa": true
+}

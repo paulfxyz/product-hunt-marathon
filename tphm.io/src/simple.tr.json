@@ -1,0 +1,73 @@
+{
+ "title": "Product Hunt Maratonu, sade sözlerle",
+ "tag": "Sade dil · 3 dakika",
+ "lead": "On iki günde on iki ücretsiz araç üretip yayınladım. Bu sayfa her şeyi sade sözlerle anlatıyor.",
+ "metaDescription": "Sade sözlerle Product Hunt Maratonu: 10-21 Kasım 2026 arasında yapay zekâyla üretilip yayınlanan on iki ücretsiz, açık kaynak araç.",
+ "sections": [
+  {
+   "heading": "Maraton neydi?",
+   "text": "Product Hunt Maratonu 10 - 21 Kasım 2026 arasında gerçekleşti. On bir günde on bir araç yayınladım, ardından bir de bonus ekledim: Tetris. On iki aracın tümü ücretsiz ve MIT lisansıyla açık kaynak; hepsini yapay zekâyla ürettim. On ikisini de inşa etmek yapay zekâ, harcanan saatler ve barındırma masrafı olarak yaklaşık 2.200 ABD dolarına mal oldu; üstelik tek bir upvote bile satın almadım ya da kimseden istemedim.",
+   "link": "Kayıtları oku",
+   "href": "/#log"
+  },
+  {
+   "heading": "On iki araç",
+   "text": "Araçlar ufak ve pratik. Junk, Mac'in için ekranda süzülen bir karalama defteri. Mang, terminal komutları önerir ve onaylamanı bekler. Megamesh kendi özel VPN'ini kurar, Mars bir Mac'i zararlı yazılımlara karşı tarar, Timescreen ise boşta duran bir ekranı saate dönüştürür. Tetris ise bonus; sırf eğlence olsun diye yapılmış bir hayran projesi. Her aracın arkasındaki hikâyeyi anlatan kendine ait bir sayfası var.",
+   "link": "On iki kaydı aç",
+   "href": "/#log"
+  },
+  {
+   "heading": "Product Hunt bana ne öğretti?",
+   "text": "Lansman ekibim olmadan ve kimseden upvote istemeden yayınladım; bana oy satmak isteyen her teklifi de geri çevirdim. Yayında olmak ile görünür olmak bambaşka iki şey: Deneyimlerime göre büyük bir reklam bütçeniz yoksa ya da bir editör sizi öne çıkarmazsa, bir ürün 4 puan civarında kalıyor. Editörler Mang'i öne çıkardı ama açık kaynak projelerin hiçbir bütçe olmadan da keşfedilebilmesini dilerdim. Her lansmanın puanlarını ve çıkardığım dersleri içeren tam rapor 28 Kasım Cumartesi günü çıkıyor.",
+   "link": "Saha notlarını oku",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS öldü",
+   "text": "SaaS, abonelikle kiraladığın yazılım demek. Benim iddiam şu: Artık daha fazla şirket, şu anda kiraladığı araçları kendi inşa edip onların sahibi olacak. Bu kesin bir kanıt değil, bir öngörü. Yazılımı sıfırdan yapmak; veriyi, mevzuata uyumu veya güveni baştan inşa etmez ve her aracın bir sorumlusu olması gerekir. Bir hesaplayıcı, kiralamakla kendi başına inşa etmeyi kıyaslamana yardımcı olur.",
+   "link": "Hesapları yap",
+   "href": "/saas"
+  },
+  {
+   "heading": "Bir Chief Hacking Officer (CHO) ile çalış",
+   "text": "CHO, Chief Hacking Officer anlamına geliyor. Ciddi bir danışmanlık hizmeti için oyuncu bir unvan: Ekibinin sürekli tekrarladığı işleri buluyorum, ardından yapay zekâdan yararlanarak ekibinin sahiplenip yürütebileceği sade araçlar inşa ediyorum. Hayat kurtaran pratik çözümleri (life hack) düşün: Buradaki \"hack\", yalnızca siber güvenlik demek değil; bir sorunu çözmek için daha akılcı bir yol bulmak demek. Şu anda haftada 30 saate kadar vaktim var.",
+   "link": "Seninle nasıl çalışacağımı gör",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, ana girişimim",
+   "text": "Openline benim ana girişimim ve startup'ım. Yurt dışındayken plastik bir SIM karta ihtiyaç duymadan telefonuna mobil veri sağlayan seyahat eSIM'leri satıyor. İş ortakları aracılığıyla bir milyondan fazlası etkinleştirildi. Iris ve Digital Spot, Openline için inşa edilen araçlardan türeyen yan girişimler. Melek yatırımcılardan ve risk sermayesi fonlarından yatırım turundayım; Maraton ise benim yan projmdi.",
+   "link": "Girişimleri gör",
+   "href": "/invest"
+  },
+  {
+   "heading": "Kendi maratonunu başlat",
+   "text": "Kendi küçük maratonunu koşmak istiyorsan buradan başla. Kendi maratonumdan çıkardığım altı dersi ve geliştiriciler için bir lansman günü kontrol listesini paylaşıyorum. Adımları tamamladıkça işaretleyebilir, listeyi notlarına, repona veya proje takip aracına kopyalayabilirsin.",
+   "link": "Kontrol listesine başla",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS bu sitenin eğlenceli sürümü. Bütün Maraton'u uygulamaları, gelen kutusu, terminali ve DJ kedisi olan, kurcalayabileceğin küçük bir bilgisayar masaüstüne dönüştürüyor. Oynamayı tercih ediyorsan sistemi başlatabilirsin.",
+   "link": "TPHM OS'i başlat",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "İçeriğe geç",
+  "brandLabel": "TPHM, seyir defteri",
+  "back": "Seyir defteri",
+  "theme": "Açık ve koyu tema arasında geçiş yap",
+  "listen": "Bu sayfayı dinle",
+  "pause": "Duraklat",
+  "resume": "Devam et",
+  "error": "Ses oynatılamadı. Sayfayı yine de okuyabilirsin.",
+  "min": "3 dk",
+  "full": "Seyir defterinin tamamını gör",
+  "contact": "Bana ulaş",
+  "motto": "Düşün. Üret. Yayınla. Tekrarla.",
+  "note": "© 2026 Paul Fleury. On iki araç da ücretsiz ve MIT lisanslıdır."
+ },
+ "noaudio": true,
+ "nometa": true
+}

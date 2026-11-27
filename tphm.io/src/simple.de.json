@@ -1,0 +1,73 @@
+{
+ "title": "Der Product Hunt Marathon in einfachen Worten",
+ "tag": "Einfache Sprache · 3 Minuten",
+ "lead": "Ich habe in zwölf Tagen zwölf kostenlose Tools gebaut und gelauncht. Diese Seite erklärt alles in einfachen Worten.",
+ "metaDescription": "Der Product Hunt Marathon in einfachen Worten: zwölf kostenlose Open-Source-Tools, mit KI gebaut und vom 10. bis 21. November 2026 gelauncht.",
+ "sections": [
+  {
+   "heading": "Was der Marathon war",
+   "text": "Der Product Hunt Marathon lief vom 10. bis 21. November 2026. Ich habe elf Tools in elf Tagen gelauncht, plus eine Zugabe: Tetris. Alle zwölf sind kostenlos und Open Source unter der MIT-Lizenz. Ich habe sie mit KI gebaut. Alle zwölf zu bauen hat etwa 2.200 US-Dollar gekostet – für KI, Arbeitsstunden und Hosting. Ich habe keinen einzigen Upvote gekauft oder erbeten.",
+   "link": "Das Logbuch lesen",
+   "href": "/#log"
+  },
+  {
+   "heading": "Die zwölf Tools",
+   "text": "Die Tools sind klein und praktisch. Junk ist ein schwebender Notizzettel für deinen Mac. Mang schlägt Terminal-Befehle vor und wartet, bis du bestätigst. Megamesh richtet dein eigenes privates VPN ein, Mars scannt einen Mac nach Malware, und Timescreen macht aus einem freien Bildschirm eine Uhr. Tetris ist der Bonus, ein Fanprojekt aus reinem Spaß. Jedes Tool hat eine eigene Seite mit der Geschichte dahinter.",
+   "link": "Die zwölf Einträge öffnen",
+   "href": "/#log"
+  },
+  {
+   "heading": "Was Product Hunt mir beigebracht hat",
+   "text": "Ich bin ohne Launch-Team und ohne Bitten um Upvotes an den Start gegangen und habe jedes Angebot abgelehnt, mir Stimmen zu verkaufen. Live zu sein und gesehen zu werden, sind zwei verschiedene Dinge: Nach meiner Erfahrung bleibt ein Produkt bei etwa 4 Punkten hängen, wenn es kein Werbebudget hat oder kein Redakteur es vorstellt. Die Redaktion hat Mang gefeatured, aber ich wünschte, Open-Source-Arbeit könnte auch ohne Budget sichtbar sein. Der ausführliche Bericht mit den Punkten für jeden Launch und allem, was ich gelernt habe, erscheint am Samstag, 28. November.",
+   "link": "Die Praxis-Notizen lesen",
+   "href": "/hunt"
+  },
+  {
+   "heading": "SaaS ist tot",
+   "text": "SaaS bedeutet Software, die du im Abo mietest. Meine Wette lautet: Immer mehr Firmen werden die Tools, die sie heute mieten, selbst bauen und besitzen. Das ist eine Vorhersage, kein Beweis. Neu gebaute Software ersetzt keine Daten, keine Compliance und kein Vertrauen, und jedes Tool braucht jemanden, der sich darum kümmert. Mit einem Rechner kannst du Mieten und Selberbauen selbst vergleichen.",
+   "link": "Die Zahlen durchrechnen",
+   "href": "/saas"
+  },
+  {
+   "heading": "Hol dir einen Chief Hacking Officer",
+   "text": "CHO steht für Chief Hacking Officer. Das ist ein spielerischer Titel für ernsthafte Beratung: Ich finde heraus, welche Aufgaben dein Team ständig wiederholt, und baue dann mit KI einfache Tools, die dein Team selbst besitzen und pflegen kann. Denk an Lifehacks: Hacken heißt hier, einen schlaueren Weg für ein Problem zu finden, nicht nur IT-Sicherheit. Ich habe aktuell bis zu 30 Stunden pro Woche frei.",
+   "link": "Wie wir zusammenarbeiten können",
+   "href": "/cho"
+  },
+  {
+   "heading": "Openline, die Hauptwette",
+   "text": "Openline ist mein Hauptprojekt und Startup. Es verkauft Reise-eSIMs, mit denen dein Smartphone im Ausland mobilen Datenzugang hat – ganz ohne Plastik-SIM-Karte. Über Geschäftspartner wurden schon mehr als eine Million aktiviert. Iris und Digital Spot sind Spin-offs von Tools, die wir für Openline gebaut haben. Ich sammle Kapital bei Angels und Wagniskapitalfonds ein; der Marathon war mein Nebenprojekt.",
+   "link": "Die Ventures ansehen",
+   "href": "/invest"
+  },
+  {
+   "heading": "Starte deinen eigenen Marathon",
+   "text": "Wenn du deinen eigenen kleinen Marathon laufen willst, fang hier an. Ich teile sechs Lektionen aus meinem Lauf und eine Launch-Day-Checkliste für Builder. Du kannst Punkte nach und nach abhaken und die Liste in deine Notizen, dein Repository oder dein Projekt-Tool kopieren.",
+   "link": "Die Checkliste öffnen",
+   "href": "/builders"
+  },
+  {
+   "heading": "TPHM OS",
+   "text": "TPHM OS ist die spielerische Version dieser Seite. Sie verwandelt den gesamten Marathon in einen kleinen Desktop-Computer zum Ausprobieren – mit Apps, Posteingang, Terminal und einer DJ-Katze. Wenn du lieber ausprobieren willst, starte es einfach.",
+   "link": "TPHM OS starten",
+   "href": "/os"
+  }
+ ],
+ "ui": {
+  "skip": "Direkt zum Inhalt springen",
+  "brandLabel": "TPHM, das Logbuch",
+  "back": "Das Logbuch",
+  "theme": "Zwischen hell und dunkel wechseln",
+  "listen": "Diese Seite anhören",
+  "pause": "Pause",
+  "resume": "Fortsetzen",
+  "error": "Das Audio konnte nicht abgespielt werden. Du kannst die Seite trotzdem lesen.",
+  "min": "3 Min.",
+  "full": "Das ganze Logbuch ansehen",
+  "contact": "Kontakt aufnehmen",
+  "motto": "Think. Build. Ship. Repeat.",
+  "note": "© 2026 Paul Fleury. Alle zwölf Tools sind kostenlos und MIT-lizenziert."
+ },
+ "noaudio": true,
+ "nometa": true
+}
