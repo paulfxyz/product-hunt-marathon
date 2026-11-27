@@ -1,8 +1,8 @@
 {
  "title": "Marathon na Product Hunt, a sauƙaƙan harshe",
  "tag": "Sauƙaƙan harshe · minti 3",
- "lead": "Na gina na kuma saki kayan aiki goma sha biyu kyauta cikin kwana goma sha biyu. Wannan shafi yana bayyana komai a sauƙaƙe, kuma za ka iya karanta shi.",
- "metaDescription": "Marathon na Product Hunt a sauƙaƙan harshe: kayan aiki 12 kyauta, buɗaɗɗen tushe, an gina su da AI daga 10 zuwa 21 Nuwamba 2026.",
+ "lead": "Na gina na kuma saki kayan aiki goma sha biyu kyauta cikin kwana goma sha biyu. Wannan shafi yana bayyana komai a sauƙaƙe, kuma za ka iya karanta shi ko ka saurare shi.",
+ "metaDescription": "Marathon na Product Hunt a sauƙaƙan harshe: kayan aiki 12 kyauta, buɗaɗɗen tushe, an gina su da AI daga 10 zuwa 21 Nuwamba 2026, tare da sigar da aka karanta da murya.",
  "sections": [
   {
    "heading": "Menene Marathon ɗin",
@@ -66,8 +66,6 @@
   "full": "Duba cikakken littafin tarihin aiki",
   "contact": "Tuntuɓe ni",
   "motto": "Yi tunani. Gina. Saki. Maimaita.",
-  "note": "© 2026 Paul Fleury. Duka kayan aiki goma sha biyun kyauta ne kuma suna ƙarƙashin lasisin MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Duka kayan aiki goma sha biyun kyauta ne kuma suna ƙarƙashin lasisin MIT. An samar da karatun ne da muryar AI."
+ }
 }

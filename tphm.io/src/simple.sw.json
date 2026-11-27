@@ -1,8 +1,8 @@
 {
  "title": "Mbio za Marathoni za Product Hunt, kwa maneno rahisi",
  "tag": "Lugha rahisi · dakika 3",
- "lead": "Nilijenga na kuzindua zana kumi na mbili za bure ndani ya siku kumi na mbili. Ukurasa huu unaeleza yote kwa maneno rahisi.",
- "metaDescription": "Mbio za Marathoni za Product Hunt kwa maneno rahisi: zana kumi na mbili za bure, chanzo huria, zilizojengwa kwa AI na kuzinduliwa 10 hadi 21 Novemba 2026.",
+ "lead": "Nilijenga na kuzindua zana kumi na mbili za bure ndani ya siku kumi na mbili. Ukurasa huu unaeleza yote kwa maneno rahisi, na unaweza kuusoma au kuusikiliza.",
+ "metaDescription": "Mbio za Marathoni za Product Hunt kwa maneno rahisi: zana kumi na mbili za bure, chanzo huria, zilizojengwa kwa AI na kuzinduliwa 10 hadi 21 Novemba 2026, pamoja na toleo la sauti.",
  "sections": [
   {
    "heading": "Marathoni ilikuwa nini",
@@ -66,8 +66,6 @@
   "full": "Ona kitabu kamili cha kumbukumbu",
   "contact": "Wasiliana nami",
   "motto": "Fikiri. Jenga. Zindua. Rudia.",
-  "note": "© 2026 Paul Fleury. Zana zote kumi na mbili ni za bure na zimepewa leseni ya MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Zana zote kumi na mbili ni za bure na zimepewa leseni ya MIT. Usimulizi huu umetengenezwa kwa sauti ya AI."
+ }
 }

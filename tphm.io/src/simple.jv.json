@@ -1,8 +1,8 @@
 {
  "title": "Maraton Product Hunt, nganggo basa prasaja",
  "tag": "Basa prasaja · 3 menit",
- "lead": "Aku nggawe lan ngrilis rolas piranti gratis sajrone rolas dina. Kaca iki nerangake kabeh nganggo basa prasaja, lan kowe bisa maca.",
- "metaDescription": "Maraton Product Hunt nganggo basa prasaja: rolas piranti gratis lan open source nganggo AI, dirilis 10-21 Nov 2026.",
+ "lead": "Aku nggawe lan ngrilis rolas piranti gratis sajrone rolas dina. Kaca iki nerangake kabeh nganggo basa prasaja, lan kowe bisa maca utawa ngrungokake.",
+ "metaDescription": "Maraton Product Hunt nganggo basa prasaja: rolas piranti gratis lan open source nganggo AI, dirilis 10-21 Nov 2026, kanthi versi lisan.",
  "sections": [
   {
    "heading": "Maraton iku apa",
@@ -66,8 +66,6 @@
   "full": "Deleng buku cathetan jangkep",
   "contact": "Hubungi aku",
   "motto": "Mikir. Nggawe. Rilis. Baleni.",
-  "note": "© 2026 Paul Fleury. Kabeh rolas piranti gratis lan kanthi lisensi MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Kabeh rolas piranti gratis lan kanthi lisensi MIT. Narasi iki digawe nganggo swara AI."
+ }
 }

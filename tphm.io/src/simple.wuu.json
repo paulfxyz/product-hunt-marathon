@@ -1,8 +1,8 @@
 {
  "title": "Product Hunt 马拉松，用大白话讲",
  "tag": "大白话 · 3分钟",
- "lead": "阿拉用12日工夫造好、发布脱12个免费工具。这一页用大白话统统讲清爽，侬可以看。",
- "metaDescription": "Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具。",
+ "lead": "阿拉用12日工夫造好、发布脱12个免费工具。这一页用大白话统统讲清爽，侬可以看，也可以听。",
+ "metaDescription": "Product Hunt 马拉松大白话版：2026年11月10号到21号，用 AI 造好发布个12个免费开源工具，还有语音版。",
  "sections": [
   {
    "heading": "马拉松是啥",
@@ -66,8 +66,6 @@
   "full": "看完整航海日志",
   "contact": "联系阿拉",
   "motto": "想。造。发。再来。",
-  "note": "© 2026 Paul Fleury。12个工具全部免费，按 MIT 许可证开源。"
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury。12个工具全部免费，按 MIT 许可证开源。旁白是用 AI 声音生成个。"
+ }
 }

@@ -1,8 +1,8 @@
 {
  "title": "Ang Product Hunt Marathon, sa simpleng salita",
  "tag": "Simpleng wika · 3 minuto",
- "lead": "Gumawa at nag-ship ako ng labindalawang libreng tool sa loob ng labindalawang araw. Ipinapaliwanag ng page na ito ang lahat sa simpleng salita, at puwede mo itong basahin.",
- "metaDescription": "Ang Product Hunt Marathon sa simpleng salita: labindalawang libre at open-source na tool na binuo gamit ang AI at na-ship mula 10 hanggang 21 Nobyembre 2026.",
+ "lead": "Gumawa at nag-ship ako ng labindalawang libreng tool sa loob ng labindalawang araw. Ipinapaliwanag ng page na ito ang lahat sa simpleng salita, at puwede mo itong basahin o pakinggan.",
+ "metaDescription": "Ang Product Hunt Marathon sa simpleng salita: labindalawang libre at open-source na tool na binuo gamit ang AI at na-ship mula 10 hanggang 21 Nobyembre 2026, na may spoken version.",
  "sections": [
   {
    "heading": "Ano ang Marathon",
@@ -66,8 +66,6 @@
   "full": "Tingnan ang buong logbook",
   "contact": "Kontakin ako",
   "motto": "Mag-isip. Bumuo. I-ship. Ulitin.",
-  "note": "© 2026 Paul Fleury. Libre at MIT-licensed ang lahat ng labindalawang tool."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Libre at MIT-licensed ang lahat ng labindalawang tool. Ang narration ay ginawa gamit ang AI voice."
+ }
 }

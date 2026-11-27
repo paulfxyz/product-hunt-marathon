@@ -1,8 +1,8 @@
 {
  "title": "Di Product Hunt Marathon, for simple words",
  "tag": "Simple language · 3 minutes",
- "lead": "I build and ship twelve free tools inside twelve days. Dis page explain everything for simple words.",
- "metaDescription": "Di Product Hunt Marathon for simple words: twelve free open-source tools wey I build with AI and ship from 10 to 21 November 2026.",
+ "lead": "I build and ship twelve free tools inside twelve days. Dis page explain everything for simple words, and you fit read am or listen to am.",
+ "metaDescription": "Di Product Hunt Marathon for simple words: twelve free open-source tools wey I build with AI and ship from 10 to 21 November 2026, with spoken version.",
  "sections": [
   {
    "heading": "Wetin di Marathon be",
@@ -66,8 +66,6 @@
   "full": "See di full logbook",
   "contact": "Contact me",
   "motto": "Think. Build. Ship. Repeat.",
-  "note": "© 2026 Paul Fleury. All di twelve tools dey free and dem get MIT licence."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. All di twelve tools dey free and dem get MIT licence. Dem generate di narration with AI voice."
+ }
 }

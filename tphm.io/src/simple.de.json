@@ -1,8 +1,8 @@
 {
  "title": "Der Product Hunt Marathon in einfachen Worten",
  "tag": "Einfache Sprache · 3 Minuten",
- "lead": "Ich habe in zwölf Tagen zwölf kostenlose Tools gebaut und gelauncht. Diese Seite erklärt alles in einfachen Worten.",
- "metaDescription": "Der Product Hunt Marathon in einfachen Worten: zwölf kostenlose Open-Source-Tools, mit KI gebaut und vom 10. bis 21. November 2026 gelauncht.",
+ "lead": "Ich habe in zwölf Tagen zwölf kostenlose Tools gebaut und gelauncht. Diese Seite erklärt alles in einfachen Worten, und du kannst sie lesen oder dir anhören.",
+ "metaDescription": "Der Product Hunt Marathon in einfachen Worten: zwölf kostenlose Open-Source-Tools, mit KI gebaut und vom 10. bis 21. November 2026 gelauncht, mit einer gesprochenen Version.",
  "sections": [
   {
    "heading": "Was der Marathon war",
@@ -66,8 +66,6 @@
   "full": "Das ganze Logbuch ansehen",
   "contact": "Kontakt aufnehmen",
   "motto": "Think. Build. Ship. Repeat.",
-  "note": "© 2026 Paul Fleury. Alle zwölf Tools sind kostenlos und MIT-lizenziert."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Alle zwölf Tools sind kostenlos und MIT-lizenziert. Die Vertonung wurde mit einer KI-Stimme erstellt."
+ }
 }

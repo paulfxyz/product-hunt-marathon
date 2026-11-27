@@ -1,8 +1,8 @@
 {
  "title": "El maratón de Product Hunt, en palabras sencillas",
  "tag": "Lenguaje sencillo · 3 minutos",
- "lead": "Creé y publiqué doce herramientas gratuitas en doce días. Esta página lo explica todo con palabras sencillas.",
- "metaDescription": "El maratón de Product Hunt en palabras sencillas: doce herramientas gratuitas y de código abierto creadas con IA entre el 10 y el 21 de noviembre de 2026.",
+ "lead": "Creé y publiqué doce herramientas gratuitas en doce días. Esta página lo explica todo con palabras sencillas, y puedes leerla o escucharla.",
+ "metaDescription": "El maratón de Product Hunt en palabras sencillas: doce herramientas gratuitas y de código abierto creadas con IA entre el 10 y el 21 de noviembre de 2026, con una versión hablada.",
  "sections": [
   {
    "heading": "Qué fue el maratón",
@@ -66,8 +66,6 @@
   "full": "Ver el cuaderno de bitácora completo",
   "contact": "Contacta conmigo",
   "motto": "Piensa. Construye. Lanza. Repite.",
-  "note": "© 2026 Paul Fleury. Las doce herramientas son gratuitas y con licencia MIT."
- },
- "noaudio": true,
- "nometa": true
+  "note": "© 2026 Paul Fleury. Las doce herramientas son gratuitas y con licencia MIT. Narración generada con una voz de IA."
+ }
 }
