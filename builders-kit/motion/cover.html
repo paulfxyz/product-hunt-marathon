@@ -62,7 +62,7 @@ const F=new URLSearchParams(location.search).get('f')||'x';
 const X=F==='x';const W=X?1600:1080,H=X?900:1350;const U=X?24:26;
 document.documentElement.style.setProperty('--W',W+'px');document.documentElement.style.setProperty('--H',H+'px');document.documentElement.style.setProperty('--u',U+'px');
 const BH=X?200:222;{for(const id of ['tag','tag2']){const g=document.getElementById(id);g.style.fontSize=(X?44:42)+'px';g.style.setProperty('--tl',(X?26:26)+'px');g.style.setProperty('--tb',(X?16:20)+'px');}}{const b=document.getElementById('band');b.style.height=BH+'px';b.style.fontSize=(X?55:37)+'px';b.style.setProperty('--f2',(X?38:30)+'px');b.style.setProperty('--rg',(X?14:16)+'px');b.style.setProperty('--hz',(X?10:12)+'px');b.style.paddingBottom=(X?10:12)+'px';const st=document.getElementById('wrap');const FT=X?90:96;const sc=(H-BH-FT)/H;st.style.transformOrigin='50% 0';st.style.transform=`translateY(${BH}px) scale(${sc})`;}
-const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',4],['timescreen','Timescreen',9],['mars','Mars',11],['tetris','Tetris',16]];
+const P=[['junk','Junk',5],['ase','ASE',4],['mang','Mang',77],['hollr','Hollr',7],['clippy','Clippy',3],['mercury','Mercury',3],['megamesh','Megamesh',4],['ai-credit-checker','AI Credits',4],['xnftables','xnftables',9],['timescreen','Timescreen',10],['mars','Mars',11],['tetris','Tetris',16]];
 const S=document.getElementById('stage');
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();const e=d.firstChild;S.appendChild(e);return e};
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
@@ -72,7 +72,7 @@ const el2=t=>{t=clamp(t);if(t===0||t===1)return t;return Math.pow(2,-10*t)*Math.
 const M=X?72:64;
 // ---------- scene A: hook
 const kick=el(`<div id="kick" class="abs mono" style="left:${M}px;top:${X?58:64}px"><b></b>The Product Hunt Marathon · Full report</div>`);
-const A=[['12 free tools.',''],['≈ US$2,200.',''],['147 points.','']];
+const A=[['12 free tools.',''],['≈ US$2,200.',''],['153 points.','']];
 const hA=el(`<div class="abs disp hl" style="left:${M}px;top:${X?150:190}px;font-size:${X?118:112}px"></div>`);
 const wordsA=[];A.forEach((l,i)=>{const line=document.createElement('div');line.style.whiteSpace='nowrap';
  (l[0]+(l[1]?' '+l[1]:'')).split(' ').forEach((w,j)=>{const s=document.createElement('span');s.className='w'+(i===2?' acc':'');s.textContent=w;line.appendChild(s);line.appendChild(document.createTextNode(' '));wordsA.push([s,i])});hA.appendChild(line)});
@@ -96,7 +96,7 @@ const arrow=el(`<svg class="abs" style="left:${X?cl+slot*3.6:cl+slot*3.8}px;top:
 const mi=2, mx=bars[mi].x;
 const stamp=el(`<div id="stamp" style="font-size:${X?22:24}px;left:${mx+bw+18}px;top:${cb-sc(77)+(X?10:20)}px">Featured by<br>the PH editors<br><span style="font-size:1.6em;font-family:'Bricolage Grotesque';font-weight:800;letter-spacing:-.02em">#33</span> of the day</div>`);
 // ---------- scene C: dark
-const C1=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?96:100}px;max-width:${W-2*M}px"><span class="w">7 of 11</span> <span class="w">tools</span> <span class="w">stalled</span> <span class="w">at</span> <span class="w" style="color:var(--banda)">3 to 5</span> <span class="w" style="color:var(--banda)">points.</span></div>`);
+const C1=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?96:100}px;max-width:${W-2*M}px"><span class="w">6 of 11</span> <span class="w">tools</span> <span class="w">stalled</span> <span class="w">at</span> <span class="w" style="color:var(--banda)">3 to 5</span> <span class="w" style="color:var(--banda)">points.</span></div>`);
 const C2=el(`<div class="abs big" style="left:${M}px;top:${X?190:300}px;font-size:${X?100:104}px;max-width:${W-2*M}px">Open source<br>shouldn't need<br><span class="mk">an ad budget.</span></div>`);
 const G=el(`<div class="abs" style="right:${X?60:M}px;${X?'top:330px':'top:880px'};font-family:Bricolage Grotesque;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:${X?420:400}px;color:transparent;-webkit-text-stroke:4px #FF7F57;text-align:right">4<span style="font-size:.3em;letter-spacing:0;-webkit-text-stroke:2.5px #FF7F57">pts</span></div>`);
 const Ck=el(`<div class="abs mono" style="left:${M}px;top:${X?58:64}px;color:var(--banda);font-size:${U*1.05}px">What I learned</div>`);
@@ -203,7 +203,7 @@ window.render=function(t){
  // E
  { const eIn=t>=T.e0-.05, k=eo((t-T.e0)/.45), eo2=1-eio((t-(T.g0-.3))/.3);
    set(E,eIn?k*eo2:0,0,(1-k)*30);
-   const q=eo((t-(T.e0+.3))/1.1); document.getElementById('eN').textContent=Math.round(147*q);
+   const q=eo((t-(T.e0+.3))/1.1); document.getElementById('eN').textContent=Math.round(153*q);
    const p=document.getElementById('eP'); const kp=eo((t-(T.e0+1.6))/.45); p.style.opacity=kp; p.style.transform=`translateY(${(1-kp)*20}px)`;
    const ks=back((t-(T.e0+2.4))/.45); set(eS,eIn?clamp((t-(T.e0+2.4))/.1)*eo2:0,0,0,1.7-.7*ks,-14+6*ks); }
  // K
